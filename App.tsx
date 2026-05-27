@@ -69,9 +69,7 @@ const DraggableCanvasItem = ({
         onDragMove(element.instanceId, gestureState.dx, gestureState.dy);
       },
       onPanResponderRelease: (evt, gestureState) => {
-        const endX = lastPosition.current.x + gestureState.dx;
-        const endY = lastPosition.current.y + gestureState.dy;
-        onDragRelease(element.instanceId, endX, endY);
+        onDragRelease(element.instanceId, lastPosition.current.x, lastPosition.current.y);
       },
     })
   ).current;
