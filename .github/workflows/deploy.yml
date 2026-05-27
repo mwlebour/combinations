@@ -1,0 +1,51 @@
+name: Build and Deploy to GCS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Web Bundle
+        run: npm run build
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Sync static files to GCS Bucket
+        run: |
+          # Sync dist directory to bucket, deleting removed files
+          gsutil -m rsync -r -d dist gs://combinations.lebourgeo.is
+
+      - name: Set Cache-Control Headers on GCS Objects
+        run: |
+          # Set long-term cache control for static compilation assets (JS, CSS, images)
+          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000, immutable" "gs://combinations.lebourgeo.is/_expo/static/**" || true
+          
+          # Ensure entry index.html is never cached so users get instant updates
+          gsutil -m setmeta -h "Cache-Control:no-cache, no-store, must-revalidate" "gs://combinations.lebourgeo.is/index.html" || true
