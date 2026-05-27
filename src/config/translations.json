@@ -1,0 +1,629 @@
+{
+  "ui": {
+    "title": {
+      "en": "Elemental Combinations",
+      "hu": "Elemek Kombinációja",
+      "de": "Elementare Kombinationen",
+      "la": "Combinationes Elementorum",
+      "it": "Combinazioni Elementali",
+      "fr": "Combinaisons Élémentaires"
+    },
+    "discovered": {
+      "en": "Discovered",
+      "hu": "Felfedezve",
+      "de": "Entdeckt",
+      "la": "Repertum",
+      "it": "Scoperti",
+      "fr": "Découvert"
+    },
+    "resetGame": {
+      "en": "Reset Game",
+      "hu": "Játék visszaállítása",
+      "de": "Zurücksetzen",
+      "la": "Restituere",
+      "it": "Azzera Gioco",
+      "fr": "Réinitialiser"
+    },
+    "clearBoard": {
+      "en": "Clear Board",
+      "hu": "Tábla ürítése",
+      "de": "Säubern",
+      "la": "Tabulam purgare",
+      "it": "Pulisci Tavola",
+      "fr": "Vider le plateau"
+    },
+    "workspaceCanvas": {
+      "en": "WORKSPACE CANVAS",
+      "hu": "MUNKATERÜLET TÁBLA",
+      "de": "ARBEITSFLÄCHE CANVAS",
+      "la": "TABULA OPERIS",
+      "it": "TAVOLA DI LAVORO",
+      "fr": "PLATEAU DE TRAVAIL"
+    },
+    "dragHint": {
+      "en": "Tap items in the right sidebar to spawn them. Drag and drop them onto each other to combine!",
+      "hu": "Kattints a jobb oldalsáv elemeire a spawnoláshoz. Húzd egymásra őket a kombináláshoz!",
+      "de": "Tippe auf Elemente in der Seitenleiste zum Erstellen. Ziehe sie aufeinander, um sie zu kombinieren!",
+      "la": "Tange elementa in columna dextera ut ea gignantur. Trahe et superpone ea ut combinentur!",
+      "it": "Tocca gli elementi nella barra a destra per crearli. Trascinali uno sull'altro per combinarli!",
+      "fr": "Appuyez sur les éléments de la barre latérale pour les générer. Glissez-déposez-les pour les combiner !"
+    },
+    "searchPlaceholder": {
+      "en": "Search discovered...",
+      "hu": "Keresés...",
+      "de": "Suche...",
+      "la": "Quaere...",
+      "it": "Cerca scoperti...",
+      "fr": "Rechercher..."
+    },
+    "allTab": {
+      "en": "All",
+      "hu": "Összes",
+      "de": "Alle",
+      "la": "Omnia",
+      "it": "Tutti",
+      "fr": "Tout"
+    },
+    "basicTab": {
+      "en": "Basic",
+      "hu": "Alap",
+      "de": "Basis",
+      "la": "Primaria",
+      "it": "Base",
+      "fr": "Base"
+    },
+    "combinedTab": {
+      "en": "Combined",
+      "hu": "Kombinált",
+      "de": "Kombiniert",
+      "la": "Mixta",
+      "it": "Composti",
+      "fr": "Combinés"
+    },
+    "finalTab": {
+      "en": "Final",
+      "hu": "Végső",
+      "de": "Finale",
+      "la": "Finalia",
+      "it": "Finali",
+      "fr": "Finaux"
+    },
+    "noItems": {
+      "en": "No items found",
+      "hu": "Nincs találat",
+      "de": "Keine Elemente gefunden",
+      "la": "Nulla elementa reperta",
+      "it": "Nessun elemento trovato",
+      "fr": "Aucun élément trouvé"
+    },
+    "newDiscovery": {
+      "en": "NEW DISCOVERY!",
+      "hu": "ÚJ FELFEDEZÉS!",
+      "de": "NEUE ENTDECKUNG!",
+      "la": "NOVUM REPERTUM!",
+      "it": "NUOVA SCOPERTA!",
+      "fr": "NOUVELLE DÉCOUVERTE !"
+    },
+    "awesome": {
+      "en": "Awesome!",
+      "hu": "Király!",
+      "de": "Großartig!",
+      "la": "Optime!",
+      "it": "Fantastico!",
+      "fr": "Génial !"
+    },
+    "finalBadge": {
+      "en": "Final",
+      "hu": "Kész",
+      "de": "Fertig",
+      "la": "Finis",
+      "it": "Fine",
+      "fr": "Final"
+    },
+    "selectLanguage": {
+      "en": "Select Language",
+      "hu": "Nyelv választása",
+      "de": "Sprache wählen",
+      "la": "Elige Linguam",
+      "it": "Seleziona Lingua",
+      "fr": "Choisir la langue"
+    }
+  },
+  "elements": {
+    "earth": {
+      "name": { "en": "Earth", "hu": "Föld", "de": "Erde", "la": "Terra", "it": "Terra", "fr": "Terre" },
+      "description": {
+        "en": "Representative of land, stability, soil.",
+        "hu": "A szárazföld, a stabilitás és a talaj képviselője.",
+        "de": "Repräsentiert Land, Stabilität und Boden.",
+        "la": "Repraesentatio terrae, stabilitatis et soli.",
+        "it": "Rappresenta la terra, la stabilità, il suolo.",
+        "fr": "Représente la terre, la stabilité et le sol."
+      }
+    },
+    "air": {
+      "name": { "en": "Air", "hu": "Levegő", "de": "Luft", "la": "Aer", "it": "Aria", "fr": "Air" },
+      "description": {
+        "en": "Representative of atmosphere, wind, movement.",
+        "hu": "A légkör, a szél és a mozgás képviselője.",
+        "de": "Repräsentiert Atmosphäre, Wind und Bewegung.",
+        "la": "Repraesentatio atmosphaerae, venti, et motus.",
+        "it": "Rappresenta l'atmosfera, il vento, il movimento.",
+        "fr": "Représente l'atmosphère, le vent et le mouvement."
+      }
+    },
+    "fire": {
+      "name": { "en": "Fire", "hu": "Tűz", "de": "Feuer", "la": "Ignis", "it": "Fuoco", "fr": "Feu" },
+      "description": {
+        "en": "Representative of heat, energy, light.",
+        "hu": "A hő, az energia és a fény képviselője.",
+        "de": "Repräsentiert Wärme, Energie und Licht.",
+        "la": "Repraesentatio caloris, energiae, et lucis.",
+        "it": "Rappresenta il calore, l'energia, la luce.",
+        "fr": "Représente la chaleur, l'énergie et la lumière."
+      }
+    },
+    "water": {
+      "name": { "en": "Water", "hu": "Víz", "de": "Wasser", "la": "Aqua", "it": "Acqua", "fr": "Eau" },
+      "description": {
+        "en": "Representative of ocean, rain, fluid.",
+        "hu": "Az óceán, az eső és a folyadék képviselője.",
+        "de": "Repräsentiert Ozean, Regen und Flüssigkeit.",
+        "la": "Repraesentatio oceani, pluviae, et fluidi.",
+        "it": "Rappresenta l'oceano, la pioggia, il fluido.",
+        "fr": "Représente l'océan, la pluie et les fluides."
+      }
+    },
+    "sand": {
+      "name": { "en": "Sand", "hu": "Homok", "de": "Sand", "la": "Arena", "it": "Sabbia", "fr": "Sable" },
+      "description": {
+        "en": "Representative of desert, granular silica matter.",
+        "hu": "A sivatag és a szemcsés szilícium képviselője.",
+        "de": "Repräsentiert Wüste und körniges Silizium.",
+        "la": "Repraesentatio deserti et materiae arenosae.",
+        "it": "Rappresenta il deserto, materia silicea granulare.",
+        "fr": "Représente le désert, matière siliceuse granulaire."
+      }
+    },
+    "lightning": {
+      "name": { "en": "Lightning", "hu": "Villám", "de": "Blitz", "la": "Fulgur", "it": "Fulmine", "fr": "Éclair" },
+      "description": {
+        "en": "Representative of electricity, storm energy, sparks.",
+        "hu": "Az elektromosság, a vihar és a szikrák képviselője.",
+        "de": "Repräsentiert Elektrizität, Sturmengenergie und Funken.",
+        "la": "Repraesentatio electricitatis, tempestatis et scintillarum.",
+        "it": "Rappresenta l'elettricità, l'energia della tempesta, le scintille.",
+        "fr": "Représente l'électricité, l'énergie de la tempête et les étincelles."
+      }
+    },
+    "ice": {
+      "name": { "en": "Ice", "hu": "Jég", "de": "Eis", "la": "Glacies", "it": "Ghiaccio", "fr": "Glace" },
+      "description": {
+        "en": "Representative of frost, cold, crystals.",
+        "hu": "A fagy, a hideg és a kristályok képviselője.",
+        "de": "Repräsentiert Frost, Kälte und Kristalle.",
+        "la": "Repraesentatio gelu, frigoris et crystallorum.",
+        "it": "Rappresenta il gelo, il freddo, i cristalli.",
+        "fr": "Représente le gel, le froid et les cristaux."
+      }
+    },
+    "metal": {
+      "name": { "en": "Metal", "hu": "Fém", "de": "Metall", "la": "Metallum", "it": "Metallo", "fr": "Métal" },
+      "description": {
+        "en": "Representative of iron, refinement, conductibility.",
+        "hu": "A vas, a finomítás és a vezetőképesség képviselője.",
+        "de": "Repräsentiert Eisen, Veredelung und Leitfähigkeit.",
+        "la": "Repraesentatio ferri, elaborationis et ductilitatis.",
+        "it": "Rappresenta il ferro, la raffinazione, la conducibilità.",
+        "fr": "Représente le fer, le raffinage et la conductivité."
+      }
+    },
+    "wood": {
+      "name": { "en": "Wood", "hu": "Fa", "de": "Holz", "la": "Lignum", "it": "Legno", "fr": "Bois" },
+      "description": {
+        "en": "Representative of forest, organic construction, nature.",
+        "hu": "Az erdő, a szerves építőanyag és a természet képviselője.",
+        "de": "Repräsentiert Wald, organischen Bau und Natur.",
+        "la": "Repraesentatio silvae, structurae organicae et naturae.",
+        "it": "Rappresenta la foresta, la costruzione organica, la natura.",
+        "fr": "Représente la forêt, la construction organique et la nature."
+      }
+    },
+    "glass": {
+      "name": { "en": "Glass", "hu": "Üveg", "de": "Glas", "la": "Vitrum", "it": "Vetro", "fr": "Verre" },
+      "description": {
+        "en": "Transparent silica structure.",
+        "hu": "Átlátszó szilícium-dioxid szerkezet.",
+        "de": "Transparente Siliziumdioxidstruktur.",
+        "la": "Structura vitrea perspicua.",
+        "it": "Struttura silicea trasparente.",
+        "fr": "Structure de silice transparente."
+      }
+    },
+    "glasses": {
+      "name": { "en": "Glasses", "hu": "Szemüveg", "de": "Brille", "la": "Perspicillum", "it": "Occhiali", "fr": "Lunettes" },
+      "description": {
+        "en": "Two lenses connected together to assist vision.",
+        "hu": "Két lencse összekapcsolva a látás segítésére.",
+        "de": "Zwei miteinander verbundene Linsen zur Sehhilfe.",
+        "la": "Duo vitra coniuncta ad visum adiuvandum.",
+        "it": "Due lenti collegate insieme per assistere la vista.",
+        "fr": "Deux lentilles connectées pour aider la vision."
+      }
+    },
+    "binoculars": {
+      "name": { "en": "Binoculars", "hu": "Távcső", "de": "Fernglas", "la": "Binoculum", "it": "Binocolo", "fr": "Jumelles" },
+      "description": {
+        "en": "High-magnification optical instrument.",
+        "hu": "Nagy nagyítású optikai műszer.",
+        "de": "Optisches Instrument mit starker Vergrößerung.",
+        "la": "Instrumentum opticum magnae magnificationis.",
+        "it": "Strumento ottico ad alto ingrandimento.",
+        "fr": "Instrument optique à fort grossissement."
+      }
+    },
+    "mud": {
+      "name": { "en": "Mud", "hu": "Sár", "de": "Schlamm", "la": "Lutum", "it": "Fango", "fr": "Boue" },
+      "description": {
+        "en": "Wet, gooey soil.",
+        "hu": "Nedves, ragadós föld.",
+        "de": "Feuchter, klebriger Boden.",
+        "la": "Humus humida et mollis.",
+        "it": "Terreno umido e fangoso.",
+        "fr": "Terre humide et gluante."
+      }
+    },
+    "swamp": {
+      "name": { "en": "Swamp", "hu": "Mocsár", "de": "Sumpf", "la": "Palus", "it": "Palude", "fr": "Marécage" },
+      "description": {
+        "en": "Wet, saturated forest area.",
+        "hu": "Nedves, vízzel telített erdős terület.",
+        "de": "Feuchtes, wassergesättigtes Waldgebiet.",
+        "la": "Silva humida et aquis inundata.",
+        "it": "Area forestale umida e satura d'acqua.",
+        "fr": "Zone forestière humide et saturée d'eau."
+      }
+    },
+    "life": {
+      "name": { "en": "Life", "hu": "Élet", "de": "Leben", "la": "Vita", "it": "Vita", "fr": "Vie" },
+      "description": {
+        "en": "Sparks of biology and energy coalescing.",
+        "hu": "A biológia és az energia összeolvadó szikrája.",
+        "de": "Zusammenfließende Funken von Biologie und Energie.",
+        "la": "Scintillae biologiae et energiae coalescentes.",
+        "it": "Scintille di biologia ed energia che si fondono.",
+        "fr": "Étincelles de biologie et d'énergie qui fusionnent."
+      }
+    },
+    "ent": {
+      "name": { "en": "Ent", "hu": "Ent", "de": "Ent", "la": "Entus", "it": "Ent", "fr": "Ent" },
+      "description": {
+        "en": "A sentient, walking tree creature.",
+        "hu": "Egy érző, sétáló fa lény.",
+        "de": "Ein empfindungsfähiges, wandelndes Baumwesen.",
+        "la": "Arbor sentiens et ambulans.",
+        "it": "Una creatura albero senziente e camminante.",
+        "fr": "Une créature d'arbre sentiente et marcheuse."
+      }
+    },
+    "electricity": {
+      "name": { "en": "Electricity", "hu": "Elektromosság", "de": "Elektrizität", "la": "Electricitas", "it": "Elettricità", "fr": "Électricité" },
+      "description": {
+        "en": "Flow of charge through conductive material.",
+        "hu": "Töltésáramlás vezető anyagon keresztül.",
+        "de": "Fluss von Ladungen durch leitfähiges Material.",
+        "la": "Fluctus oneris per materiam ductibilem.",
+        "it": "Flusso di carica attraverso materiale conduttivo.",
+        "fr": "Flux de charge à travers un matériau conducteur."
+      }
+    },
+    "silicon": {
+      "name": { "en": "Silicon", "hu": "Szilícium", "de": "Silizium", "la": "Silicium", "it": "Silicio", "fr": "Silicium" },
+      "description": {
+        "en": "Purified semiconductor base.",
+        "hu": "Tisztított félvezető alap.",
+        "de": "Gereinigte Halbleiterbasis.",
+        "la": "Elementum semiconductivum purgatum.",
+        "it": "Base semiconduttrice purificata.",
+        "fr": "Base de semi-conducteur purifiée."
+      }
+    },
+    "microchip": {
+      "name": { "en": "Microchip", "hu": "Mikrocsip", "de": "Mikrochip", "la": "Microchip", "it": "Microchip", "fr": "Puce" },
+      "description": {
+        "en": "Complex integrated circuit.",
+        "hu": "Komplex integrált áramkör.",
+        "de": "Komplexer integrierter Schaltkreis.",
+        "la": "Circuitus integratus complexus.",
+        "it": "Circuito integrato complesso.",
+        "fr": "Circuit intégré complexe."
+      }
+    },
+    "smartphone": {
+      "name": { "en": "Smartphone", "hu": "Okostelefon", "de": "Smartphone", "la": "Telephonum callidum", "it": "Smartphone", "fr": "Smartphone" },
+      "description": {
+        "en": "Advanced portable computer with a glass screen.",
+        "hu": "Fejlett hordozható számítógép üvegképernyővel.",
+        "de": "Fortschrittlicher tragbarer Computer mit Glasbildschirm.",
+        "la": "Computatrum portabile provectum cum vitro perspicuo.",
+        "it": "Computer portatile avanzato con schermo in vetro.",
+        "fr": "Ordinateur portable avancé avec écran en verre."
+      }
+    },
+    "steam": {
+      "name": { "en": "Steam", "hu": "Gőz", "de": "Dampf", "la": "Vapor", "it": "Vapore", "fr": "Vapeur" },
+      "description": {
+        "en": "Heated vapor rising.",
+        "hu": "Felszálló forró gőz.",
+        "de": "Aufsteigender erhitzter Dampf.",
+        "la": "Vapor calidus ascendens.",
+        "it": "Vapore riscaldato che sale.",
+        "fr": "Vapeur chauffée qui s'élève."
+      }
+    },
+    "cloud": {
+      "name": { "en": "Cloud", "hu": "Felhő", "de": "Wolke", "la": "Nubes", "it": "Nuvola", "fr": "Nuage" },
+      "description": {
+        "en": "Condensed water droplets in the sky.",
+        "hu": "Lecsapódott vízcseppek az égen.",
+        "de": "Kondensierte Wassertropfen am Himmel.",
+        "la": "Guttae aquae condensatae in caelo.",
+        "it": "Gocce d'acqua condensate nel cielo.",
+        "fr": "Gouttelettes d'eau condensées dans le ciel."
+      }
+    },
+    "storm": {
+      "name": { "en": "Storm", "hu": "Vihar", "de": "Sturm", "la": "Tempestas", "it": "Tempesta", "fr": "Tempête" },
+      "description": {
+        "en": "Heavy tempest of clouds, rain, and thunder.",
+        "hu": "Heves vihar felhőkkel, esővel és mennydörgéssel.",
+        "de": "Heftiges Unwetter mit Wolken, Regen und Donner.",
+        "la": "Tempestas magna nubibus, pluvia et tonitru.",
+        "it": "Forte tempesta di nuvole, pioggia e tuoni.",
+        "fr": "Tempête violente de nuages, de pluie et de tonnerre."
+      }
+    },
+    "lightning_rod": {
+      "name": { "en": "Lightning Rod", "hu": "Villámhárító", "de": "Blitzableiter", "la": "Virga fulminalis", "it": "Parafulmine", "fr": "Paratonnerre" },
+      "description": {
+        "en": "Metal conductor mounted to attract and ground lightning.",
+        "hu": "Fémvezető a villámok vonzására és levezetésére.",
+        "de": "Metallleiter zur Anziehung und Erdung von Blitzen.",
+        "la": "Ductile metallicum ad fulmina attrahenda et in terram ducenda.",
+        "it": "Conduttore metallico montato per attrarre e scaricare i fulmini.",
+        "fr": "Conducteur métallique monté pour attirer et canaliser la foudre."
+      }
+    },
+    "snow": {
+      "name": { "en": "Snow", "hu": "Hó", "de": "Schnee", "la": "Nix", "it": "Neve", "fr": "Neige" },
+      "description": {
+        "en": "Flurry of frozen water crystals.",
+        "hu": "Fagyott vízkristályok zápora.",
+        "de": "Gestöber von gefrorenen Wasserkristallen.",
+        "la": "Crystallorum aquae gelatae multitudo.",
+        "it": "Raffica di cristalli d'acqua ghiacciati.",
+        "fr": "Bourrasque de cristaux d'eau gelée."
+      }
+    },
+    "snowman": {
+      "name": { "en": "Snowman", "hu": "Hóember", "de": "Schneemann", "la": "Homo nivalis", "it": "Pupazzo di neve", "fr": "Bonhomme de neige" },
+      "description": {
+        "en": "Frozen humanoid figure built from packed snow and soil.",
+        "hu": "Hóból és földből épített fagyott emberalak.",
+        "de": "Gefrorene menschliche Figur aus gepresstem Schnee und Erde.",
+        "la": "Figura humana e nive compacta et humo facta.",
+        "it": "Figura umana congelata costruita con neve e terra.",
+        "fr": "Figurine humaine gelée construite à partir de neige tassée et de terre."
+      }
+    },
+    "axe": {
+      "name": { "en": "Axe", "hu": "Fejsze", "de": "Axt", "la": "Securis", "it": "Ascia", "fr": "Hache" },
+      "description": {
+        "en": "Cutting tool with metal head and wooden handle.",
+        "hu": "Vágószerszám fém fejjel és fa nyéllel.",
+        "de": "Schneidwerkzeug mit Metallkopf und Holzgriff.",
+        "la": "Instrumentum caedendi cum capite metallico et manubrio ligneo.",
+        "it": "Strumento da taglio con testa in metallo e manico in legno.",
+        "fr": "Outil de coupe avec tête en métal et manche en bois."
+      }
+    },
+    "plank": {
+      "name": { "en": "Plank", "hu": "Deszka", "de": "Planke", "la": "Tabula", "it": "Tavola", "fr": "Planche" },
+      "description": {
+        "en": "Wood cut into a flat, usable construction board.",
+        "hu": "Lapos, használható építőlemezzé vágott fa.",
+        "de": "Holz, das zu einem flachen Baubrett geschnitten wurde.",
+        "la": "Lignum sectum in tabulam planam et utilem.",
+        "it": "Legno tagliato in una tavola da costruzione piatta e utilizzabile.",
+        "fr": "Bois coupé en une planche de construction plate et utilisable."
+      }
+    },
+    "bridge": {
+      "name": { "en": "Bridge", "hu": "Híd", "de": "Brücke", "la": "Pons", "it": "Ponte", "fr": "Pont" },
+      "description": {
+        "en": "Elevated pathway spanning a gap.",
+        "hu": "Magasított útvonal egy szakadék áthidalására.",
+        "de": "Erhöhter Pfad, der eine Lücke überbrückt.",
+        "la": "Via elata super foveam vel flumen.",
+        "it": "Percorso sopraelevato che attraversa un vuoto.",
+        "fr": "Passage surélevé enjambant un vide."
+      }
+    },
+    "train_track": {
+      "name": { "en": "Train Track", "hu": "Vasúti sín", "de": "Bahngleis", "la": "Via ferrea", "it": "Binario", "fr": "Voie ferrée" },
+      "description": {
+        "en": "Steel rails laid over wooden supports.",
+        "hu": "Fa alátétekre fektetett acélsínek.",
+        "de": "Stahlschienen auf Holzschwellen.",
+        "la": "Regulae chalybeae super fulcimenta lignea positae.",
+        "it": "Rotaie d'acciaio posate su supporti di legno.",
+        "fr": "Rails en acier posés sur des supports en bois."
+      }
+    },
+    "coal": {
+      "name": { "en": "Coal", "hu": "Szén", "de": "Kohle", "la": "Carbo", "it": "Carbone", "fr": "Charbon" },
+      "description": {
+        "en": "Carbonised wood fuel block.",
+        "hu": "Karbonizált fa tüzelőanyag.",
+        "de": "Karbonisierter Holzbrennstoffblock.",
+        "la": "Lignum carbonisatum ad ignem alendum.",
+        "it": "Blocco di combustibile di legno carbonizzato.",
+        "fr": "Bloc de combustible de bois carbonisé."
+      }
+    },
+    "steel": {
+      "name": { "en": "Steel", "hu": "Acél", "de": "Stahl", "la": "Chalybs", "it": "Acciaio", "fr": "Acier" },
+      "description": {
+        "en": "Carbon-reinforced metal alloy.",
+        "hu": "Szénnel megerősített fémötvözet.",
+        "de": "Kohlenstoffverstärkte Metalllegierung.",
+        "la": "Mixtura metallica carbone firmata.",
+        "it": "Lega metallica rinforzata con carbonio.",
+        "fr": "Alliage métallique renforcé de carbone."
+      }
+    },
+    "sword": {
+      "name": { "en": "Sword", "hu": "Kard", "de": "Schwert", "la": "Gladius", "it": "Spada", "fr": "Épée" },
+      "description": {
+        "en": "Forged blade weapon.",
+        "hu": "Kovácsolt pengés fegyver.",
+        "de": "Geschmiedete Klingenwaffe.",
+        "la": "Armum lamina cuspidata formatum.",
+        "it": "Arma a lama forgiata.",
+        "fr": "Arme à lame forgée."
+      }
+    },
+    "energy_blade": {
+      "name": { "en": "Energy Blade", "hu": "Energiapenge", "de": "Energieklinge", "la": "Lamina energetica", "it": "Lama energetica", "fr": "Lame d'énergie" },
+      "description": {
+        "en": "High-tech sword infused with electrical currents.",
+        "hu": "Csúcstechnológiás kard elektromos árammal átitatva.",
+        "de": "High-Tech-Schwert, durchdrungen von elektrischen Strömen.",
+        "la": "Gladius technologiae altae electricitate infusus.",
+        "it": "Spada high-tech infusa con correnti elettriche.",
+        "fr": "Épée high-tech infusée de courants électriques."
+      }
+    },
+    "rock": {
+      "name": { "en": "Rock", "hu": "Kő", "de": "Fels", "la": "Saxum", "it": "Roccia", "fr": "Roche" },
+      "description": {
+        "en": "Solid, compact mass of stone.",
+        "hu": "Szilárd, tömör kőtömeg.",
+        "de": "Solide, kompakte Steinmasse.",
+        "la": "Massa lapidea solida et compacta.",
+        "it": "Massa solida e compatta di pietra.",
+        "fr": "Masse solide et compacte de pierre."
+      }
+    },
+    "lava": {
+      "name": { "en": "Lava", "hu": "Láva", "de": "Lava", "la": "Lava", "it": "Lava", "fr": "Lave" },
+      "description": {
+        "en": "Superheated liquid rock flowing from the earth.",
+        "hu": "A földből áramló túlhevült folyékony kőzet.",
+        "de": "Aus der Erde fließendes, überhitztes flüssiges Gestein.",
+        "la": "Magma liquidum calidissimum e terra fluens.",
+        "it": "Roccia liquida surriscaldata che scorre dalla terra.",
+        "fr": "Roche liquide surchauffée s'écoulant de la terre."
+      }
+    },
+    "mountain": {
+      "name": { "en": "Mountain", "hu": "Hegy", "de": "Berg", "la": "Mons", "it": "Montagna", "fr": "Montagne" },
+      "description": {
+        "en": "Towering elevation of the earth's surface.",
+        "hu": "A földfelszín tornyosuló kiemelkedése.",
+        "de": "Riesige Erhebung der Erdoberfläche.",
+        "la": "Celsitudo eminens terrae.",
+        "it": "Elevata altura della superficie terrestre.",
+        "fr": "Élévation imposante de la surface de la terre."
+      }
+    },
+    "volcano": {
+      "name": { "en": "Volcano", "hu": "Vulkán", "de": "Vulkan", "la": "Vulcanus", "it": "Vulcano", "fr": "Volcan" },
+      "description": {
+        "en": "A mountain that vents lava, steam, and ash.",
+        "hu": "Lávát, gőzt és hamut kibocsátó hegy.",
+        "de": "Ein Berg, der Lava, Dampf und Asche ausstößt.",
+        "la": "Mons qui lavam, vaporem et cinerem emittit.",
+        "it": "Una montagna che emette lava, vapore e cenere.",
+        "fr": "Une montagne qui rejette de la lave, de la vapeur et des cendres."
+      }
+    },
+    "obsidian": {
+      "name": { "en": "Obsidian", "hu": "Obszidián", "de": "Obsidian", "la": "Obsidianus", "it": "Ossidiana", "fr": "Obsidienne" },
+      "description": {
+        "en": "Dark, volcanic glass formed from rapid cooling of lava.",
+        "hu": "Sötét, vulkáni üveg, amely a láva gyors lehűlésével keletkezik.",
+        "de": "Dunkles, vulkanisches Glas, das durch schnelle Abkühlung von Lava entsteht.",
+        "la": "Vitrum vulcanicum nigrum e lava celeriter refrigerata factum.",
+        "it": "Vetro vulcanico scuro formato dal rapido raffreddamento della lava.",
+        "fr": "Verre volcanique sombre formé par le refroidissement rapide de la lave."
+      }
+    },
+    "geyser": {
+      "name": { "en": "Geyser", "hu": "Gejzír", "de": "Geysir", "la": "Geyzerus", "it": "Geyser", "fr": "Geyser" },
+      "description": {
+        "en": "Hot spring that sends columns of steam and water into the air.",
+        "hu": "Hőforrás, amely gőz- és oszlopokat lő a levegőbe.",
+        "de": "Heiße Quelle, die Dampf- und Wassersäulen in die Luft schießt.",
+        "la": "Fons calidus qui vaporem et aquam in altum eructat.",
+        "it": "Sorgente termale che scaglia colonne di vapore e acqua nell'aria.",
+        "fr": "Source chaude qui projette des colonnes de vapeur et d'eau dans l'air."
+      }
+    },
+    "magnet": {
+      "name": { "en": "Magnet", "hu": "Mágnes", "de": "Magnet", "la": "Magnes", "it": "Magnete", "fr": "Aimant" },
+      "description": {
+        "en": "Material that produces a magnetic field.",
+        "hu": "Mágneses mezőt létrehozó anyag.",
+        "de": "Material, das ein Magnetfeld erzeugt.",
+        "la": "Materia quae campum magneticum efficit.",
+        "it": "Materiale che produce un campo magnetico.",
+        "fr": "Matériau qui produit un champ magnétique."
+      }
+    },
+    "compass": {
+      "name": { "en": "Compass", "hu": "Iránytű", "de": "Kompass", "la": "Pyxis nautica", "it": "Bussola", "fr": "Boussole" },
+      "description": {
+        "en": "Navigational instrument showing direction.",
+        "hu": "Navigációs eszköz az irány mutatására.",
+        "de": "Navigationsinstrument zur Richtungsbestimmung.",
+        "la": "Instrumentum navigandi vias indicans.",
+        "it": "Strumento di navigazione che mostra la direzione.",
+        "fr": "Instrument de navigation indiquant la direction."
+      }
+    },
+    "clay": {
+      "name": { "en": "Clay", "hu": "Agyag", "de": "Ton", "la": "Argilla", "it": "Argilla", "fr": "Argile" },
+      "description": {
+        "en": "Fine-grained natural soil material.",
+        "hu": "Finomszemcsés természetes talajanyag.",
+        "de": "Feinkörniges natürliches Bodenmaterial.",
+        "la": "Materia argillosa terrae subtilis.",
+        "it": "Materiale naturale del terreno a grana fine.",
+        "fr": "Matière de sol naturelle à grain fin."
+      }
+    },
+    "brick": {
+      "name": { "en": "Brick", "hu": "Tégla", "de": "Ziegel", "la": "Later", "it": "Mattone", "fr": "Brique" },
+      "description": {
+        "en": "Rectangular block of baked clay used in building.",
+        "hu": "Építkezéshez használt kiégetett agyagtégla.",
+        "de": "Rechteckiger Block aus gebranntem Ton zum Bauen.",
+        "la": "Massa rectangularis ex argilla cocta ad aedificandum.",
+        "it": "Blocco rettangolare di argilla cotta usato nelle costruzioni.",
+        "fr": "Bloc rectangulaire d'argile cuite utilisé dans la construction."
+      }
+    },
+    "house": {
+      "name": { "en": "House", "hu": "Ház", "de": "Haus", "la": "Domus", "it": "Casa", "fr": "Maison" },
+      "description": {
+        "en": "Building for human habitation.",
+        "hu": "Emberi lakóhelyül szolgáló épület.",
+        "de": "Gebäude zur menschlichen Behausung.",
+        "la": "Aedificium ad habitandum factum.",
+        "it": "Edificio destinato ad abitazione umana.",
+        "fr": "Bâtiment destiné à l'habitation humaine."
+      }
+    }
+  }
+}

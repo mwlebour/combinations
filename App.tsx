@@ -16,17 +16,30 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import elementsData from './src/config/elements.json';
 import recipesData from './src/config/recipes.json';
+import translationsData from './src/config/translations.json';
 import { ElementItem, ActiveCanvasElement, RecipeDictionary } from './src/types/game';
 import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './src/utils/gameLogic';
 
 const STORAGE_KEYS = {
   DISCOVERED: '@elemental_discovered',
   CANVAS: '@elemental_canvas',
+  LANGUAGE: '@elemental_language',
 };
 
 const DEFAULT_STARTING_ELEMENTS = [
   'earth', 'air', 'fire', 'water', 'sand', 'lightning', 'ice', 'metal', 'wood'
 ];
+
+const LANGUAGES = [
+  { code: 'en', label: 'English', flag: '🇬🇧' },
+  { code: 'hu', label: 'Magyar', flag: '🇭🇺' },
+  { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+  { code: 'la', label: 'Latina', flag: '🏛️' },
+  { code: 'it', label: 'Italiano', flag: '🇮🇹' },
+  { code: 'fr', label: 'Français', flag: '🇫🇷' },
+] as const;
+
+type Language = typeof LANGUAGES[number]['code'];
 
 // Helper: Custom SVG Icon Renderer
 const ElementIcon = ({ path, color, size = 32 }: { path: string; color: string; size?: number }) => (
@@ -39,6 +52,7 @@ const ElementIcon = ({ path, color, size = 32 }: { path: string; color: string; 
 interface DraggableCanvasItemProps {
   element: ActiveCanvasElement;
   item: ElementItem;
+  name: string; // pre-translated name
   onDragStart: (instanceId: string, x: number, y: number) => void;
   onDragMove: (instanceId: string, dx: number, dy: number) => void;
   onDragRelease: (instanceId: string, endX: number, endY: number) => void;
@@ -47,6 +61,7 @@ interface DraggableCanvasItemProps {
 const DraggableCanvasItem = ({
   element,
   item,
+  name,
   onDragStart,
   onDragMove,
   onDragRelease,
@@ -90,7 +105,7 @@ const DraggableCanvasItem = ({
     >
       <ElementIcon path={item.svgPath} color={item.color} size={28} />
       <Text style={styles.canvasElementText} numberOfLines={1}>
-        {item.name}
+        {name}
       </Text>
     </View>
   );
@@ -106,6 +121,10 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState<'all' | 'basic' | 'combined' | 'final'>('all');
   
+  // Localization States
+  const [currentLanguage, setCurrentLanguage] = useState<Language>('en');
+  const [showLangMenu, setShowLangMenu] = useState(false);
+  
   // Proximity Vector Line state connecting snapping pairs
   const [proximityLine, setProximityLine] = useState<{ x1: number; y1: number; x2: number; y2: number; color: string } | null>(null);
 
@@ -118,12 +137,32 @@ export default function App() {
   // References to track drag offset starts
   const dragStartPositions = useRef<{ [key: string]: { x: number; y: number } }>({});
 
+  // Translation helpers
+  const t = (key: keyof typeof translationsData.ui) => {
+    return translationsData.ui[key][currentLanguage] || translationsData.ui[key]['en'];
+  };
+
+  const getElementTranslation = (id: string) => {
+    const defaultElement = elements.find(el => el.id === id);
+    if (!defaultElement) return { name: id, description: '' };
+
+    const translation = (translationsData.elements as any)[id];
+    if (translation) {
+      return {
+        name: translation.name[currentLanguage] || defaultElement.name,
+        description: translation.description[currentLanguage] || defaultElement.description,
+      };
+    }
+    return { name: defaultElement.name, description: defaultElement.description };
+  };
+
   // 1. Initial State Loading from Storage
   useEffect(() => {
     const loadSavedState = async () => {
       try {
         const storedDiscovered = await AsyncStorage.getItem(STORAGE_KEYS.DISCOVERED);
         const storedCanvas = await AsyncStorage.getItem(STORAGE_KEYS.CANVAS);
+        const storedLang = await AsyncStorage.getItem(STORAGE_KEYS.LANGUAGE);
         
         if (storedDiscovered) {
           setDiscoveredIds(JSON.parse(storedDiscovered));
@@ -134,6 +173,10 @@ export default function App() {
         
         if (storedCanvas) {
           setCanvasElements(JSON.parse(storedCanvas));
+        }
+
+        if (storedLang) {
+          setCurrentLanguage(storedLang as Language);
         }
       } catch (e) {
         console.error('Failed to load storage state', e);
@@ -173,7 +216,7 @@ export default function App() {
     saveState(discoveredIds, updatedCanvas);
   };
 
-  // 3. Clear & Reset Actions
+  // 3. Clear, Reset, & Language Actions
   const handleClearCanvas = () => {
     setCanvasElements([]);
     setProximityLine(null);
@@ -186,6 +229,16 @@ export default function App() {
     setProximityLine(null);
     await AsyncStorage.setItem(STORAGE_KEYS.DISCOVERED, JSON.stringify(DEFAULT_STARTING_ELEMENTS));
     await AsyncStorage.setItem(STORAGE_KEYS.CANVAS, JSON.stringify([]));
+  };
+
+  const handleSelectLanguage = async (lang: Language) => {
+    setCurrentLanguage(lang);
+    setShowLangMenu(false);
+    try {
+      await AsyncStorage.setItem(STORAGE_KEYS.LANGUAGE, lang);
+    } catch (e) {
+      console.error('Failed to save language setting', e);
+    }
   };
 
   // 4. Drag & Drop Gestures Handlers
@@ -371,14 +424,15 @@ export default function App() {
   // 5. Filter Discovered Sidebar Lists
   const discoveredElements = elements.filter(el => discoveredIds.includes(el.id));
   
-  const filteredElements = discoveredElements.filter(el => {
-    const matchesSearch = el.name.toLowerCase().includes(searchQuery.toLowerCase());
+  const filteredElements = discoveredElements.filter(item => {
+    const trans = getElementTranslation(item.id);
+    const matchesSearch = trans.name.toLowerCase().includes(searchQuery.toLowerCase());
     
     if (!matchesSearch) return false;
     if (activeTab === 'all') return true;
-    if (activeTab === 'basic') return el.category === 'basic';
-    if (activeTab === 'final') return el.isFinal;
-    if (activeTab === 'combined') return el.category !== 'basic' && !el.isFinal;
+    if (activeTab === 'basic') return item.category === 'basic';
+    if (activeTab === 'final') return item.isFinal;
+    if (activeTab === 'combined') return item.category !== 'basic' && !item.isFinal;
     return true;
   });
 
@@ -393,17 +447,22 @@ export default function App() {
       {/* Header Panel */}
       <View style={styles.header}>
         <View>
-          <Text style={styles.title}>Elemental Combinations</Text>
+          <Text style={styles.title}>{t('title')}</Text>
           <Text style={styles.subtitle}>
-            Discovered: {discoveredIds.length} / {elements.length}
+            {t('discovered')}: {discoveredIds.length} / {elements.length}
           </Text>
         </View>
         <View style={styles.headerButtons}>
+          <TouchableOpacity style={[styles.glassButton, styles.langButton]} onPress={() => setShowLangMenu(true)}>
+            <Text style={styles.langButtonText}>
+              {LANGUAGES.find(l => l.code === currentLanguage)?.flag} {currentLanguage.toUpperCase()}
+            </Text>
+          </TouchableOpacity>
           <TouchableOpacity style={[styles.glassButton, styles.resetButton]} onPress={handleResetGame}>
-            <Text style={styles.resetButtonText}>Reset Game</Text>
+            <Text style={styles.resetButtonText}>{t('resetGame')}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.glassButton, styles.clearButton]} onPress={handleClearCanvas}>
-            <Text style={styles.clearButtonText}>Clear Board</Text>
+            <Text style={styles.clearButtonText}>{t('clearBoard')}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -415,20 +474,20 @@ export default function App() {
         <View style={styles.canvasContainer} onLayout={onCanvasLayout}>
           {canvasElements.length === 0 ? (
             <View style={styles.emptyCanvasHint}>
-              <Text style={styles.hintText}>WORKSPACE CANVAS</Text>
-              <Text style={styles.subHintText}>
-                Tap items in the right sidebar to spawn them. Drag and drop them onto each other to combine!
-              </Text>
+              <Text style={styles.hintText}>{t('workspaceCanvas')}</Text>
+              <Text style={styles.subHintText}>{t('dragHint')}</Text>
             </View>
           ) : (
             canvasElements.map(el => {
               const item = elements.find(item => item.id === el.elementId);
               if (!item) return null;
+              const trans = getElementTranslation(el.elementId);
               return (
                 <DraggableCanvasItem
                   key={el.instanceId}
                   element={el}
                   item={item}
+                  name={trans.name}
                   onDragStart={handleDragStart}
                   onDragMove={handleDragMove}
                   onDragRelease={handleDragRelease}
@@ -467,7 +526,7 @@ export default function App() {
         <View style={styles.sidebar}>
           <TextInput
             style={styles.searchBar}
-            placeholder="Search discovered..."
+            placeholder={t('searchPlaceholder')}
             placeholderTextColor="#4CAF50"
             value={searchQuery}
             onChangeText={setSearchQuery}
@@ -482,7 +541,10 @@ export default function App() {
                 onPress={() => setActiveTab(tab)}
               >
                 <Text style={[styles.tabButtonText, activeTab === tab && styles.tabButtonTextActive]}>
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {tab === 'all' && t('allTab')}
+                  {tab === 'basic' && t('basicTab')}
+                  {tab === 'combined' && t('combinedTab')}
+                  {tab === 'final' && t('finalTab')}
                 </Text>
               </TouchableOpacity>
             ))}
@@ -493,27 +555,30 @@ export default function App() {
             contentContainerStyle={styles.sidebarGrid}
             showsVerticalScrollIndicator={false}
           >
-            {filteredElements.map((item) => (
-              <TouchableOpacity 
-                key={item.id} 
-                style={[
-                  styles.sidebarCard, 
-                  item.isFinal && styles.finalSidebarCard
-                ]}
-                activeOpacity={0.7}
-                onPress={() => handleSpawnElement(item.id)}
-              >
-                <View style={[styles.iconWrapper, { backgroundColor: `${item.color}18` }]}>
-                  <ElementIcon path={item.svgPath} color={item.color} size={22} />
-                </View>
-                <Text style={styles.sidebarCardText} numberOfLines={1}>
-                  {item.name}
-                </Text>
-                {item.isFinal && <Text style={styles.finalBadge}>Final</Text>}
-              </TouchableOpacity>
-            ))}
+            {filteredElements.map((item) => {
+              const trans = getElementTranslation(item.id);
+              return (
+                <TouchableOpacity 
+                  key={item.id} 
+                  style={[
+                    styles.sidebarCard, 
+                    item.isFinal && styles.finalSidebarCard
+                  ]}
+                  activeOpacity={0.7}
+                  onPress={() => handleSpawnElement(item.id)}
+                >
+                  <View style={[styles.iconWrapper, { backgroundColor: `${item.color}18` }]}>
+                    <ElementIcon path={item.svgPath} color={item.color} size={22} />
+                  </View>
+                  <Text style={styles.sidebarCardText} numberOfLines={1}>
+                    {trans.name}
+                  </Text>
+                  {item.isFinal && <Text style={styles.finalBadge}>{t('finalBadge')}</Text>}
+                </TouchableOpacity>
+              );
+            })}
             {filteredElements.length === 0 && (
-              <Text style={styles.noItemsText}>No items found</Text>
+              <Text style={styles.noItemsText}>{t('noItems')}</Text>
             )}
           </ScrollView>
         </View>
@@ -521,29 +586,70 @@ export default function App() {
       </View>
 
       {/* Popover Celebration Modal for Discovered Items */}
-      {discoveredElement && (
+      {discoveredElement && (() => {
+        const trans = getElementTranslation(discoveredElement.id);
+        return (
+          <View style={styles.modalOverlay}>
+            <View style={[styles.modalContent, { borderColor: discoveredElement.color }]}>
+              <Text style={styles.modalHeader}>{t('newDiscovery')}</Text>
+              
+              <View style={[styles.modalIconWrapper, { backgroundColor: `${discoveredElement.color}15`, shadowColor: discoveredElement.color }]}>
+                <ElementIcon path={discoveredElement.svgPath} color={discoveredElement.color} size={56} />
+              </View>
+
+              <Text style={[styles.modalTitle, { color: discoveredElement.color }]}>
+                {trans.name}
+              </Text>
+              
+              <Text style={styles.modalDescription}>
+                {trans.description}
+              </Text>
+
+              <TouchableOpacity 
+                style={[styles.modalButton, { borderColor: discoveredElement.color }]} 
+                onPress={() => setDiscoveredElement(null)}
+              >
+                <Text style={[styles.modalButtonText, { color: discoveredElement.color }]}>
+                  {t('awesome')}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        );
+      })()}
+
+      {/* Language Selection Modal */}
+      {showLangMenu && (
         <View style={styles.modalOverlay}>
-          <View style={[styles.modalContent, { borderColor: discoveredElement.color }]}>
-            <Text style={styles.modalHeader}>NEW DISCOVERY!</Text>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalHeader}>{t('selectLanguage')}</Text>
             
-            <View style={[styles.modalIconWrapper, { backgroundColor: `${discoveredElement.color}15`, shadowColor: discoveredElement.color }]}>
-              <ElementIcon path={discoveredElement.svgPath} color={discoveredElement.color} size={56} />
+            <View style={styles.langList}>
+              {LANGUAGES.map((lang) => (
+                <TouchableOpacity
+                  key={lang.code}
+                  style={[
+                    styles.langItem,
+                    currentLanguage === lang.code && styles.langItemActive
+                  ]}
+                  onPress={() => handleSelectLanguage(lang.code)}
+                >
+                  <Text style={styles.langItemText}>
+                    {lang.flag}  {lang.label}
+                  </Text>
+                  {currentLanguage === lang.code && (
+                    <Text style={styles.langActiveIndicator}>✓</Text>
+                  )}
+                </TouchableOpacity>
+              ))}
             </View>
 
-            <Text style={[styles.modalTitle, { color: discoveredElement.color }]}>
-              {discoveredElement.name}
-            </Text>
-            
-            <Text style={styles.modalDescription}>
-              {discoveredElement.description}
-            </Text>
-
             <TouchableOpacity 
-              style={[styles.modalButton, { borderColor: discoveredElement.color }]} 
-              onPress={() => setDiscoveredElement(null)}
+              style={styles.langCloseButton} 
+              onPress={() => setShowLangMenu(false)}
             >
-              <Text style={[styles.modalButtonText, { color: discoveredElement.color }]}>
-                Awesome!
+              <Text style={styles.langCloseButtonText}>
+                {currentLanguage === 'hu' ? 'Bezárás' : 'Close'}
               </Text>
             </TouchableOpacity>
           </View>
@@ -869,6 +975,64 @@ const styles = StyleSheet.create({
   modalButtonText: {
     fontSize: 14,
     fontWeight: 'bold',
+    userSelect: 'none' as any,
+  },
+  // Language Specific Styles
+  langButton: {
+    borderColor: 'rgba(0, 230, 118, 0.25)',
+    backgroundColor: 'rgba(0, 230, 118, 0.05)',
+  },
+  langButtonText: {
+    color: '#00E676',
+    fontSize: 12,
+    fontWeight: '600',
+    userSelect: 'none' as any,
+  },
+  langList: {
+    width: '100%',
+    gap: 8,
+    marginBottom: 20,
+  },
+  langItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.05)',
+    backgroundColor: 'rgba(255, 255, 255, 0.02)',
+  },
+  langItemActive: {
+    borderColor: '#00E676',
+    backgroundColor: 'rgba(0, 230, 118, 0.08)',
+  },
+  langItemText: {
+    color: '#ECEFF1',
+    fontSize: 14,
+    fontWeight: '500',
+    userSelect: 'none' as any,
+  },
+  langActiveIndicator: {
+    color: '#00E676',
+    fontWeight: 'bold',
+    fontSize: 14,
+    userSelect: 'none' as any,
+  },
+  langCloseButton: {
+    width: '100%',
+    paddingVertical: 10,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#90A4AE',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255,255,255,0.02)',
+  },
+  langCloseButtonText: {
+    color: '#90A4AE',
+    fontSize: 12,
+    fontWeight: '600',
     userSelect: 'none' as any,
   },
 });
