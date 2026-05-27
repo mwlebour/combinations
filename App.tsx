@@ -17,7 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import elementsData from './src/config/elements.json';
 import recipesData from './src/config/recipes.json';
 import { ElementItem, ActiveCanvasElement, RecipeDictionary } from './src/types/game';
-import { combineElements, checkCollision, getMidpoint } from './src/utils/gameLogic';
+import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './src/utils/gameLogic';
 
 const STORAGE_KEYS = {
   DISCOVERED: '@elemental_discovered',
@@ -108,6 +108,9 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState<'all' | 'basic' | 'combined' | 'final'>('all');
   
+  // Proximity Vector Line state connecting snapping pairs
+  const [proximityLine, setProximityLine] = useState<{ x1: number; y1: number; x2: number; y2: number; color: string } | null>(null);
+
   // Highlight Discovery Modal State
   const [discoveredElement, setDiscoveredElement] = useState<ElementItem | null>(null);
 
@@ -175,12 +178,14 @@ export default function App() {
   // 3. Clear & Reset Actions
   const handleClearCanvas = () => {
     setCanvasElements([]);
+    setProximityLine(null);
     saveState(discoveredIds, []);
   };
 
   const handleResetGame = async () => {
     setDiscoveredIds(DEFAULT_STARTING_ELEMENTS);
     setCanvasElements([]);
+    setProximityLine(null);
     await AsyncStorage.setItem(STORAGE_KEYS.DISCOVERED, JSON.stringify(DEFAULT_STARTING_ELEMENTS));
     await AsyncStorage.setItem(STORAGE_KEYS.CANVAS, JSON.stringify([]));
   };
@@ -194,13 +199,77 @@ export default function App() {
     const startPos = dragStartPositions.current[instanceId];
     if (!startPos) return;
 
+    const rawX = startPos.x + dx;
+    const rawY = startPos.y + dy;
+
+    // Default positioning coordinates
+    let finalX = rawX;
+    let finalY = rawY;
+    let activeProximity: typeof proximityLine = null;
+
+    const currentDragged = canvasElements.find(el => el.instanceId === instanceId);
+    
+    if (currentDragged) {
+      let closestPartner: ActiveCanvasElement | null = null;
+      let closestDist = Infinity;
+
+      // Find closest compatible item on canvas
+      for (const other of canvasElements) {
+        if (other.instanceId === instanceId) continue;
+
+        // Check if combination is possible
+        const canCombine = combineElements(currentDragged.elementId, other.elementId, recipes);
+        if (canCombine) {
+          const c1x = rawX + 40;
+          const c1y = rawY + 40;
+          const c2x = other.x + 40;
+          const c2y = other.y + 40;
+          const distance = Math.sqrt(Math.pow(c2x - c1x, 2) + Math.pow(c2y - c1y, 2));
+
+          if (distance < closestDist) {
+            closestDist = distance;
+            closestPartner = other;
+          }
+        }
+      }
+
+      // Snapping & Proximity Indicators
+      if (closestPartner) {
+        const partnerItem = elements.find(el => el.id === closestPartner!.elementId);
+        
+        // 1. Proximity Check: below 95px distance shows dashed connector lines
+        if (closestDist <= 95 && partnerItem) {
+          activeProximity = {
+            x1: rawX + 40,
+            y1: rawY + 40,
+            x2: closestPartner.x + 40,
+            y2: closestPartner.y + 40,
+            color: partnerItem.color,
+          };
+
+          // 2. Magnetic Snap: below 70px triggers physical snapping coordinates pull
+          if (closestDist <= 70) {
+            const magnet = calculateMagnetPosition(rawX, rawY, closestPartner.x, closestPartner.y, 70, 0.45);
+            finalX = magnet.x;
+            finalY = magnet.y;
+            
+            // Adjust proximity line to align with magnetic coordinates
+            activeProximity.x1 = finalX + 40;
+            activeProximity.y1 = finalY + 40;
+          }
+        }
+      }
+    }
+
+    setProximityLine(activeProximity);
+
     setCanvasElements(prev =>
       prev.map(el => {
         if (el.instanceId === instanceId) {
           return {
             ...el,
-            x: startPos.x + dx,
-            y: startPos.y + dy,
+            x: finalX,
+            y: finalY,
           };
         }
         return el;
@@ -210,6 +279,7 @@ export default function App() {
 
   const handleDragRelease = (instanceId: string, endX: number, endY: number) => {
     delete dragStartPositions.current[instanceId];
+    setProximityLine(null);
 
     setCanvasElements(currentCanvas => {
       const dragged = currentCanvas.find(el => el.instanceId === instanceId);
@@ -236,14 +306,14 @@ export default function App() {
         return remaining;
       }
 
-      // Update position of the dragged item
+      // Update final position
       let updatedCanvas = currentCanvas.map(el =>
         el.instanceId === instanceId ? { ...el, x: endX, y: endY } : el
       );
 
       let combined = false;
 
-      // Find collisions with other elements
+      // Find collisions with other elements. Threshold raised to 75px for magnetic comfort.
       for (const other of currentCanvas) {
         if (other.instanceId === instanceId) continue;
 
@@ -252,8 +322,7 @@ export default function App() {
         const c2x = other.x + 40;
         const c2y = other.y + 40;
 
-        // Collision threshold matching visual boundaries (55 pixels)
-        if (checkCollision(c1x, c1y, c2x, c2y, 55)) {
+        if (checkCollision(c1x, c1y, c2x, c2y, 75)) {
           const product = combineElements(dragged.elementId, other.elementId, recipes);
           if (product) {
             const midpoint = getMidpoint(endX, endY, other.x, other.y);
@@ -370,6 +439,19 @@ export default function App() {
             })
           )}
 
+          {/* Dotted vector proximity connector line */}
+          {proximityLine && (
+            <Svg style={styles.vectorOverlay} pointerEvents="none">
+              <Path
+                d={`M${proximityLine.x1} ${proximityLine.y1} L${proximityLine.x2} ${proximityLine.y2}`}
+                stroke={proximityLine.color}
+                strokeWidth={2}
+                strokeDasharray="5 5"
+                opacity={0.8}
+              />
+            </Svg>
+          )}
+
           {/* Glowing Red Trash Bin in bottom-left corner */}
           {canvasLayout.height > 0 && (
             <View style={styles.trashBinContainer}>
@@ -383,12 +465,12 @@ export default function App() {
           )}
         </View>
 
-        {/* Right-hand Sidebar (Discovery Inventory) */}
+        {/* Right-hand Sidebar (Discovery Inventory with Deep Neon Green Theme) */}
         <View style={styles.sidebar}>
           <TextInput
             style={styles.searchBar}
             placeholder="Search discovered..."
-            placeholderTextColor="#607D8B"
+            placeholderTextColor="#4CAF50"
             value={searchQuery}
             onChangeText={setSearchQuery}
           />
@@ -423,7 +505,7 @@ export default function App() {
                 activeOpacity={0.7}
                 onPress={() => handleSpawnElement(item.id)}
               >
-                <View style={[styles.iconWrapper, { backgroundColor: `${item.color}15` }]}>
+                <View style={[styles.iconWrapper, { backgroundColor: `${item.color}18` }]}>
                   <ElementIcon path={item.svgPath} color={item.color} size={22} />
                 </View>
                 <Text style={styles.sidebarCardText} numberOfLines={1}>
@@ -494,12 +576,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#ECEFF1',
     letterSpacing: 0.5,
+    userSelect: 'none' as any,
   },
   subtitle: {
     fontSize: 12,
     color: '#80DEEA',
     marginTop: 2,
     fontWeight: '600',
+    userSelect: 'none' as any,
   },
   headerButtons: {
     flexDirection: 'row',
@@ -519,6 +603,7 @@ const styles = StyleSheet.create({
     color: '#90A4AE',
     fontSize: 12,
     fontWeight: '600',
+    userSelect: 'none' as any,
   },
   clearButton: {
     borderColor: 'rgba(239, 83, 80, 0.4)',
@@ -528,6 +613,7 @@ const styles = StyleSheet.create({
     color: '#EF5350',
     fontSize: 12,
     fontWeight: '600',
+    userSelect: 'none' as any,
   },
   mainLayout: {
     flex: 1,
@@ -535,10 +621,17 @@ const styles = StyleSheet.create({
   },
   // Canvas Styles
   canvasContainer: {
-    flex: 1.7,
+    flex: 2.2, // Narrowed sidebar gives canvas about 73% width
     backgroundColor: '#0E131F',
     position: 'relative',
     overflow: 'hidden',
+  },
+  vectorOverlay: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
   },
   emptyCanvasHint: {
     position: 'absolute',
@@ -547,6 +640,7 @@ const styles = StyleSheet.create({
     top: '40%',
     alignItems: 'center',
     justifyContent: 'center',
+    userSelect: 'none' as any,
   },
   hintText: {
     color: '#1F2C46',
@@ -571,6 +665,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 6,
+    userSelect: 'none' as any, // Prevent text selection highlight on drag
     // iOS shadow glow effect
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.6,
@@ -608,22 +703,22 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 3,
   },
-  // Sidebar Styles
+  // Sidebar Styles (Neon Green Translucent Background)
   sidebar: {
-    flex: 1,
-    backgroundColor: '#111726',
+    flex: 0.8, // Sidebar narrowed to about 27%
+    backgroundColor: 'rgba(7, 24, 13, 0.96)', // Translucent dark forest neon-green
     borderLeftWidth: 1,
-    borderLeftColor: '#1A2332',
+    borderLeftColor: 'rgba(0, 230, 118, 0.18)',
     padding: 8,
   },
   searchBar: {
     height: 38,
-    backgroundColor: '#0A0E1A',
-    borderColor: '#1F2C46',
+    backgroundColor: '#040D07',
+    borderColor: 'rgba(0, 230, 118, 0.25)',
     borderWidth: 1,
     borderRadius: 8,
     paddingHorizontal: 10,
-    color: '#ECEFF1',
+    color: '#A5D6A7', // Light green input text for premium contrast
     fontSize: 12,
     marginBottom: 8,
   },
@@ -638,20 +733,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     borderRadius: 6,
     borderWidth: 1,
-    borderColor: '#1F2C46',
-    backgroundColor: 'rgba(255,255,255,0.01)',
+    borderColor: 'rgba(0, 230, 118, 0.15)',
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
   },
   tabButtonActive: {
-    borderColor: '#80DEEA',
-    backgroundColor: 'rgba(128,222,234,0.08)',
+    borderColor: '#00E676', // Bright neon green active tab
+    backgroundColor: 'rgba(0, 230, 118, 0.08)',
   },
   tabButtonText: {
-    color: '#78909C',
+    color: '#81C784',
     fontSize: 9,
     fontWeight: '600',
+    userSelect: 'none' as any,
   },
   tabButtonTextActive: {
-    color: '#80DEEA',
+    color: '#00E676',
   },
   sidebarGrid: {
     flexDirection: 'column',
@@ -661,11 +757,12 @@ const styles = StyleSheet.create({
   sidebarCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255,255,255,0.02)',
+    backgroundColor: 'rgba(0, 0, 0, 0.35)', // Dark contrast bubble
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.05)',
+    borderColor: 'rgba(255, 255, 255, 0.05)',
     borderRadius: 10,
     padding: 6,
+    userSelect: 'none' as any,
   },
   finalSidebarCard: {
     borderColor: 'rgba(255,213,79,0.3)',
@@ -679,9 +776,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   sidebarCardText: {
-    color: '#CFD8DC',
+    color: '#ECEFF1', // Pure crisp white-gray for maximum readability
     fontSize: 11,
-    fontWeight: '500',
+    fontWeight: '600',
     marginLeft: 8,
     flex: 1,
   },
@@ -696,10 +793,11 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   noItemsText: {
-    color: '#607D8B',
+    color: '#81C784',
     fontSize: 12,
     textAlign: 'center',
     marginTop: 20,
+    userSelect: 'none' as any,
   },
   // Modal Styles
   modalOverlay: {
@@ -733,6 +831,7 @@ const styles = StyleSheet.create({
     color: '#FFD54F',
     letterSpacing: 2,
     marginBottom: 16,
+    userSelect: 'none' as any,
   },
   modalIconWrapper: {
     width: 90,
@@ -750,6 +849,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 8,
     textAlign: 'center',
+    userSelect: 'none' as any,
   },
   modalDescription: {
     fontSize: 12,
@@ -758,6 +858,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
     marginBottom: 24,
     paddingHorizontal: 8,
+    userSelect: 'none' as any,
   },
   modalButton: {
     width: '100%',
@@ -770,5 +871,6 @@ const styles = StyleSheet.create({
   modalButtonText: {
     fontSize: 14,
     fontWeight: 'bold',
+    userSelect: 'none' as any,
   },
 });

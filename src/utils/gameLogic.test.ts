@@ -1,5 +1,8 @@
-import { combineElements, checkCollision, getMidpoint } from './gameLogic';
+import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './gameLogic';
 import { RecipeDictionary } from '../types/game';
+import actualRecipesData from '../config/recipes.json';
+
+const actualRecipes = actualRecipesData as RecipeDictionary;
 
 describe('Game Logic Utilities', () => {
   
@@ -42,6 +45,29 @@ describe('Game Logic Utilities', () => {
       // @ts-ignore
       expect(combineElements('fire', 'sand', null)).toBeNull();
     });
+
+    // Test new actual elements combinations
+    describe('Actual Production Recipes', () => {
+      it('should combine Earth + Earth into Rock', () => {
+        const result = combineElements('earth', 'earth', actualRecipes);
+        expect(result).toBe('rock');
+      });
+
+      it('should combine Mountain + Lava into Volcano', () => {
+        const result = combineElements('mountain', 'lava', actualRecipes);
+        expect(result).toBe('volcano');
+      });
+
+      it('should combine Clay + Fire into Brick', () => {
+        const result = combineElements('clay', 'fire', actualRecipes);
+        expect(result).toBe('brick');
+      });
+
+      it('should combine Brick + Wood into House', () => {
+        const result = combineElements('brick', 'wood', actualRecipes);
+        expect(result).toBe('house');
+      });
+    });
   });
 
   // Test distance collision detection
@@ -83,6 +109,47 @@ describe('Game Logic Utilities', () => {
       // x is (100 + 105) / 2 = 102.5 -> rounds to 103
       // y is (200 + 204) / 2 = 202
       expect(mid).toEqual({ x: 103, y: 202 });
+    });
+  });
+
+  // Test magnetic attraction snap position
+  describe('calculateMagnetPosition', () => {
+    const dragX = 100;
+    const dragY = 100;
+    const targetX = 120; // 20px delta X
+    const targetY = 110; // 10px delta Y
+    const threshold = 80;
+
+    it('should attract and snap position toward target when within threshold distance', () => {
+      const snapForce = 0.5; // 50% pull
+      const result = calculateMagnetPosition(dragX, dragY, targetX, targetY, threshold, snapForce);
+      
+      expect(result.magnetActive).toBe(true);
+      // x: 100 + (120 - 100) * 0.5 = 110
+      // y: 100 + (110 - 100) * 0.5 = 105
+      expect(result.x).toBe(110);
+      expect(result.y).toBe(105);
+    });
+
+    it('should attract more strongly with higher snap force', () => {
+      const snapForce = 0.8; // 80% pull
+      const result = calculateMagnetPosition(dragX, dragY, targetX, targetY, threshold, snapForce);
+      
+      expect(result.magnetActive).toBe(true);
+      // x: 100 + 20 * 0.8 = 116
+      // y: 100 + 10 * 0.8 = 108
+      expect(result.x).toBe(116);
+      expect(result.y).toBe(108);
+    });
+
+    it('should not attract and keep raw coordinates when outside threshold distance', () => {
+      const farTargetX = 250;
+      const farTargetY = 250;
+      const result = calculateMagnetPosition(dragX, dragY, farTargetX, farTargetY, threshold);
+      
+      expect(result.magnetActive).toBe(false);
+      expect(result.x).toBe(dragX);
+      expect(result.y).toBe(dragY);
     });
   });
 

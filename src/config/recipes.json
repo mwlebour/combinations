@@ -23,5 +23,16 @@
   "fire+wood": "coal",
   "coal+metal": "steel",
   "fire+steel": "sword",
-  "lightning+sword": "energy_blade"
+  "lightning+sword": "energy_blade",
+  "earth+earth": "rock",
+  "earth+fire": "lava",
+  "earth+rock": "mountain",
+  "lava+mountain": "volcano",
+  "lava+water": "obsidian",
+  "volcano+water": "geyser",
+  "lightning+rock": "magnet",
+  "magnet+metal": "compass",
+  "mud+sand": "clay",
+  "clay+fire": "brick",
+  "brick+wood": "house"
 }
