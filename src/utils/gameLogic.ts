@@ -117,3 +117,83 @@ export function calculateMagnetPosition(
     magnetActive: false,
   };
 }
+
+/**
+ * Generates an array of dynamic particle configurations tailored to the
+ * combining elements and the resulting product.
+ *
+ * @param count Number of particles to generate
+ * @param elementA First ingredient with id and color
+ * @param elementB Second ingredient with id and color
+ * @param product Resulting product with id and color
+ * @param randomFn Optional random number generator (defaults to Math.random for testing)
+ * @returns Array of ParticleConfig
+ */
+export function generateParticleConfigs(
+  count: number,
+  elementA: { id: string; color: string },
+  elementB: { id: string; color: string },
+  product: { id: string; color: string; category?: string },
+  randomFn: () => number = Math.random
+): import('../types/game').ParticleConfig[] {
+  const hasFire = elementA.id === 'fire' || elementB.id === 'fire' || elementA.id === 'lava' || elementB.id === 'lava';
+  const hasSand = elementA.id === 'sand' || elementB.id === 'sand';
+  const isGlassOrCrystal = product.id === 'glass' || product.id === 'glasses' || product.category === 'optics';
+
+  // Base palette containing ingredients, product, and highlight sparks
+  const palette = [
+    elementA.color,
+    elementB.color,
+    product.color,
+    '#FFFFFF',
+  ];
+
+  if (hasFire) {
+    palette.push('#FF5722', '#FF9800', '#FF3D00', '#FFEB3B');
+  }
+  if (hasSand) {
+    palette.push('#FFD54F', '#FFE082', '#FFCA28');
+  }
+  if (isGlassOrCrystal) {
+    palette.push('#E0F7FA', '#80DEEA', '#FFFFFF', '#B2EBF2');
+  }
+
+  const particles: import('../types/game').ParticleConfig[] = [];
+  const baseAngleStep = (Math.PI * 2) / Math.max(1, count);
+
+  for (let i = 0; i < count; i++) {
+    // Angular spread with gentle jitter
+    const angle = i * baseAngleStep + (randomFn() - 0.5) * (baseAngleStep * 0.8);
+    const distance = 40 + randomFn() * 65; // 40px to 105px radius
+    const size = 5 + randomFn() * 8;       // 5px to 13px size
+    const color = palette[Math.floor(randomFn() * palette.length)];
+
+    let shape: 'circle' | 'sparkle' | 'ember' | 'diamond' = 'circle';
+    let driftY = 0;
+
+    const shapeRoll = randomFn();
+    if (hasFire && shapeRoll < 0.4) {
+      shape = 'ember';
+      driftY = -(15 + randomFn() * 25); // Rising upward embers
+    } else if (isGlassOrCrystal && shapeRoll > 0.45) {
+      shape = shapeRoll > 0.75 ? 'diamond' : 'sparkle';
+    } else if (shapeRoll > 0.7) {
+      shape = 'sparkle';
+    }
+
+    particles.push({
+      id: i,
+      angle,
+      distance: Math.round(distance),
+      size: Math.round(size),
+      color,
+      shape,
+      duration: Math.round(450 + randomFn() * 350), // 450ms - 800ms
+      delay: Math.round(randomFn() * 70),          // 0ms - 70ms stagger
+      driftY: Math.round(driftY),
+      rotation: Math.round(randomFn() * 360),
+    });
+  }
+
+  return particles;
+}
