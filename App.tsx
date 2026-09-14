@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   PanResponder,
   LayoutChangeEvent,
+  Animated,
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -17,8 +18,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import elementsData from './src/config/elements.json';
 import recipesData from './src/config/recipes.json';
 import translationsData from './src/config/translations.json';
-import { ElementItem, ActiveCanvasElement, RecipeDictionary } from './src/types/game';
+import { ElementItem, ActiveCanvasElement, RecipeDictionary, ActiveCombinationAnimation } from './src/types/game';
 import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './src/utils/gameLogic';
+import { CombinationEffect } from './src/components/CombinationEffect';
+import { playCombinationSound } from './src/utils/audio';
 
 const STORAGE_KEYS = {
   DISCOVERED: '@elemental_discovered',
@@ -67,11 +70,26 @@ const DraggableCanvasItem = ({
   onDragRelease,
 }: DraggableCanvasItemProps) => {
   const lastPosition = useRef({ x: element.x, y: element.y });
+  const spawnScale = useRef(new Animated.Value(element.isNew ? 0 : 1)).current;
 
   // Update position reference when element prop changes
   useEffect(() => {
     lastPosition.current = { x: element.x, y: element.y };
   }, [element.x, element.y]);
+
+  useEffect(() => {
+    if (element.isNew) {
+      const timer = setTimeout(() => {
+        Animated.spring(spawnScale, {
+          toValue: 1,
+          friction: 4.5,
+          tension: 90,
+          useNativeDriver: false,
+        }).start();
+      }, 170);
+      return () => clearTimeout(timer);
+    }
+  }, [element.isNew]);
 
   const panResponder = useRef(
     PanResponder.create({
@@ -90,7 +108,7 @@ const DraggableCanvasItem = ({
   ).current;
 
   return (
-    <View
+    <Animated.View
       {...panResponder.panHandlers}
       style={[
         styles.canvasElement,
@@ -99,6 +117,7 @@ const DraggableCanvasItem = ({
           top: element.y,
           borderColor: item.color,
           shadowColor: item.color,
+          transform: [{ scale: spawnScale }],
         },
         item.isFinal && styles.finalStateGlow,
       ]}
@@ -107,7 +126,7 @@ const DraggableCanvasItem = ({
       <Text style={styles.canvasElementText} numberOfLines={1}>
         {name}
       </Text>
-    </View>
+    </Animated.View>
   );
 };
 
@@ -127,6 +146,9 @@ export default function App() {
   
   // Proximity Vector Line state connecting snapping pairs
   const [proximityLine, setProximityLine] = useState<{ x1: number; y1: number; x2: number; y2: number; color: string } | null>(null);
+
+  // Active combination animation effects playing on canvas
+  const [activeCombinations, setActiveCombinations] = useState<ActiveCombinationAnimation[]>([]);
 
   // Highlight Discovery Modal State
   const [discoveredElement, setDiscoveredElement] = useState<ElementItem | null>(null);
@@ -220,6 +242,7 @@ export default function App() {
   const handleClearCanvas = () => {
     setCanvasElements([]);
     setProximityLine(null);
+    setActiveCombinations([]);
     saveState(discoveredIds, []);
   };
 
@@ -227,8 +250,13 @@ export default function App() {
     setDiscoveredIds(DEFAULT_STARTING_ELEMENTS);
     setCanvasElements([]);
     setProximityLine(null);
+    setActiveCombinations([]);
     await AsyncStorage.setItem(STORAGE_KEYS.DISCOVERED, JSON.stringify(DEFAULT_STARTING_ELEMENTS));
     await AsyncStorage.setItem(STORAGE_KEYS.CANVAS, JSON.stringify([]));
+  };
+
+  const handleCombinationComplete = (animId: string) => {
+    setActiveCombinations(prev => prev.filter(anim => anim.id !== animId));
   };
 
   const handleSelectLanguage = async (lang: Language) => {
@@ -378,29 +406,61 @@ export default function App() {
           if (product) {
             const midpoint = getMidpoint(endX, endY, other.x, other.y);
 
+            const elementA = elements.find(el => el.id === dragged.elementId);
+            const elementB = elements.find(el => el.id === other.elementId);
+            const productItem = elements.find(el => el.id === product);
+
             // Consume ingredient elements
             updatedCanvas = updatedCanvas.filter(
               el => el.instanceId !== instanceId && el.instanceId !== other.instanceId
             );
 
-            // Add newly combined product
+            // Add newly combined product with entry spring bounce animation
             const combinedInstance: ActiveCanvasElement = {
               instanceId: `instance_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
               elementId: product,
               x: midpoint.x,
               y: midpoint.y,
+              isNew: true,
             };
             updatedCanvas.push(combinedInstance);
+
+            // Trigger procedural audio feedback
+            playCombinationSound(dragged.elementId, other.elementId, product);
+
+            // Trigger visual combination burst and particle animation
+            if (elementA && elementB && productItem) {
+              const productTrans = getElementTranslation(product);
+              const animId = `comb_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`;
+              setActiveCombinations(prev => [
+                ...prev,
+                {
+                  id: animId,
+                  startX1: endX,
+                  startY1: endY,
+                  startX2: other.x,
+                  startY2: other.y,
+                  targetX: midpoint.x,
+                  targetY: midpoint.y,
+                  elementA,
+                  elementB,
+                  product: productItem,
+                  productName: productTrans.name,
+                },
+              ]);
+            }
 
             // Discover element unlock logic
             setDiscoveredIds(currentDiscovered => {
               let updatedDiscovered = [...currentDiscovered];
               if (!currentDiscovered.includes(product)) {
                 updatedDiscovered.push(product);
-                // Trigger overlay modal
+                // Delay discovery modal slightly so player watches the combination animation on canvas
                 const itemDetails = elements.find(el => el.id === product);
                 if (itemDetails) {
-                  setDiscoveredElement(itemDetails);
+                  setTimeout(() => {
+                    setDiscoveredElement(itemDetails);
+                  }, 750);
                 }
               }
               saveState(updatedDiscovered, updatedCanvas);
@@ -508,6 +568,15 @@ export default function App() {
               />
             </Svg>
           )}
+
+          {/* Active Elemental Combination Burst and Particle Animations */}
+          {activeCombinations.map(anim => (
+            <CombinationEffect
+              key={anim.id}
+              animation={anim}
+              onComplete={handleCombinationComplete}
+            />
+          ))}
 
           {/* Glowing Red Trash Bin in bottom-left corner */}
           {canvasLayout.height > 0 && (

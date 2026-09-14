@@ -153,4 +153,69 @@ describe('Game Logic Utilities', () => {
     });
   });
 
+  // Test particle config generation for combination animations
+  describe('generateParticleConfigs', () => {
+    it('should generate the specified count of particles', () => {
+      const { generateParticleConfigs } = require('./gameLogic');
+      const particles = generateParticleConfigs(
+        24,
+        { id: 'fire', color: '#FF5722' },
+        { id: 'sand', color: '#FFD54F' },
+        { id: 'glass', color: '#E0F7FA', category: 'optics' }
+      );
+
+      expect(particles).toHaveLength(24);
+      particles.forEach((p: any) => {
+        expect(p).toHaveProperty('id');
+        expect(p).toHaveProperty('angle');
+        expect(p).toHaveProperty('distance');
+        expect(p).toHaveProperty('size');
+        expect(p).toHaveProperty('color');
+        expect(p).toHaveProperty('shape');
+        expect(p).toHaveProperty('duration');
+        expect(p).toHaveProperty('delay');
+      });
+    });
+
+    it('should include fire embers and upward drift when fire is an ingredient', () => {
+      const { generateParticleConfigs } = require('./gameLogic');
+      // Mock random function that triggers ember shape
+      const mockRandom = jest.fn()
+        .mockReturnValueOnce(0.1) // angle jitter
+        .mockReturnValueOnce(0.5) // distance
+        .mockReturnValueOnce(0.5) // size
+        .mockReturnValueOnce(0.1) // color index
+        .mockReturnValueOnce(0.2) // shapeRoll (< 0.4 triggers ember)
+        .mockReturnValueOnce(0.5) // driftY
+        .mockReturnValueOnce(0.5) // duration
+        .mockReturnValueOnce(0.5) // delay
+        .mockReturnValueOnce(0.5) // driftY round
+        .mockReturnValueOnce(0.5); // rotation
+
+      const particles = generateParticleConfigs(
+        1,
+        { id: 'fire', color: '#FF5722' },
+        { id: 'sand', color: '#FFD54F' },
+        { id: 'glass', color: '#E0F7FA', category: 'optics' },
+        mockRandom
+      );
+
+      expect(particles[0].shape).toBe('ember');
+      expect(particles[0].driftY).toBeLessThan(0); // upward drift
+    });
+
+    it('should include glass/optics sparkle or diamond shapes for glass product', () => {
+      const { generateParticleConfigs } = require('./gameLogic');
+      const particles = generateParticleConfigs(
+        30,
+        { id: 'fire', color: '#FF5722' },
+        { id: 'sand', color: '#FFD54F' },
+        { id: 'glass', color: '#E0F7FA', category: 'optics' }
+      );
+
+      const shapes = particles.map((p: any) => p.shape);
+      expect(shapes.some((s: string) => s === 'sparkle' || s === 'diamond')).toBe(true);
+    });
+  });
+
 });
