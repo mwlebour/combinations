@@ -596,7 +596,7 @@ export default function App() {
           <TextInput
             style={styles.searchBar}
             placeholder={t('searchPlaceholder')}
-            placeholderTextColor="#4CAF50"
+            placeholderTextColor="#66BB6A"
             value={searchQuery}
             onChangeText={setSearchQuery}
           />
@@ -880,15 +880,20 @@ const styles = StyleSheet.create({
   sidebar: {
     flex: 0.8, // Sidebar narrowed to about 27%
     backgroundColor: 'rgba(7, 24, 13, 0.96)', // Translucent dark forest neon-green
-    borderLeftWidth: 1,
-    borderLeftColor: 'rgba(0, 230, 118, 0.18)',
+    borderLeftWidth: 3,
+    borderLeftColor: '#00E676',
+    shadowColor: '#00E676',
+    shadowOffset: { width: -2, height: 0 },
+    shadowOpacity: 0.8,
+    shadowRadius: 10,
+    elevation: 8,
     padding: 8,
   },
   searchBar: {
     height: 38,
     backgroundColor: '#040D07',
-    borderColor: 'rgba(0, 230, 118, 0.25)',
-    borderWidth: 1,
+    borderColor: 'rgba(0, 230, 118, 0.5)',
+    borderWidth: 1.5,
     borderRadius: 8,
     paddingHorizontal: 10,
     color: '#A5D6A7', // Light green input text for premium contrast
@@ -906,12 +911,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     borderRadius: 6,
     borderWidth: 1,
-    borderColor: 'rgba(0, 230, 118, 0.15)',
+    borderColor: 'rgba(0, 230, 118, 0.25)',
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
   },
   tabButtonActive: {
+    borderWidth: 1.5,
     borderColor: '#00E676', // Bright neon green active tab
-    backgroundColor: 'rgba(0, 230, 118, 0.08)',
+    backgroundColor: 'rgba(0, 230, 118, 0.15)',
+    shadowColor: '#00E676',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 6,
   },
   tabButtonText: {
     color: '#81C784',
@@ -932,7 +942,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.35)', // Dark contrast bubble
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.05)',
+    borderColor: 'rgba(0, 230, 118, 0.12)',
     borderRadius: 10,
     padding: 6,
     userSelect: 'none' as any,
