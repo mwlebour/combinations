@@ -30,7 +30,7 @@ const STORAGE_KEYS = {
 };
 
 const DEFAULT_STARTING_ELEMENTS = [
-  'earth', 'air', 'fire', 'water', 'sand', 'lightning', 'ice', 'metal', 'wood', 'plastic'
+  'earth', 'air', 'fire', 'water', 'sand', 'lightning', 'ice', 'metal', 'wood', 'crude_oil'
 ];
 
 const LANGUAGES = [
