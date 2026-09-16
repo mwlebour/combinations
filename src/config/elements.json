@@ -36,6 +36,15 @@
     "color": "#2196F3"
   },
   {
+    "id": "plastic",
+    "name": "Plastic",
+    "description": "Representative of synthetic polymers, moldable material.",
+    "isFinal": false,
+    "category": "basic",
+    "svgPath": "M4 4h16v6a4 4 0 0 1-4 4h-1v6h-6v-6H8a4 4 0 0 1-4-4V4zm2 2v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6H6z",
+    "color": "#F06292"
+  },
+  {
     "id": "sand",
     "name": "Sand",
     "description": "Representative of desert, granular silica matter.",
