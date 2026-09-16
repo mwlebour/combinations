@@ -24,6 +24,36 @@ export function combineElements(
 }
 
 /**
+ * Finds a combination the player can try next: a recipe whose two ingredients
+ * are both already discovered but whose product is not.
+ *
+ * @param discoveredIds IDs of elements the player has already unlocked
+ * @param recipes Dictionary mapping "idA+idB" to resulting element ID
+ * @param randomFn Optional random number generator (defaults to Math.random for testing)
+ * @returns The ingredient pair and product to hint at, or null if none are available
+ */
+export function findHint(
+  discoveredIds: string[],
+  recipes: RecipeDictionary,
+  randomFn: () => number = Math.random
+): { idA: string; idB: string; product: string } | null {
+  const discoveredSet = new Set(discoveredIds);
+
+  const candidates = Object.entries(recipes)
+    .filter(([, product]) => !discoveredSet.has(product))
+    .map(([recipeKey, product]) => {
+      const [idA, idB] = recipeKey.split('+');
+      return { idA, idB, product };
+    })
+    .filter(({ idA, idB }) => discoveredSet.has(idA) && discoveredSet.has(idB));
+
+  if (candidates.length === 0) return null;
+
+  const index = Math.floor(randomFn() * candidates.length);
+  return candidates[Math.min(index, candidates.length - 1)];
+}
+
+/**
  * Checks if two coordinate positions are overlapping based on a distance threshold.
  * Uses Euclidean distance formula: d = sqrt((x2 - x1)^2 + (y2 - y1)^2)
  * 

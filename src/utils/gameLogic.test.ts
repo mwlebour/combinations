@@ -1,4 +1,4 @@
-import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './gameLogic';
+import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition, findHint } from './gameLogic';
 import { RecipeDictionary } from '../types/game';
 import actualRecipesData from '../config/recipes.json';
 
@@ -215,6 +215,45 @@ describe('Game Logic Utilities', () => {
 
       const shapes = particles.map((p: any) => p.shape);
       expect(shapes.some((s: string) => s === 'sparkle' || s === 'diamond')).toBe(true);
+    });
+  });
+
+  describe('findHint', () => {
+    const mockRecipes: RecipeDictionary = {
+      'fire+sand': 'glass',
+      'glass+glass': 'glasses',
+      'earth+water': 'mud',
+    };
+
+    it('should return a recipe whose ingredients are discovered but product is not', () => {
+      const hint = findHint(['fire', 'sand'], mockRecipes);
+      expect(hint).toEqual({ idA: 'fire', idB: 'sand', product: 'glass' });
+    });
+
+    it('should return null once every recipe has already been discovered', () => {
+      const hint = findHint(['fire', 'sand', 'glass', 'glasses', 'earth', 'water', 'mud'], mockRecipes);
+      expect(hint).toBeNull();
+    });
+
+    it('should never suggest a recipe missing an undiscovered ingredient', () => {
+      const hint = findHint(['fire'], mockRecipes);
+      expect(hint).toBeNull();
+    });
+
+    it('should pick among multiple valid candidates using the provided random function', () => {
+      const discovered = ['fire', 'sand', 'earth', 'water'];
+      const first = findHint(discovered, mockRecipes, () => 0);
+      const second = findHint(discovered, mockRecipes, () => 0.99);
+      expect([first?.product, second?.product].sort()).toEqual(['glass', 'mud']);
+    });
+
+    it('should find a valid hint against the actual production recipes', () => {
+      const hint = findHint(['water'], actualRecipes);
+      expect(hint).toBeNull();
+
+      const withEarth = findHint(['earth', 'water'], actualRecipes, () => 0);
+      expect(withEarth).not.toBeNull();
+      expect(actualRecipes[`${[withEarth!.idA, withEarth!.idB].sort().join('+')}`]).toBe(withEarth!.product);
     });
   });
 

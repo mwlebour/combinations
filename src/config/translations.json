@@ -127,11 +127,50 @@
       "la": "Elige Linguam",
       "it": "Seleziona Lingua",
       "fr": "Choisir la langue"
+    },
+    "tipButton": {
+      "en": "Tip",
+      "hu": "Tipp",
+      "de": "Tipp",
+      "la": "Consilium",
+      "it": "Suggerimento",
+      "fr": "Astuce"
+    },
+    "hintTitle": {
+      "en": "HERE'S A TIP",
+      "hu": "ITT EGY TIPP",
+      "de": "HIER IST EIN TIPP",
+      "la": "ECCE CONSILIUM",
+      "it": "ECCO UN SUGGERIMENTO",
+      "fr": "VOICI UNE ASTUCE"
+    },
+    "hintDescription": {
+      "en": "Try combining these two:",
+      "hu": "Próbáld ezt a kettőt kombinálni:",
+      "de": "Versuch diese zwei zu kombinieren:",
+      "la": "Coniunge haec duo:",
+      "it": "Prova a combinare questi due:",
+      "fr": "Essaie de combiner ces deux-là :"
+    },
+    "noHintAvailable": {
+      "en": "No hints left — you've found every combination!",
+      "hu": "Nincs több tipp — mindent felfedeztél!",
+      "de": "Keine Tipps mehr – du hast alles entdeckt!",
+      "la": "Nullum consilium restat — omnia repperisti!",
+      "it": "Nessun suggerimento rimasto: hai scoperto tutto!",
+      "fr": "Plus d'astuce — tu as tout découvert !"
     }
   },
   "elements": {
     "earth": {
-      "name": { "en": "Earth", "hu": "Föld", "de": "Erde", "la": "Terra", "it": "Terra", "fr": "Terre" },
+      "name": {
+        "en": "Earth",
+        "hu": "Föld",
+        "de": "Erde",
+        "la": "Terra",
+        "it": "Terra",
+        "fr": "Terre"
+      },
       "description": {
         "en": "Representative of land, stability, soil.",
         "hu": "A szárazföld, a stabilitás és a talaj képviselője.",
@@ -142,7 +181,14 @@
       }
     },
     "air": {
-      "name": { "en": "Air", "hu": "Levegő", "de": "Luft", "la": "Aer", "it": "Aria", "fr": "Air" },
+      "name": {
+        "en": "Air",
+        "hu": "Levegő",
+        "de": "Luft",
+        "la": "Aer",
+        "it": "Aria",
+        "fr": "Air"
+      },
       "description": {
         "en": "Representative of atmosphere, wind, movement.",
         "hu": "A légkör, a szél és a mozgás képviselője.",
@@ -153,7 +199,14 @@
       }
     },
     "fire": {
-      "name": { "en": "Fire", "hu": "Tűz", "de": "Feuer", "la": "Ignis", "it": "Fuoco", "fr": "Feu" },
+      "name": {
+        "en": "Fire",
+        "hu": "Tűz",
+        "de": "Feuer",
+        "la": "Ignis",
+        "it": "Fuoco",
+        "fr": "Feu"
+      },
       "description": {
         "en": "Representative of heat, energy, light.",
         "hu": "A hő, az energia és a fény képviselője.",
@@ -164,7 +217,14 @@
       }
     },
     "water": {
-      "name": { "en": "Water", "hu": "Víz", "de": "Wasser", "la": "Aqua", "it": "Acqua", "fr": "Eau" },
+      "name": {
+        "en": "Water",
+        "hu": "Víz",
+        "de": "Wasser",
+        "la": "Aqua",
+        "it": "Acqua",
+        "fr": "Eau"
+      },
       "description": {
         "en": "Representative of ocean, rain, fluid.",
         "hu": "Az óceán, az eső és a folyadék képviselője.",
@@ -175,7 +235,14 @@
       }
     },
     "sand": {
-      "name": { "en": "Sand", "hu": "Homok", "de": "Sand", "la": "Arena", "it": "Sabbia", "fr": "Sable" },
+      "name": {
+        "en": "Sand",
+        "hu": "Homok",
+        "de": "Sand",
+        "la": "Arena",
+        "it": "Sabbia",
+        "fr": "Sable"
+      },
       "description": {
         "en": "Representative of desert, granular silica matter.",
         "hu": "A sivatag és a szemcsés szilícium képviselője.",
@@ -186,7 +253,14 @@
       }
     },
     "lightning": {
-      "name": { "en": "Lightning", "hu": "Villám", "de": "Blitz", "la": "Fulgur", "it": "Fulmine", "fr": "Éclair" },
+      "name": {
+        "en": "Lightning",
+        "hu": "Villám",
+        "de": "Blitz",
+        "la": "Fulgur",
+        "it": "Fulmine",
+        "fr": "Éclair"
+      },
       "description": {
         "en": "Representative of electricity, storm energy, sparks.",
         "hu": "Az elektromosság, a vihar és a szikrák képviselője.",
@@ -197,7 +271,14 @@
       }
     },
     "ice": {
-      "name": { "en": "Ice", "hu": "Jég", "de": "Eis", "la": "Glacies", "it": "Ghiaccio", "fr": "Glace" },
+      "name": {
+        "en": "Ice",
+        "hu": "Jég",
+        "de": "Eis",
+        "la": "Glacies",
+        "it": "Ghiaccio",
+        "fr": "Glace"
+      },
       "description": {
         "en": "Representative of frost, cold, crystals.",
         "hu": "A fagy, a hideg és a kristályok képviselője.",
@@ -208,7 +289,14 @@
       }
     },
     "metal": {
-      "name": { "en": "Metal", "hu": "Fém", "de": "Metall", "la": "Metallum", "it": "Metallo", "fr": "Métal" },
+      "name": {
+        "en": "Metal",
+        "hu": "Fém",
+        "de": "Metall",
+        "la": "Metallum",
+        "it": "Metallo",
+        "fr": "Métal"
+      },
       "description": {
         "en": "Representative of iron, refinement, conductibility.",
         "hu": "A vas, a finomítás és a vezetőképesség képviselője.",
@@ -219,7 +307,14 @@
       }
     },
     "wood": {
-      "name": { "en": "Wood", "hu": "Fa", "de": "Holz", "la": "Lignum", "it": "Legno", "fr": "Bois" },
+      "name": {
+        "en": "Wood",
+        "hu": "Fa",
+        "de": "Holz",
+        "la": "Lignum",
+        "it": "Legno",
+        "fr": "Bois"
+      },
       "description": {
         "en": "Representative of forest, organic construction, nature.",
         "hu": "Az erdő, a szerves építőanyag és a természet képviselője.",
@@ -230,7 +325,14 @@
       }
     },
     "glass": {
-      "name": { "en": "Glass", "hu": "Üveg", "de": "Glas", "la": "Vitrum", "it": "Vetro", "fr": "Verre" },
+      "name": {
+        "en": "Glass",
+        "hu": "Üveg",
+        "de": "Glas",
+        "la": "Vitrum",
+        "it": "Vetro",
+        "fr": "Verre"
+      },
       "description": {
         "en": "Transparent silica structure.",
         "hu": "Átlátszó szilícium-dioxid szerkezet.",
@@ -241,7 +343,14 @@
       }
     },
     "glasses": {
-      "name": { "en": "Glasses", "hu": "Szemüveg", "de": "Brille", "la": "Perspicillum", "it": "Occhiali", "fr": "Lunettes" },
+      "name": {
+        "en": "Glasses",
+        "hu": "Szemüveg",
+        "de": "Brille",
+        "la": "Perspicillum",
+        "it": "Occhiali",
+        "fr": "Lunettes"
+      },
       "description": {
         "en": "Two lenses connected together to assist vision.",
         "hu": "Két lencse összekapcsolva a látás segítésére.",
@@ -252,7 +361,14 @@
       }
     },
     "binoculars": {
-      "name": { "en": "Binoculars", "hu": "Távcső", "de": "Fernglas", "la": "Binoculum", "it": "Binocolo", "fr": "Jumelles" },
+      "name": {
+        "en": "Binoculars",
+        "hu": "Távcső",
+        "de": "Fernglas",
+        "la": "Binoculum",
+        "it": "Binocolo",
+        "fr": "Jumelles"
+      },
       "description": {
         "en": "High-magnification optical instrument.",
         "hu": "Nagy nagyítású optikai műszer.",
@@ -263,7 +379,14 @@
       }
     },
     "mud": {
-      "name": { "en": "Mud", "hu": "Sár", "de": "Schlamm", "la": "Lutum", "it": "Fango", "fr": "Boue" },
+      "name": {
+        "en": "Mud",
+        "hu": "Sár",
+        "de": "Schlamm",
+        "la": "Lutum",
+        "it": "Fango",
+        "fr": "Boue"
+      },
       "description": {
         "en": "Wet, gooey soil.",
         "hu": "Nedves, ragadós föld.",
@@ -274,7 +397,14 @@
       }
     },
     "swamp": {
-      "name": { "en": "Swamp", "hu": "Mocsár", "de": "Sumpf", "la": "Palus", "it": "Palude", "fr": "Marécage" },
+      "name": {
+        "en": "Swamp",
+        "hu": "Mocsár",
+        "de": "Sumpf",
+        "la": "Palus",
+        "it": "Palude",
+        "fr": "Marécage"
+      },
       "description": {
         "en": "Wet, saturated forest area.",
         "hu": "Nedves, vízzel telített erdős terület.",
@@ -285,7 +415,14 @@
       }
     },
     "life": {
-      "name": { "en": "Life", "hu": "Élet", "de": "Leben", "la": "Vita", "it": "Vita", "fr": "Vie" },
+      "name": {
+        "en": "Life",
+        "hu": "Élet",
+        "de": "Leben",
+        "la": "Vita",
+        "it": "Vita",
+        "fr": "Vie"
+      },
       "description": {
         "en": "Sparks of biology and energy coalescing.",
         "hu": "A biológia és az energia összeolvadó szikrája.",
@@ -296,7 +433,14 @@
       }
     },
     "ent": {
-      "name": { "en": "Ent", "hu": "Ent", "de": "Ent", "la": "Entus", "it": "Ent", "fr": "Ent" },
+      "name": {
+        "en": "Ent",
+        "hu": "Ent",
+        "de": "Ent",
+        "la": "Entus",
+        "it": "Ent",
+        "fr": "Ent"
+      },
       "description": {
         "en": "A sentient, walking tree creature.",
         "hu": "Egy érző, sétáló fa lény.",
@@ -307,7 +451,14 @@
       }
     },
     "electricity": {
-      "name": { "en": "Electricity", "hu": "Elektromosság", "de": "Elektrizität", "la": "Electricitas", "it": "Elettricità", "fr": "Électricité" },
+      "name": {
+        "en": "Electricity",
+        "hu": "Elektromosság",
+        "de": "Elektrizität",
+        "la": "Electricitas",
+        "it": "Elettricità",
+        "fr": "Électricité"
+      },
       "description": {
         "en": "Flow of charge through conductive material.",
         "hu": "Töltésáramlás vezető anyagon keresztül.",
@@ -318,7 +469,14 @@
       }
     },
     "silicon": {
-      "name": { "en": "Silicon", "hu": "Szilícium", "de": "Silizium", "la": "Silicium", "it": "Silicio", "fr": "Silicium" },
+      "name": {
+        "en": "Silicon",
+        "hu": "Szilícium",
+        "de": "Silizium",
+        "la": "Silicium",
+        "it": "Silicio",
+        "fr": "Silicium"
+      },
       "description": {
         "en": "Purified semiconductor base.",
         "hu": "Tisztított félvezető alap.",
@@ -329,7 +487,14 @@
       }
     },
     "microchip": {
-      "name": { "en": "Microchip", "hu": "Mikrocsip", "de": "Mikrochip", "la": "Microchip", "it": "Microchip", "fr": "Puce" },
+      "name": {
+        "en": "Microchip",
+        "hu": "Mikrocsip",
+        "de": "Mikrochip",
+        "la": "Microchip",
+        "it": "Microchip",
+        "fr": "Puce"
+      },
       "description": {
         "en": "Complex integrated circuit.",
         "hu": "Komplex integrált áramkör.",
@@ -340,7 +505,14 @@
       }
     },
     "smartphone": {
-      "name": { "en": "Smartphone", "hu": "Okostelefon", "de": "Smartphone", "la": "Telephonum callidum", "it": "Smartphone", "fr": "Smartphone" },
+      "name": {
+        "en": "Smartphone",
+        "hu": "Okostelefon",
+        "de": "Smartphone",
+        "la": "Telephonum callidum",
+        "it": "Smartphone",
+        "fr": "Smartphone"
+      },
       "description": {
         "en": "Advanced portable computer with a glass screen.",
         "hu": "Fejlett hordozható számítógép üvegképernyővel.",
@@ -351,7 +523,14 @@
       }
     },
     "steam": {
-      "name": { "en": "Steam", "hu": "Gőz", "de": "Dampf", "la": "Vapor", "it": "Vapore", "fr": "Vapeur" },
+      "name": {
+        "en": "Steam",
+        "hu": "Gőz",
+        "de": "Dampf",
+        "la": "Vapor",
+        "it": "Vapore",
+        "fr": "Vapeur"
+      },
       "description": {
         "en": "Heated vapor rising.",
         "hu": "Felszálló forró gőz.",
@@ -362,7 +541,14 @@
       }
     },
     "cloud": {
-      "name": { "en": "Cloud", "hu": "Felhő", "de": "Wolke", "la": "Nubes", "it": "Nuvola", "fr": "Nuage" },
+      "name": {
+        "en": "Cloud",
+        "hu": "Felhő",
+        "de": "Wolke",
+        "la": "Nubes",
+        "it": "Nuvola",
+        "fr": "Nuage"
+      },
       "description": {
         "en": "Condensed water droplets in the sky.",
         "hu": "Lecsapódott vízcseppek az égen.",
@@ -373,7 +559,14 @@
       }
     },
     "storm": {
-      "name": { "en": "Storm", "hu": "Vihar", "de": "Sturm", "la": "Tempestas", "it": "Tempesta", "fr": "Tempête" },
+      "name": {
+        "en": "Storm",
+        "hu": "Vihar",
+        "de": "Sturm",
+        "la": "Tempestas",
+        "it": "Tempesta",
+        "fr": "Tempête"
+      },
       "description": {
         "en": "Heavy tempest of clouds, rain, and thunder.",
         "hu": "Heves vihar felhőkkel, esővel és mennydörgéssel.",
@@ -384,7 +577,14 @@
       }
     },
     "lightning_rod": {
-      "name": { "en": "Lightning Rod", "hu": "Villámhárító", "de": "Blitzableiter", "la": "Virga fulminalis", "it": "Parafulmine", "fr": "Paratonnerre" },
+      "name": {
+        "en": "Lightning Rod",
+        "hu": "Villámhárító",
+        "de": "Blitzableiter",
+        "la": "Virga fulminalis",
+        "it": "Parafulmine",
+        "fr": "Paratonnerre"
+      },
       "description": {
         "en": "Metal conductor mounted to attract and ground lightning.",
         "hu": "Fémvezető a villámok vonzására és levezetésére.",
@@ -395,7 +595,14 @@
       }
     },
     "snow": {
-      "name": { "en": "Snow", "hu": "Hó", "de": "Schnee", "la": "Nix", "it": "Neve", "fr": "Neige" },
+      "name": {
+        "en": "Snow",
+        "hu": "Hó",
+        "de": "Schnee",
+        "la": "Nix",
+        "it": "Neve",
+        "fr": "Neige"
+      },
       "description": {
         "en": "Flurry of frozen water crystals.",
         "hu": "Fagyott vízkristályok zápora.",
@@ -406,7 +613,14 @@
       }
     },
     "snowman": {
-      "name": { "en": "Snowman", "hu": "Hóember", "de": "Schneemann", "la": "Homo nivalis", "it": "Pupazzo di neve", "fr": "Bonhomme de neige" },
+      "name": {
+        "en": "Snowman",
+        "hu": "Hóember",
+        "de": "Schneemann",
+        "la": "Homo nivalis",
+        "it": "Pupazzo di neve",
+        "fr": "Bonhomme de neige"
+      },
       "description": {
         "en": "Frozen humanoid figure built from packed snow and soil.",
         "hu": "Hóból és földből épített fagyott emberalak.",
@@ -417,7 +631,14 @@
       }
     },
     "axe": {
-      "name": { "en": "Axe", "hu": "Fejsze", "de": "Axt", "la": "Securis", "it": "Ascia", "fr": "Hache" },
+      "name": {
+        "en": "Axe",
+        "hu": "Fejsze",
+        "de": "Axt",
+        "la": "Securis",
+        "it": "Ascia",
+        "fr": "Hache"
+      },
       "description": {
         "en": "Cutting tool with metal head and wooden handle.",
         "hu": "Vágószerszám fém fejjel és fa nyéllel.",
@@ -428,7 +649,14 @@
       }
     },
     "plank": {
-      "name": { "en": "Plank", "hu": "Deszka", "de": "Planke", "la": "Tabula", "it": "Tavola", "fr": "Planche" },
+      "name": {
+        "en": "Plank",
+        "hu": "Deszka",
+        "de": "Planke",
+        "la": "Tabula",
+        "it": "Tavola",
+        "fr": "Planche"
+      },
       "description": {
         "en": "Wood cut into a flat, usable construction board.",
         "hu": "Lapos, használható építőlemezzé vágott fa.",
@@ -439,7 +667,14 @@
       }
     },
     "bridge": {
-      "name": { "en": "Bridge", "hu": "Híd", "de": "Brücke", "la": "Pons", "it": "Ponte", "fr": "Pont" },
+      "name": {
+        "en": "Bridge",
+        "hu": "Híd",
+        "de": "Brücke",
+        "la": "Pons",
+        "it": "Ponte",
+        "fr": "Pont"
+      },
       "description": {
         "en": "Elevated pathway spanning a gap.",
         "hu": "Magasított útvonal egy szakadék áthidalására.",
@@ -450,7 +685,14 @@
       }
     },
     "train_track": {
-      "name": { "en": "Train Track", "hu": "Vasúti sín", "de": "Bahngleis", "la": "Via ferrea", "it": "Binario", "fr": "Voie ferrée" },
+      "name": {
+        "en": "Train Track",
+        "hu": "Vasúti sín",
+        "de": "Bahngleis",
+        "la": "Via ferrea",
+        "it": "Binario",
+        "fr": "Voie ferrée"
+      },
       "description": {
         "en": "Steel rails laid over wooden supports.",
         "hu": "Fa alátétekre fektetett acélsínek.",
@@ -461,7 +703,14 @@
       }
     },
     "coal": {
-      "name": { "en": "Coal", "hu": "Szén", "de": "Kohle", "la": "Carbo", "it": "Carbone", "fr": "Charbon" },
+      "name": {
+        "en": "Coal",
+        "hu": "Szén",
+        "de": "Kohle",
+        "la": "Carbo",
+        "it": "Carbone",
+        "fr": "Charbon"
+      },
       "description": {
         "en": "Carbonised wood fuel block.",
         "hu": "Karbonizált fa tüzelőanyag.",
@@ -472,7 +721,14 @@
       }
     },
     "steel": {
-      "name": { "en": "Steel", "hu": "Acél", "de": "Stahl", "la": "Chalybs", "it": "Acciaio", "fr": "Acier" },
+      "name": {
+        "en": "Steel",
+        "hu": "Acél",
+        "de": "Stahl",
+        "la": "Chalybs",
+        "it": "Acciaio",
+        "fr": "Acier"
+      },
       "description": {
         "en": "Carbon-reinforced metal alloy.",
         "hu": "Szénnel megerősített fémötvözet.",
@@ -483,7 +739,14 @@
       }
     },
     "sword": {
-      "name": { "en": "Sword", "hu": "Kard", "de": "Schwert", "la": "Gladius", "it": "Spada", "fr": "Épée" },
+      "name": {
+        "en": "Sword",
+        "hu": "Kard",
+        "de": "Schwert",
+        "la": "Gladius",
+        "it": "Spada",
+        "fr": "Épée"
+      },
       "description": {
         "en": "Forged blade weapon.",
         "hu": "Kovácsolt pengés fegyver.",
@@ -494,7 +757,14 @@
       }
     },
     "energy_blade": {
-      "name": { "en": "Energy Blade", "hu": "Energiapenge", "de": "Energieklinge", "la": "Lamina energetica", "it": "Lama energetica", "fr": "Lame d'énergie" },
+      "name": {
+        "en": "Energy Blade",
+        "hu": "Energiapenge",
+        "de": "Energieklinge",
+        "la": "Lamina energetica",
+        "it": "Lama energetica",
+        "fr": "Lame d'énergie"
+      },
       "description": {
         "en": "High-tech sword infused with electrical currents.",
         "hu": "Csúcstechnológiás kard elektromos árammal átitatva.",
@@ -505,7 +775,14 @@
       }
     },
     "rock": {
-      "name": { "en": "Rock", "hu": "Kő", "de": "Fels", "la": "Saxum", "it": "Roccia", "fr": "Roche" },
+      "name": {
+        "en": "Rock",
+        "hu": "Kő",
+        "de": "Fels",
+        "la": "Saxum",
+        "it": "Roccia",
+        "fr": "Roche"
+      },
       "description": {
         "en": "Solid, compact mass of stone.",
         "hu": "Szilárd, tömör kőtömeg.",
@@ -516,7 +793,14 @@
       }
     },
     "lava": {
-      "name": { "en": "Lava", "hu": "Láva", "de": "Lava", "la": "Lava", "it": "Lava", "fr": "Lave" },
+      "name": {
+        "en": "Lava",
+        "hu": "Láva",
+        "de": "Lava",
+        "la": "Lava",
+        "it": "Lava",
+        "fr": "Lave"
+      },
       "description": {
         "en": "Superheated liquid rock flowing from the earth.",
         "hu": "A földből áramló túlhevült folyékony kőzet.",
@@ -527,7 +811,14 @@
       }
     },
     "mountain": {
-      "name": { "en": "Mountain", "hu": "Hegy", "de": "Berg", "la": "Mons", "it": "Montagna", "fr": "Montagne" },
+      "name": {
+        "en": "Mountain",
+        "hu": "Hegy",
+        "de": "Berg",
+        "la": "Mons",
+        "it": "Montagna",
+        "fr": "Montagne"
+      },
       "description": {
         "en": "Towering elevation of the earth's surface.",
         "hu": "A földfelszín tornyosuló kiemelkedése.",
@@ -538,7 +829,14 @@
       }
     },
     "volcano": {
-      "name": { "en": "Volcano", "hu": "Vulkán", "de": "Vulkan", "la": "Vulcanus", "it": "Vulcano", "fr": "Volcan" },
+      "name": {
+        "en": "Volcano",
+        "hu": "Vulkán",
+        "de": "Vulkan",
+        "la": "Vulcanus",
+        "it": "Vulcano",
+        "fr": "Volcan"
+      },
       "description": {
         "en": "A mountain that vents lava, steam, and ash.",
         "hu": "Lávát, gőzt és hamut kibocsátó hegy.",
@@ -549,7 +847,14 @@
       }
     },
     "obsidian": {
-      "name": { "en": "Obsidian", "hu": "Obszidián", "de": "Obsidian", "la": "Obsidianus", "it": "Ossidiana", "fr": "Obsidienne" },
+      "name": {
+        "en": "Obsidian",
+        "hu": "Obszidián",
+        "de": "Obsidian",
+        "la": "Obsidianus",
+        "it": "Ossidiana",
+        "fr": "Obsidienne"
+      },
       "description": {
         "en": "Dark, volcanic glass formed from rapid cooling of lava.",
         "hu": "Sötét, vulkáni üveg, amely a láva gyors lehűlésével keletkezik.",
@@ -560,7 +865,14 @@
       }
     },
     "geyser": {
-      "name": { "en": "Geyser", "hu": "Gejzír", "de": "Geysir", "la": "Geyzerus", "it": "Geyser", "fr": "Geyser" },
+      "name": {
+        "en": "Geyser",
+        "hu": "Gejzír",
+        "de": "Geysir",
+        "la": "Geyzerus",
+        "it": "Geyser",
+        "fr": "Geyser"
+      },
       "description": {
         "en": "Hot spring that sends columns of steam and water into the air.",
         "hu": "Hőforrás, amely gőz- és oszlopokat lő a levegőbe.",
@@ -571,7 +883,14 @@
       }
     },
     "magnet": {
-      "name": { "en": "Magnet", "hu": "Mágnes", "de": "Magnet", "la": "Magnes", "it": "Magnete", "fr": "Aimant" },
+      "name": {
+        "en": "Magnet",
+        "hu": "Mágnes",
+        "de": "Magnet",
+        "la": "Magnes",
+        "it": "Magnete",
+        "fr": "Aimant"
+      },
       "description": {
         "en": "Material that produces a magnetic field.",
         "hu": "Mágneses mezőt létrehozó anyag.",
@@ -582,7 +901,14 @@
       }
     },
     "compass": {
-      "name": { "en": "Compass", "hu": "Iránytű", "de": "Kompass", "la": "Pyxis nautica", "it": "Bussola", "fr": "Boussole" },
+      "name": {
+        "en": "Compass",
+        "hu": "Iránytű",
+        "de": "Kompass",
+        "la": "Pyxis nautica",
+        "it": "Bussola",
+        "fr": "Boussole"
+      },
       "description": {
         "en": "Navigational instrument showing direction.",
         "hu": "Navigációs eszköz az irány mutatására.",
@@ -593,7 +919,14 @@
       }
     },
     "clay": {
-      "name": { "en": "Clay", "hu": "Agyag", "de": "Ton", "la": "Argilla", "it": "Argilla", "fr": "Argile" },
+      "name": {
+        "en": "Clay",
+        "hu": "Agyag",
+        "de": "Ton",
+        "la": "Argilla",
+        "it": "Argilla",
+        "fr": "Argile"
+      },
       "description": {
         "en": "Fine-grained natural soil material.",
         "hu": "Finomszemcsés természetes talajanyag.",
@@ -604,7 +937,14 @@
       }
     },
     "brick": {
-      "name": { "en": "Brick", "hu": "Tégla", "de": "Ziegel", "la": "Later", "it": "Mattone", "fr": "Brique" },
+      "name": {
+        "en": "Brick",
+        "hu": "Tégla",
+        "de": "Ziegel",
+        "la": "Later",
+        "it": "Mattone",
+        "fr": "Brique"
+      },
       "description": {
         "en": "Rectangular block of baked clay used in building.",
         "hu": "Építkezéshez használt kiégetett agyagtégla.",
@@ -615,7 +955,14 @@
       }
     },
     "house": {
-      "name": { "en": "House", "hu": "Ház", "de": "Haus", "la": "Domus", "it": "Casa", "fr": "Maison" },
+      "name": {
+        "en": "House",
+        "hu": "Ház",
+        "de": "Haus",
+        "la": "Domus",
+        "it": "Casa",
+        "fr": "Maison"
+      },
       "description": {
         "en": "Building for human habitation.",
         "hu": "Emberi lakóhelyül szolgáló épület.",
