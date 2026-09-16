@@ -72,6 +72,15 @@
     "color": "#B0BEC5"
   },
   {
+    "id": "crude_oil",
+    "name": "Crude Oil",
+    "description": "Thick, flammable liquid hydrocarbon drawn up from deep underground.",
+    "isFinal": false,
+    "category": "basic",
+    "svgPath": "M5 3h14v18H5V3zm-1 6h16v1H4V9zm0 4h16v1H4v-1zm0 4h16v1H4v-1z",
+    "color": "#3E2723"
+  },
+  {
     "id": "wood",
     "name": "Wood",
     "description": "Representative of forest, organic construction, nature.",
@@ -403,5 +412,14 @@
     "category": "construction",
     "svgPath": "M12 3L2 12h3v8h14v-8h3L12 3zm0 4l5 5H7l5-5z",
     "color": "#81C784"
+  },
+  {
+    "id": "plastic",
+    "name": "Plastic",
+    "description": "Synthetic polymer material refined from crude oil.",
+    "isFinal": true,
+    "category": "materials",
+    "svgPath": "M9 2h6v3l2 2v13a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V7l2-2V2zm0 2v2h6V4H9zm-1 5v11h8V9H8z",
+    "color": "#4FC3F7"
   }
 ]

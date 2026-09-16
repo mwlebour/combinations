@@ -34,5 +34,6 @@
   "magnet+metal": "compass",
   "mud+sand": "clay",
   "clay+fire": "brick",
-  "brick+wood": "house"
+  "brick+wood": "house",
+  "crude_oil+fire": "plastic"
 }
