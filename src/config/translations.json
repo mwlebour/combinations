@@ -234,6 +234,17 @@
         "fr": "Représente l'océan, la pluie et les fluides."
       }
     },
+    "crude_oil": {
+      "name": { "en": "Crude Oil", "hu": "Nyersolaj", "de": "Rohöl", "la": "Oleum Crudum", "it": "Petrolio Greggio", "fr": "Pétrole Brut" },
+      "description": {
+        "en": "Thick, flammable liquid hydrocarbon drawn up from deep underground.",
+        "hu": "Sűrű, gyúlékony szénhidrogén, amelyet mély föld alól nyernek ki.",
+        "de": "Dickflüssiger, brennbarer Kohlenwasserstoff, der tief unter der Erde gefördert wird.",
+        "la": "Crassus, inflammabilis liquor hydrocarbonicus ex alto sub terra haustus.",
+        "it": "Denso idrocarburo liquido e infiammabile estratto dal sottosuolo profondo.",
+        "fr": "Hydrocarbure liquide épais et inflammable extrait des profondeurs du sous-sol."
+      }
+    },
     "sand": {
       "name": {
         "en": "Sand",
@@ -970,6 +981,17 @@
         "la": "Aedificium ad habitandum factum.",
         "it": "Edificio destinato ad abitazione umana.",
         "fr": "Bâtiment destiné à l'habitation humaine."
+      }
+    },
+    "plastic": {
+      "name": { "en": "Plastic", "hu": "Műanyag", "de": "Kunststoff", "la": "Plasticum", "it": "Plastica", "fr": "Plastique" },
+      "description": {
+        "en": "Synthetic polymer material refined from crude oil.",
+        "hu": "Nyersolajból finomított szintetikus polimer anyag.",
+        "de": "Synthetisches Polymermaterial, aus Rohöl raffiniert.",
+        "la": "Materia polymerica synthetica ex oleo crudo raffinata.",
+        "it": "Materiale polimerico sintetico raffinato dal petrolio greggio.",
+        "fr": "Matériau polymère synthétique raffiné à partir de pétrole brut."
       }
     }
   }
