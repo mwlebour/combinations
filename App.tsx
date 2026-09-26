@@ -156,6 +156,9 @@ export default function App() {
   // Tip / Hint Modal State: pair of ingredients to try next, or 'none' when nothing is left to hint at
   const [hintPair, setHintPair] = useState<{ idA: string; idB: string } | 'none' | null>(null);
 
+  // Reset Game Confirmation Modal State
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+
   // Keep track of canvas sizing for containment checks
   const [canvasLayout, setCanvasLayout] = useState({ x: 0, y: 0, width: 0, height: 0 });
 
@@ -256,6 +259,15 @@ export default function App() {
     setActiveCombinations([]);
     await AsyncStorage.setItem(STORAGE_KEYS.DISCOVERED, JSON.stringify(DEFAULT_STARTING_ELEMENTS));
     await AsyncStorage.setItem(STORAGE_KEYS.CANVAS, JSON.stringify([]));
+  };
+
+  const handleRequestResetGame = () => {
+    setShowResetConfirm(true);
+  };
+
+  const handleConfirmResetGame = async () => {
+    setShowResetConfirm(false);
+    await handleResetGame();
   };
 
   const handleRequestTip = () => {
@@ -529,7 +541,7 @@ export default function App() {
           <TouchableOpacity style={[styles.glassButton, styles.tipButton]} onPress={handleRequestTip}>
             <Text style={styles.tipButtonText}>💡 {t('tipButton')}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.glassButton, styles.resetButton]} onPress={handleResetGame}>
+          <TouchableOpacity style={[styles.glassButton, styles.resetButton]} onPress={handleRequestResetGame}>
             <Text style={styles.resetButtonText}>{t('resetGame')}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.glassButton, styles.clearButton]} onPress={handleClearCanvas}>
@@ -751,6 +763,32 @@ export default function App() {
           </View>
         );
       })()}
+
+      {/* Reset Game Confirmation Modal */}
+      {showResetConfirm && (
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalHeader}>{t('confirmResetTitle')}</Text>
+            <Text style={styles.modalDescription}>{t('confirmResetDescription')}</Text>
+
+            <View style={styles.confirmButtonRow}>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.confirmButton, { borderColor: '#EF5350' }]}
+                onPress={handleConfirmResetGame}
+              >
+                <Text style={[styles.modalButtonText, { color: '#EF5350' }]}>{t('yes')}</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={[styles.modalButton, styles.confirmButton, { borderColor: '#00E676' }]}
+                onPress={() => setShowResetConfirm(false)}
+              >
+                <Text style={[styles.modalButtonText, { color: '#00E676' }]}>{t('no')}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      )}
 
       {/* Language Selection Modal */}
       {showLangMenu && (
@@ -1124,6 +1162,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 16,
     marginBottom: 24,
+  },
+  confirmButtonRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 12,
+  },
+  confirmButton: {
+    flex: 1,
   },
   hintPairItem: {
     alignItems: 'center',

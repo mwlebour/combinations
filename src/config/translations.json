@@ -159,6 +159,38 @@
       "la": "Nullum consilium restat — omnia repperisti!",
       "it": "Nessun suggerimento rimasto: hai scoperto tutto!",
       "fr": "Plus d'astuce — tu as tout découvert !"
+    },
+    "confirmResetTitle": {
+      "en": "Reset Game?",
+      "hu": "Visszaállítod a játékot?",
+      "de": "Spiel zurücksetzen?",
+      "la": "Restituere ludum?",
+      "it": "Azzerare il gioco?",
+      "fr": "Réinitialiser la partie ?"
+    },
+    "confirmResetDescription": {
+      "en": "Are you sure you want to reset the game? All discovered elements and progress will be lost.",
+      "hu": "Biztosan visszaállítod a játékot? Minden felfedezett elem és haladás elvész.",
+      "de": "Möchtest du das Spiel wirklich zurücksetzen? Alle entdeckten Elemente und dein Fortschritt gehen verloren.",
+      "la": "Certusne es te ludum restituere velle? Omnia elementa reperta et progressus amittentur.",
+      "it": "Sei sicuro di voler azzerare il gioco? Tutti gli elementi scoperti e i progressi andranno persi.",
+      "fr": "Voulez-vous vraiment réinitialiser la partie ? Tous les éléments découverts et votre progression seront perdus."
+    },
+    "yes": {
+      "en": "Yes",
+      "hu": "Igen",
+      "de": "Ja",
+      "la": "Etiam",
+      "it": "Sì",
+      "fr": "Oui"
+    },
+    "no": {
+      "en": "No",
+      "hu": "Nem",
+      "de": "Nein",
+      "la": "Non",
+      "it": "No",
+      "fr": "Non"
     }
   },
   "elements": {
