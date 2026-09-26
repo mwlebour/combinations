@@ -128,38 +128,6 @@
       "it": "Seleziona Lingua",
       "fr": "Choisir la langue"
     },
-    "tipButton": {
-      "en": "Tip",
-      "hu": "Tipp",
-      "de": "Tipp",
-      "la": "Consilium",
-      "it": "Suggerimento",
-      "fr": "Astuce"
-    },
-    "hintTitle": {
-      "en": "HERE'S A TIP",
-      "hu": "ITT EGY TIPP",
-      "de": "HIER IST EIN TIPP",
-      "la": "ECCE CONSILIUM",
-      "it": "ECCO UN SUGGERIMENTO",
-      "fr": "VOICI UNE ASTUCE"
-    },
-    "hintDescription": {
-      "en": "Try combining these two:",
-      "hu": "Próbáld ezt a kettőt kombinálni:",
-      "de": "Versuch diese zwei zu kombinieren:",
-      "la": "Coniunge haec duo:",
-      "it": "Prova a combinare questi due:",
-      "fr": "Essaie de combiner ces deux-là :"
-    },
-    "noHintAvailable": {
-      "en": "No hints left — you've found every combination!",
-      "hu": "Nincs több tipp — mindent felfedeztél!",
-      "de": "Keine Tipps mehr – du hast alles entdeckt!",
-      "la": "Nullum consilium restat — omnia repperisti!",
-      "it": "Nessun suggerimento rimasto: hai scoperto tutto!",
-      "fr": "Plus d'astuce — tu as tout découvert !"
-    },
     "confirmResetTitle": {
       "en": "Reset Game?",
       "hu": "Visszaállítod a játékot?",

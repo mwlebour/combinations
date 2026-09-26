@@ -19,7 +19,7 @@ import elementsData from './src/config/elements.json';
 import recipesData from './src/config/recipes.json';
 import translationsData from './src/config/translations.json';
 import { ElementItem, ActiveCanvasElement, RecipeDictionary, ActiveCombinationAnimation } from './src/types/game';
-import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition, findHint } from './src/utils/gameLogic';
+import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './src/utils/gameLogic';
 import { CombinationEffect } from './src/components/CombinationEffect';
 import { playCombinationSound } from './src/utils/audio';
 
@@ -153,9 +153,6 @@ export default function App() {
   // Highlight Discovery Modal State
   const [discoveredElement, setDiscoveredElement] = useState<ElementItem | null>(null);
 
-  // Tip / Hint Modal State: pair of ingredients to try next, or 'none' when nothing is left to hint at
-  const [hintPair, setHintPair] = useState<{ idA: string; idB: string } | 'none' | null>(null);
-
   // Reset Game Confirmation Modal State
   const [showResetConfirm, setShowResetConfirm] = useState(false);
 
@@ -268,11 +265,6 @@ export default function App() {
   const handleConfirmResetGame = async () => {
     setShowResetConfirm(false);
     await handleResetGame();
-  };
-
-  const handleRequestTip = () => {
-    const hint = findHint(discoveredIds, recipes);
-    setHintPair(hint ? { idA: hint.idA, idB: hint.idB } : 'none');
   };
 
   const handleCombinationComplete = (animId: string) => {
@@ -538,9 +530,6 @@ export default function App() {
               {LANGUAGES.find(l => l.code === currentLanguage)?.flag} {currentLanguage.toUpperCase()}
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.glassButton, styles.tipButton]} onPress={handleRequestTip}>
-            <Text style={styles.tipButtonText}>💡 {t('tipButton')}</Text>
-          </TouchableOpacity>
           <TouchableOpacity style={[styles.glassButton, styles.resetButton]} onPress={handleRequestResetGame}>
             <Text style={styles.resetButtonText}>{t('resetGame')}</Text>
           </TouchableOpacity>
@@ -710,60 +699,6 @@ export default function App() {
         );
       })()}
 
-      {/* Tip / Hint Modal */}
-      {hintPair && (() => {
-        if (hintPair === 'none') {
-          return (
-            <View style={styles.modalOverlay}>
-              <View style={styles.modalContent}>
-                <Text style={styles.modalHeader}>{t('hintTitle')}</Text>
-                <Text style={styles.modalDescription}>{t('noHintAvailable')}</Text>
-                <TouchableOpacity style={[styles.modalButton, { borderColor: '#00E676' }]} onPress={() => setHintPair(null)}>
-                  <Text style={[styles.modalButtonText, { color: '#00E676' }]}>{t('awesome')}</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          );
-        }
-
-        const itemA = elements.find(el => el.id === hintPair.idA);
-        const itemB = elements.find(el => el.id === hintPair.idB);
-        if (!itemA || !itemB) return null;
-        const transA = getElementTranslation(itemA.id);
-        const transB = getElementTranslation(itemB.id);
-
-        return (
-          <View style={styles.modalOverlay}>
-            <View style={styles.modalContent}>
-              <Text style={styles.modalHeader}>{t('hintTitle')}</Text>
-              <Text style={styles.modalDescription}>{t('hintDescription')}</Text>
-
-              <View style={styles.hintPairRow}>
-                <View style={styles.hintPairItem}>
-                  <View style={[styles.modalIconWrapper, styles.hintIconWrapper, { backgroundColor: `${itemA.color}15`, shadowColor: itemA.color }]}>
-                    <ElementIcon path={itemA.svgPath} color={itemA.color} size={36} />
-                  </View>
-                  <Text style={[styles.hintItemName, { color: itemA.color }]}>{transA.name}</Text>
-                </View>
-
-                <Text style={styles.hintPlus}>+</Text>
-
-                <View style={styles.hintPairItem}>
-                  <View style={[styles.modalIconWrapper, styles.hintIconWrapper, { backgroundColor: `${itemB.color}15`, shadowColor: itemB.color }]}>
-                    <ElementIcon path={itemB.svgPath} color={itemB.color} size={36} />
-                  </View>
-                  <Text style={[styles.hintItemName, { color: itemB.color }]}>{transB.name}</Text>
-                </View>
-              </View>
-
-              <TouchableOpacity style={[styles.modalButton, { borderColor: '#00E676' }]} onPress={() => setHintPair(null)}>
-                <Text style={[styles.modalButtonText, { color: '#00E676' }]}>{t('awesome')}</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        );
-      })()}
-
       {/* Reset Game Confirmation Modal */}
       {showResetConfirm && (
         <View style={styles.modalOverlay}>
@@ -871,16 +806,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     backgroundColor: 'rgba(255,255,255,0.03)',
-  },
-  tipButton: {
-    borderColor: 'rgba(255, 213, 79, 0.4)',
-    backgroundColor: 'rgba(255, 213, 79, 0.05)',
-  },
-  tipButtonText: {
-    color: '#FFD54F',
-    fontSize: 12,
-    fontWeight: '600',
-    userSelect: 'none' as any,
   },
   resetButton: {
     borderColor: 'rgba(255, 255, 255, 0.15)',
@@ -1156,13 +1081,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     userSelect: 'none' as any,
   },
-  hintPairRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 16,
-    marginBottom: 24,
-  },
   confirmButtonRow: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -1170,27 +1088,6 @@ const styles = StyleSheet.create({
   },
   confirmButton: {
     flex: 1,
-  },
-  hintPairItem: {
-    alignItems: 'center',
-  },
-  hintIconWrapper: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
-    marginBottom: 8,
-  },
-  hintItemName: {
-    fontSize: 13,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    userSelect: 'none' as any,
-  },
-  hintPlus: {
-    color: '#90A4AE',
-    fontSize: 20,
-    fontWeight: 'bold',
-    userSelect: 'none' as any,
   },
   modalButton: {
     width: '100%',
