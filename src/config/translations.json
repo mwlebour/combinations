@@ -16,7 +16,8 @@
       "sq": "Kombinime Elementare",
       "sr": "Elementarne Kombinacije",
       "uk": "Комбінації Елементів",
-      "pl": "Kombinacje Żywiołów"
+      "pl": "Kombinacje Żywiołów",
+      "bg": "Комбинации на Елементите"
     },
     "discovered": {
       "en": "Discovered",
@@ -34,7 +35,8 @@
       "sq": "Zbuluar",
       "sr": "Otkriveno",
       "uk": "Відкрито",
-      "pl": "Odkryto"
+      "pl": "Odkryto",
+      "bg": "Открито"
     },
     "resetGame": {
       "en": "Reset Game",
@@ -52,7 +54,8 @@
       "sq": "Rifillo Lojën",
       "sr": "Resetuj Igru",
       "uk": "Скинути Гру",
-      "pl": "Zresetuj Grę"
+      "pl": "Zresetuj Grę",
+      "bg": "Рестартирай Играта"
     },
     "clearBoard": {
       "en": "Clear Board",
@@ -70,7 +73,8 @@
       "sq": "Pastro Tabelën",
       "sr": "Očisti Tablu",
       "uk": "Очистити Поле",
-      "pl": "Wyczyść Planszę"
+      "pl": "Wyczyść Planszę",
+      "bg": "Изчисти Таблото"
     },
     "workspaceCanvas": {
       "en": "WORKSPACE CANVAS",
@@ -88,7 +92,8 @@
       "sq": "SIPËRFAQJA E PUNËS",
       "sr": "RADNA POVRŠINA",
       "uk": "РОБОЧА ОБЛАСТЬ",
-      "pl": "OBSZAR ROBOCZY"
+      "pl": "OBSZAR ROBOCZY",
+      "bg": "РАБОТНА ОБЛАСТ"
     },
     "dragHint": {
       "en": "Tap items in the right sidebar to spawn them. Drag and drop them onto each other to combine!",
@@ -106,7 +111,8 @@
       "sq": "Prek elementet në shiritin anësor djathtas për t'i krijuar. Tërhiqi mbi njëri-tjetrin për t'i kombinuar!",
       "sr": "Dodirni predmete u bočnoj traci da bi ih napravio. Prevuci ih jedan na drugi da bi ih kombinovao!",
       "uk": "Торкніться елементів на бічній панелі, щоб створити їх. Перетягуйте їх один на одного, щоб комбінувати!",
-      "pl": "Dotknij przedmiotów na bocznym pasku, aby je stworzyć. Przeciągaj je na siebie, aby je łączyć!"
+      "pl": "Dotknij przedmiotów na bocznym pasku, aby je stworzyć. Przeciągaj je na siebie, aby je łączyć!",
+      "bg": "Докосни елементите в страничната лента, за да ги създадеш. Плъзгай ги един върху друг, за да ги комбинираш!"
     },
     "searchPlaceholder": {
       "en": "Search discovered...",
@@ -124,7 +130,8 @@
       "sq": "Kërko të zbuluarat...",
       "sr": "Pretraži otkriveno...",
       "uk": "Пошук відкритих...",
-      "pl": "Szukaj odkrytych..."
+      "pl": "Szukaj odkrytych...",
+      "bg": "Търси открити..."
     },
     "allTab": {
       "en": "All",
@@ -142,7 +149,8 @@
       "sq": "Të gjitha",
       "sr": "Sve",
       "uk": "Усі",
-      "pl": "Wszystkie"
+      "pl": "Wszystkie",
+      "bg": "Всички"
     },
     "basicTab": {
       "en": "Basic",
@@ -160,7 +168,8 @@
       "sq": "Bazë",
       "sr": "Osnovno",
       "uk": "Базові",
-      "pl": "Podstawowe"
+      "pl": "Podstawowe",
+      "bg": "Основни"
     },
     "combinedTab": {
       "en": "Combined",
@@ -178,7 +187,8 @@
       "sq": "Të kombinuara",
       "sr": "Kombinovano",
       "uk": "Складені",
-      "pl": "Złożone"
+      "pl": "Złożone",
+      "bg": "Комбинирани"
     },
     "finalTab": {
       "en": "Final",
@@ -196,7 +206,8 @@
       "sq": "Përfundimtare",
       "sr": "Finalno",
       "uk": "Фінальні",
-      "pl": "Finałowe"
+      "pl": "Finałowe",
+      "bg": "Финални"
     },
     "noItems": {
       "en": "No items found",
@@ -214,7 +225,8 @@
       "sq": "Nuk u gjetën elemente",
       "sr": "Nema pronađenih predmeta",
       "uk": "Нічого не знайдено",
-      "pl": "Nie znaleziono przedmiotów"
+      "pl": "Nie znaleziono przedmiotów",
+      "bg": "Няма намерени елементи"
     },
     "newDiscovery": {
       "en": "NEW DISCOVERY!",
@@ -232,7 +244,8 @@
       "sq": "ZBULIM I RI!",
       "sr": "NOVO OTKRIĆE!",
       "uk": "НОВЕ ВІДКРИТТЯ!",
-      "pl": "NOWE ODKRYCIE!"
+      "pl": "NOWE ODKRYCIE!",
+      "bg": "НОВО ОТКРИТИЕ!"
     },
     "awesome": {
       "en": "Awesome!",
@@ -250,7 +263,8 @@
       "sq": "Fantastike!",
       "sr": "Sjajno!",
       "uk": "Чудово!",
-      "pl": "Świetnie!"
+      "pl": "Świetnie!",
+      "bg": "Страхотно!"
     },
     "finalBadge": {
       "en": "Final",
@@ -268,7 +282,8 @@
       "sq": "Përfundimtare",
       "sr": "Finalno",
       "uk": "Фінал",
-      "pl": "Finał"
+      "pl": "Finał",
+      "bg": "Финал"
     },
     "selectLanguage": {
       "en": "Select Language",
@@ -286,7 +301,8 @@
       "sq": "Zgjidh Gjuhën",
       "sr": "Izaberi Jezik",
       "uk": "Вибрати мову",
-      "pl": "Wybierz Język"
+      "pl": "Wybierz Język",
+      "bg": "Избери Език"
     },
     "tipButton": {
       "en": "Tip",
@@ -304,7 +320,8 @@
       "sq": "Këshillë",
       "sr": "Savet",
       "uk": "Підказка",
-      "pl": "Wskazówka"
+      "pl": "Wskazówka",
+      "bg": "Съвет"
     },
     "hintTitle": {
       "en": "HERE'S A TIP",
@@ -322,7 +339,8 @@
       "sq": "JA NJË KËSHILLË",
       "sr": "EVO JEDNOG SAVETA",
       "uk": "ОСЬ ПІДКАЗКА",
-      "pl": "OTO WSKAZÓWKA"
+      "pl": "OTO WSKAZÓWKA",
+      "bg": "ЕТО ЕДИН СЪВЕТ"
     },
     "hintDescription": {
       "en": "Try combining these two:",
@@ -340,7 +358,8 @@
       "sq": "Provo të kombinosh këto dy:",
       "sr": "Pokušaj da kombinuješ ova dva:",
       "uk": "Спробуй скомбінувати ці два:",
-      "pl": "Spróbuj połączyć te dwa:"
+      "pl": "Spróbuj połączyć te dwa:",
+      "bg": "Опитай да комбинираш тези две:"
     },
     "noHintAvailable": {
       "en": "No hints left — you've found every combination!",
@@ -358,7 +377,8 @@
       "sq": "Nuk ka më këshilla — i ke zbuluar të gjitha kombinimet!",
       "sr": "Nema više saveta — pronašao si sve kombinacije!",
       "uk": "Підказок більше немає — ви знайшли всі комбінації!",
-      "pl": "Nie ma więcej wskazówek — odkryłeś wszystkie kombinacje!"
+      "pl": "Nie ma więcej wskazówek — odkryłeś wszystkie kombinacje!",
+      "bg": "Няма повече съвети — открил си всички комбинации!"
     },
     "confirmResetTitle": {
       "en": "Reset Game?",
@@ -376,7 +396,8 @@
       "sq": "Të rifillojmë lojën?",
       "sr": "Resetovati igru?",
       "uk": "Скинути гру?",
-      "pl": "Zresetować grę?"
+      "pl": "Zresetować grę?",
+      "bg": "Да рестартираме играта?"
     },
     "confirmResetDescription": {
       "en": "Are you sure you want to reset the game? All discovered elements and progress will be lost.",
@@ -394,7 +415,8 @@
       "sq": "A je i sigurt që dëshiron ta rifillosh lojën? Të gjitha elementet e zbuluara dhe përparimi do të humbasin.",
       "sr": "Da li si siguran da želiš da resetuješ igru? Svi otkriveni elementi i napredak će biti izgubljeni.",
       "uk": "Ви впевнені, що хочете скинути гру? Усі відкриті елементи та прогрес буде втрачено.",
-      "pl": "Czy na pewno chcesz zresetować grę? Wszystkie odkryte elementy i postępy zostaną utracone."
+      "pl": "Czy na pewno chcesz zresetować grę? Wszystkie odkryte elementy i postępy zostaną utracone.",
+      "bg": "Сигурен ли си, че искаш да рестартираш играта? Всички открити елементи и напредъкът ще бъдат загубени."
     },
     "yes": {
       "en": "Yes",
@@ -412,7 +434,8 @@
       "sq": "Po",
       "sr": "Da",
       "uk": "Так",
-      "pl": "Tak"
+      "pl": "Tak",
+      "bg": "Да"
     },
     "no": {
       "en": "No",
@@ -430,7 +453,8 @@
       "sq": "Jo",
       "sr": "Ne",
       "uk": "Ні",
-      "pl": "Nie"
+      "pl": "Nie",
+      "bg": "Не"
     }
   },
   "elements": {
@@ -451,7 +475,8 @@
         "sq": "Tokë",
         "sr": "Zemlja",
         "uk": "Земля",
-        "pl": "Ziemia"
+        "pl": "Ziemia",
+        "bg": "Земя"
       },
       "description": {
         "en": "Representative of land, stability, soil.",
@@ -469,7 +494,8 @@
         "sq": "Përfaqëson dheun, stabilitetin, tokën.",
         "sr": "Predstavlja tlo, stabilnost, zemljište.",
         "uk": "Символ суходолу, стабільності та ґрунту.",
-        "pl": "Symbolizuje ląd, stabilność, glebę."
+        "pl": "Symbolizuje ląd, stabilność, glebę.",
+        "bg": "Представлява сушата, стабилността, почвата."
       }
     },
     "air": {
@@ -489,7 +515,8 @@
         "sq": "Ajër",
         "sr": "Vazduh",
         "uk": "Повітря",
-        "pl": "Powietrze"
+        "pl": "Powietrze",
+        "bg": "Въздух"
       },
       "description": {
         "en": "Representative of atmosphere, wind, movement.",
@@ -507,7 +534,8 @@
         "sq": "Përfaqëson atmosferën, erën, lëvizjen.",
         "sr": "Predstavlja atmosferu, vetar, kretanje.",
         "uk": "Символ атмосфери, вітру та руху.",
-        "pl": "Symbolizuje atmosferę, wiatr, ruch."
+        "pl": "Symbolizuje atmosferę, wiatr, ruch.",
+        "bg": "Представлява атмосферата, вятъра, движението."
       }
     },
     "fire": {
@@ -527,7 +555,8 @@
         "sq": "Zjarr",
         "sr": "Vatra",
         "uk": "Вогонь",
-        "pl": "Ogień"
+        "pl": "Ogień",
+        "bg": "Огън"
       },
       "description": {
         "en": "Representative of heat, energy, light.",
@@ -545,7 +574,8 @@
         "sq": "Përfaqëson nxehtësinë, energjinë, dritën.",
         "sr": "Predstavlja toplotu, energiju, svetlost.",
         "uk": "Символ тепла, енергії та світла.",
-        "pl": "Symbolizuje ciepło, energię, światło."
+        "pl": "Symbolizuje ciepło, energię, światło.",
+        "bg": "Представлява топлината, енергията, светлината."
       }
     },
     "water": {
@@ -565,7 +595,8 @@
         "sq": "Ujë",
         "sr": "Voda",
         "uk": "Вода",
-        "pl": "Woda"
+        "pl": "Woda",
+        "bg": "Вода"
       },
       "description": {
         "en": "Representative of ocean, rain, fluid.",
@@ -583,7 +614,8 @@
         "sq": "Përfaqëson oqeanin, shiun, lëngun.",
         "sr": "Predstavlja okean, kišu, tečnost.",
         "uk": "Символ океану, дощу та рідини.",
-        "pl": "Symbolizuje ocean, deszcz, płyn."
+        "pl": "Symbolizuje ocean, deszcz, płyn.",
+        "bg": "Представлява океана, дъжда, течността."
       }
     },
     "crude_oil": {
@@ -603,7 +635,8 @@
         "sq": "Naftë e Papërpunuar",
         "sr": "Sirova Nafta",
         "uk": "Сира Нафта",
-        "pl": "Ropa Naftowa"
+        "pl": "Ropa Naftowa",
+        "bg": "Суров Нефт"
       },
       "description": {
         "en": "Thick, flammable liquid hydrocarbon drawn up from deep underground.",
@@ -621,7 +654,8 @@
         "sq": "Hidrokarbur i lëngshëm, i trashë dhe i ndezshëm, nxjerrë nga thellësia e tokës.",
         "sr": "Gusti, zapaljivi tečni ugljovodonik izvučen iz dubine zemlje.",
         "uk": "Густий, легкозаймистий рідкий вуглеводень, здобутий з глибини землі.",
-        "pl": "Gęsty, łatwopalny węglowodór ciekły wydobywany z głębi ziemi."
+        "pl": "Gęsty, łatwopalny węglowodór ciekły wydobywany z głębi ziemi.",
+        "bg": "Гъст, запалим течен въглеводород, изваден от дълбините на земята."
       }
     },
     "gold": {
@@ -641,7 +675,8 @@
         "sq": "Ar",
         "sr": "Zlato",
         "uk": "Золото",
-        "pl": "Złoto"
+        "pl": "Złoto",
+        "bg": "Злато"
       },
       "description": {
         "en": "Precious, lustrous metal prized for its rarity.",
@@ -659,7 +694,8 @@
         "sq": "Metal i çmuar dhe i shndritshëm, i vlerësuar për rrallësinë e tij.",
         "sr": "Dragoceni, sjajni metal cenjen zbog svoje retkosti.",
         "uk": "Дорогоцінний, блискучий метал, який цінують за рідкісність.",
-        "pl": "Cenny, lśniący metal ceniony za swoją rzadkość."
+        "pl": "Cenny, lśniący metal ceniony za swoją rzadkość.",
+        "bg": "Ценен, лъскав метал, ценен заради своята рядкост."
       }
     },
     "silver": {
@@ -679,7 +715,8 @@
         "sq": "Argjend",
         "sr": "Srebro",
         "uk": "Срібло",
-        "pl": "Srebro"
+        "pl": "Srebro",
+        "bg": "Сребро"
       },
       "description": {
         "en": "Pale, reflective metal valued for its shine.",
@@ -697,7 +734,8 @@
         "sq": "Metal i zbehtë dhe reflektues, i vlerësuar për shkëlqimin e tij.",
         "sr": "Bledi, reflektujući metal cenjen zbog svog sjaja.",
         "uk": "Блідий, відбиваючий метал, який цінують за блиск.",
-        "pl": "Blady, odblaskowy metal ceniony za swój blask."
+        "pl": "Blady, odblaskowy metal ceniony za swój blask.",
+        "bg": "Бледен, отразяващ метал, ценен заради своя блясък."
       }
     },
     "sand": {
@@ -717,7 +755,8 @@
         "sq": "Rërë",
         "sr": "Pesak",
         "uk": "Пісок",
-        "pl": "Piasek"
+        "pl": "Piasek",
+        "bg": "Пясък"
       },
       "description": {
         "en": "Representative of desert, granular silica matter.",
@@ -735,7 +774,8 @@
         "sq": "Përfaqëson shkretëtirën, lëndën granulare të silicit.",
         "sr": "Predstavlja pustinju, zrnastu silicijumsku materiju.",
         "uk": "Символ пустелі, зернистої кремнієвої речовини.",
-        "pl": "Symbolizuje pustynię, ziarnistą materię krzemionkową."
+        "pl": "Symbolizuje pustynię, ziarnistą materię krzemionkową.",
+        "bg": "Представлява пустинята, зърнестото силициево вещество."
       }
     },
     "lightning": {
@@ -755,7 +795,8 @@
         "sq": "Rrufe",
         "sr": "Munja",
         "uk": "Блискавка",
-        "pl": "Błyskawica"
+        "pl": "Błyskawica",
+        "bg": "Мълния"
       },
       "description": {
         "en": "Representative of electricity, storm energy, sparks.",
@@ -773,7 +814,8 @@
         "sq": "Përfaqëson elektricitetin, energjinë e stuhisë, shkëndijat.",
         "sr": "Predstavlja elektricitet, energiju oluje, varnice.",
         "uk": "Символ електрики, енергії бурі, іскор.",
-        "pl": "Symbolizuje elektryczność, energię burzy, iskry."
+        "pl": "Symbolizuje elektryczność, energię burzy, iskry.",
+        "bg": "Представлява електричеството, енергията на бурята, искрите."
       }
     },
     "ice": {
@@ -793,7 +835,8 @@
         "sq": "Akull",
         "sr": "Led",
         "uk": "Лід",
-        "pl": "Lód"
+        "pl": "Lód",
+        "bg": "Лед"
       },
       "description": {
         "en": "Representative of frost, cold, crystals.",
@@ -811,7 +854,8 @@
         "sq": "Përfaqëson brymën, ftohtësinë, kristalet.",
         "sr": "Predstavlja mraz, hladnoću, kristale.",
         "uk": "Символ інею, холоду та кристалів.",
-        "pl": "Symbolizuje mróz, zimno, kryształy."
+        "pl": "Symbolizuje mróz, zimno, kryształy.",
+        "bg": "Представлява слана, студ, кристали."
       }
     },
     "metal": {
@@ -831,7 +875,8 @@
         "sq": "Metal",
         "sr": "Metal",
         "uk": "Метал",
-        "pl": "Metal"
+        "pl": "Metal",
+        "bg": "Метал"
       },
       "description": {
         "en": "Representative of iron, refinement, conductibility.",
@@ -849,7 +894,8 @@
         "sq": "Përfaqëson hekurin, rafinimin, përçueshmërinë.",
         "sr": "Predstavlja gvožđe, preradu, provodljivost.",
         "uk": "Символ заліза, обробки та електропровідності.",
-        "pl": "Symbolizuje żelazo, obróbkę, przewodnictwo."
+        "pl": "Symbolizuje żelazo, obróbkę, przewodnictwo.",
+        "bg": "Представлява желязото, преработката, проводимостта."
       }
     },
     "wood": {
@@ -869,7 +915,8 @@
         "sq": "Dru",
         "sr": "Drvo",
         "uk": "Дерево",
-        "pl": "Drewno"
+        "pl": "Drewno",
+        "bg": "Дърво"
       },
       "description": {
         "en": "Representative of forest, organic construction, nature.",
@@ -887,7 +934,8 @@
         "sq": "Përfaqëson pyllin, ndërtimin organik, natyrën.",
         "sr": "Predstavlja šumu, organsku gradnju, prirodu.",
         "uk": "Символ лісу, органічного будівництва та природи.",
-        "pl": "Symbolizuje las, organiczną budowę, naturę."
+        "pl": "Symbolizuje las, organiczną budowę, naturę.",
+        "bg": "Представлява гората, органичното строителство, природата."
       }
     },
     "glass": {
@@ -907,7 +955,8 @@
         "sq": "Xham",
         "sr": "Staklo",
         "uk": "Скло",
-        "pl": "Szkło"
+        "pl": "Szkło",
+        "bg": "Стъкло"
       },
       "description": {
         "en": "Transparent silica structure.",
@@ -925,7 +974,8 @@
         "sq": "Strukturë transparente e silicit.",
         "sr": "Providna silicijumska struktura.",
         "uk": "Прозора кремнієва структура.",
-        "pl": "Przezroczysta struktura krzemionkowa."
+        "pl": "Przezroczysta struktura krzemionkowa.",
+        "bg": "Прозрачна силициева структура."
       }
     },
     "glasses": {
@@ -945,7 +995,8 @@
         "sq": "Syze",
         "sr": "Naočare",
         "uk": "Окуляри",
-        "pl": "Okulary"
+        "pl": "Okulary",
+        "bg": "Очила"
       },
       "description": {
         "en": "Two lenses connected together to assist vision.",
@@ -963,7 +1014,8 @@
         "sq": "Dy lente të lidhura së bashku për të ndihmuar shikimin.",
         "sr": "Dva sočiva povezana zajedno radi pomoći pri vidu.",
         "uk": "Дві лінзи, з'єднані разом для покращення зору.",
-        "pl": "Dwie soczewki połączone razem, aby wspomóc wzrok."
+        "pl": "Dwie soczewki połączone razem, aby wspomóc wzrok.",
+        "bg": "Две лещи, свързани заедно, за да подпомогнат зрението."
       }
     },
     "binoculars": {
@@ -983,7 +1035,8 @@
         "sq": "Dylbi",
         "sr": "Dvogled",
         "uk": "Бінокль",
-        "pl": "Lornetka"
+        "pl": "Lornetka",
+        "bg": "Бинокъл"
       },
       "description": {
         "en": "High-magnification optical instrument.",
@@ -1001,7 +1054,8 @@
         "sq": "Instrument optik me zmadhim të lartë.",
         "sr": "Optički instrument visokog uveličanja.",
         "uk": "Оптичний прилад з високим збільшенням.",
-        "pl": "Przyrząd optyczny o wysokim powiększeniu."
+        "pl": "Przyrząd optyczny o wysokim powiększeniu.",
+        "bg": "Оптичен инструмент с високо увеличение."
       }
     },
     "mud": {
@@ -1021,7 +1075,8 @@
         "sq": "Baltë",
         "sr": "Blato",
         "uk": "Багнюка",
-        "pl": "Błoto"
+        "pl": "Błoto",
+        "bg": "Кал"
       },
       "description": {
         "en": "Wet, gooey soil.",
@@ -1039,7 +1094,8 @@
         "sq": "Dhe i lagësht dhe ngjitës.",
         "sr": "Vlažna, lepljiva zemlja.",
         "uk": "Волога, липка земля.",
-        "pl": "Wilgotna, lepka ziemia."
+        "pl": "Wilgotna, lepka ziemia.",
+        "bg": "Влажна, лепкава почва."
       }
     },
     "swamp": {
@@ -1059,7 +1115,8 @@
         "sq": "Moçal",
         "sr": "Močvara",
         "uk": "Болото",
-        "pl": "Bagno"
+        "pl": "Bagno",
+        "bg": "Блато"
       },
       "description": {
         "en": "Wet, saturated forest area.",
@@ -1077,7 +1134,8 @@
         "sq": "Zonë pyjore e lagësht dhe e ngopur me ujë.",
         "sr": "Vlažno, vodom zasićeno šumsko područje.",
         "uk": "Волога, насичена водою лісова місцевість.",
-        "pl": "Wilgotny, nasycony wodą obszar leśny."
+        "pl": "Wilgotny, nasycony wodą obszar leśny.",
+        "bg": "Влажна, наситена с вода горска местност."
       }
     },
     "life": {
@@ -1097,7 +1155,8 @@
         "sq": "Jetë",
         "sr": "Život",
         "uk": "Життя",
-        "pl": "Życie"
+        "pl": "Życie",
+        "bg": "Живот"
       },
       "description": {
         "en": "Sparks of biology and energy coalescing.",
@@ -1115,7 +1174,8 @@
         "sq": "Shkëndija të biologjisë dhe energjisë që bashkohen.",
         "sr": "Varnice biologije i energije koje se spajaju.",
         "uk": "Іскри біології та енергії, що зливаються воєдино.",
-        "pl": "Iskry biologii i energii łączące się w jedno."
+        "pl": "Iskry biologii i energii łączące się w jedno.",
+        "bg": "Искри на биология и енергия, сливащи се в едно."
       }
     },
     "ent": {
@@ -1135,7 +1195,8 @@
         "sq": "Ent",
         "sr": "Ent",
         "uk": "Ент",
-        "pl": "Ent"
+        "pl": "Ent",
+        "bg": "Ент"
       },
       "description": {
         "en": "A sentient, walking tree creature.",
@@ -1153,7 +1214,8 @@
         "sq": "Krijesë peme që ecën dhe ka ndjenja.",
         "sr": "Svesno, hodajuće drveno biće.",
         "uk": "Розумна, рухома деревна істота.",
-        "pl": "Świadome, chodzące stworzenie drzewne."
+        "pl": "Świadome, chodzące stworzenie drzewne.",
+        "bg": "Разумно, ходещо дървесно същество."
       }
     },
     "electricity": {
@@ -1173,7 +1235,8 @@
         "sq": "Elektricitet",
         "sr": "Elektricitet",
         "uk": "Електрика",
-        "pl": "Elektryczność"
+        "pl": "Elektryczność",
+        "bg": "Електричество"
       },
       "description": {
         "en": "Flow of charge through conductive material.",
@@ -1191,7 +1254,8 @@
         "sq": "Rrjedhja e ngarkesës përmes materialit përçues.",
         "sr": "Protok naboja kroz provodni materijal.",
         "uk": "Потік заряду через провідний матеріал.",
-        "pl": "Przepływ ładunku przez materiał przewodzący."
+        "pl": "Przepływ ładunku przez materiał przewodzący.",
+        "bg": "Поток от заряд през проводящ материал."
       }
     },
     "silicon": {
@@ -1211,7 +1275,8 @@
         "sq": "Silic",
         "sr": "Silicijum",
         "uk": "Кремній",
-        "pl": "Krzem"
+        "pl": "Krzem",
+        "bg": "Силиций"
       },
       "description": {
         "en": "Purified semiconductor base.",
@@ -1229,7 +1294,8 @@
         "sq": "Bazë gjysmëpërçuese e purifikuar.",
         "sr": "Prečišćena poluprovodnička osnova.",
         "uk": "Очищена напівпровідникова основа.",
-        "pl": "Oczyszczona baza półprzewodnikowa."
+        "pl": "Oczyszczona baza półprzewodnikowa.",
+        "bg": "Пречистена полупроводникова основа."
       }
     },
     "microchip": {
@@ -1249,7 +1315,8 @@
         "sq": "Mikroçip",
         "sr": "Mikročip",
         "uk": "Мікрочіп",
-        "pl": "Mikroczip"
+        "pl": "Mikroczip",
+        "bg": "Микрочип"
       },
       "description": {
         "en": "Complex integrated circuit.",
@@ -1267,7 +1334,8 @@
         "sq": "Qark i integruar kompleks.",
         "sr": "Složeno integrisano kolo.",
         "uk": "Складна інтегральна схема.",
-        "pl": "Złożony układ scalony."
+        "pl": "Złożony układ scalony.",
+        "bg": "Сложна интегрална схема."
       }
     },
     "smartphone": {
@@ -1287,7 +1355,8 @@
         "sq": "Smartfon",
         "sr": "Pametni Telefon",
         "uk": "Смартфон",
-        "pl": "Smartfon"
+        "pl": "Smartfon",
+        "bg": "Смартфон"
       },
       "description": {
         "en": "Advanced portable computer with a glass screen.",
@@ -1305,7 +1374,8 @@
         "sq": "Kompjuter i avancuar dhe portativ me ekran xhami.",
         "sr": "Napredni prenosivi računar sa staklenim ekranom.",
         "uk": "Просунутий портативний комп'ютер зі скляним екраном.",
-        "pl": "Zaawansowany przenośny komputer ze szklanym ekranem."
+        "pl": "Zaawansowany przenośny komputer ze szklanym ekranem.",
+        "bg": "Усъвършенстван преносим компютър със стъклен екран."
       }
     },
     "steam": {
@@ -1325,7 +1395,8 @@
         "sq": "Avull",
         "sr": "Para",
         "uk": "Пара",
-        "pl": "Para"
+        "pl": "Para",
+        "bg": "Пара"
       },
       "description": {
         "en": "Heated vapor rising.",
@@ -1343,7 +1414,8 @@
         "sq": "Avull i nxehtë që ngrihet.",
         "sr": "Zagrejana para koja se diže.",
         "uk": "Гаряча пара, що піднімається.",
-        "pl": "Unosząca się gorąca para."
+        "pl": "Unosząca się gorąca para.",
+        "bg": "Издигаща се гореща пара."
       }
     },
     "cloud": {
@@ -1363,7 +1435,8 @@
         "sq": "Re",
         "sr": "Oblak",
         "uk": "Хмара",
-        "pl": "Chmura"
+        "pl": "Chmura",
+        "bg": "Облак"
       },
       "description": {
         "en": "Condensed water droplets in the sky.",
@@ -1381,7 +1454,8 @@
         "sq": "Pika uji të kondensuara në qiell.",
         "sr": "Kondenzovane kapi vode na nebu.",
         "uk": "Конденсовані краплі води в небі.",
-        "pl": "Skroplone krople wody na niebie."
+        "pl": "Skroplone krople wody na niebie.",
+        "bg": "Кондензирани водни капчици в небето."
       }
     },
     "storm": {
@@ -1401,7 +1475,8 @@
         "sq": "Stuhi",
         "sr": "Oluja",
         "uk": "Буря",
-        "pl": "Burza"
+        "pl": "Burza",
+        "bg": "Буря"
       },
       "description": {
         "en": "Heavy tempest of clouds, rain, and thunder.",
@@ -1419,7 +1494,8 @@
         "sq": "Stuhi e fortë me re, shi dhe bubullima.",
         "sr": "Snažna nevremena sa oblacima, kišom i grmljavinom.",
         "uk": "Сильна негода з хмарами, дощем і громом.",
-        "pl": "Silna nawałnica chmur, deszczu i grzmotów."
+        "pl": "Silna nawałnica chmur, deszczu i grzmotów.",
+        "bg": "Силна стихия от облаци, дъжд и гръмотевици."
       }
     },
     "lightning_rod": {
@@ -1439,7 +1515,8 @@
         "sq": "Rrufepritëse",
         "sr": "Gromobran",
         "uk": "Громовідвід",
-        "pl": "Piorunochron"
+        "pl": "Piorunochron",
+        "bg": "Гръмоотвод"
       },
       "description": {
         "en": "Metal conductor mounted to attract and ground lightning.",
@@ -1457,7 +1534,8 @@
         "sq": "Përçues metalik i vendosur për të tërhequr dhe tokëzuar rrufetë.",
         "sr": "Metalni provodnik postavljen da privuče i uzemlji munje.",
         "uk": "Металевий провідник, встановлений для притягання та заземлення блискавок.",
-        "pl": "Metalowy przewodnik zamontowany, aby przyciągać i uziemiać pioruny."
+        "pl": "Metalowy przewodnik zamontowany, aby przyciągać i uziemiać pioruny.",
+        "bg": "Метален проводник, монтиран за привличане и заземяване на мълнии."
       }
     },
     "snow": {
@@ -1477,7 +1555,8 @@
         "sq": "Borë",
         "sr": "Sneg",
         "uk": "Сніг",
-        "pl": "Śnieg"
+        "pl": "Śnieg",
+        "bg": "Сняг"
       },
       "description": {
         "en": "Flurry of frozen water crystals.",
@@ -1495,7 +1574,8 @@
         "sq": "Reshje kristalesh uji të ngrira.",
         "sr": "Vejavica smrznutih vodenih kristala.",
         "uk": "Заметіль замерзлих кристалів води.",
-        "pl": "Zawierucha zamarzniętych kryształków wody."
+        "pl": "Zawierucha zamarzniętych kryształków wody.",
+        "bg": "Виелица от замръзнали водни кристали."
       }
     },
     "snowman": {
@@ -1515,7 +1595,8 @@
         "sq": "Njeri Bore",
         "sr": "Sneško Belić",
         "uk": "Сніговик",
-        "pl": "Bałwan"
+        "pl": "Bałwan",
+        "bg": "Снежен Човек"
       },
       "description": {
         "en": "Frozen humanoid figure built from packed snow and soil.",
@@ -1533,7 +1614,8 @@
         "sq": "Figurë e ngrirë njerëzore e ndërtuar nga bora e ngjeshur dhe dheu.",
         "sr": "Smrznuta humanoidna figura napravljena od zbijenog snega i zemlje.",
         "uk": "Замерзла людиноподібна фігура, зроблена з утрамбованого снігу та землі.",
-        "pl": "Zamarznięta ludzka postać zbudowana z ubitego śniegu i ziemi."
+        "pl": "Zamarznięta ludzka postać zbudowana z ubitego śniegu i ziemi.",
+        "bg": "Замръзнала човекоподобна фигура, изградена от уплътнен сняг и почва."
       }
     },
     "axe": {
@@ -1553,7 +1635,8 @@
         "sq": "Sëpatë",
         "sr": "Sekira",
         "uk": "Сокира",
-        "pl": "Siekiera"
+        "pl": "Siekiera",
+        "bg": "Брадва"
       },
       "description": {
         "en": "Cutting tool with metal head and wooden handle.",
@@ -1571,7 +1654,8 @@
         "sq": "Vegël prerëse me kokë metalike dhe bisht druri.",
         "sr": "Alat za sečenje sa metalnom glavom i drvenom drškom.",
         "uk": "Ріжучий інструмент з металевою головкою та дерев'яним держаком.",
-        "pl": "Narzędzie tnące z metalową głowicą i drewnianym trzonkiem."
+        "pl": "Narzędzie tnące z metalową głowicą i drewnianym trzonkiem.",
+        "bg": "Режещ инструмент с метална глава и дървена дръжка."
       }
     },
     "plank": {
@@ -1591,7 +1675,8 @@
         "sq": "Dërrasë",
         "sr": "Daska",
         "uk": "Дошка",
-        "pl": "Deska"
+        "pl": "Deska",
+        "bg": "Дъска"
       },
       "description": {
         "en": "Wood cut into a flat, usable construction board.",
@@ -1609,7 +1694,8 @@
         "sq": "Dru i prerë në një pllakë të sheshtë dhe të përdorshme për ndërtim.",
         "sr": "Drvo isečeno u ravnu, upotrebljivu građevinsku dasku.",
         "uk": "Дерево, розпиляне на плоску, придатну для будівництва дошку.",
-        "pl": "Drewno pocięte na płaską, użyteczną deskę budowlaną."
+        "pl": "Drewno pocięte na płaską, użyteczną deskę budowlaną.",
+        "bg": "Дърво, нарязано в плоска, използваема строителна дъска."
       }
     },
     "bridge": {
@@ -1629,7 +1715,8 @@
         "sq": "Urë",
         "sr": "Most",
         "uk": "Міст",
-        "pl": "Most"
+        "pl": "Most",
+        "bg": "Мост"
       },
       "description": {
         "en": "Elevated pathway spanning a gap.",
@@ -1647,7 +1734,8 @@
         "sq": "Rrugë e ngritur që kalon mbi një hendek.",
         "sr": "Uzdignuti put koji premošćuje prazninu.",
         "uk": "Піднята дорога, що перетинає розрив.",
-        "pl": "Wzniesiona ścieżka przecinająca przerwę."
+        "pl": "Wzniesiona ścieżka przecinająca przerwę.",
+        "bg": "Издигнат път, преминаващ през пропаст."
       }
     },
     "train_track": {
@@ -1667,7 +1755,8 @@
         "sq": "Shina Treni",
         "sr": "Železnička Pruga",
         "uk": "Рейки",
-        "pl": "Tory Kolejowe"
+        "pl": "Tory Kolejowe",
+        "bg": "Железопътна Линия"
       },
       "description": {
         "en": "Steel rails laid over wooden supports.",
@@ -1685,7 +1774,8 @@
         "sq": "Shina çeliku të vendosura mbi mbështetëse druri.",
         "sr": "Čelične šine postavljene na drvene podloge.",
         "uk": "Сталеві рейки, покладені на дерев'яні опори.",
-        "pl": "Stalowe szyny ułożone na drewnianych podkładach."
+        "pl": "Stalowe szyny ułożone na drewnianych podkładach.",
+        "bg": "Стоманени релси, положени върху дървени траверси."
       }
     },
     "coal": {
@@ -1705,7 +1795,8 @@
         "sq": "Qymyr",
         "sr": "Ugalj",
         "uk": "Вугілля",
-        "pl": "Węgiel"
+        "pl": "Węgiel",
+        "bg": "Въглища"
       },
       "description": {
         "en": "Carbonised wood fuel block.",
@@ -1723,7 +1814,8 @@
         "sq": "Bllok karburanti druri i karbonizuar.",
         "sr": "Karbonizovani blok drvenog goriva.",
         "uk": "Карбонізований дерев'яний паливний блок.",
-        "pl": "Zwęglony blok paliwa drzewnego."
+        "pl": "Zwęglony blok paliwa drzewnego.",
+        "bg": "Карбонизиран блок от дървесно гориво."
       }
     },
     "steel": {
@@ -1743,7 +1835,8 @@
         "sq": "Çelik",
         "sr": "Čelik",
         "uk": "Сталь",
-        "pl": "Stal"
+        "pl": "Stal",
+        "bg": "Стомана"
       },
       "description": {
         "en": "Carbon-reinforced metal alloy.",
@@ -1761,7 +1854,8 @@
         "sq": "Aliazh metalik i përforcuar me karbon.",
         "sr": "Metalna legura ojačana ugljenikom.",
         "uk": "Металевий сплав, зміцнений вуглецем.",
-        "pl": "Stop metalu wzmocniony węglem."
+        "pl": "Stop metalu wzmocniony węglem.",
+        "bg": "Метална сплав, укрепена с въглерод."
       }
     },
     "sword": {
@@ -1781,7 +1875,8 @@
         "sq": "Shpatë",
         "sr": "Mač",
         "uk": "Меч",
-        "pl": "Miecz"
+        "pl": "Miecz",
+        "bg": "Меч"
       },
       "description": {
         "en": "Forged blade weapon.",
@@ -1799,7 +1894,8 @@
         "sq": "Armë me tehe e farkëtuar.",
         "sr": "Iskovano oružje sa oštricom.",
         "uk": "Кована клинкова зброя.",
-        "pl": "Kuta broń o ostrzu."
+        "pl": "Kuta broń o ostrzu.",
+        "bg": "Изковано острие оръжие."
       }
     },
     "energy_blade": {
@@ -1819,7 +1915,8 @@
         "sq": "Teh Energjie",
         "sr": "Energetsko Sečivo",
         "uk": "Енергетичний Клинок",
-        "pl": "Ostrze Energii"
+        "pl": "Ostrze Energii",
+        "bg": "Енергийно Острие"
       },
       "description": {
         "en": "High-tech sword infused with electrical currents.",
@@ -1837,7 +1934,8 @@
         "sq": "Shpatë high-tech e mbushur me rryma elektrike.",
         "sr": "Visokotehnološki mač ispunjen električnim strujama.",
         "uk": "Високотехнологічний меч, наповнений електричними струмами.",
-        "pl": "Zaawansowany technologicznie miecz nasycony prądem elektrycznym."
+        "pl": "Zaawansowany technologicznie miecz nasycony prądem elektrycznym.",
+        "bg": "Високотехнологичен меч, напоен с електрически токове."
       }
     },
     "rock": {
@@ -1857,7 +1955,8 @@
         "sq": "Gur",
         "sr": "Stena",
         "uk": "Камінь",
-        "pl": "Skała"
+        "pl": "Skała",
+        "bg": "Скала"
       },
       "description": {
         "en": "Solid, compact mass of stone.",
@@ -1875,7 +1974,8 @@
         "sq": "Masë e ngurtë dhe kompakte guri.",
         "sr": "Čvrsta, zbijena masa kamena.",
         "uk": "Тверда, щільна кам'яна маса.",
-        "pl": "Twarda, zwarta masa kamienia."
+        "pl": "Twarda, zwarta masa kamienia.",
+        "bg": "Твърда, плътна маса от камък."
       }
     },
     "lava": {
@@ -1895,7 +1995,8 @@
         "sq": "Llavë",
         "sr": "Lava",
         "uk": "Лава",
-        "pl": "Lawa"
+        "pl": "Lawa",
+        "bg": "Лава"
       },
       "description": {
         "en": "Superheated liquid rock flowing from the earth.",
@@ -1913,7 +2014,8 @@
         "sq": "Shkëmb i lëngshëm i mbinxehur që rrjedh nga toka.",
         "sr": "Pregrejana tečna stena koja teče iz zemlje.",
         "uk": "Перегріта рідка порода, що витікає із землі.",
-        "pl": "Przegrzana, ciekła skała wypływająca z ziemi."
+        "pl": "Przegrzana, ciekła skała wypływająca z ziemi.",
+        "bg": "Прегрята течна скала, изтичаща от земята."
       }
     },
     "mountain": {
@@ -1933,7 +2035,8 @@
         "sq": "Mal",
         "sr": "Planina",
         "uk": "Гора",
-        "pl": "Góra"
+        "pl": "Góra",
+        "bg": "Планина"
       },
       "description": {
         "en": "Towering elevation of the earth's surface.",
@@ -1951,7 +2054,8 @@
         "sq": "Ngritje madhështore e sipërfaqes së tokës.",
         "sr": "Uzdignuta izbočina zemljine površine.",
         "uk": "Височінь, що здіймається над земною поверхнею.",
-        "pl": "Wznosząca się wyniosłość powierzchni ziemi."
+        "pl": "Wznosząca się wyniosłość powierzchni ziemi.",
+        "bg": "Извисяваща се височина на земната повърхност."
       }
     },
     "volcano": {
@@ -1971,7 +2075,8 @@
         "sq": "Vullkan",
         "sr": "Vulkan",
         "uk": "Вулкан",
-        "pl": "Wulkan"
+        "pl": "Wulkan",
+        "bg": "Вулкан"
       },
       "description": {
         "en": "A mountain that vents lava, steam, and ash.",
@@ -1989,7 +2094,8 @@
         "sq": "Një mal që nxjerr llavë, avull dhe hi.",
         "sr": "Planina koja ispušta lavu, paru i pepeo.",
         "uk": "Гора, що вивергає лаву, пару та попіл.",
-        "pl": "Góra, która wyrzuca lawę, parę i popiół."
+        "pl": "Góra, która wyrzuca lawę, parę i popiół.",
+        "bg": "Планина, която изхвърля лава, пара и пепел."
       }
     },
     "obsidian": {
@@ -2009,7 +2115,8 @@
         "sq": "Obsidian",
         "sr": "Opsidijan",
         "uk": "Обсидіан",
-        "pl": "Obsydian"
+        "pl": "Obsydian",
+        "bg": "Обсидиан"
       },
       "description": {
         "en": "Dark, volcanic glass formed from rapid cooling of lava.",
@@ -2027,7 +2134,8 @@
         "sq": "Xham vullkanik i errët i formuar nga ftohja e shpejtë e llavës.",
         "sr": "Tamno vulkansko staklo nastalo brzim hlađenjem lave.",
         "uk": "Темне вулканічне скло, утворене швидким охолодженням лави.",
-        "pl": "Ciemne szkło wulkaniczne powstałe z szybkiego chłodzenia lawy."
+        "pl": "Ciemne szkło wulkaniczne powstałe z szybkiego chłodzenia lawy.",
+        "bg": "Тъмно вулканично стъкло, образувано от бързото охлаждане на лавата."
       }
     },
     "geyser": {
@@ -2047,7 +2155,8 @@
         "sq": "Gejzer",
         "sr": "Gejzir",
         "uk": "Гейзер",
-        "pl": "Gejzer"
+        "pl": "Gejzer",
+        "bg": "Гейзер"
       },
       "description": {
         "en": "Hot spring that sends columns of steam and water into the air.",
@@ -2065,7 +2174,8 @@
         "sq": "Burim i nxehtë që hedh kolona avulli dhe uji në ajër.",
         "sr": "Topli izvor koji izbacuje stubove pare i vode u vazduh.",
         "uk": "Гаряче джерело, що викидає стовпи пари та води в повітря.",
-        "pl": "Gorące źródło wyrzucające kolumny pary i wody w powietrze."
+        "pl": "Gorące źródło wyrzucające kolumny pary i wody w powietrze.",
+        "bg": "Горещ извор, изхвърлящ колони от пара и вода във въздуха."
       }
     },
     "magnet": {
@@ -2085,7 +2195,8 @@
         "sq": "Magnet",
         "sr": "Magnet",
         "uk": "Магніт",
-        "pl": "Magnes"
+        "pl": "Magnes",
+        "bg": "Магнит"
       },
       "description": {
         "en": "Material that produces a magnetic field.",
@@ -2103,7 +2214,8 @@
         "sq": "Material që prodhon një fushë magnetike.",
         "sr": "Materijal koji stvara magnetno polje.",
         "uk": "Матеріал, що створює магнітне поле.",
-        "pl": "Materiał wytwarzający pole magnetyczne."
+        "pl": "Materiał wytwarzający pole magnetyczne.",
+        "bg": "Материал, който създава магнитно поле."
       }
     },
     "compass": {
@@ -2123,7 +2235,8 @@
         "sq": "Busull",
         "sr": "Kompas",
         "uk": "Компас",
-        "pl": "Kompas"
+        "pl": "Kompas",
+        "bg": "Компас"
       },
       "description": {
         "en": "Navigational instrument showing direction.",
@@ -2141,7 +2254,8 @@
         "sq": "Instrument navigimi që tregon drejtimin.",
         "sr": "Navigacioni instrument koji pokazuje pravac.",
         "uk": "Навігаційний прилад, що показує напрямок.",
-        "pl": "Przyrząd nawigacyjny wskazujący kierunek."
+        "pl": "Przyrząd nawigacyjny wskazujący kierunek.",
+        "bg": "Навигационен инструмент, показващ посока."
       }
     },
     "clay": {
@@ -2161,7 +2275,8 @@
         "sq": "Argjilë",
         "sr": "Glina",
         "uk": "Глина",
-        "pl": "Glina"
+        "pl": "Glina",
+        "bg": "Глина"
       },
       "description": {
         "en": "Fine-grained natural soil material.",
@@ -2179,7 +2294,8 @@
         "sq": "Material natyror dheu me grimca të imëta.",
         "sr": "Sitnozrni prirodni zemljišni materijal.",
         "uk": "Дрібнозерниста природна ґрунтова речовина.",
-        "pl": "Drobnoziarnisty naturalny materiał glebowy."
+        "pl": "Drobnoziarnisty naturalny materiał glebowy.",
+        "bg": "Финозърнест естествен почвен материал."
       }
     },
     "brick": {
@@ -2199,7 +2315,8 @@
         "sq": "Tullë",
         "sr": "Cigla",
         "uk": "Цегла",
-        "pl": "Cegła"
+        "pl": "Cegła",
+        "bg": "Тухла"
       },
       "description": {
         "en": "Rectangular block of baked clay used in building.",
@@ -2217,7 +2334,8 @@
         "sq": "Bllok drejtkëndor argjile të pjekur i përdorur në ndërtim.",
         "sr": "Pravougaoni blok pečene gline koji se koristi u gradnji.",
         "uk": "Прямокутний блок випаленої глини, що використовується в будівництві.",
-        "pl": "Prostokątny blok wypalonej gliny używany w budownictwie."
+        "pl": "Prostokątny blok wypalonej gliny używany w budownictwie.",
+        "bg": "Правоъгълен блок изпечена глина, използван в строителството."
       }
     },
     "house": {
@@ -2237,7 +2355,8 @@
         "sq": "Shtëpi",
         "sr": "Kuća",
         "uk": "Будинок",
-        "pl": "Dom"
+        "pl": "Dom",
+        "bg": "Къща"
       },
       "description": {
         "en": "Building for human habitation.",
@@ -2255,7 +2374,8 @@
         "sq": "Ndërtesë për banim njerëzor.",
         "sr": "Zgrada za ljudsko stanovanje.",
         "uk": "Будівля для проживання людей.",
-        "pl": "Budynek przeznaczony do zamieszkania przez ludzi."
+        "pl": "Budynek przeznaczony do zamieszkania przez ludzi.",
+        "bg": "Сграда за човешко обитаване."
       }
     },
     "plastic": {
@@ -2275,7 +2395,8 @@
         "sq": "Plastikë",
         "sr": "Plastika",
         "uk": "Пластик",
-        "pl": "Plastik"
+        "pl": "Plastik",
+        "bg": "Пластмаса"
       },
       "description": {
         "en": "Synthetic polymer material refined from crude oil.",
@@ -2293,7 +2414,8 @@
         "sq": "Material polimer sintetik i rafinuar nga nafta e papërpunuar.",
         "sr": "Sintetički polimerni materijal prerađen od sirove nafte.",
         "uk": "Синтетичний полімерний матеріал, отриманий з сирої нафти.",
-        "pl": "Syntetyczny materiał polimerowy rafinowany z ropy naftowej."
+        "pl": "Syntetyczny materiał polimerowy rafinowany z ropy naftowej.",
+        "bg": "Синтетичен полимерен материал, рафиниран от суров нефт."
       }
     },
     "paper": {
@@ -2313,7 +2435,8 @@
         "sq": "Letër",
         "sr": "Papir",
         "uk": "Папір",
-        "pl": "Papier"
+        "pl": "Papier",
+        "bg": "Хартия"
       },
       "description": {
         "en": "Thin sheet pressed from soaked wood pulp.",
@@ -2331,7 +2454,8 @@
         "sq": "Fletë e hollë e shtypur nga qelqi i drurit i njomur.",
         "sr": "Tanak list presovan od nakvašene drvne pulpe.",
         "uk": "Тонкий аркуш, спресований із розмоченої деревної маси.",
-        "pl": "Cienki arkusz sprasowany z namoczonej masy drzewnej."
+        "pl": "Cienki arkusz sprasowany z namoczonej masy drzewnej.",
+        "bg": "Тънък лист, пресован от намокрена дървесна каша."
       }
     },
     "animal": {
@@ -2351,7 +2475,8 @@
         "sq": "Kafshë",
         "sr": "Životinja",
         "uk": "Тварина",
-        "pl": "Zwierzę"
+        "pl": "Zwierzę",
+        "bg": "Животно"
       },
       "description": {
         "en": "Breath given to earth, formed into a living creature.",
@@ -2369,7 +2494,8 @@
         "sq": "Frymë e dhënë tokës, e formuar në një krijesë të gjallë.",
         "sr": "Dah dat zemlji, oblikovan u živo biće.",
         "uk": "Подих, дарований землі, що набув форми живої істоти.",
-        "pl": "Tchnienie dane ziemi, ukształtowane w żywą istotę."
+        "pl": "Tchnienie dane ziemi, ukształtowane w żywą istotę.",
+        "bg": "Дъх, даден на земята, оформен в живо същество."
       }
     },
     "leather": {
@@ -2389,7 +2515,8 @@
         "sq": "Lëkurë",
         "sr": "Koža",
         "uk": "Шкіра",
-        "pl": "Skóra"
+        "pl": "Skóra",
+        "bg": "Кожа"
       },
       "description": {
         "en": "Durable animal hide cured over fire.",
@@ -2407,7 +2534,8 @@
         "sq": "Lëkurë kafshe e qëndrueshme e regjur mbi zjarr.",
         "sr": "Izdržljiva životinjska koža uštavljena na vatri.",
         "uk": "Міцна шкура тварини, вичинена над вогнем.",
-        "pl": "Wytrzymała skóra zwierzęca garbowana nad ogniem."
+        "pl": "Wytrzymała skóra zwierzęca garbowana nad ogniem.",
+        "bg": "Издръжлива животинска кожа, обработена над огън."
       }
     },
     "book": {
@@ -2427,7 +2555,8 @@
         "sq": "Libër",
         "sr": "Knjiga",
         "uk": "Книга",
-        "pl": "Książka"
+        "pl": "Książka",
+        "bg": "Книга"
       },
       "description": {
         "en": "Bound pages of paper wrapped in a leather cover.",
@@ -2445,7 +2574,8 @@
         "sq": "Faqe letre të lidhura, të mbështjella në një kapak lëkure.",
         "sr": "Uvezane stranice papira umotane u kožni povez.",
         "uk": "Зшиті сторінки паперу в шкіряній обкладинці.",
-        "pl": "Zszyte strony papieru owinięte w skórzaną okładkę."
+        "pl": "Zszyte strony papieru owinięte w skórzaną okładkę.",
+        "bg": "Зашити страници хартия, обвити в кожена корица."
       }
     },
     "ring": {
@@ -2465,7 +2595,8 @@
         "sq": "Unazë",
         "sr": "Prsten",
         "uk": "Перстень",
-        "pl": "Pierścionek"
+        "pl": "Pierścionek",
+        "bg": "Пръстен"
       },
       "description": {
         "en": "Band of precious metal worn as jewelry.",
@@ -2483,7 +2614,8 @@
         "sq": "Rreth metali të çmuar i veshur si stoli.",
         "sr": "Traka od dragocenog metala nošena kao nakit.",
         "uk": "Обідок з дорогоцінного металу, який носять як прикрасу.",
-        "pl": "Obrączka z cennego metalu noszona jako biżuteria."
+        "pl": "Obrączka z cennego metalu noszona jako biżuteria.",
+        "bg": "Обръч от ценен метал, носен като украшение."
       }
     },
     "mirror": {
@@ -2503,7 +2635,8 @@
         "sq": "Pasqyrë",
         "sr": "Ogledalo",
         "uk": "Дзеркало",
-        "pl": "Lustro"
+        "pl": "Lustro",
+        "bg": "Огледало"
       },
       "description": {
         "en": "Polished glass backed with reflective silver.",
@@ -2521,7 +2654,8 @@
         "sq": "Xham i lustruar me shtresë argjendi reflektues në pjesën e pasme.",
         "sr": "Polirano staklo sa reflektujućim srebrnim slojem.",
         "uk": "Полірoване скло з відбиваючим срібним шаром на звороті.",
-        "pl": "Wypolerowane szkło pokryte odblaskową warstwą srebra."
+        "pl": "Wypolerowane szkło pokryte odblaskową warstwą srebra.",
+        "bg": "Полирано стъкло с отразяващ сребърен слой отзад."
       }
     },
     "homework": {
@@ -2541,7 +2675,8 @@
         "sq": "Detyrë shtëpie",
         "sr": "Domaći zadatak",
         "uk": "Домашнє завдання",
-        "pl": "Praca domowa"
+        "pl": "Praca domowa",
+        "bg": "Домашно"
       },
       "description": {
         "en": "Assignment written up by a living mind, one sheet at a time.",
@@ -2559,7 +2694,8 @@
         "sq": "Detyrë e shkruar nga një mendje e gjallë, fletë pas fletë.",
         "sr": "Zadatak koji je napisao živi um, list po list.",
         "uk": "Завдання, написане живим розумом, аркуш за аркушем.",
-        "pl": "Zadanie napisane przez żywy umysł, kartka po kartce."
+        "pl": "Zadanie napisane przez żywy umysł, kartka po kartce.",
+        "bg": "Задание, написано от жив ум, лист по лист."
       }
     },
     "glacier": {
@@ -2579,7 +2715,8 @@
         "sq": "Akullnajë",
         "sr": "Glečer",
         "uk": "Льодовик",
-        "pl": "Lodowiec"
+        "pl": "Lodowiec",
+        "bg": "Ледник"
       },
       "description": {
         "en": "Vast, slow-moving river of compacted ice.",
@@ -2597,7 +2734,8 @@
         "sq": "Lumë i madh, ngadalë lëvizës prej akulli të ngjeshur.",
         "sr": "Ogromna, sporo pokretna reka zbijenog leda.",
         "uk": "Величезна повільна річка спресованого льоду.",
-        "pl": "Ogromna, wolno płynąca rzeka zbitego lodu."
+        "pl": "Ogromna, wolno płynąca rzeka zbitego lodu.",
+        "bg": "Огромна, бавно движеща се река от уплътнен лед."
       }
     },
     "iceberg": {
@@ -2617,7 +2755,8 @@
         "sq": "Ajsberg",
         "sr": "Santa leda",
         "uk": "Айсберг",
-        "pl": "Góra lodowa"
+        "pl": "Góra lodowa",
+        "bg": "Айсберг"
       },
       "description": {
         "en": "Massive chunk of glacial ice floating in open water.",
@@ -2635,7 +2774,8 @@
         "sq": "Copë e madhe akulli akullnajor që noton në ujë të hapur.",
         "sr": "Ogroman komad glečerskog leda koji pluta na otvorenoj vodi.",
         "uk": "Величезна брила льодовикового льоду, що плаває у відкритій воді.",
-        "pl": "Ogromna bryła lodu lodowcowego unosząca się na otwartej wodzie."
+        "pl": "Ogromna bryła lodu lodowcowego unosząca się na otwartej wodzie.",
+        "bg": "Огромен къс ледников лед, плаващ в открита вода."
       }
     },
     "blizzard": {
@@ -2655,7 +2795,8 @@
         "sq": "Stuhi bore",
         "sr": "Mećava",
         "uk": "Хуртовина",
-        "pl": "Zamieć śnieżna"
+        "pl": "Zamieć śnieżna",
+        "bg": "Снежна Буря"
       },
       "description": {
         "en": "Violent storm of driving wind and snow.",
@@ -2673,7 +2814,8 @@
         "sq": "Stuhi e dhunshme me erë të fortë dhe borë.",
         "sr": "Žestoka oluja sa jakim vetrom i snegom.",
         "uk": "Люта буря з пронизливим вітром і снігом.",
-        "pl": "Gwałtowna burza z ostrym wiatrem i śniegiem."
+        "pl": "Gwałtowna burza z ostrym wiatrem i śniegiem.",
+        "bg": "Силна стихия от порой от вятър и сняг."
       }
     },
     "avalanche": {
@@ -2693,7 +2835,8 @@
         "sq": "Ortek",
         "sr": "Lavina",
         "uk": "Лавина",
-        "pl": "Lawina"
+        "pl": "Lawina",
+        "bg": "Лавина"
       },
       "description": {
         "en": "Sudden mass of snow, ice, and earth sliding down a mountainside.",
@@ -2711,7 +2854,8 @@
         "sq": "Masë e papritur bore, akulli dhe dheu që rrëshqet nga shpati i malit.",
         "sr": "Iznenadna masa snega, leda i zemlje koja klizi niz padinu planine.",
         "uk": "Раптова маса снігу, льоду та землі, що сповзає по схилу гори.",
-        "pl": "Nagła masa śniegu, lodu i ziemi zsuwająca się po zboczu góry."
+        "pl": "Nagła masa śniegu, lodu i ziemi zsuwająca się po zboczu góry.",
+        "bg": "Внезапна маса от сняг, лед и пръст, свличаща се по планински склон."
       }
     }
   }
