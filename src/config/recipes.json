@@ -39,5 +39,16 @@
   "axe+rock": "pickaxe",
   "mountain+pickaxe": "salt_crystal",
   "water+water": "lake",
-  "lake+salt_crystal": "ocean"
+  "lake+salt_crystal": "ocean",
+  "water+wood": "paper",
+  "air+earth": "animal",
+  "animal+fire": "leather",
+  "leather+paper": "book",
+  "gold+metal": "ring",
+  "glass+silver": "mirror",
+  "life+paper": "homework",
+  "ice+ice": "glacier",
+  "glacier+water": "iceberg",
+  "ice+storm": "blizzard",
+  "blizzard+earth": "avalanche"
 }

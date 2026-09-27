@@ -11,6 +11,7 @@ import {
   PanResponder,
   LayoutChangeEvent,
   Animated,
+  useWindowDimensions,
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -18,9 +19,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import elementsData from './src/config/elements.json';
 import recipesData from './src/config/recipes.json';
 import translationsData from './src/config/translations.json';
-import { ElementItem, ActiveCanvasElement, RecipeDictionary, ActiveCombinationAnimation } from './src/types/game';
-import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition, findHint } from './src/utils/gameLogic';
+import { ElementItem, ActiveCanvasElement, RecipeDictionary, ActiveCombinationAnimation, IconLayer } from './src/types/game';
+import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './src/utils/gameLogic';
 import { CombinationEffect } from './src/components/CombinationEffect';
+import { ElementAura } from './src/components/ElementAura';
 import { playCombinationSound } from './src/utils/audio';
 
 const STORAGE_KEYS = {
@@ -29,9 +31,9 @@ const STORAGE_KEYS = {
   LANGUAGE: '@elemental_language',
 };
 
-const DEFAULT_STARTING_ELEMENTS = [
-  'earth', 'air', 'fire', 'water', 'sand', 'lightning', 'ice', 'metal', 'wood', 'crude_oil'
-];
+const DEFAULT_STARTING_ELEMENTS = (elementsData as ElementItem[])
+  .filter(el => el.category === 'basic')
+  .map(el => el.id);
 
 const LANGUAGES = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
@@ -40,14 +42,29 @@ const LANGUAGES = [
   { code: 'la', label: 'Latina', flag: '🏛️' },
   { code: 'it', label: 'Italiano', flag: '🇮🇹' },
   { code: 'fr', label: 'Français', flag: '🇫🇷' },
+  { code: 'es', label: 'Español', flag: '🇪🇸' },
+  { code: 'pt', label: 'Português', flag: '🇵🇹' },
+  { code: 'ja', label: '日本語', flag: '🇯🇵' },
+  { code: 'zh', label: '中文', flag: '🇨🇳' },
+  { code: 'ru', label: 'Русский', flag: '🇷🇺' },
+  { code: 'ko', label: '한국어', flag: '🇰🇷' },
+  { code: 'sq', label: 'Shqip', flag: '🇦🇱' },
+  { code: 'sr', label: 'Српски', flag: '🇷🇸' },
+  { code: 'uk', label: 'Українська', flag: '🇺🇦' },
+  { code: 'pl', label: 'Polski', flag: '🇵🇱' },
+  { code: 'bg', label: 'Български', flag: '🇧🇬' },
 ] as const;
 
 type Language = typeof LANGUAGES[number]['code'];
 
 // Helper: Custom SVG Icon Renderer
-const ElementIcon = ({ path, color, size = 32 }: { path: string; color: string; size?: number }) => (
+// Renders `layers` (multiple fills, e.g. a wooden handle plus a metal head) when
+// provided; otherwise falls back to the single path/color pair.
+const ElementIcon = ({ path, color, size = 32, layers }: { path: string; color: string; size?: number; layers?: IconLayer[] }) => (
   <Svg width={size} height={size} viewBox="0 0 24 24">
-    <Path d={path} fill={color} />
+    {layers && layers.length > 0
+      ? layers.map((layer, i) => <Path key={i} d={layer.svgPath} fill={layer.color} />)
+      : <Path d={path} fill={color} />}
   </Svg>
 );
 
@@ -91,18 +108,27 @@ const DraggableCanvasItem = ({
     }
   }, [element.isNew]);
 
+  // PanResponder is created once via useRef, so its callbacks must not close over
+  // props/state directly (they'd freeze at this item's first mount, e.g. when
+  // rehydrated from storage before canvasLayout has been measured). Route through
+  // a ref that's refreshed every render so handlers always see current values.
+  const handlersRef = useRef({ onDragStart, onDragMove, onDragRelease });
+  useEffect(() => {
+    handlersRef.current = { onDragStart, onDragMove, onDragRelease };
+  });
+
   const panResponder = useRef(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: () => {
-        onDragStart(element.instanceId, lastPosition.current.x, lastPosition.current.y);
+        handlersRef.current.onDragStart(element.instanceId, lastPosition.current.x, lastPosition.current.y);
       },
       onPanResponderMove: (evt, gestureState) => {
-        onDragMove(element.instanceId, gestureState.dx, gestureState.dy);
+        handlersRef.current.onDragMove(element.instanceId, gestureState.dx, gestureState.dy);
       },
       onPanResponderRelease: (evt, gestureState) => {
-        onDragRelease(element.instanceId, lastPosition.current.x, lastPosition.current.y);
+        handlersRef.current.onDragRelease(element.instanceId, lastPosition.current.x, lastPosition.current.y);
       },
     })
   ).current;
@@ -122,7 +148,8 @@ const DraggableCanvasItem = ({
         item.isFinal && styles.finalStateGlow,
       ]}
     >
-      <ElementIcon path={item.svgPath} color={item.color} size={28} />
+      <ElementAura elementId={item.id} />
+      <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={28} />
       <Text style={styles.canvasElementText} numberOfLines={1}>
         {name}
       </Text>
@@ -130,9 +157,16 @@ const DraggableCanvasItem = ({
   );
 };
 
+// Below this viewport width, the sidebar drops beneath the canvas and the
+// inventory switches from a list to a compact wrapping grid.
+const NARROW_BREAKPOINT = 700;
+
 export default function App() {
   const elements = elementsData as ElementItem[];
   const recipes = recipesData as RecipeDictionary;
+
+  const { width: windowWidth } = useWindowDimensions();
+  const isNarrow = windowWidth < NARROW_BREAKPOINT;
 
   // Game States
   const [discoveredIds, setDiscoveredIds] = useState<string[]>(DEFAULT_STARTING_ELEMENTS);
@@ -153,8 +187,8 @@ export default function App() {
   // Highlight Discovery Modal State
   const [discoveredElement, setDiscoveredElement] = useState<ElementItem | null>(null);
 
-  // Tip / Hint Modal State: pair of ingredients to try next, or 'none' when nothing is left to hint at
-  const [hintPair, setHintPair] = useState<{ idA: string; idB: string } | 'none' | null>(null);
+  // Reset Game Confirmation Modal State
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
 
   // Keep track of canvas sizing for containment checks
   const [canvasLayout, setCanvasLayout] = useState({ x: 0, y: 0, width: 0, height: 0 });
@@ -190,7 +224,15 @@ export default function App() {
         const storedLang = await AsyncStorage.getItem(STORAGE_KEYS.LANGUAGE);
         
         if (storedDiscovered) {
-          setDiscoveredIds(JSON.parse(storedDiscovered));
+          const parsedDiscovered: string[] = JSON.parse(storedDiscovered);
+          const missingBasics = DEFAULT_STARTING_ELEMENTS.filter(id => !parsedDiscovered.includes(id));
+          const mergedDiscovered = missingBasics.length > 0
+            ? [...parsedDiscovered, ...missingBasics]
+            : parsedDiscovered;
+          setDiscoveredIds(mergedDiscovered);
+          if (missingBasics.length > 0) {
+            await AsyncStorage.setItem(STORAGE_KEYS.DISCOVERED, JSON.stringify(mergedDiscovered));
+          }
         } else {
           // Setup defaults
           await AsyncStorage.setItem(STORAGE_KEYS.DISCOVERED, JSON.stringify(DEFAULT_STARTING_ELEMENTS));
@@ -258,9 +300,13 @@ export default function App() {
     await AsyncStorage.setItem(STORAGE_KEYS.CANVAS, JSON.stringify([]));
   };
 
-  const handleRequestTip = () => {
-    const hint = findHint(discoveredIds, recipes);
-    setHintPair(hint ? { idA: hint.idA, idB: hint.idB } : 'none');
+  const handleRequestResetGame = () => {
+    setShowResetConfirm(true);
+  };
+
+  const handleConfirmResetGame = async () => {
+    setShowResetConfirm(false);
+    await handleResetGame();
   };
 
   const handleCombinationComplete = (animId: string) => {
@@ -513,23 +559,20 @@ export default function App() {
       <StatusBar style="light" />
       
       {/* Header Panel */}
-      <View style={styles.header}>
+      <View style={[styles.header, isNarrow && styles.headerNarrow]}>
         <View>
-          <Text style={styles.title}>{t('title')}</Text>
+          <Text style={[styles.title, isNarrow && styles.titleNarrow]}>{t('title')}</Text>
           <Text style={styles.subtitle}>
             {t('discovered')}: {discoveredIds.length} / {elements.length}
           </Text>
         </View>
-        <View style={styles.headerButtons}>
+        <View style={[styles.headerButtons, isNarrow && styles.headerButtonsNarrow]}>
           <TouchableOpacity style={[styles.glassButton, styles.langButton]} onPress={() => setShowLangMenu(true)}>
             <Text style={styles.langButtonText}>
               {LANGUAGES.find(l => l.code === currentLanguage)?.flag} {currentLanguage.toUpperCase()}
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.glassButton, styles.tipButton]} onPress={handleRequestTip}>
-            <Text style={styles.tipButtonText}>💡 {t('tipButton')}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.glassButton, styles.resetButton]} onPress={handleResetGame}>
+          <TouchableOpacity style={[styles.glassButton, styles.resetButton]} onPress={handleRequestResetGame}>
             <Text style={styles.resetButtonText}>{t('resetGame')}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.glassButton, styles.clearButton]} onPress={handleClearCanvas}>
@@ -538,11 +581,11 @@ export default function App() {
         </View>
       </View>
 
-      {/* Main Split Screen */}
-      <View style={styles.mainLayout}>
-        
+      {/* Main Split Screen (stacks vertically on narrow screens) */}
+      <View style={[styles.mainLayout, isNarrow && styles.mainLayoutNarrow]}>
+
         {/* Workspace Canvas (Left Area) */}
-        <View style={styles.canvasContainer} onLayout={onCanvasLayout}>
+        <View style={[styles.canvasContainer, isNarrow && styles.canvasContainerNarrow]} onLayout={onCanvasLayout}>
           {canvasElements.length === 0 ? (
             <View style={styles.emptyCanvasHint}>
               <Text style={styles.hintText}>{t('workspaceCanvas')}</Text>
@@ -603,7 +646,7 @@ export default function App() {
         </View>
 
         {/* Right-hand Sidebar (Discovery Inventory with Deep Neon Green Theme) */}
-        <View style={styles.sidebar}>
+        <View style={[styles.sidebar, isNarrow && styles.sidebarNarrow]}>
           <TextInput
             style={styles.searchBar}
             placeholder={t('searchPlaceholder')}
@@ -631,26 +674,30 @@ export default function App() {
           </View>
 
           {/* Scrollable grid listing discovered elements */}
-          <ScrollView 
-            contentContainerStyle={styles.sidebarGrid}
+          <ScrollView
+            contentContainerStyle={[styles.sidebarGrid, isNarrow && styles.sidebarGridNarrow]}
             showsVerticalScrollIndicator={false}
           >
             {filteredElements.map((item) => {
               const trans = getElementTranslation(item.id);
               return (
-                <TouchableOpacity 
-                  key={item.id} 
+                <TouchableOpacity
+                  key={item.id}
                   style={[
-                    styles.sidebarCard, 
+                    styles.sidebarCard,
+                    isNarrow && styles.sidebarCardNarrow,
                     item.isFinal && styles.finalSidebarCard
                   ]}
                   activeOpacity={0.7}
                   onPress={() => handleSpawnElement(item.id)}
                 >
                   <View style={[styles.iconWrapper, { backgroundColor: `${item.color}18` }]}>
-                    <ElementIcon path={item.svgPath} color={item.color} size={22} />
+                    <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={22} />
                   </View>
-                  <Text style={styles.sidebarCardText} numberOfLines={1}>
+                  <Text
+                    style={[styles.sidebarCardText, isNarrow && styles.sidebarCardTextNarrow]}
+                    numberOfLines={1}
+                  >
                     {trans.name}
                   </Text>
                   {item.isFinal && <Text style={styles.finalBadge}>{t('finalBadge')}</Text>}
@@ -674,7 +721,7 @@ export default function App() {
               <Text style={styles.modalHeader}>{t('newDiscovery')}</Text>
               
               <View style={[styles.modalIconWrapper, { backgroundColor: `${discoveredElement.color}15`, shadowColor: discoveredElement.color }]}>
-                <ElementIcon path={discoveredElement.svgPath} color={discoveredElement.color} size={56} />
+                <ElementIcon path={discoveredElement.svgPath} color={discoveredElement.color} layers={discoveredElement.iconLayers} size={56} />
               </View>
 
               <Text style={[styles.modalTitle, { color: discoveredElement.color }]}>
@@ -698,59 +745,31 @@ export default function App() {
         );
       })()}
 
-      {/* Tip / Hint Modal */}
-      {hintPair && (() => {
-        if (hintPair === 'none') {
-          return (
-            <View style={styles.modalOverlay}>
-              <View style={styles.modalContent}>
-                <Text style={styles.modalHeader}>{t('hintTitle')}</Text>
-                <Text style={styles.modalDescription}>{t('noHintAvailable')}</Text>
-                <TouchableOpacity style={[styles.modalButton, { borderColor: '#00E676' }]} onPress={() => setHintPair(null)}>
-                  <Text style={[styles.modalButtonText, { color: '#00E676' }]}>{t('awesome')}</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          );
-        }
+      {/* Reset Game Confirmation Modal */}
+      {showResetConfirm && (
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalHeader}>{t('confirmResetTitle')}</Text>
+            <Text style={styles.modalDescription}>{t('confirmResetDescription')}</Text>
 
-        const itemA = elements.find(el => el.id === hintPair.idA);
-        const itemB = elements.find(el => el.id === hintPair.idB);
-        if (!itemA || !itemB) return null;
-        const transA = getElementTranslation(itemA.id);
-        const transB = getElementTranslation(itemB.id);
+            <View style={styles.confirmButtonRow}>
+              <TouchableOpacity
+                style={[styles.confirmButton, { borderColor: '#00E676' }]}
+                onPress={handleConfirmResetGame}
+              >
+                <Text style={[styles.modalButtonText, { color: '#00E676' }]}>{t('yes')}</Text>
+              </TouchableOpacity>
 
-        return (
-          <View style={styles.modalOverlay}>
-            <View style={styles.modalContent}>
-              <Text style={styles.modalHeader}>{t('hintTitle')}</Text>
-              <Text style={styles.modalDescription}>{t('hintDescription')}</Text>
-
-              <View style={styles.hintPairRow}>
-                <View style={styles.hintPairItem}>
-                  <View style={[styles.modalIconWrapper, styles.hintIconWrapper, { backgroundColor: `${itemA.color}15`, shadowColor: itemA.color }]}>
-                    <ElementIcon path={itemA.svgPath} color={itemA.color} size={36} />
-                  </View>
-                  <Text style={[styles.hintItemName, { color: itemA.color }]}>{transA.name}</Text>
-                </View>
-
-                <Text style={styles.hintPlus}>+</Text>
-
-                <View style={styles.hintPairItem}>
-                  <View style={[styles.modalIconWrapper, styles.hintIconWrapper, { backgroundColor: `${itemB.color}15`, shadowColor: itemB.color }]}>
-                    <ElementIcon path={itemB.svgPath} color={itemB.color} size={36} />
-                  </View>
-                  <Text style={[styles.hintItemName, { color: itemB.color }]}>{transB.name}</Text>
-                </View>
-              </View>
-
-              <TouchableOpacity style={[styles.modalButton, { borderColor: '#00E676' }]} onPress={() => setHintPair(null)}>
-                <Text style={[styles.modalButtonText, { color: '#00E676' }]}>{t('awesome')}</Text>
+              <TouchableOpacity
+                style={[styles.confirmButton, { borderColor: '#EF5350' }]}
+                onPress={() => setShowResetConfirm(false)}
+              >
+                <Text style={[styles.modalButtonText, { color: '#EF5350' }]}>{t('no')}</Text>
               </TouchableOpacity>
             </View>
           </View>
-        );
-      })()}
+        </View>
+      )}
 
       {/* Language Selection Modal */}
       {showLangMenu && (
@@ -758,7 +777,7 @@ export default function App() {
           <View style={styles.modalContent}>
             <Text style={styles.modalHeader}>{t('selectLanguage')}</Text>
             
-            <View style={styles.langList}>
+            <ScrollView nativeID="lang-scroll" style={styles.langScroll} contentContainerStyle={styles.langList} showsVerticalScrollIndicator={true}>
               {LANGUAGES.map((lang) => (
                 <TouchableOpacity
                   key={lang.code}
@@ -776,7 +795,7 @@ export default function App() {
                   )}
                 </TouchableOpacity>
               ))}
-            </View>
+            </ScrollView>
 
             <TouchableOpacity 
               style={styles.langCloseButton} 
@@ -801,6 +820,8 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    rowGap: 8,
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 16,
@@ -809,12 +830,19 @@ const styles = StyleSheet.create({
     borderBottomColor: '#1A2332',
     backgroundColor: '#0B0E14',
   },
+  headerNarrow: {
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+  },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#ECEFF1',
     letterSpacing: 0.5,
     userSelect: 'none' as any,
+  },
+  titleNarrow: {
+    fontSize: 16,
   },
   subtitle: {
     fontSize: 12,
@@ -825,7 +853,13 @@ const styles = StyleSheet.create({
   },
   headerButtons: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-end',
     gap: 8,
+  },
+  headerButtonsNarrow: {
+    width: '100%',
+    gap: 6,
   },
   glassButton: {
     paddingVertical: 6,
@@ -833,16 +867,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     backgroundColor: 'rgba(255,255,255,0.03)',
-  },
-  tipButton: {
-    borderColor: 'rgba(255, 213, 79, 0.4)',
-    backgroundColor: 'rgba(255, 213, 79, 0.05)',
-  },
-  tipButtonText: {
-    color: '#FFD54F',
-    fontSize: 12,
-    fontWeight: '600',
-    userSelect: 'none' as any,
   },
   resetButton: {
     borderColor: 'rgba(255, 255, 255, 0.15)',
@@ -867,12 +891,18 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
   },
+  mainLayoutNarrow: {
+    flexDirection: 'column',
+  },
   // Canvas Styles
   canvasContainer: {
     flex: 2.2, // Narrowed sidebar gives canvas about 73% width
     backgroundColor: '#0E131F',
     position: 'relative',
     overflow: 'hidden',
+  },
+  canvasContainerNarrow: {
+    flex: 1.3, // Stacked layout: canvas keeps the larger share of vertical space
   },
   vectorOverlay: {
     position: 'absolute',
@@ -964,6 +994,13 @@ const styles = StyleSheet.create({
     elevation: 8,
     padding: 8,
   },
+  sidebarNarrow: {
+    flex: 1, // Stacked below the canvas; grid layout uses width efficiently
+    borderLeftWidth: 0,
+    borderTopWidth: 3,
+    borderTopColor: '#00E676',
+    shadowOffset: { width: 0, height: -2 },
+  },
   searchBar: {
     height: 38,
     backgroundColor: '#040D07',
@@ -1012,6 +1049,11 @@ const styles = StyleSheet.create({
     gap: 6,
     paddingBottom: 20,
   },
+  sidebarGridNarrow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
+  },
   sidebarCard: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -1021,6 +1063,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 6,
     userSelect: 'none' as any,
+  },
+  sidebarCardNarrow: {
+    flexDirection: 'column',
+    width: '31%',
+    paddingVertical: 10,
+    justifyContent: 'center',
   },
   finalSidebarCard: {
     borderColor: 'rgba(255,213,79,0.3)',
@@ -1039,6 +1087,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginLeft: 8,
     flex: 1,
+  },
+  sidebarCardTextNarrow: {
+    marginLeft: 0,
+    marginTop: 6,
+    flex: 0,
+    textAlign: 'center',
   },
   finalBadge: {
     fontSize: 8,
@@ -1118,33 +1172,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     userSelect: 'none' as any,
   },
-  hintPairRow: {
+  confirmButtonRow: {
     flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 12,
+  },
+  confirmButton: {
+    flex: 1,
+    minWidth: 96,
+    paddingVertical: 8,
+    paddingHorizontal: 20,
+    borderRadius: 999,
+    borderWidth: 1.5,
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 16,
-    marginBottom: 24,
-  },
-  hintPairItem: {
-    alignItems: 'center',
-  },
-  hintIconWrapper: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
-    marginBottom: 8,
-  },
-  hintItemName: {
-    fontSize: 13,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    userSelect: 'none' as any,
-  },
-  hintPlus: {
-    color: '#90A4AE',
-    fontSize: 20,
-    fontWeight: 'bold',
-    userSelect: 'none' as any,
+    backgroundColor: 'rgba(255,255,255,0.02)',
   },
   modalButton: {
     width: '100%',
@@ -1170,10 +1212,14 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     userSelect: 'none' as any,
   },
+  langScroll: {
+    width: '100%',
+    maxHeight: 320,
+    marginBottom: 20,
+  },
   langList: {
     width: '100%',
     gap: 8,
-    marginBottom: 20,
   },
   langItem: {
     flexDirection: 'row',
