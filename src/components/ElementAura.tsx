@@ -174,6 +174,8 @@ const FlameLayer = ({
   duration,
   delay,
   flickerRange,
+  opacityRange,
+  swayDeg,
   mirrored,
 }: {
   color: string;
@@ -184,15 +186,17 @@ const FlameLayer = ({
   duration: number;
   delay: number;
   flickerRange: [number, number];
+  opacityRange: [number, number];
+  swayDeg: number;
   mirrored?: boolean;
 }) => {
   const progress = usePingPong(duration, delay);
   const scaleY = progress.interpolate({ inputRange: [0, 1], outputRange: flickerRange });
   const rotate = progress.interpolate({
     inputRange: [0, 1],
-    outputRange: mirrored ? ['4deg', '-4deg'] : ['-4deg', '4deg'],
+    outputRange: mirrored ? [`${swayDeg}deg`, `${-swayDeg}deg`] : [`${-swayDeg}deg`, `${swayDeg}deg`],
   });
-  const opacity = progress.interpolate({ inputRange: [0, 1], outputRange: [0.82, 1] });
+  const opacity = progress.interpolate({ inputRange: [0, 1], outputRange: opacityRange });
 
   return (
     <Animated.View
@@ -212,40 +216,58 @@ const FlameLayer = ({
   );
 };
 
-// Flames climb the left/right edges of the tile so the icon and label stay clear.
+// Big, translucent flames that start low inside the tile and dance up past its left/right sides,
+// staying see-through so the icon and label underneath remain legible.
 const FlameAura = ({ spec }: { spec: AuraSpec }) => (
   <>
-    <FlameLayer color={spec.color} width={26} height={34} left={8} bottom={6} duration={880} delay={0} flickerRange={[0.88, 1.1]} />
+    <FlameLayer
+      color={spec.color}
+      width={60}
+      height={84}
+      left={2}
+      bottom={26}
+      duration={950}
+      delay={0}
+      flickerRange={[0.9, 1.12]}
+      opacityRange={[0.32, 0.5]}
+      swayDeg={7}
+    />
     <FlameLayer
       color={spec.secondaryColor || spec.color}
-      width={15}
-      height={20}
-      left={13}
-      bottom={6}
-      duration={600}
-      delay={90}
-      flickerRange={[0.82, 1.18]}
+      width={36}
+      height={52}
+      left={14}
+      bottom={22}
+      duration={640}
+      delay={120}
+      flickerRange={[0.85, 1.2]}
+      opacityRange={[0.35, 0.55]}
+      swayDeg={9}
     />
     <FlameLayer
       color={spec.color}
-      width={26}
-      height={34}
-      left={AURA_SIZE - 8 - 26}
-      bottom={6}
-      duration={780}
-      delay={220}
-      flickerRange={[0.88, 1.1]}
+      width={60}
+      height={84}
+      left={AURA_SIZE - 2 - 60}
+      bottom={26}
+      duration={880}
+      delay={260}
+      flickerRange={[0.9, 1.12]}
+      opacityRange={[0.32, 0.5]}
+      swayDeg={7}
       mirrored
     />
     <FlameLayer
       color={spec.secondaryColor || spec.color}
-      width={15}
-      height={20}
-      left={AURA_SIZE - 13 - 15}
-      bottom={6}
-      duration={560}
-      delay={300}
-      flickerRange={[0.82, 1.18]}
+      width={36}
+      height={52}
+      left={AURA_SIZE - 14 - 36}
+      bottom={22}
+      duration={580}
+      delay={340}
+      flickerRange={[0.85, 1.2]}
+      opacityRange={[0.35, 0.55]}
+      swayDeg={9}
       mirrored
     />
   </>
