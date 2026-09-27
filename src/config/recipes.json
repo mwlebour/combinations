@@ -37,7 +37,9 @@
   "brick+wood": "house",
   "crude_oil+fire": "plastic",
   "water+wood": "paper",
-  "earth+life": "animal",
+  "air+earth": "animal",
   "animal+fire": "leather",
-  "leather+paper": "book"
+  "leather+paper": "book",
+  "gold+metal": "ring",
+  "glass+silver": "mirror"
 }

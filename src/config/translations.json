@@ -128,37 +128,37 @@
       "it": "Seleziona Lingua",
       "fr": "Choisir la langue"
     },
-    "tipButton": {
-      "en": "Tip",
-      "hu": "Tipp",
-      "de": "Tipp",
-      "la": "Consilium",
-      "it": "Suggerimento",
-      "fr": "Astuce"
+    "confirmResetTitle": {
+      "en": "Reset Game?",
+      "hu": "Visszaállítod a játékot?",
+      "de": "Spiel zurücksetzen?",
+      "la": "Restituere ludum?",
+      "it": "Azzerare il gioco?",
+      "fr": "Réinitialiser la partie ?"
     },
-    "hintTitle": {
-      "en": "HERE'S A TIP",
-      "hu": "ITT EGY TIPP",
-      "de": "HIER IST EIN TIPP",
-      "la": "ECCE CONSILIUM",
-      "it": "ECCO UN SUGGERIMENTO",
-      "fr": "VOICI UNE ASTUCE"
+    "confirmResetDescription": {
+      "en": "Are you sure you want to reset the game? All discovered elements and progress will be lost.",
+      "hu": "Biztosan visszaállítod a játékot? Minden felfedezett elem és haladás elvész.",
+      "de": "Möchtest du das Spiel wirklich zurücksetzen? Alle entdeckten Elemente und dein Fortschritt gehen verloren.",
+      "la": "Certusne es te ludum restituere velle? Omnia elementa reperta et progressus amittentur.",
+      "it": "Sei sicuro di voler azzerare il gioco? Tutti gli elementi scoperti e i progressi andranno persi.",
+      "fr": "Voulez-vous vraiment réinitialiser la partie ? Tous les éléments découverts et votre progression seront perdus."
     },
-    "hintDescription": {
-      "en": "Try combining these two:",
-      "hu": "Próbáld ezt a kettőt kombinálni:",
-      "de": "Versuch diese zwei zu kombinieren:",
-      "la": "Coniunge haec duo:",
-      "it": "Prova a combinare questi due:",
-      "fr": "Essaie de combiner ces deux-là :"
+    "yes": {
+      "en": "Yes",
+      "hu": "Igen",
+      "de": "Ja",
+      "la": "Etiam",
+      "it": "Sì",
+      "fr": "Oui"
     },
-    "noHintAvailable": {
-      "en": "No hints left — you've found every combination!",
-      "hu": "Nincs több tipp — mindent felfedeztél!",
-      "de": "Keine Tipps mehr – du hast alles entdeckt!",
-      "la": "Nullum consilium restat — omnia repperisti!",
-      "it": "Nessun suggerimento rimasto: hai scoperto tutto!",
-      "fr": "Plus d'astuce — tu as tout découvert !"
+    "no": {
+      "en": "No",
+      "hu": "Nem",
+      "de": "Nein",
+      "la": "Non",
+      "it": "No",
+      "fr": "Non"
     }
   },
   "elements": {
@@ -243,6 +243,28 @@
         "la": "Crassus, inflammabilis liquor hydrocarbonicus ex alto sub terra haustus.",
         "it": "Denso idrocarburo liquido e infiammabile estratto dal sottosuolo profondo.",
         "fr": "Hydrocarbure liquide épais et inflammable extrait des profondeurs du sous-sol."
+      }
+    },
+    "gold": {
+      "name": { "en": "Gold", "hu": "Arany", "de": "Gold", "la": "Aurum", "it": "Oro", "fr": "Or" },
+      "description": {
+        "en": "Precious, lustrous metal prized for its rarity.",
+        "hu": "Értékes, fényes fém, ritkasága miatt nagyra becsült.",
+        "de": "Kostbares, glänzendes Metall, geschätzt für seine Seltenheit.",
+        "la": "Pretiosum, nitidum metallum ob raritatem suam magni aestimatum.",
+        "it": "Metallo prezioso e lucente, apprezzato per la sua rarità.",
+        "fr": "Métal précieux et brillant, apprécié pour sa rareté."
+      }
+    },
+    "silver": {
+      "name": { "en": "Silver", "hu": "Ezüst", "de": "Silber", "la": "Argentum", "it": "Argento", "fr": "Argent" },
+      "description": {
+        "en": "Pale, reflective metal valued for its shine.",
+        "hu": "Sápadt, fényvisszaverő fém, csillogásáért becsült.",
+        "de": "Blasses, reflektierendes Metall, geschätzt für seinen Glanz.",
+        "la": "Pallidum, splendens metallum ob nitorem suum aestimatum.",
+        "it": "Metallo pallido e riflettente, apprezzato per la sua lucentezza.",
+        "fr": "Métal pâle et réfléchissant, apprécié pour son éclat."
       }
     },
     "sand": {
@@ -1008,12 +1030,12 @@
     "animal": {
       "name": { "en": "Animal", "hu": "Állat", "de": "Tier", "la": "Animal", "it": "Animale", "fr": "Animal" },
       "description": {
-        "en": "Living creature roaming the land.",
-        "hu": "A földön kóborló élőlény.",
-        "de": "Lebewesen, das über das Land streift.",
-        "la": "Creatura vivens per terram vagans.",
-        "it": "Creatura vivente che vaga sulla terra.",
-        "fr": "Créature vivante errant sur la terre."
+        "en": "Breath given to earth, formed into a living creature.",
+        "hu": "A földnek adott lélegzet, amely élőlénnyé formálódott.",
+        "de": "Der Erde eingehauchter Atem, zu einem Lebewesen geformt.",
+        "la": "Spiritus terrae datus, in creaturam viventem formatus.",
+        "it": "Respiro donato alla terra, plasmato in una creatura vivente.",
+        "fr": "Souffle donné à la terre, façonné en une créature vivante."
       }
     },
     "leather": {
@@ -1036,6 +1058,28 @@
         "la": "Paginae chartae in tegumento coriaceo ligatae.",
         "it": "Pagine di carta legate in una copertina di pelle.",
         "fr": "Pages de papier reliées dans une couverture en cuir."
+      }
+    },
+    "ring": {
+      "name": { "en": "Ring", "hu": "Gyűrű", "de": "Ring", "la": "Anulus", "it": "Anello", "fr": "Bague" },
+      "description": {
+        "en": "Band of precious metal worn as jewelry.",
+        "hu": "Értékes fémből készült ékszer, amelyet ujjon viselnek.",
+        "de": "Aus wertvollem Metall gefertigter Schmuck.",
+        "la": "Vinculum ex metallo pretioso tamquam ornamentum gestatum.",
+        "it": "Fascia di metallo prezioso indossata come gioiello.",
+        "fr": "Anneau de métal précieux porté comme bijou."
+      }
+    },
+    "mirror": {
+      "name": { "en": "Mirror", "hu": "Tükör", "de": "Spiegel", "la": "Speculum", "it": "Specchio", "fr": "Miroir" },
+      "description": {
+        "en": "Polished glass backed with reflective silver.",
+        "hu": "Csiszolt üveg, ezüst tükröződő réteggel bevonva.",
+        "de": "Poliertes Glas mit reflektierender Silberschicht.",
+        "la": "Vitrum politum argento nitido tectum.",
+        "it": "Vetro levigato rivestito da uno strato riflettente d'argento.",
+        "fr": "Verre poli recouvert d'une couche d'argent réfléchissante."
       }
     }
   }
