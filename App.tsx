@@ -22,6 +22,7 @@ import translationsData from './src/config/translations.json';
 import { ElementItem, ActiveCanvasElement, RecipeDictionary, ActiveCombinationAnimation } from './src/types/game';
 import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './src/utils/gameLogic';
 import { CombinationEffect } from './src/components/CombinationEffect';
+import { ElementAura } from './src/components/ElementAura';
 import { playCombinationSound } from './src/utils/audio';
 
 const STORAGE_KEYS = {
@@ -133,6 +134,7 @@ const DraggableCanvasItem = ({
         item.isFinal && styles.finalStateGlow,
       ]}
     >
+      <ElementAura elementId={item.id} />
       <ElementIcon path={item.svgPath} color={item.color} size={28} />
       <Text style={styles.canvasElementText} numberOfLines={1}>
         {name}
