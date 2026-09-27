@@ -12,7 +12,8 @@
       "ja": "元素の組み合わせ",
       "zh": "元素组合",
       "ru": "Комбинации Элементов",
-      "ko": "원소 조합"
+      "ko": "원소 조합",
+      "sq": "Kombinime Elementare"
     },
     "discovered": {
       "en": "Discovered",
@@ -26,7 +27,8 @@
       "ja": "発見済み",
       "zh": "已发现",
       "ru": "Открыто",
-      "ko": "발견됨"
+      "ko": "발견됨",
+      "sq": "Zbuluar"
     },
     "resetGame": {
       "en": "Reset Game",
@@ -40,7 +42,8 @@
       "ja": "ゲームをリセット",
       "zh": "重置游戏",
       "ru": "Сбросить Игру",
-      "ko": "게임 초기화"
+      "ko": "게임 초기화",
+      "sq": "Rifillo Lojën"
     },
     "clearBoard": {
       "en": "Clear Board",
@@ -54,7 +57,8 @@
       "ja": "盤面をクリア",
       "zh": "清空面板",
       "ru": "Очистить Поле",
-      "ko": "보드 지우기"
+      "ko": "보드 지우기",
+      "sq": "Pastro Tabelën"
     },
     "workspaceCanvas": {
       "en": "WORKSPACE CANVAS",
@@ -68,7 +72,8 @@
       "ja": "作業スペース",
       "zh": "工作台",
       "ru": "РАБОЧАЯ ОБЛАСТЬ",
-      "ko": "작업 공간"
+      "ko": "작업 공간",
+      "sq": "SIPËRFAQJA E PUNËS"
     },
     "dragHint": {
       "en": "Tap items in the right sidebar to spawn them. Drag and drop them onto each other to combine!",
@@ -82,7 +87,8 @@
       "ja": "右側のサイドバーの項目をタップして生成しましょう。ドラッグ&ドロップで重ねると組み合わせられます!",
       "zh": "点击右侧栏中的元素以生成它们。将它们拖到一起即可合成!",
       "ru": "Нажмите на элементы в боковой панели, чтобы создать их. Перетаскивайте их друг на друга, чтобы комбинировать!",
-      "ko": "오른쪽 사이드바의 항목을 탭하여 생성하세요. 서로 드래그 앤 드롭하여 조합해보세요!"
+      "ko": "오른쪽 사이드바의 항목을 탭하여 생성하세요. 서로 드래그 앤 드롭하여 조합해보세요!",
+      "sq": "Prek elementet në shiritin anësor djathtas për t'i krijuar. Tërhiqi mbi njëri-tjetrin për t'i kombinuar!"
     },
     "searchPlaceholder": {
       "en": "Search discovered...",
@@ -96,7 +102,8 @@
       "ja": "発見済みを検索...",
       "zh": "搜索已发现的元素...",
       "ru": "Поиск открытых...",
-      "ko": "발견한 항목 검색..."
+      "ko": "발견한 항목 검색...",
+      "sq": "Kërko të zbuluarat..."
     },
     "allTab": {
       "en": "All",
@@ -110,7 +117,8 @@
       "ja": "すべて",
       "zh": "全部",
       "ru": "Все",
-      "ko": "전체"
+      "ko": "전체",
+      "sq": "Të gjitha"
     },
     "basicTab": {
       "en": "Basic",
@@ -124,7 +132,8 @@
       "ja": "基本",
       "zh": "基础",
       "ru": "Базовые",
-      "ko": "기본"
+      "ko": "기본",
+      "sq": "Bazë"
     },
     "combinedTab": {
       "en": "Combined",
@@ -138,7 +147,8 @@
       "ja": "組み合わせ",
       "zh": "组合",
       "ru": "Составные",
-      "ko": "조합됨"
+      "ko": "조합됨",
+      "sq": "Të kombinuara"
     },
     "finalTab": {
       "en": "Final",
@@ -152,7 +162,8 @@
       "ja": "最終",
       "zh": "最终",
       "ru": "Финальные",
-      "ko": "최종"
+      "ko": "최종",
+      "sq": "Përfundimtare"
     },
     "noItems": {
       "en": "No items found",
@@ -166,7 +177,8 @@
       "ja": "アイテムが見つかりません",
       "zh": "未找到相关物品",
       "ru": "Ничего не найдено",
-      "ko": "항목을 찾을 수 없습니다"
+      "ko": "항목을 찾을 수 없습니다",
+      "sq": "Nuk u gjetën elemente"
     },
     "newDiscovery": {
       "en": "NEW DISCOVERY!",
@@ -180,7 +192,8 @@
       "ja": "新発見!",
       "zh": "新发现!",
       "ru": "НОВОЕ ОТКРЫТИЕ!",
-      "ko": "새로운 발견!"
+      "ko": "새로운 발견!",
+      "sq": "ZBULIM I RI!"
     },
     "awesome": {
       "en": "Awesome!",
@@ -194,7 +207,8 @@
       "ja": "やった!",
       "zh": "太棒了!",
       "ru": "Отлично!",
-      "ko": "멋져요!"
+      "ko": "멋져요!",
+      "sq": "Fantastike!"
     },
     "finalBadge": {
       "en": "Final",
@@ -208,7 +222,8 @@
       "ja": "最終",
       "zh": "最终",
       "ru": "Финал",
-      "ko": "최종"
+      "ko": "최종",
+      "sq": "Përfundimtare"
     },
     "selectLanguage": {
       "en": "Select Language",
@@ -222,7 +237,8 @@
       "ja": "言語を選択",
       "zh": "选择语言",
       "ru": "Выбрать язык",
-      "ko": "언어 선택"
+      "ko": "언어 선택",
+      "sq": "Zgjidh Gjuhën"
     },
     "tipButton": {
       "en": "Tip",
@@ -236,7 +252,8 @@
       "ja": "ヒント",
       "zh": "提示",
       "ru": "Подсказка",
-      "ko": "힌트"
+      "ko": "힌트",
+      "sq": "Këshillë"
     },
     "hintTitle": {
       "en": "HERE'S A TIP",
@@ -250,7 +267,8 @@
       "ja": "ヒントです",
       "zh": "这是一个提示",
       "ru": "ВОТ ПОДСКАЗКА",
-      "ko": "힌트가 있어요"
+      "ko": "힌트가 있어요",
+      "sq": "JA NJË KËSHILLË"
     },
     "hintDescription": {
       "en": "Try combining these two:",
@@ -264,7 +282,8 @@
       "ja": "この2つを組み合わせてみて:",
       "zh": "试试组合这两个:",
       "ru": "Попробуй скомбинировать эти два:",
-      "ko": "이 두 가지를 조합해보세요:"
+      "ko": "이 두 가지를 조합해보세요:",
+      "sq": "Provo të kombinosh këto dy:"
     },
     "noHintAvailable": {
       "en": "No hints left — you've found every combination!",
@@ -278,7 +297,8 @@
       "ja": "ヒントはもうありません — すべての組み合わせを発見しました!",
       "zh": "没有更多提示了——你已经发现了所有组合!",
       "ru": "Подсказок больше нет — вы нашли все комбинации!",
-      "ko": "더 이상 힌트가 없어요 — 모든 조합을 발견했습니다!"
+      "ko": "더 이상 힌트가 없어요 — 모든 조합을 발견했습니다!",
+      "sq": "Nuk ka më këshilla — i ke zbuluar të gjitha kombinimet!"
     },
     "confirmResetTitle": {
       "en": "Reset Game?",
@@ -292,7 +312,8 @@
       "ja": "ゲームをリセットしますか?",
       "zh": "重置游戏?",
       "ru": "Сбросить игру?",
-      "ko": "게임을 초기화할까요?"
+      "ko": "게임을 초기화할까요?",
+      "sq": "Të rifillojmë lojën?"
     },
     "confirmResetDescription": {
       "en": "Are you sure you want to reset the game? All discovered elements and progress will be lost.",
@@ -306,7 +327,8 @@
       "ja": "本当にゲームをリセットしますか?発見したすべての要素と進行状況が失われます。",
       "zh": "确定要重置游戏吗?所有已发现的元素和进度都将丢失。",
       "ru": "Вы уверены, что хотите сбросить игру? Все открытые элементы и прогресс будут утеряны.",
-      "ko": "정말로 게임을 초기화하시겠습니까? 발견한 모든 요소와 진행 상황이 사라집니다."
+      "ko": "정말로 게임을 초기화하시겠습니까? 발견한 모든 요소와 진행 상황이 사라집니다.",
+      "sq": "A je i sigurt që dëshiron ta rifillosh lojën? Të gjitha elementet e zbuluara dhe përparimi do të humbasin."
     },
     "yes": {
       "en": "Yes",
@@ -320,7 +342,8 @@
       "ja": "はい",
       "zh": "是",
       "ru": "Да",
-      "ko": "예"
+      "ko": "예",
+      "sq": "Po"
     },
     "no": {
       "en": "No",
@@ -334,7 +357,8 @@
       "ja": "いいえ",
       "zh": "否",
       "ru": "Нет",
-      "ko": "아니오"
+      "ko": "아니오",
+      "sq": "Jo"
     }
   },
   "elements": {
@@ -351,7 +375,8 @@
         "ja": "地",
         "zh": "土",
         "ru": "Земля",
-        "ko": "흙"
+        "ko": "흙",
+        "sq": "Tokë"
       },
       "description": {
         "en": "Representative of land, stability, soil.",
@@ -365,7 +390,8 @@
         "ja": "大地、安定、土壌を象徴する。",
         "zh": "代表大地、稳定与土壤。",
         "ru": "Символ суши, стабильности и почвы.",
-        "ko": "대지, 안정, 토양을 상징한다."
+        "ko": "대지, 안정, 토양을 상징한다.",
+        "sq": "Përfaqëson dheun, stabilitetin, tokën."
       }
     },
     "air": {
@@ -381,7 +407,8 @@
         "ja": "風",
         "zh": "风",
         "ru": "Воздух",
-        "ko": "공기"
+        "ko": "공기",
+        "sq": "Ajër"
       },
       "description": {
         "en": "Representative of atmosphere, wind, movement.",
@@ -395,7 +422,8 @@
         "ja": "大気、風、動きを象徴する。",
         "zh": "代表大气、风与运动。",
         "ru": "Символ атмосферы, ветра и движения.",
-        "ko": "대기, 바람, 움직임을 상징한다."
+        "ko": "대기, 바람, 움직임을 상징한다.",
+        "sq": "Përfaqëson atmosferën, erën, lëvizjen."
       }
     },
     "fire": {
@@ -411,7 +439,8 @@
         "ja": "火",
         "zh": "火",
         "ru": "Огонь",
-        "ko": "불"
+        "ko": "불",
+        "sq": "Zjarr"
       },
       "description": {
         "en": "Representative of heat, energy, light.",
@@ -425,7 +454,8 @@
         "ja": "熱、エネルギー、光を象徴する。",
         "zh": "代表热量、能量与光。",
         "ru": "Символ жара, энергии и света.",
-        "ko": "열기, 에너지, 빛을 상징한다."
+        "ko": "열기, 에너지, 빛을 상징한다.",
+        "sq": "Përfaqëson nxehtësinë, energjinë, dritën."
       }
     },
     "water": {
@@ -441,7 +471,8 @@
         "ja": "水",
         "zh": "水",
         "ru": "Вода",
-        "ko": "물"
+        "ko": "물",
+        "sq": "Ujë"
       },
       "description": {
         "en": "Representative of ocean, rain, fluid.",
@@ -455,7 +486,8 @@
         "ja": "海、雨、液体を象徴する。",
         "zh": "代表海洋、雨水与流体。",
         "ru": "Символ океана, дождя и жидкости.",
-        "ko": "바다, 비, 유체를 상징한다."
+        "ko": "바다, 비, 유체를 상징한다.",
+        "sq": "Përfaqëson oqeanin, shiun, lëngun."
       }
     },
     "crude_oil": {
@@ -471,7 +503,8 @@
         "ja": "原油",
         "zh": "原油",
         "ru": "Сырая Нефть",
-        "ko": "원유"
+        "ko": "원유",
+        "sq": "Naftë e Papërpunuar"
       },
       "description": {
         "en": "Thick, flammable liquid hydrocarbon drawn up from deep underground.",
@@ -485,7 +518,8 @@
         "ja": "地中深くから汲み上げられる、粘性のある可燃性の液体炭化水素。",
         "zh": "从地下深处抽取的粘稠、易燃液态碳氢化合物。",
         "ru": "Густой, горючий жидкий углеводород, добываемый из глубины земли.",
-        "ko": "지하 깊은 곳에서 끌어올린 걸쭉하고 인화성 있는 액체 탄화수소."
+        "ko": "지하 깊은 곳에서 끌어올린 걸쭉하고 인화성 있는 액체 탄화수소.",
+        "sq": "Hidrokarbur i lëngshëm, i trashë dhe i ndezshëm, nxjerrë nga thellësia e tokës."
       }
     },
     "gold": {
@@ -501,7 +535,8 @@
         "ja": "金",
         "zh": "黄金",
         "ru": "Золото",
-        "ko": "금"
+        "ko": "금",
+        "sq": "Ar"
       },
       "description": {
         "en": "Precious, lustrous metal prized for its rarity.",
@@ -515,7 +550,8 @@
         "ja": "希少性で珍重される、貴重で光沢のある金属。",
         "zh": "因稀有而备受珍视的贵重光泽金属。",
         "ru": "Драгоценный, блестящий металл, ценимый за свою редкость.",
-        "ko": "희소성으로 인해 귀하게 여겨지는 값진 광택 금속."
+        "ko": "희소성으로 인해 귀하게 여겨지는 값진 광택 금속.",
+        "sq": "Metal i çmuar dhe i shndritshëm, i vlerësuar për rrallësinë e tij."
       }
     },
     "silver": {
@@ -531,7 +567,8 @@
         "ja": "銀",
         "zh": "白银",
         "ru": "Серебро",
-        "ko": "은"
+        "ko": "은",
+        "sq": "Argjend"
       },
       "description": {
         "en": "Pale, reflective metal valued for its shine.",
@@ -545,7 +582,8 @@
         "ja": "輝きで評価される、淡く反射性のある金属。",
         "zh": "因光泽而备受珍视的淡色反光金属。",
         "ru": "Бледный, отражающий металл, ценимый за свой блеск.",
-        "ko": "광채로 인해 귀하게 여겨지는 옅은 색의 반사 금속."
+        "ko": "광채로 인해 귀하게 여겨지는 옅은 색의 반사 금속.",
+        "sq": "Metal i zbehtë dhe reflektues, i vlerësuar për shkëlqimin e tij."
       }
     },
     "sand": {
@@ -561,7 +599,8 @@
         "ja": "砂",
         "zh": "沙",
         "ru": "Песок",
-        "ko": "모래"
+        "ko": "모래",
+        "sq": "Rërë"
       },
       "description": {
         "en": "Representative of desert, granular silica matter.",
@@ -575,7 +614,8 @@
         "ja": "砂漠、粒状のシリカ物質を象徴する。",
         "zh": "代表沙漠与颗粒状硅质物质。",
         "ru": "Символ пустыни, зернистого кремниевого вещества.",
-        "ko": "사막, 알갱이 형태의 실리카 물질을 상징한다."
+        "ko": "사막, 알갱이 형태의 실리카 물질을 상징한다.",
+        "sq": "Përfaqëson shkretëtirën, lëndën granulare të silicit."
       }
     },
     "lightning": {
@@ -591,7 +631,8 @@
         "ja": "雷",
         "zh": "闪电",
         "ru": "Молния",
-        "ko": "번개"
+        "ko": "번개",
+        "sq": "Rrufe"
       },
       "description": {
         "en": "Representative of electricity, storm energy, sparks.",
@@ -605,7 +646,8 @@
         "ja": "電気、嵐のエネルギー、火花を象徴する。",
         "zh": "代表电力、风暴能量与火花。",
         "ru": "Символ электричества, энергии бури, искр.",
-        "ko": "전기, 폭풍 에너지, 불꽃을 상징한다."
+        "ko": "전기, 폭풍 에너지, 불꽃을 상징한다.",
+        "sq": "Përfaqëson elektricitetin, energjinë e stuhisë, shkëndijat."
       }
     },
     "ice": {
@@ -621,7 +663,8 @@
         "ja": "氷",
         "zh": "冰",
         "ru": "Лёд",
-        "ko": "얼음"
+        "ko": "얼음",
+        "sq": "Akull"
       },
       "description": {
         "en": "Representative of frost, cold, crystals.",
@@ -635,7 +678,8 @@
         "ja": "霜、冷気、結晶を象徴する。",
         "zh": "代表霜冻、寒冷与结晶。",
         "ru": "Символ мороза, холода и кристаллов.",
-        "ko": "서리, 추위, 결정을 상징한다."
+        "ko": "서리, 추위, 결정을 상징한다.",
+        "sq": "Përfaqëson brymën, ftohtësinë, kristalet."
       }
     },
     "metal": {
@@ -651,7 +695,8 @@
         "ja": "金属",
         "zh": "金属",
         "ru": "Металл",
-        "ko": "금속"
+        "ko": "금속",
+        "sq": "Metal"
       },
       "description": {
         "en": "Representative of iron, refinement, conductibility.",
@@ -665,7 +710,8 @@
         "ja": "鉄、精錬、伝導性を象徴する。",
         "zh": "代表铁、精炼与导电性。",
         "ru": "Символ железа, обработки и электропроводности.",
-        "ko": "철, 정제, 전도성을 상징한다."
+        "ko": "철, 정제, 전도성을 상징한다.",
+        "sq": "Përfaqëson hekurin, rafinimin, përçueshmërinë."
       }
     },
     "wood": {
@@ -681,7 +727,8 @@
         "ja": "木",
         "zh": "木",
         "ru": "Дерево",
-        "ko": "나무"
+        "ko": "나무",
+        "sq": "Dru"
       },
       "description": {
         "en": "Representative of forest, organic construction, nature.",
@@ -695,7 +742,8 @@
         "ja": "森、有機的な建材、自然を象徴する。",
         "zh": "代表森林、有机建材与自然。",
         "ru": "Символ леса, органического строительства и природы.",
-        "ko": "숲, 유기적 건축, 자연을 상징한다."
+        "ko": "숲, 유기적 건축, 자연을 상징한다.",
+        "sq": "Përfaqëson pyllin, ndërtimin organik, natyrën."
       }
     },
     "glass": {
@@ -711,7 +759,8 @@
         "ja": "ガラス",
         "zh": "玻璃",
         "ru": "Стекло",
-        "ko": "유리"
+        "ko": "유리",
+        "sq": "Xham"
       },
       "description": {
         "en": "Transparent silica structure.",
@@ -725,7 +774,8 @@
         "ja": "透明なシリカ構造。",
         "zh": "透明的硅质结构。",
         "ru": "Прозрачная кремниевая структура.",
-        "ko": "투명한 실리카 구조물."
+        "ko": "투명한 실리카 구조물.",
+        "sq": "Strukturë transparente e silicit."
       }
     },
     "glasses": {
@@ -741,7 +791,8 @@
         "ja": "眼鏡",
         "zh": "眼镜",
         "ru": "Очки",
-        "ko": "안경"
+        "ko": "안경",
+        "sq": "Syze"
       },
       "description": {
         "en": "Two lenses connected together to assist vision.",
@@ -755,7 +806,8 @@
         "ja": "視力を補助するために連結された2枚のレンズ。",
         "zh": "两片连接在一起以辅助视力的镜片。",
         "ru": "Две линзы, соединённые вместе для улучшения зрения.",
-        "ko": "시력을 돕기 위해 연결된 두 개의 렌즈."
+        "ko": "시력을 돕기 위해 연결된 두 개의 렌즈.",
+        "sq": "Dy lente të lidhura së bashku për të ndihmuar shikimin."
       }
     },
     "binoculars": {
@@ -771,7 +823,8 @@
         "ja": "双眼鏡",
         "zh": "望远镜",
         "ru": "Бинокль",
-        "ko": "쌍안경"
+        "ko": "쌍안경",
+        "sq": "Dylbi"
       },
       "description": {
         "en": "High-magnification optical instrument.",
@@ -785,7 +838,8 @@
         "ja": "高倍率の光学機器。",
         "zh": "高倍率光学仪器。",
         "ru": "Оптический прибор с высоким увеличением.",
-        "ko": "고배율 광학 기기."
+        "ko": "고배율 광학 기기.",
+        "sq": "Instrument optik me zmadhim të lartë."
       }
     },
     "mud": {
@@ -801,7 +855,8 @@
         "ja": "泥",
         "zh": "泥",
         "ru": "Грязь",
-        "ko": "진흙"
+        "ko": "진흙",
+        "sq": "Baltë"
       },
       "description": {
         "en": "Wet, gooey soil.",
@@ -815,7 +870,8 @@
         "ja": "湿ってねばねばした土。",
         "zh": "湿润粘稠的泥土。",
         "ru": "Влажная, липкая почва.",
-        "ko": "축축하고 끈적한 흙."
+        "ko": "축축하고 끈적한 흙.",
+        "sq": "Dhe i lagësht dhe ngjitës."
       }
     },
     "swamp": {
@@ -831,7 +887,8 @@
         "ja": "沼地",
         "zh": "沼泽",
         "ru": "Болото",
-        "ko": "늪"
+        "ko": "늪",
+        "sq": "Moçal"
       },
       "description": {
         "en": "Wet, saturated forest area.",
@@ -845,7 +902,8 @@
         "ja": "湿って水浸しの森林地帯。",
         "zh": "潮湿饱和的森林地带。",
         "ru": "Влажная, насыщенная водой лесная территория.",
-        "ko": "습하고 물에 잠긴 숲 지역."
+        "ko": "습하고 물에 잠긴 숲 지역.",
+        "sq": "Zonë pyjore e lagësht dhe e ngopur me ujë."
       }
     },
     "life": {
@@ -861,7 +919,8 @@
         "ja": "生命",
         "zh": "生命",
         "ru": "Жизнь",
-        "ko": "생명"
+        "ko": "생명",
+        "sq": "Jetë"
       },
       "description": {
         "en": "Sparks of biology and energy coalescing.",
@@ -875,7 +934,8 @@
         "ja": "生物とエネルギーの火花が融合する。",
         "zh": "生物与能量的火花交融汇聚。",
         "ru": "Искры биологии и энергии, сливающиеся воедино.",
-        "ko": "생물학과 에너지의 불꽃이 하나로 합쳐진 것."
+        "ko": "생물학과 에너지의 불꽃이 하나로 합쳐진 것.",
+        "sq": "Shkëndija të biologjisë dhe energjisë që bashkohen."
       }
     },
     "ent": {
@@ -891,7 +951,8 @@
         "ja": "エント",
         "zh": "树人",
         "ru": "Энт",
-        "ko": "엔트"
+        "ko": "엔트",
+        "sq": "Ent"
       },
       "description": {
         "en": "A sentient, walking tree creature.",
@@ -905,7 +966,8 @@
         "ja": "意識を持ち、歩き回る木の生き物。",
         "zh": "一种有知觉、会行走的树形生物。",
         "ru": "Разумное, ходячее древесное существо.",
-        "ko": "지각이 있는, 걸어 다니는 나무 생물."
+        "ko": "지각이 있는, 걸어 다니는 나무 생물.",
+        "sq": "Krijesë peme që ecën dhe ka ndjenja."
       }
     },
     "electricity": {
@@ -921,7 +983,8 @@
         "ja": "電気",
         "zh": "电",
         "ru": "Электричество",
-        "ko": "전기"
+        "ko": "전기",
+        "sq": "Elektricitet"
       },
       "description": {
         "en": "Flow of charge through conductive material.",
@@ -935,7 +998,8 @@
         "ja": "導電性材料を流れる電荷の流れ。",
         "zh": "电荷流经导电材料的流动。",
         "ru": "Поток заряда через проводящий материал.",
-        "ko": "전도성 물질을 통한 전하의 흐름."
+        "ko": "전도성 물질을 통한 전하의 흐름.",
+        "sq": "Rrjedhja e ngarkesës përmes materialit përçues."
       }
     },
     "silicon": {
@@ -951,7 +1015,8 @@
         "ja": "シリコン",
         "zh": "硅",
         "ru": "Кремний",
-        "ko": "실리콘"
+        "ko": "실리콘",
+        "sq": "Silic"
       },
       "description": {
         "en": "Purified semiconductor base.",
@@ -965,7 +1030,8 @@
         "ja": "精製された半導体基材。",
         "zh": "提纯后的半导体基材。",
         "ru": "Очищенная полупроводниковая основа.",
-        "ko": "정제된 반도체 기초 물질."
+        "ko": "정제된 반도체 기초 물질.",
+        "sq": "Bazë gjysmëpërçuese e purifikuar."
       }
     },
     "microchip": {
@@ -981,7 +1047,8 @@
         "ja": "マイクロチップ",
         "zh": "微芯片",
         "ru": "Микрочип",
-        "ko": "마이크로칩"
+        "ko": "마이크로칩",
+        "sq": "Mikroçip"
       },
       "description": {
         "en": "Complex integrated circuit.",
@@ -995,7 +1062,8 @@
         "ja": "複雑な集積回路。",
         "zh": "复杂的集成电路。",
         "ru": "Сложная интегральная схема.",
-        "ko": "복잡한 집적 회로."
+        "ko": "복잡한 집적 회로.",
+        "sq": "Qark i integruar kompleks."
       }
     },
     "smartphone": {
@@ -1011,7 +1079,8 @@
         "ja": "スマートフォン",
         "zh": "智能手机",
         "ru": "Смартфон",
-        "ko": "스마트폰"
+        "ko": "스마트폰",
+        "sq": "Smartfon"
       },
       "description": {
         "en": "Advanced portable computer with a glass screen.",
@@ -1025,7 +1094,8 @@
         "ja": "ガラス画面を備えた高度な携帯用コンピュータ。",
         "zh": "配备玻璃屏幕的高级便携电脑。",
         "ru": "Продвинутый портативный компьютер со стеклянным экраном.",
-        "ko": "유리 화면을 가진 첨단 휴대용 컴퓨터."
+        "ko": "유리 화면을 가진 첨단 휴대용 컴퓨터.",
+        "sq": "Kompjuter i avancuar dhe portativ me ekran xhami."
       }
     },
     "steam": {
@@ -1041,7 +1111,8 @@
         "ja": "蒸気",
         "zh": "蒸汽",
         "ru": "Пар",
-        "ko": "증기"
+        "ko": "증기",
+        "sq": "Avull"
       },
       "description": {
         "en": "Heated vapor rising.",
@@ -1055,7 +1126,8 @@
         "ja": "立ち上る熱い蒸気。",
         "zh": "升腾的热蒸汽。",
         "ru": "Поднимающийся горячий пар.",
-        "ko": "위로 피어오르는 뜨거운 수증기."
+        "ko": "위로 피어오르는 뜨거운 수증기.",
+        "sq": "Avull i nxehtë që ngrihet."
       }
     },
     "cloud": {
@@ -1071,7 +1143,8 @@
         "ja": "雲",
         "zh": "云",
         "ru": "Облако",
-        "ko": "구름"
+        "ko": "구름",
+        "sq": "Re"
       },
       "description": {
         "en": "Condensed water droplets in the sky.",
@@ -1085,7 +1158,8 @@
         "ja": "空に凝結した水滴。",
         "zh": "天空中凝结的水滴。",
         "ru": "Конденсированные капли воды в небе.",
-        "ko": "하늘에 응결된 물방울."
+        "ko": "하늘에 응결된 물방울.",
+        "sq": "Pika uji të kondensuara në qiell."
       }
     },
     "storm": {
@@ -1101,7 +1175,8 @@
         "ja": "嵐",
         "zh": "风暴",
         "ru": "Буря",
-        "ko": "폭풍"
+        "ko": "폭풍",
+        "sq": "Stuhi"
       },
       "description": {
         "en": "Heavy tempest of clouds, rain, and thunder.",
@@ -1115,7 +1190,8 @@
         "ja": "雲、雨、雷を伴う激しい嵐。",
         "zh": "云、雨与雷交织的猛烈风暴。",
         "ru": "Сильная непогода из туч, дождя и грома.",
-        "ko": "구름, 비, 천둥이 동반된 거센 폭풍우."
+        "ko": "구름, 비, 천둥이 동반된 거센 폭풍우.",
+        "sq": "Stuhi e fortë me re, shi dhe bubullima."
       }
     },
     "lightning_rod": {
@@ -1131,7 +1207,8 @@
         "ja": "避雷針",
         "zh": "避雷针",
         "ru": "Громоотвод",
-        "ko": "피뢰침"
+        "ko": "피뢰침",
+        "sq": "Rrufepritëse"
       },
       "description": {
         "en": "Metal conductor mounted to attract and ground lightning.",
@@ -1145,7 +1222,8 @@
         "ja": "雷を引き寄せ、接地させるために設置された金属導体。",
         "zh": "用于吸引雷电并将其导入地面的金属导体。",
         "ru": "Металлический проводник, установленный для притяжения и заземления молний.",
-        "ko": "번개를 끌어들여 땅으로 흘려보내기 위해 설치된 금속 도체."
+        "ko": "번개를 끌어들여 땅으로 흘려보내기 위해 설치된 금속 도체.",
+        "sq": "Përçues metalik i vendosur për të tërhequr dhe tokëzuar rrufetë."
       }
     },
     "snow": {
@@ -1161,7 +1239,8 @@
         "ja": "雪",
         "zh": "雪",
         "ru": "Снег",
-        "ko": "눈"
+        "ko": "눈",
+        "sq": "Borë"
       },
       "description": {
         "en": "Flurry of frozen water crystals.",
@@ -1175,7 +1254,8 @@
         "ja": "凍った水の結晶の吹雪。",
         "zh": "冻结水结晶的飘落。",
         "ru": "Вихрь замёрзших кристаллов воды.",
-        "ko": "얼어붙은 물 결정의 눈보라."
+        "ko": "얼어붙은 물 결정의 눈보라.",
+        "sq": "Reshje kristalesh uji të ngrira."
       }
     },
     "snowman": {
@@ -1191,7 +1271,8 @@
         "ja": "雪だるま",
         "zh": "雪人",
         "ru": "Снеговик",
-        "ko": "눈사람"
+        "ko": "눈사람",
+        "sq": "Njeri Bore"
       },
       "description": {
         "en": "Frozen humanoid figure built from packed snow and soil.",
@@ -1205,7 +1286,8 @@
         "ja": "固めた雪と土で作られた凍った人型の像。",
         "zh": "由压实的雪和泥土制成的冰冻人形。",
         "ru": "Замёрзшая человекоподобная фигура из утрамбованного снега и почвы.",
-        "ko": "다져진 눈과 흙으로 만든 얼어붙은 사람 모양 형상."
+        "ko": "다져진 눈과 흙으로 만든 얼어붙은 사람 모양 형상.",
+        "sq": "Figurë e ngrirë njerëzore e ndërtuar nga bora e ngjeshur dhe dheu."
       }
     },
     "axe": {
@@ -1221,7 +1303,8 @@
         "ja": "斧",
         "zh": "斧头",
         "ru": "Топор",
-        "ko": "도끼"
+        "ko": "도끼",
+        "sq": "Sëpatë"
       },
       "description": {
         "en": "Cutting tool with metal head and wooden handle.",
@@ -1235,7 +1318,8 @@
         "ja": "金属の刃と木の柄を持つ切削工具。",
         "zh": "带有金属刃和木柄的切削工具。",
         "ru": "Режущий инструмент с металлической головкой и деревянной рукоятью.",
-        "ko": "금속 머리와 나무 손잡이가 있는 절단 도구."
+        "ko": "금속 머리와 나무 손잡이가 있는 절단 도구.",
+        "sq": "Vegël prerëse me kokë metalike dhe bisht druri."
       }
     },
     "plank": {
@@ -1251,7 +1335,8 @@
         "ja": "板",
         "zh": "木板",
         "ru": "Доска",
-        "ko": "널빤지"
+        "ko": "널빤지",
+        "sq": "Dërrasë"
       },
       "description": {
         "en": "Wood cut into a flat, usable construction board.",
@@ -1265,7 +1350,8 @@
         "ja": "使用可能な平らな建材板に切り出された木材。",
         "zh": "被切割成可用的平整建筑木板的木材。",
         "ru": "Дерево, распиленное в плоскую, пригодную для строительства доску.",
-        "ko": "평평하고 쓸모 있는 건축용 판자로 잘린 나무."
+        "ko": "평평하고 쓸모 있는 건축용 판자로 잘린 나무.",
+        "sq": "Dru i prerë në një pllakë të sheshtë dhe të përdorshme për ndërtim."
       }
     },
     "bridge": {
@@ -1281,7 +1367,8 @@
         "ja": "橋",
         "zh": "桥",
         "ru": "Мост",
-        "ko": "다리"
+        "ko": "다리",
+        "sq": "Urë"
       },
       "description": {
         "en": "Elevated pathway spanning a gap.",
@@ -1295,7 +1382,8 @@
         "ja": "隙間にかかる高架の通路。",
         "zh": "横跨缺口的高架通道。",
         "ru": "Приподнятый путь, пересекающий разрыв.",
-        "ko": "틈을 가로지르는 높은 통로."
+        "ko": "틈을 가로지르는 높은 통로.",
+        "sq": "Rrugë e ngritur që kalon mbi një hendek."
       }
     },
     "train_track": {
@@ -1311,7 +1399,8 @@
         "ja": "線路",
         "zh": "铁轨",
         "ru": "Рельсы",
-        "ko": "철로"
+        "ko": "철로",
+        "sq": "Shina Treni"
       },
       "description": {
         "en": "Steel rails laid over wooden supports.",
@@ -1325,7 +1414,8 @@
         "ja": "木製の枕木の上に敷かれた鋼鉄のレール。",
         "zh": "铺设在木质支撑上的钢轨。",
         "ru": "Стальные рельсы, уложенные на деревянные опоры.",
-        "ko": "나무 받침 위에 놓인 강철 레일."
+        "ko": "나무 받침 위에 놓인 강철 레일.",
+        "sq": "Shina çeliku të vendosura mbi mbështetëse druri."
       }
     },
     "coal": {
@@ -1341,7 +1431,8 @@
         "ja": "石炭",
         "zh": "煤炭",
         "ru": "Уголь",
-        "ko": "석탄"
+        "ko": "석탄",
+        "sq": "Qymyr"
       },
       "description": {
         "en": "Carbonised wood fuel block.",
@@ -1355,7 +1446,8 @@
         "ja": "炭化した木の燃料ブロック。",
         "zh": "碳化木材制成的燃料块。",
         "ru": "Карбонизированный древесный топливный брусок.",
-        "ko": "탄화된 나무 연료 덩어리."
+        "ko": "탄화된 나무 연료 덩어리.",
+        "sq": "Bllok karburanti druri i karbonizuar."
       }
     },
     "steel": {
@@ -1371,7 +1463,8 @@
         "ja": "鋼",
         "zh": "钢",
         "ru": "Сталь",
-        "ko": "강철"
+        "ko": "강철",
+        "sq": "Çelik"
       },
       "description": {
         "en": "Carbon-reinforced metal alloy.",
@@ -1385,7 +1478,8 @@
         "ja": "炭素で強化された金属合金。",
         "zh": "碳强化的金属合金。",
         "ru": "Металлический сплав, укреплённый углеродом.",
-        "ko": "탄소로 강화된 금속 합금."
+        "ko": "탄소로 강화된 금속 합금.",
+        "sq": "Aliazh metalik i përforcuar me karbon."
       }
     },
     "sword": {
@@ -1401,7 +1495,8 @@
         "ja": "剣",
         "zh": "剑",
         "ru": "Меч",
-        "ko": "검"
+        "ko": "검",
+        "sq": "Shpatë"
       },
       "description": {
         "en": "Forged blade weapon.",
@@ -1415,7 +1510,8 @@
         "ja": "鍛造された刃を持つ武器。",
         "zh": "锻造的刃制武器。",
         "ru": "Кованое клинковое оружие.",
-        "ko": "단조된 칼날 무기."
+        "ko": "단조된 칼날 무기.",
+        "sq": "Armë me tehe e farkëtuar."
       }
     },
     "energy_blade": {
@@ -1431,7 +1527,8 @@
         "ja": "エネルギーブレード",
         "zh": "能量刃",
         "ru": "Энергетический Клинок",
-        "ko": "에너지 블레이드"
+        "ko": "에너지 블레이드",
+        "sq": "Teh Energjie"
       },
       "description": {
         "en": "High-tech sword infused with electrical currents.",
@@ -1445,7 +1542,8 @@
         "ja": "電流を帯びたハイテク剣。",
         "zh": "注入电流的高科技剑。",
         "ru": "Высокотехнологичный меч, наполненный электрическими токами.",
-        "ko": "전류가 주입된 첨단 기술 검."
+        "ko": "전류가 주입된 첨단 기술 검.",
+        "sq": "Shpatë high-tech e mbushur me rryma elektrike."
       }
     },
     "rock": {
@@ -1461,7 +1559,8 @@
         "ja": "岩",
         "zh": "岩石",
         "ru": "Камень",
-        "ko": "바위"
+        "ko": "바위",
+        "sq": "Gur"
       },
       "description": {
         "en": "Solid, compact mass of stone.",
@@ -1475,7 +1574,8 @@
         "ja": "硬く密な石の塊。",
         "zh": "坚固紧密的石块。",
         "ru": "Твёрдая, плотная каменная масса.",
-        "ko": "단단하고 조밀한 돌 덩어리."
+        "ko": "단단하고 조밀한 돌 덩어리.",
+        "sq": "Masë e ngurtë dhe kompakte guri."
       }
     },
     "lava": {
@@ -1491,7 +1591,8 @@
         "ja": "溶岩",
         "zh": "岩浆",
         "ru": "Лава",
-        "ko": "용암"
+        "ko": "용암",
+        "sq": "Llavë"
       },
       "description": {
         "en": "Superheated liquid rock flowing from the earth.",
@@ -1505,7 +1606,8 @@
         "ja": "地中から流れ出る過熱した液状の岩石。",
         "zh": "从地下涌出的过热液态岩石。",
         "ru": "Перегретая жидкая порода, вытекающая из земли.",
-        "ko": "땅에서 흘러나오는 과열된 액체 암석."
+        "ko": "땅에서 흘러나오는 과열된 액체 암석.",
+        "sq": "Shkëmb i lëngshëm i mbinxehur që rrjedh nga toka."
       }
     },
     "mountain": {
@@ -1521,7 +1623,8 @@
         "ja": "山",
         "zh": "山",
         "ru": "Гора",
-        "ko": "산"
+        "ko": "산",
+        "sq": "Mal"
       },
       "description": {
         "en": "Towering elevation of the earth's surface.",
@@ -1535,7 +1638,8 @@
         "ja": "そびえ立つ地表の高まり。",
         "zh": "高耸的地表隆起。",
         "ru": "Возвышающаяся часть земной поверхности.",
-        "ko": "지표면이 우뚝 솟아오른 지형."
+        "ko": "지표면이 우뚝 솟아오른 지형.",
+        "sq": "Ngritje madhështore e sipërfaqes së tokës."
       }
     },
     "volcano": {
@@ -1551,7 +1655,8 @@
         "ja": "火山",
         "zh": "火山",
         "ru": "Вулкан",
-        "ko": "화산"
+        "ko": "화산",
+        "sq": "Vullkan"
       },
       "description": {
         "en": "A mountain that vents lava, steam, and ash.",
@@ -1565,7 +1670,8 @@
         "ja": "溶岩、蒸気、灰を噴出する山。",
         "zh": "喷发岩浆、蒸汽与灰烬的山。",
         "ru": "Гора, извергающая лаву, пар и пепел.",
-        "ko": "용암, 증기, 재를 뿜어내는 산."
+        "ko": "용암, 증기, 재를 뿜어내는 산.",
+        "sq": "Një mal që nxjerr llavë, avull dhe hi."
       }
     },
     "obsidian": {
@@ -1581,7 +1687,8 @@
         "ja": "黒曜石",
         "zh": "黑曜石",
         "ru": "Обсидиан",
-        "ko": "흑요석"
+        "ko": "흑요석",
+        "sq": "Obsidian"
       },
       "description": {
         "en": "Dark, volcanic glass formed from rapid cooling of lava.",
@@ -1595,7 +1702,8 @@
         "ja": "溶岩が急速に冷えてできた暗色の火山ガラス。",
         "zh": "由熔岩快速冷却形成的深色火山玻璃。",
         "ru": "Тёмное вулканическое стекло, образованное быстрым охлаждением лавы.",
-        "ko": "용암이 급속히 식어 형성된 어두운 화산 유리."
+        "ko": "용암이 급속히 식어 형성된 어두운 화산 유리.",
+        "sq": "Xham vullkanik i errët i formuar nga ftohja e shpejtë e llavës."
       }
     },
     "geyser": {
@@ -1611,7 +1719,8 @@
         "ja": "間欠泉",
         "zh": "间歇泉",
         "ru": "Гейзер",
-        "ko": "간헐천"
+        "ko": "간헐천",
+        "sq": "Gejzer"
       },
       "description": {
         "en": "Hot spring that sends columns of steam and water into the air.",
@@ -1625,7 +1734,8 @@
         "ja": "蒸気と水の柱を空に噴き上げる温泉。",
         "zh": "向空中喷出蒸汽与水柱的温泉。",
         "ru": "Горячий источник, выбрасывающий столбы пара и воды в воздух.",
-        "ko": "증기와 물기둥을 공중으로 뿜어내는 온천."
+        "ko": "증기와 물기둥을 공중으로 뿜어내는 온천.",
+        "sq": "Burim i nxehtë që hedh kolona avulli dhe uji në ajër."
       }
     },
     "magnet": {
@@ -1641,7 +1751,8 @@
         "ja": "磁石",
         "zh": "磁铁",
         "ru": "Магнит",
-        "ko": "자석"
+        "ko": "자석",
+        "sq": "Magnet"
       },
       "description": {
         "en": "Material that produces a magnetic field.",
@@ -1655,7 +1766,8 @@
         "ja": "磁場を発生させる物質。",
         "zh": "产生磁场的材料。",
         "ru": "Материал, создающий магнитное поле.",
-        "ko": "자기장을 만들어내는 물질."
+        "ko": "자기장을 만들어내는 물질.",
+        "sq": "Material që prodhon një fushë magnetike."
       }
     },
     "compass": {
@@ -1671,7 +1783,8 @@
         "ja": "コンパス",
         "zh": "指南针",
         "ru": "Компас",
-        "ko": "나침반"
+        "ko": "나침반",
+        "sq": "Busull"
       },
       "description": {
         "en": "Navigational instrument showing direction.",
@@ -1685,7 +1798,8 @@
         "ja": "方角を示す航海用具。",
         "zh": "指示方向的导航仪器。",
         "ru": "Навигационный прибор, показывающий направление.",
-        "ko": "방향을 알려주는 항해 도구."
+        "ko": "방향을 알려주는 항해 도구.",
+        "sq": "Instrument navigimi që tregon drejtimin."
       }
     },
     "clay": {
@@ -1701,7 +1815,8 @@
         "ja": "粘土",
         "zh": "粘土",
         "ru": "Глина",
-        "ko": "점토"
+        "ko": "점토",
+        "sq": "Argjilë"
       },
       "description": {
         "en": "Fine-grained natural soil material.",
@@ -1715,7 +1830,8 @@
         "ja": "きめ細かい天然の土質材料。",
         "zh": "细粒的天然土壤材料。",
         "ru": "Мелкозернистый природный почвенный материал.",
-        "ko": "고운 입자의 천연 토양 물질."
+        "ko": "고운 입자의 천연 토양 물질.",
+        "sq": "Material natyror dheu me grimca të imëta."
       }
     },
     "brick": {
@@ -1731,7 +1847,8 @@
         "ja": "レンガ",
         "zh": "砖",
         "ru": "Кирпич",
-        "ko": "벽돌"
+        "ko": "벽돌",
+        "sq": "Tullë"
       },
       "description": {
         "en": "Rectangular block of baked clay used in building.",
@@ -1745,7 +1862,8 @@
         "ja": "建築に使われる焼成粘土の直方体ブロック。",
         "zh": "用于建筑的矩形烧制粘土块。",
         "ru": "Прямоугольный блок обожжённой глины, используемый в строительстве.",
-        "ko": "건축에 사용되는 구운 점토의 직사각형 블록."
+        "ko": "건축에 사용되는 구운 점토의 직사각형 블록.",
+        "sq": "Bllok drejtkëndor argjile të pjekur i përdorur në ndërtim."
       }
     },
     "house": {
@@ -1761,7 +1879,8 @@
         "ja": "家",
         "zh": "房子",
         "ru": "Дом",
-        "ko": "집"
+        "ko": "집",
+        "sq": "Shtëpi"
       },
       "description": {
         "en": "Building for human habitation.",
@@ -1775,7 +1894,8 @@
         "ja": "人が住むための建物。",
         "zh": "供人类居住的建筑。",
         "ru": "Здание для проживания людей.",
-        "ko": "인간이 거주하기 위한 건물."
+        "ko": "인간이 거주하기 위한 건물.",
+        "sq": "Ndërtesë për banim njerëzor."
       }
     },
     "plastic": {
@@ -1791,7 +1911,8 @@
         "ja": "プラスチック",
         "zh": "塑料",
         "ru": "Пластик",
-        "ko": "플라스틱"
+        "ko": "플라스틱",
+        "sq": "Plastikë"
       },
       "description": {
         "en": "Synthetic polymer material refined from crude oil.",
@@ -1805,7 +1926,8 @@
         "ja": "原油から精製された合成ポリマー素材。",
         "zh": "由原油精炼而成的合成聚合物材料。",
         "ru": "Синтетический полимерный материал, получаемый из сырой нефти.",
-        "ko": "원유에서 정제된 합성 고분자 물질."
+        "ko": "원유에서 정제된 합성 고분자 물질.",
+        "sq": "Material polimer sintetik i rafinuar nga nafta e papërpunuar."
       }
     },
     "paper": {
@@ -1821,7 +1943,8 @@
         "ja": "紙",
         "zh": "纸",
         "ru": "Бумага",
-        "ko": "종이"
+        "ko": "종이",
+        "sq": "Letër"
       },
       "description": {
         "en": "Thin sheet pressed from soaked wood pulp.",
@@ -1835,7 +1958,8 @@
         "ja": "水に浸した木材パルプを圧搾した薄いシート。",
         "zh": "由浸泡的木浆压制而成的薄片。",
         "ru": "Тонкий лист, спрессованный из размоченной древесной массы.",
-        "ko": "물에 불린 목재 펄프를 압착하여 만든 얇은 시트."
+        "ko": "물에 불린 목재 펄프를 압착하여 만든 얇은 시트.",
+        "sq": "Fletë e hollë e shtypur nga qelqi i drurit i njomur."
       }
     },
     "animal": {
@@ -1851,7 +1975,8 @@
         "ja": "動物",
         "zh": "动物",
         "ru": "Животное",
-        "ko": "동물"
+        "ko": "동물",
+        "sq": "Kafshë"
       },
       "description": {
         "en": "Breath given to earth, formed into a living creature.",
@@ -1865,7 +1990,8 @@
         "ja": "大地に与えられた息吹が、生きる生物へと形作られたもの。",
         "zh": "赋予大地的气息,塑造成一个活生生的生物。",
         "ru": "Дыхание, дарованное земле, обретшее форму живого существа.",
-        "ko": "대지에 불어넣어진 숨결이 살아있는 생명체로 형성된 것."
+        "ko": "대지에 불어넣어진 숨결이 살아있는 생명체로 형성된 것.",
+        "sq": "Frymë e dhënë tokës, e formuar në një krijesë të gjallë."
       }
     },
     "leather": {
@@ -1881,7 +2007,8 @@
         "ja": "革",
         "zh": "皮革",
         "ru": "Кожа",
-        "ko": "가죽"
+        "ko": "가죽",
+        "sq": "Lëkurë"
       },
       "description": {
         "en": "Durable animal hide cured over fire.",
@@ -1895,7 +2022,8 @@
         "ja": "火で処理された耐久性のある動物の皮。",
         "zh": "经火处理而成的耐用兽皮。",
         "ru": "Прочная шкура животного, выделанная над огнём.",
-        "ko": "불에 무두질한 튼튼한 동물 가죽."
+        "ko": "불에 무두질한 튼튼한 동물 가죽.",
+        "sq": "Lëkurë kafshe e qëndrueshme e regjur mbi zjarr."
       }
     },
     "book": {
@@ -1911,7 +2039,8 @@
         "ja": "本",
         "zh": "书",
         "ru": "Книга",
-        "ko": "책"
+        "ko": "책",
+        "sq": "Libër"
       },
       "description": {
         "en": "Bound pages of paper wrapped in a leather cover.",
@@ -1925,7 +2054,8 @@
         "ja": "革の表紙で綴じられた紙のページ。",
         "zh": "用皮革封面装订的纸页。",
         "ru": "Сшитые страницы бумаги в кожаном переплёте.",
-        "ko": "가죽 표지로 감싼 제본된 종이 페이지들."
+        "ko": "가죽 표지로 감싼 제본된 종이 페이지들.",
+        "sq": "Faqe letre të lidhura, të mbështjella në një kapak lëkure."
       }
     },
     "ring": {
@@ -1941,7 +2071,8 @@
         "ja": "指輪",
         "zh": "戒指",
         "ru": "Кольцо",
-        "ko": "반지"
+        "ko": "반지",
+        "sq": "Unazë"
       },
       "description": {
         "en": "Band of precious metal worn as jewelry.",
@@ -1955,7 +2086,8 @@
         "ja": "宝飾品として身につける貴金属の輪。",
         "zh": "作为首饰佩戴的贵金属环。",
         "ru": "Ободок из драгоценного металла, носимый как украшение.",
-        "ko": "장신구로 착용하는 귀금속 밴드."
+        "ko": "장신구로 착용하는 귀금속 밴드.",
+        "sq": "Rreth metali të çmuar i veshur si stoli."
       }
     },
     "mirror": {
@@ -1971,7 +2103,8 @@
         "ja": "鏡",
         "zh": "镜子",
         "ru": "Зеркало",
-        "ko": "거울"
+        "ko": "거울",
+        "sq": "Pasqyrë"
       },
       "description": {
         "en": "Polished glass backed with reflective silver.",
@@ -1985,7 +2118,8 @@
         "ja": "反射性の銀を裏打ちした研磨ガラス。",
         "zh": "背衬反光银层的磨光玻璃。",
         "ru": "Полированное стекло с отражающим серебряным слоем.",
-        "ko": "반사되는 은으로 뒷면을 처리한 연마된 유리."
+        "ko": "반사되는 은으로 뒷면을 처리한 연마된 유리.",
+        "sq": "Xham i lustruar me shtresë argjendi reflektues në pjesën e pasme."
       }
     }
   }
