@@ -49,6 +49,7 @@ const LANGUAGES = [
   { code: 'sq', label: 'Shqip', flag: '🇦🇱' },
   { code: 'sr', label: 'Српски', flag: '🇷🇸' },
   { code: 'uk', label: 'Українська', flag: '🇺🇦' },
+  { code: 'pl', label: 'Polski', flag: '🇵🇱' },
 ] as const;
 
 type Language = typeof LANGUAGES[number]['code'];
