@@ -266,7 +266,7 @@
     "description": "Cutting tool with metal head and wooden handle.",
     "isFinal": false,
     "category": "construction",
-    "svgPath": "M7.5 20.4L15.5 10.4L14.4 9.6L6.5 19.6Z M14.4 9.6L18 4.5L22 3L23 6L19.5 9L15.5 10.4Z",
+    "svgPath": "M7.5 20.4L15.5 10.4L14.4 9.6L6.5 19.6Z M15.5 10.4L9 5.5L10 10.5L12.2 13.6Z",
     "color": "#8D6E63"
   },
   {
