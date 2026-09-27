@@ -35,5 +35,9 @@
   "mud+sand": "clay",
   "clay+fire": "brick",
   "brick+wood": "house",
-  "crude_oil+fire": "plastic"
+  "crude_oil+fire": "plastic",
+  "water+wood": "paper",
+  "earth+life": "animal",
+  "animal+fire": "leather",
+  "leather+paper": "book"
 }
