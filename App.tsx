@@ -749,7 +749,7 @@ export default function App() {
           <View style={styles.modalContent}>
             <Text style={styles.modalHeader}>{t('selectLanguage')}</Text>
             
-            <View style={styles.langList}>
+            <ScrollView style={styles.langScroll} contentContainerStyle={styles.langList} showsVerticalScrollIndicator={true}>
               {LANGUAGES.map((lang) => (
                 <TouchableOpacity
                   key={lang.code}
@@ -767,7 +767,7 @@ export default function App() {
                   )}
                 </TouchableOpacity>
               ))}
-            </View>
+            </ScrollView>
 
             <TouchableOpacity 
               style={styles.langCloseButton} 
@@ -1131,10 +1131,14 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     userSelect: 'none' as any,
   },
+  langScroll: {
+    width: '100%',
+    maxHeight: 320,
+    marginBottom: 20,
+  },
   langList: {
     width: '100%',
     gap: 8,
-    marginBottom: 20,
   },
   langItem: {
     flexDirection: 'row',
