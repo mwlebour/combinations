@@ -36,5 +36,6 @@
   "clay+fire": "brick",
   "brick+wood": "house",
   "crude_oil+fire": "plastic",
-  "gold+metal": "ring"
+  "gold+metal": "ring",
+  "glass+silver": "mirror"
 }
