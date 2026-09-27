@@ -441,6 +441,42 @@
     "color": "#4FC3F7"
   },
   {
+    "id": "paper",
+    "name": "Paper",
+    "description": "Thin sheet pressed from soaked wood pulp.",
+    "isFinal": false,
+    "category": "materials",
+    "svgPath": "M4 3h16v18H4V3zm2 2v14h12V5H6zm2 3h8v1H8V8zm0 3h8v1H8v-1zm0 3h6v1H8v-1z",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": "animal",
+    "name": "Animal",
+    "description": "Breath given to earth, formed into a living creature.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M12 14c-2.2 0-4 1.8-4 4v1h8v-1c0-2.2-1.8-4-4-4zm-5-3a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm-7-4a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6zm4 0a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6z",
+    "color": "#8D6E63"
+  },
+  {
+    "id": "leather",
+    "name": "Leather",
+    "description": "Durable animal hide cured over fire.",
+    "isFinal": false,
+    "category": "materials",
+    "svgPath": "M4 4c2 0 3-2 5-2s3 2 5 2s5-2 5-2v16c-2 0-3 2-5 2s-3-2-5-2s-5 2-5 2V4z",
+    "color": "#6D4C41"
+  },
+  {
+    "id": "book",
+    "name": "Book",
+    "description": "Bound pages of paper wrapped in a leather cover.",
+    "isFinal": true,
+    "category": "materials",
+    "svgPath": "M4 4c2-1 5-1 8 0v16c-3-1-6-1-8 0V4zm16 0c-2-1-5-1-8 0v16c3-1 6-1 8 0V4z",
+    "color": "#795548"
+  },
+  {
     "id": "ring",
     "name": "Ring",
     "description": "Band of precious metal worn as jewelry.",

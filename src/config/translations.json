@@ -1016,6 +1016,50 @@
         "fr": "Matériau polymère synthétique raffiné à partir de pétrole brut."
       }
     },
+    "paper": {
+      "name": { "en": "Paper", "hu": "Papír", "de": "Papier", "la": "Charta", "it": "Carta", "fr": "Papier" },
+      "description": {
+        "en": "Thin sheet pressed from soaked wood pulp.",
+        "hu": "Átnedvesített farostból préselt vékony lap.",
+        "de": "Dünnes Blatt, aus eingeweichtem Holzbrei gepresst.",
+        "la": "Lamina tenuis ex pulpa ligni madefacti expressa.",
+        "it": "Foglio sottile pressato da polpa di legno inzuppata.",
+        "fr": "Feuille fine pressée à partir de pâte de bois trempée."
+      }
+    },
+    "animal": {
+      "name": { "en": "Animal", "hu": "Állat", "de": "Tier", "la": "Animal", "it": "Animale", "fr": "Animal" },
+      "description": {
+        "en": "Breath given to earth, formed into a living creature.",
+        "hu": "A földnek adott lélegzet, amely élőlénnyé formálódott.",
+        "de": "Der Erde eingehauchter Atem, zu einem Lebewesen geformt.",
+        "la": "Spiritus terrae datus, in creaturam viventem formatus.",
+        "it": "Respiro donato alla terra, plasmato in una creatura vivente.",
+        "fr": "Souffle donné à la terre, façonné en une créature vivante."
+      }
+    },
+    "leather": {
+      "name": { "en": "Leather", "hu": "Bőr", "de": "Leder", "la": "Corium", "it": "Pelle", "fr": "Cuir" },
+      "description": {
+        "en": "Durable animal hide cured over fire.",
+        "hu": "Tűz felett kikészített, tartós állatbőr.",
+        "de": "Widerstandsfähige Tierhaut, über Feuer gegerbt.",
+        "la": "Pellis animalis durabilis igni curata.",
+        "it": "Pelle animale resistente conciata sul fuoco.",
+        "fr": "Peau d'animal durable tannée au feu."
+      }
+    },
+    "book": {
+      "name": { "en": "Book", "hu": "Könyv", "de": "Buch", "la": "Liber", "it": "Libro", "fr": "Livre" },
+      "description": {
+        "en": "Bound pages of paper wrapped in a leather cover.",
+        "hu": "Bőrborításba kötött papírlapok.",
+        "de": "Gebundene Papierseiten in einem Ledereinband.",
+        "la": "Paginae chartae in tegumento coriaceo ligatae.",
+        "it": "Pagine di carta legate in una copertina di pelle.",
+        "fr": "Pages de papier reliées dans une couverture en cuir."
+      }
+    },
     "ring": {
       "name": { "en": "Ring", "hu": "Gyűrű", "de": "Ring", "la": "Anulus", "it": "Anello", "fr": "Bague" },
       "description": {
