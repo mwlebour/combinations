@@ -2857,6 +2857,50 @@
         "pl": "Nagła masa śniegu, lodu i ziemi zsuwająca się po zboczu góry.",
         "bg": "Внезапна маса от сняг, лед и пръст, свличаща се по планински склон."
       }
+    },
+    "pickaxe": {
+      "name": { "en": "Pickaxe", "hu": "Csákány", "de": "Spitzhacke", "la": "Dolabra", "it": "Piccone", "fr": "Pioche" },
+      "description": {
+        "en": "Mining tool with a pointed metal head for breaking rock.",
+        "hu": "Bányászszerszám hegyes fémfejjel a kőzet töréséhez.",
+        "de": "Bergbauwerkzeug mit spitzem Metallkopf zum Aufbrechen von Gestein.",
+        "la": "Instrumentum fodinae cum capite metallico acuto ad saxa frangenda.",
+        "it": "Attrezzo minerario con testa metallica appuntita per rompere la roccia.",
+        "fr": "Outil minier à tête métallique pointue pour briser la roche."
+      }
+    },
+    "salt_crystal": {
+      "name": { "en": "Salt Crystal", "hu": "Sókristály", "de": "Salzkristall", "la": "Crystallum Salis", "it": "Cristallo di Sale", "fr": "Cristal de Sel" },
+      "description": {
+        "en": "Mineral deposit mined from a mountain's core.",
+        "hu": "Egy hegy belsejéből kibányászott ásványi lelőhely.",
+        "de": "Mineralvorkommen, aus dem Kern eines Berges abgebaut.",
+        "la": "Depositum minerale ex corde montis effossum.",
+        "it": "Giacimento minerale estratto dal cuore di una montagna.",
+        "fr": "Gisement minéral extrait du cœur d'une montagne."
+      }
+    },
+    "lake": {
+      "name": { "en": "Lake", "hu": "Tó", "de": "See", "la": "Lacus", "it": "Lago", "fr": "Lac" },
+      "description": {
+        "en": "A large body of still, fresh water.",
+        "hu": "Nagy kiterjedésű, nyugodt édesvíztömeg.",
+        "de": "Eine große Ansammlung ruhigen Süßwassers.",
+        "la": "Magna copia aquae dulcis quietae.",
+        "it": "Un grande specchio d'acqua dolce e calma.",
+        "fr": "Une grande étendue d'eau douce et calme."
+      }
+    },
+    "ocean": {
+      "name": { "en": "Ocean", "hu": "Óceán", "de": "Ozean", "la": "Oceanus", "it": "Oceano", "fr": "Océan" },
+      "description": {
+        "en": "Vast salt water body covering the earth.",
+        "hu": "A Földet borító hatalmas sósvíztömeg.",
+        "de": "Ein riesiges Salzwassergebiet, das die Erde bedeckt.",
+        "la": "Vasta aquae salsae copia terram tegens.",
+        "it": "Vasta distesa d'acqua salata che ricopre la terra.",
+        "fr": "Vaste étendue d'eau salée recouvrant la terre."
+      }
     }
   }
 }
