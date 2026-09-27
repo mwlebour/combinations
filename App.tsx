@@ -107,18 +107,27 @@ const DraggableCanvasItem = ({
     }
   }, [element.isNew]);
 
+  // PanResponder is created once via useRef, so its callbacks must not close over
+  // props/state directly (they'd freeze at this item's first mount, e.g. when
+  // rehydrated from storage before canvasLayout has been measured). Route through
+  // a ref that's refreshed every render so handlers always see current values.
+  const handlersRef = useRef({ onDragStart, onDragMove, onDragRelease });
+  useEffect(() => {
+    handlersRef.current = { onDragStart, onDragMove, onDragRelease };
+  });
+
   const panResponder = useRef(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: () => {
-        onDragStart(element.instanceId, lastPosition.current.x, lastPosition.current.y);
+        handlersRef.current.onDragStart(element.instanceId, lastPosition.current.x, lastPosition.current.y);
       },
       onPanResponderMove: (evt, gestureState) => {
-        onDragMove(element.instanceId, gestureState.dx, gestureState.dy);
+        handlersRef.current.onDragMove(element.instanceId, gestureState.dx, gestureState.dy);
       },
       onPanResponderRelease: (evt, gestureState) => {
-        onDragRelease(element.instanceId, lastPosition.current.x, lastPosition.current.y);
+        handlersRef.current.onDragRelease(element.instanceId, lastPosition.current.x, lastPosition.current.y);
       },
     })
   ).current;
