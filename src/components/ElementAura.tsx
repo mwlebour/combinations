@@ -174,6 +174,7 @@ const FlameLayer = ({
   duration,
   delay,
   flickerRange,
+  mirrored,
 }: {
   color: string;
   width: number;
@@ -183,10 +184,14 @@ const FlameLayer = ({
   duration: number;
   delay: number;
   flickerRange: [number, number];
+  mirrored?: boolean;
 }) => {
   const progress = usePingPong(duration, delay);
   const scaleY = progress.interpolate({ inputRange: [0, 1], outputRange: flickerRange });
-  const rotate = progress.interpolate({ inputRange: [0, 1], outputRange: ['-4deg', '4deg'] });
+  const rotate = progress.interpolate({
+    inputRange: [0, 1],
+    outputRange: mirrored ? ['4deg', '-4deg'] : ['-4deg', '4deg'],
+  });
   const opacity = progress.interpolate({ inputRange: [0, 1], outputRange: [0.82, 1] });
 
   return (
@@ -197,7 +202,7 @@ const FlameLayer = ({
         left,
         bottom,
         opacity,
-        transform: [{ scaleY }, { rotate }],
+        transform: [{ scaleY }, { rotate }, { scaleX: mirrored ? -1 : 1 }],
       }}
     >
       <Svg width={width} height={height} viewBox="0 0 24 24">
@@ -207,27 +212,41 @@ const FlameLayer = ({
   );
 };
 
+// Flames climb the left/right edges of the tile so the icon and label stay clear.
 const FlameAura = ({ spec }: { spec: AuraSpec }) => (
   <>
+    <FlameLayer color={spec.color} width={26} height={34} left={8} bottom={6} duration={880} delay={0} flickerRange={[0.88, 1.1]} />
+    <FlameLayer
+      color={spec.secondaryColor || spec.color}
+      width={15}
+      height={20}
+      left={13}
+      bottom={6}
+      duration={600}
+      delay={90}
+      flickerRange={[0.82, 1.18]}
+    />
     <FlameLayer
       color={spec.color}
-      width={48}
-      height={58}
-      left={CENTER - 24}
-      bottom={CENTER - 48}
-      duration={900}
-      delay={0}
+      width={26}
+      height={34}
+      left={AURA_SIZE - 8 - 26}
+      bottom={6}
+      duration={780}
+      delay={220}
       flickerRange={[0.88, 1.1]}
+      mirrored
     />
     <FlameLayer
       color={spec.secondaryColor || spec.color}
-      width={26}
-      height={34}
-      left={CENTER - 13}
-      bottom={CENTER - 42}
-      duration={620}
-      delay={100}
+      width={15}
+      height={20}
+      left={AURA_SIZE - 13 - 15}
+      bottom={6}
+      duration={560}
+      delay={300}
       flickerRange={[0.82, 1.18]}
+      mirrored
     />
   </>
 );
@@ -297,7 +316,29 @@ const WindAura = ({ spec }: { spec: AuraSpec }) => (
   </>
 );
 
-// --- Shine: a rotating glint of light, used for metal ---
+// --- Sweep: a diagonal shine sweeping across, used for metal ---
+
+const SweepAura = ({ spec }: { spec: AuraSpec }) => {
+  const progress = useLoop(1600, 900, Easing.inOut(Easing.quad));
+  const translateX = progress.interpolate({ inputRange: [0, 1], outputRange: [-AURA_SIZE, AURA_SIZE] });
+  const opacity = progress.interpolate({ inputRange: [0, 0.1, 0.5, 0.9, 1], outputRange: [0, 1, 1, 1, 0] });
+  return (
+    <Animated.View
+      pointerEvents="none"
+      style={{
+        position: 'absolute',
+        top: CENTER - 50,
+        width: 14,
+        height: 100,
+        backgroundColor: spec.color,
+        opacity,
+        transform: [{ translateX }, { rotate: '20deg' }],
+      }}
+    />
+  );
+};
+
+// --- Shine: a rotating glint of light, used for gold/silver ---
 
 const ShineAura = ({ spec }: { spec: AuraSpec }) => {
   const progress = useLoop(spec.speed ?? 1700, 0, Easing.linear);
@@ -352,6 +393,61 @@ const ShineAura = ({ spec }: { spec: AuraSpec }) => {
         />
       )}
     </Animated.View>
+  );
+};
+
+// --- Twinkle: sharp sparkle flashes at fixed points, used for silver ---
+
+const Twinkle = ({
+  x,
+  y,
+  size,
+  color,
+  duration,
+  delay,
+}: {
+  x: number;
+  y: number;
+  size: number;
+  color: string;
+  duration: number;
+  delay: number;
+}) => {
+  const progress = usePingPong(duration, delay, Easing.out(Easing.quad));
+  const scale = progress.interpolate({ inputRange: [0, 1], outputRange: [0.2, 1] });
+  const opacity = progress.interpolate({ inputRange: [0, 0.5, 1], outputRange: [0, 1, 0] });
+  return (
+    <Animated.View
+      pointerEvents="none"
+      style={{
+        position: 'absolute',
+        left: x,
+        top: y,
+        opacity,
+        transform: [{ scale }, { rotate: '45deg' }],
+      }}
+    >
+      <View style={{ width: size, height: size, backgroundColor: color }} />
+    </Animated.View>
+  );
+};
+
+const TwinkleAura = ({ spec }: { spec: AuraSpec }) => {
+  const sparkles = useMemo(
+    () => [
+      { x: 18, y: 20, size: 6, duration: 700, delay: 0 },
+      { x: 94, y: 32, size: 5, duration: 650, delay: 320 },
+      { x: 28, y: 90, size: 5, duration: 720, delay: 560 },
+      { x: 86, y: 84, size: 7, duration: 680, delay: 150 },
+    ],
+    []
+  );
+  return (
+    <>
+      {sparkles.map((s, i) => (
+        <Twinkle key={i} {...s} color={i % 2 === 0 ? spec.color : spec.secondaryColor || spec.color} />
+      ))}
+    </>
   );
 };
 
@@ -503,6 +599,8 @@ export const ElementAura = ({ elementId }: ElementAuraProps) => {
       {spec.type === 'orbit' && <OrbitAura spec={spec} />}
       {spec.type === 'wind' && <WindAura spec={spec} />}
       {spec.type === 'shine' && <ShineAura spec={spec} />}
+      {spec.type === 'sweep' && <SweepAura spec={spec} />}
+      {spec.type === 'twinkle' && <TwinkleAura spec={spec} />}
       {spec.type === 'leaf' && <LeafAura spec={spec} />}
       {spec.type === 'bolt' && <BoltAura spec={spec} />}
     </View>
