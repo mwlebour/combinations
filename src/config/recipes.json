@@ -35,5 +35,9 @@
   "mud+sand": "clay",
   "clay+fire": "brick",
   "brick+wood": "house",
-  "crude_oil+fire": "plastic"
+  "crude_oil+fire": "plastic",
+  "axe+rock": "pickaxe",
+  "mountain+pickaxe": "salt_crystal",
+  "water+water": "lake",
+  "lake+salt_crystal": "ocean"
 }
