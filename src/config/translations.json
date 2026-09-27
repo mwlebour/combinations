@@ -245,6 +245,17 @@
         "fr": "Hydrocarbure liquide épais et inflammable extrait des profondeurs du sous-sol."
       }
     },
+    "gold": {
+      "name": { "en": "Gold", "hu": "Arany", "de": "Gold", "la": "Aurum", "it": "Oro", "fr": "Or" },
+      "description": {
+        "en": "Precious, lustrous metal prized for its rarity.",
+        "hu": "Értékes, fényes fém, ritkasága miatt nagyra becsült.",
+        "de": "Kostbares, glänzendes Metall, geschätzt für seine Seltenheit.",
+        "la": "Pretiosum, nitidum metallum ob raritatem suam magni aestimatum.",
+        "it": "Metallo prezioso e lucente, apprezzato per la sua rarità.",
+        "fr": "Métal précieux et brillant, apprécié pour sa rareté."
+      }
+    },
     "sand": {
       "name": {
         "en": "Sand",
@@ -992,6 +1003,17 @@
         "la": "Materia polymerica synthetica ex oleo crudo raffinata.",
         "it": "Materiale polimerico sintetico raffinato dal petrolio greggio.",
         "fr": "Matériau polymère synthétique raffiné à partir de pétrole brut."
+      }
+    },
+    "ring": {
+      "name": { "en": "Ring", "hu": "Gyűrű", "de": "Ring", "la": "Anulus", "it": "Anello", "fr": "Bague" },
+      "description": {
+        "en": "Band of precious metal worn as jewelry.",
+        "hu": "Értékes fémből készült ékszer, amelyet ujjon viselnek.",
+        "de": "Aus wertvollem Metall gefertigter Schmuck.",
+        "la": "Vinculum ex metallo pretioso tamquam ornamentum gestatum.",
+        "it": "Fascia di metallo prezioso indossata come gioiello.",
+        "fr": "Anneau de métal précieux porté comme bijou."
       }
     }
   }
