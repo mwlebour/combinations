@@ -10,7 +10,8 @@
       "es": "Combinaciones Elementales",
       "pt": "Combinações Elementais",
       "ja": "元素の組み合わせ",
-      "zh": "元素组合"
+      "zh": "元素组合",
+      "ru": "Комбинации Элементов"
     },
     "discovered": {
       "en": "Discovered",
@@ -22,7 +23,8 @@
       "es": "Descubierto",
       "pt": "Descoberto",
       "ja": "発見済み",
-      "zh": "已发现"
+      "zh": "已发现",
+      "ru": "Открыто"
     },
     "resetGame": {
       "en": "Reset Game",
@@ -34,7 +36,8 @@
       "es": "Reiniciar Juego",
       "pt": "Reiniciar Jogo",
       "ja": "ゲームをリセット",
-      "zh": "重置游戏"
+      "zh": "重置游戏",
+      "ru": "Сбросить Игру"
     },
     "clearBoard": {
       "en": "Clear Board",
@@ -46,7 +49,8 @@
       "es": "Limpiar Tablero",
       "pt": "Limpar Tabuleiro",
       "ja": "盤面をクリア",
-      "zh": "清空面板"
+      "zh": "清空面板",
+      "ru": "Очистить Поле"
     },
     "workspaceCanvas": {
       "en": "WORKSPACE CANVAS",
@@ -58,7 +62,8 @@
       "es": "ÁREA DE TRABAJO",
       "pt": "ÁREA DE TRABALHO",
       "ja": "作業スペース",
-      "zh": "工作台"
+      "zh": "工作台",
+      "ru": "РАБОЧАЯ ОБЛАСТЬ"
     },
     "dragHint": {
       "en": "Tap items in the right sidebar to spawn them. Drag and drop them onto each other to combine!",
@@ -70,7 +75,8 @@
       "es": "Toca los elementos de la barra lateral para crearlos. ¡Arrástralos uno sobre otro para combinarlos!",
       "pt": "Toque nos itens da barra lateral para criá-los. Arraste-os uns sobre os outros para combiná-los!",
       "ja": "右側のサイドバーの項目をタップして生成しましょう。ドラッグ&ドロップで重ねると組み合わせられます!",
-      "zh": "点击右侧栏中的元素以生成它们。将它们拖到一起即可合成!"
+      "zh": "点击右侧栏中的元素以生成它们。将它们拖到一起即可合成!",
+      "ru": "Нажмите на элементы в боковой панели, чтобы создать их. Перетаскивайте их друг на друга, чтобы комбинировать!"
     },
     "searchPlaceholder": {
       "en": "Search discovered...",
@@ -82,7 +88,8 @@
       "es": "Buscar descubiertos...",
       "pt": "Pesquisar descobertos...",
       "ja": "発見済みを検索...",
-      "zh": "搜索已发现的元素..."
+      "zh": "搜索已发现的元素...",
+      "ru": "Поиск открытых..."
     },
     "allTab": {
       "en": "All",
@@ -94,7 +101,8 @@
       "es": "Todos",
       "pt": "Todos",
       "ja": "すべて",
-      "zh": "全部"
+      "zh": "全部",
+      "ru": "Все"
     },
     "basicTab": {
       "en": "Basic",
@@ -106,7 +114,8 @@
       "es": "Básico",
       "pt": "Básico",
       "ja": "基本",
-      "zh": "基础"
+      "zh": "基础",
+      "ru": "Базовые"
     },
     "combinedTab": {
       "en": "Combined",
@@ -118,7 +127,8 @@
       "es": "Combinados",
       "pt": "Combinados",
       "ja": "組み合わせ",
-      "zh": "组合"
+      "zh": "组合",
+      "ru": "Составные"
     },
     "finalTab": {
       "en": "Final",
@@ -130,7 +140,8 @@
       "es": "Finales",
       "pt": "Finais",
       "ja": "最終",
-      "zh": "最终"
+      "zh": "最终",
+      "ru": "Финальные"
     },
     "noItems": {
       "en": "No items found",
@@ -142,7 +153,8 @@
       "es": "No se encontraron elementos",
       "pt": "Nenhum item encontrado",
       "ja": "アイテムが見つかりません",
-      "zh": "未找到相关物品"
+      "zh": "未找到相关物品",
+      "ru": "Ничего не найдено"
     },
     "newDiscovery": {
       "en": "NEW DISCOVERY!",
@@ -154,7 +166,8 @@
       "es": "¡NUEVO DESCUBRIMIENTO!",
       "pt": "NOVA DESCOBERTA!",
       "ja": "新発見!",
-      "zh": "新发现!"
+      "zh": "新发现!",
+      "ru": "НОВОЕ ОТКРЫТИЕ!"
     },
     "awesome": {
       "en": "Awesome!",
@@ -166,7 +179,8 @@
       "es": "¡Genial!",
       "pt": "Incrível!",
       "ja": "やった!",
-      "zh": "太棒了!"
+      "zh": "太棒了!",
+      "ru": "Отлично!"
     },
     "finalBadge": {
       "en": "Final",
@@ -178,7 +192,8 @@
       "es": "Final",
       "pt": "Final",
       "ja": "最終",
-      "zh": "最终"
+      "zh": "最终",
+      "ru": "Финал"
     },
     "selectLanguage": {
       "en": "Select Language",
@@ -190,7 +205,8 @@
       "es": "Seleccionar Idioma",
       "pt": "Selecionar Idioma",
       "ja": "言語を選択",
-      "zh": "选择语言"
+      "zh": "选择语言",
+      "ru": "Выбрать язык"
     },
     "tipButton": {
       "en": "Tip",
@@ -202,7 +218,8 @@
       "es": "Pista",
       "pt": "Dica",
       "ja": "ヒント",
-      "zh": "提示"
+      "zh": "提示",
+      "ru": "Подсказка"
     },
     "hintTitle": {
       "en": "HERE'S A TIP",
@@ -214,7 +231,8 @@
       "es": "AQUÍ TIENES UNA PISTA",
       "pt": "AQUI ESTÁ UMA DICA",
       "ja": "ヒントです",
-      "zh": "这是一个提示"
+      "zh": "这是一个提示",
+      "ru": "ВОТ ПОДСКАЗКА"
     },
     "hintDescription": {
       "en": "Try combining these two:",
@@ -226,7 +244,8 @@
       "es": "Intenta combinar estos dos:",
       "pt": "Tente combinar estes dois:",
       "ja": "この2つを組み合わせてみて:",
-      "zh": "试试组合这两个:"
+      "zh": "试试组合这两个:",
+      "ru": "Попробуй скомбинировать эти два:"
     },
     "noHintAvailable": {
       "en": "No hints left — you've found every combination!",
@@ -238,7 +257,8 @@
       "es": "¡No quedan pistas — has encontrado todas las combinaciones!",
       "pt": "Sem mais dicas — você encontrou todas as combinações!",
       "ja": "ヒントはもうありません — すべての組み合わせを発見しました!",
-      "zh": "没有更多提示了——你已经发现了所有组合!"
+      "zh": "没有更多提示了——你已经发现了所有组合!",
+      "ru": "Подсказок больше нет — вы нашли все комбинации!"
     },
     "confirmResetTitle": {
       "en": "Reset Game?",
@@ -250,7 +270,8 @@
       "es": "¿Reiniciar juego?",
       "pt": "Reiniciar jogo?",
       "ja": "ゲームをリセットしますか?",
-      "zh": "重置游戏?"
+      "zh": "重置游戏?",
+      "ru": "Сбросить игру?"
     },
     "confirmResetDescription": {
       "en": "Are you sure you want to reset the game? All discovered elements and progress will be lost.",
@@ -262,7 +283,8 @@
       "es": "¿Seguro que quieres reiniciar el juego? Se perderán todos los elementos descubiertos y el progreso.",
       "pt": "Tem certeza de que deseja reiniciar o jogo? Todos os elementos descobertos e o progresso serão perdidos.",
       "ja": "本当にゲームをリセットしますか?発見したすべての要素と進行状況が失われます。",
-      "zh": "确定要重置游戏吗?所有已发现的元素和进度都将丢失。"
+      "zh": "确定要重置游戏吗?所有已发现的元素和进度都将丢失。",
+      "ru": "Вы уверены, что хотите сбросить игру? Все открытые элементы и прогресс будут утеряны."
     },
     "yes": {
       "en": "Yes",
@@ -274,7 +296,8 @@
       "es": "Sí",
       "pt": "Sim",
       "ja": "はい",
-      "zh": "是"
+      "zh": "是",
+      "ru": "Да"
     },
     "no": {
       "en": "No",
@@ -286,7 +309,8 @@
       "es": "No",
       "pt": "Não",
       "ja": "いいえ",
-      "zh": "否"
+      "zh": "否",
+      "ru": "Нет"
     }
   },
   "elements": {
@@ -301,7 +325,8 @@
         "es": "Tierra",
         "pt": "Terra",
         "ja": "地",
-        "zh": "土"
+        "zh": "土",
+        "ru": "Земля"
       },
       "description": {
         "en": "Representative of land, stability, soil.",
@@ -313,7 +338,8 @@
         "es": "Representativa de la tierra, la estabilidad, el suelo.",
         "pt": "Representa a terra, a estabilidade, o solo.",
         "ja": "大地、安定、土壌を象徴する。",
-        "zh": "代表大地、稳定与土壤。"
+        "zh": "代表大地、稳定与土壤。",
+        "ru": "Символ суши, стабильности и почвы."
       }
     },
     "air": {
@@ -327,7 +353,8 @@
         "es": "Aire",
         "pt": "Ar",
         "ja": "風",
-        "zh": "风"
+        "zh": "风",
+        "ru": "Воздух"
       },
       "description": {
         "en": "Representative of atmosphere, wind, movement.",
@@ -339,7 +366,8 @@
         "es": "Representativo de la atmósfera, el viento, el movimiento.",
         "pt": "Representa a atmosfera, o vento, o movimento.",
         "ja": "大気、風、動きを象徴する。",
-        "zh": "代表大气、风与运动。"
+        "zh": "代表大气、风与运动。",
+        "ru": "Символ атмосферы, ветра и движения."
       }
     },
     "fire": {
@@ -353,7 +381,8 @@
         "es": "Fuego",
         "pt": "Fogo",
         "ja": "火",
-        "zh": "火"
+        "zh": "火",
+        "ru": "Огонь"
       },
       "description": {
         "en": "Representative of heat, energy, light.",
@@ -365,7 +394,8 @@
         "es": "Representativo del calor, la energía, la luz.",
         "pt": "Representa o calor, a energia, a luz.",
         "ja": "熱、エネルギー、光を象徴する。",
-        "zh": "代表热量、能量与光。"
+        "zh": "代表热量、能量与光。",
+        "ru": "Символ жара, энергии и света."
       }
     },
     "water": {
@@ -379,7 +409,8 @@
         "es": "Agua",
         "pt": "Água",
         "ja": "水",
-        "zh": "水"
+        "zh": "水",
+        "ru": "Вода"
       },
       "description": {
         "en": "Representative of ocean, rain, fluid.",
@@ -391,7 +422,8 @@
         "es": "Representativa del océano, la lluvia, el fluido.",
         "pt": "Representa o oceano, a chuva, o fluido.",
         "ja": "海、雨、液体を象徴する。",
-        "zh": "代表海洋、雨水与流体。"
+        "zh": "代表海洋、雨水与流体。",
+        "ru": "Символ океана, дождя и жидкости."
       }
     },
     "crude_oil": {
@@ -405,7 +437,8 @@
         "es": "Petróleo Crudo",
         "pt": "Petróleo Bruto",
         "ja": "原油",
-        "zh": "原油"
+        "zh": "原油",
+        "ru": "Сырая Нефть"
       },
       "description": {
         "en": "Thick, flammable liquid hydrocarbon drawn up from deep underground.",
@@ -417,7 +450,8 @@
         "es": "Hidrocarburo líquido espeso e inflamable extraído de las profundidades subterráneas.",
         "pt": "Hidrocarboneto líquido espesso e inflamável extraído das profundezas do subsolo.",
         "ja": "地中深くから汲み上げられる、粘性のある可燃性の液体炭化水素。",
-        "zh": "从地下深处抽取的粘稠、易燃液态碳氢化合物。"
+        "zh": "从地下深处抽取的粘稠、易燃液态碳氢化合物。",
+        "ru": "Густой, горючий жидкий углеводород, добываемый из глубины земли."
       }
     },
     "gold": {
@@ -431,7 +465,8 @@
         "es": "Oro",
         "pt": "Ouro",
         "ja": "金",
-        "zh": "黄金"
+        "zh": "黄金",
+        "ru": "Золото"
       },
       "description": {
         "en": "Precious, lustrous metal prized for its rarity.",
@@ -443,7 +478,8 @@
         "es": "Metal precioso y brillante, apreciado por su rareza.",
         "pt": "Metal precioso e brilhante, valorizado por sua raridade.",
         "ja": "希少性で珍重される、貴重で光沢のある金属。",
-        "zh": "因稀有而备受珍视的贵重光泽金属。"
+        "zh": "因稀有而备受珍视的贵重光泽金属。",
+        "ru": "Драгоценный, блестящий металл, ценимый за свою редкость."
       }
     },
     "silver": {
@@ -457,7 +493,8 @@
         "es": "Plata",
         "pt": "Prata",
         "ja": "銀",
-        "zh": "白银"
+        "zh": "白银",
+        "ru": "Серебро"
       },
       "description": {
         "en": "Pale, reflective metal valued for its shine.",
@@ -469,7 +506,8 @@
         "es": "Metal pálido y reflectante, valorado por su brillo.",
         "pt": "Metal pálido e reflexivo, valorizado por seu brilho.",
         "ja": "輝きで評価される、淡く反射性のある金属。",
-        "zh": "因光泽而备受珍视的淡色反光金属。"
+        "zh": "因光泽而备受珍视的淡色反光金属。",
+        "ru": "Бледный, отражающий металл, ценимый за свой блеск."
       }
     },
     "sand": {
@@ -483,7 +521,8 @@
         "es": "Arena",
         "pt": "Areia",
         "ja": "砂",
-        "zh": "沙"
+        "zh": "沙",
+        "ru": "Песок"
       },
       "description": {
         "en": "Representative of desert, granular silica matter.",
@@ -495,7 +534,8 @@
         "es": "Representativa del desierto, la materia granular de sílice.",
         "pt": "Representa o deserto, a matéria granular de sílica.",
         "ja": "砂漠、粒状のシリカ物質を象徴する。",
-        "zh": "代表沙漠与颗粒状硅质物质。"
+        "zh": "代表沙漠与颗粒状硅质物质。",
+        "ru": "Символ пустыни, зернистого кремниевого вещества."
       }
     },
     "lightning": {
@@ -509,7 +549,8 @@
         "es": "Rayo",
         "pt": "Raio",
         "ja": "雷",
-        "zh": "闪电"
+        "zh": "闪电",
+        "ru": "Молния"
       },
       "description": {
         "en": "Representative of electricity, storm energy, sparks.",
@@ -521,7 +562,8 @@
         "es": "Representativo de la electricidad, la energía de tormenta, las chispas.",
         "pt": "Representa a eletricidade, a energia da tempestade, as faíscas.",
         "ja": "電気、嵐のエネルギー、火花を象徴する。",
-        "zh": "代表电力、风暴能量与火花。"
+        "zh": "代表电力、风暴能量与火花。",
+        "ru": "Символ электричества, энергии бури, искр."
       }
     },
     "ice": {
@@ -535,7 +577,8 @@
         "es": "Hielo",
         "pt": "Gelo",
         "ja": "氷",
-        "zh": "冰"
+        "zh": "冰",
+        "ru": "Лёд"
       },
       "description": {
         "en": "Representative of frost, cold, crystals.",
@@ -547,7 +590,8 @@
         "es": "Representativo de la escarcha, el frío, los cristales.",
         "pt": "Representa a geada, o frio, os cristais.",
         "ja": "霜、冷気、結晶を象徴する。",
-        "zh": "代表霜冻、寒冷与结晶。"
+        "zh": "代表霜冻、寒冷与结晶。",
+        "ru": "Символ мороза, холода и кристаллов."
       }
     },
     "metal": {
@@ -561,7 +605,8 @@
         "es": "Metal",
         "pt": "Metal",
         "ja": "金属",
-        "zh": "金属"
+        "zh": "金属",
+        "ru": "Металл"
       },
       "description": {
         "en": "Representative of iron, refinement, conductibility.",
@@ -573,7 +618,8 @@
         "es": "Representativo del hierro, el refinamiento, la conductibilidad.",
         "pt": "Representa o ferro, o refinamento, a condutibilidade.",
         "ja": "鉄、精錬、伝導性を象徴する。",
-        "zh": "代表铁、精炼与导电性。"
+        "zh": "代表铁、精炼与导电性。",
+        "ru": "Символ железа, обработки и электропроводности."
       }
     },
     "wood": {
@@ -587,7 +633,8 @@
         "es": "Madera",
         "pt": "Madeira",
         "ja": "木",
-        "zh": "木"
+        "zh": "木",
+        "ru": "Дерево"
       },
       "description": {
         "en": "Representative of forest, organic construction, nature.",
@@ -599,7 +646,8 @@
         "es": "Representativa del bosque, la construcción orgánica, la naturaleza.",
         "pt": "Representa a floresta, a construção orgânica, a natureza.",
         "ja": "森、有機的な建材、自然を象徴する。",
-        "zh": "代表森林、有机建材与自然。"
+        "zh": "代表森林、有机建材与自然。",
+        "ru": "Символ леса, органического строительства и природы."
       }
     },
     "glass": {
@@ -613,7 +661,8 @@
         "es": "Vidrio",
         "pt": "Vidro",
         "ja": "ガラス",
-        "zh": "玻璃"
+        "zh": "玻璃",
+        "ru": "Стекло"
       },
       "description": {
         "en": "Transparent silica structure.",
@@ -625,7 +674,8 @@
         "es": "Estructura de sílice transparente.",
         "pt": "Estrutura de sílica transparente.",
         "ja": "透明なシリカ構造。",
-        "zh": "透明的硅质结构。"
+        "zh": "透明的硅质结构。",
+        "ru": "Прозрачная кремниевая структура."
       }
     },
     "glasses": {
@@ -639,7 +689,8 @@
         "es": "Gafas",
         "pt": "Óculos",
         "ja": "眼鏡",
-        "zh": "眼镜"
+        "zh": "眼镜",
+        "ru": "Очки"
       },
       "description": {
         "en": "Two lenses connected together to assist vision.",
@@ -651,7 +702,8 @@
         "es": "Dos lentes conectadas para ayudar la visión.",
         "pt": "Duas lentes conectadas para auxiliar a visão.",
         "ja": "視力を補助するために連結された2枚のレンズ。",
-        "zh": "两片连接在一起以辅助视力的镜片。"
+        "zh": "两片连接在一起以辅助视力的镜片。",
+        "ru": "Две линзы, соединённые вместе для улучшения зрения."
       }
     },
     "binoculars": {
@@ -665,7 +717,8 @@
         "es": "Binoculares",
         "pt": "Binóculos",
         "ja": "双眼鏡",
-        "zh": "望远镜"
+        "zh": "望远镜",
+        "ru": "Бинокль"
       },
       "description": {
         "en": "High-magnification optical instrument.",
@@ -677,7 +730,8 @@
         "es": "Instrumento óptico de alta ampliación.",
         "pt": "Instrumento óptico de alta ampliação.",
         "ja": "高倍率の光学機器。",
-        "zh": "高倍率光学仪器。"
+        "zh": "高倍率光学仪器。",
+        "ru": "Оптический прибор с высоким увеличением."
       }
     },
     "mud": {
@@ -691,7 +745,8 @@
         "es": "Barro",
         "pt": "Lama",
         "ja": "泥",
-        "zh": "泥"
+        "zh": "泥",
+        "ru": "Грязь"
       },
       "description": {
         "en": "Wet, gooey soil.",
@@ -703,7 +758,8 @@
         "es": "Tierra húmeda y viscosa.",
         "pt": "Solo úmido e pegajoso.",
         "ja": "湿ってねばねばした土。",
-        "zh": "湿润粘稠的泥土。"
+        "zh": "湿润粘稠的泥土。",
+        "ru": "Влажная, липкая почва."
       }
     },
     "swamp": {
@@ -717,7 +773,8 @@
         "es": "Pantano",
         "pt": "Pântano",
         "ja": "沼地",
-        "zh": "沼泽"
+        "zh": "沼泽",
+        "ru": "Болото"
       },
       "description": {
         "en": "Wet, saturated forest area.",
@@ -729,7 +786,8 @@
         "es": "Zona forestal húmeda y saturada.",
         "pt": "Área florestal úmida e saturada.",
         "ja": "湿って水浸しの森林地帯。",
-        "zh": "潮湿饱和的森林地带。"
+        "zh": "潮湿饱和的森林地带。",
+        "ru": "Влажная, насыщенная водой лесная территория."
       }
     },
     "life": {
@@ -743,7 +801,8 @@
         "es": "Vida",
         "pt": "Vida",
         "ja": "生命",
-        "zh": "生命"
+        "zh": "生命",
+        "ru": "Жизнь"
       },
       "description": {
         "en": "Sparks of biology and energy coalescing.",
@@ -755,7 +814,8 @@
         "es": "Chispas de biología y energía fusionándose.",
         "pt": "Faíscas de biologia e energia se fundindo.",
         "ja": "生物とエネルギーの火花が融合する。",
-        "zh": "生物与能量的火花交融汇聚。"
+        "zh": "生物与能量的火花交融汇聚。",
+        "ru": "Искры биологии и энергии, сливающиеся воедино."
       }
     },
     "ent": {
@@ -769,7 +829,8 @@
         "es": "Ent",
         "pt": "Ent",
         "ja": "エント",
-        "zh": "树人"
+        "zh": "树人",
+        "ru": "Энт"
       },
       "description": {
         "en": "A sentient, walking tree creature.",
@@ -781,7 +842,8 @@
         "es": "Una criatura de árbol andante y consciente.",
         "pt": "Uma criatura árvore ambulante e senciente.",
         "ja": "意識を持ち、歩き回る木の生き物。",
-        "zh": "一种有知觉、会行走的树形生物。"
+        "zh": "一种有知觉、会行走的树形生物。",
+        "ru": "Разумное, ходячее древесное существо."
       }
     },
     "electricity": {
@@ -795,7 +857,8 @@
         "es": "Electricidad",
         "pt": "Eletricidade",
         "ja": "電気",
-        "zh": "电"
+        "zh": "电",
+        "ru": "Электричество"
       },
       "description": {
         "en": "Flow of charge through conductive material.",
@@ -807,7 +870,8 @@
         "es": "Flujo de carga a través de material conductor.",
         "pt": "Fluxo de carga através de material condutor.",
         "ja": "導電性材料を流れる電荷の流れ。",
-        "zh": "电荷流经导电材料的流动。"
+        "zh": "电荷流经导电材料的流动。",
+        "ru": "Поток заряда через проводящий материал."
       }
     },
     "silicon": {
@@ -821,7 +885,8 @@
         "es": "Silicio",
         "pt": "Silício",
         "ja": "シリコン",
-        "zh": "硅"
+        "zh": "硅",
+        "ru": "Кремний"
       },
       "description": {
         "en": "Purified semiconductor base.",
@@ -833,7 +898,8 @@
         "es": "Base semiconductora purificada.",
         "pt": "Base semicondutora purificada.",
         "ja": "精製された半導体基材。",
-        "zh": "提纯后的半导体基材。"
+        "zh": "提纯后的半导体基材。",
+        "ru": "Очищенная полупроводниковая основа."
       }
     },
     "microchip": {
@@ -847,7 +913,8 @@
         "es": "Microchip",
         "pt": "Microchip",
         "ja": "マイクロチップ",
-        "zh": "微芯片"
+        "zh": "微芯片",
+        "ru": "Микрочип"
       },
       "description": {
         "en": "Complex integrated circuit.",
@@ -859,7 +926,8 @@
         "es": "Circuito integrado complejo.",
         "pt": "Circuito integrado complexo.",
         "ja": "複雑な集積回路。",
-        "zh": "复杂的集成电路。"
+        "zh": "复杂的集成电路。",
+        "ru": "Сложная интегральная схема."
       }
     },
     "smartphone": {
@@ -873,7 +941,8 @@
         "es": "Smartphone",
         "pt": "Smartphone",
         "ja": "スマートフォン",
-        "zh": "智能手机"
+        "zh": "智能手机",
+        "ru": "Смартфон"
       },
       "description": {
         "en": "Advanced portable computer with a glass screen.",
@@ -885,7 +954,8 @@
         "es": "Computadora portátil avanzada con pantalla de vidrio.",
         "pt": "Computador portátil avançado com tela de vidro.",
         "ja": "ガラス画面を備えた高度な携帯用コンピュータ。",
-        "zh": "配备玻璃屏幕的高级便携电脑。"
+        "zh": "配备玻璃屏幕的高级便携电脑。",
+        "ru": "Продвинутый портативный компьютер со стеклянным экраном."
       }
     },
     "steam": {
@@ -899,7 +969,8 @@
         "es": "Vapor",
         "pt": "Vapor",
         "ja": "蒸気",
-        "zh": "蒸汽"
+        "zh": "蒸汽",
+        "ru": "Пар"
       },
       "description": {
         "en": "Heated vapor rising.",
@@ -911,7 +982,8 @@
         "es": "Vapor caliente ascendiendo.",
         "pt": "Vapor aquecido subindo.",
         "ja": "立ち上る熱い蒸気。",
-        "zh": "升腾的热蒸汽。"
+        "zh": "升腾的热蒸汽。",
+        "ru": "Поднимающийся горячий пар."
       }
     },
     "cloud": {
@@ -925,7 +997,8 @@
         "es": "Nube",
         "pt": "Nuvem",
         "ja": "雲",
-        "zh": "云"
+        "zh": "云",
+        "ru": "Облако"
       },
       "description": {
         "en": "Condensed water droplets in the sky.",
@@ -937,7 +1010,8 @@
         "es": "Gotas de agua condensadas en el cielo.",
         "pt": "Gotas de água condensadas no céu.",
         "ja": "空に凝結した水滴。",
-        "zh": "天空中凝结的水滴。"
+        "zh": "天空中凝结的水滴。",
+        "ru": "Конденсированные капли воды в небе."
       }
     },
     "storm": {
@@ -951,7 +1025,8 @@
         "es": "Tormenta",
         "pt": "Tempestade",
         "ja": "嵐",
-        "zh": "风暴"
+        "zh": "风暴",
+        "ru": "Буря"
       },
       "description": {
         "en": "Heavy tempest of clouds, rain, and thunder.",
@@ -963,7 +1038,8 @@
         "es": "Fuerte tempestad de nubes, lluvia y truenos.",
         "pt": "Forte tempestade de nuvens, chuva e trovões.",
         "ja": "雲、雨、雷を伴う激しい嵐。",
-        "zh": "云、雨与雷交织的猛烈风暴。"
+        "zh": "云、雨与雷交织的猛烈风暴。",
+        "ru": "Сильная непогода из туч, дождя и грома."
       }
     },
     "lightning_rod": {
@@ -977,7 +1053,8 @@
         "es": "Pararrayos",
         "pt": "Para-raios",
         "ja": "避雷針",
-        "zh": "避雷针"
+        "zh": "避雷针",
+        "ru": "Громоотвод"
       },
       "description": {
         "en": "Metal conductor mounted to attract and ground lightning.",
@@ -989,7 +1066,8 @@
         "es": "Conductor metálico instalado para atraer y descargar rayos a tierra.",
         "pt": "Condutor metálico instalado para atrair e aterrar raios.",
         "ja": "雷を引き寄せ、接地させるために設置された金属導体。",
-        "zh": "用于吸引雷电并将其导入地面的金属导体。"
+        "zh": "用于吸引雷电并将其导入地面的金属导体。",
+        "ru": "Металлический проводник, установленный для притяжения и заземления молний."
       }
     },
     "snow": {
@@ -1003,7 +1081,8 @@
         "es": "Nieve",
         "pt": "Neve",
         "ja": "雪",
-        "zh": "雪"
+        "zh": "雪",
+        "ru": "Снег"
       },
       "description": {
         "en": "Flurry of frozen water crystals.",
@@ -1015,7 +1094,8 @@
         "es": "Ráfaga de cristales de agua congelada.",
         "pt": "Rajada de cristais de água congelada.",
         "ja": "凍った水の結晶の吹雪。",
-        "zh": "冻结水结晶的飘落。"
+        "zh": "冻结水结晶的飘落。",
+        "ru": "Вихрь замёрзших кристаллов воды."
       }
     },
     "snowman": {
@@ -1029,7 +1109,8 @@
         "es": "Muñeco de Nieve",
         "pt": "Boneco de Neve",
         "ja": "雪だるま",
-        "zh": "雪人"
+        "zh": "雪人",
+        "ru": "Снеговик"
       },
       "description": {
         "en": "Frozen humanoid figure built from packed snow and soil.",
@@ -1041,7 +1122,8 @@
         "es": "Figura humanoide congelada hecha de nieve compactada y tierra.",
         "pt": "Figura humanoide congelada feita de neve compactada e solo.",
         "ja": "固めた雪と土で作られた凍った人型の像。",
-        "zh": "由压实的雪和泥土制成的冰冻人形。"
+        "zh": "由压实的雪和泥土制成的冰冻人形。",
+        "ru": "Замёрзшая человекоподобная фигура из утрамбованного снега и почвы."
       }
     },
     "axe": {
@@ -1055,7 +1137,8 @@
         "es": "Hacha",
         "pt": "Machado",
         "ja": "斧",
-        "zh": "斧头"
+        "zh": "斧头",
+        "ru": "Топор"
       },
       "description": {
         "en": "Cutting tool with metal head and wooden handle.",
@@ -1067,7 +1150,8 @@
         "es": "Herramienta de corte con cabeza de metal y mango de madera.",
         "pt": "Ferramenta de corte com cabeça de metal e cabo de madeira.",
         "ja": "金属の刃と木の柄を持つ切削工具。",
-        "zh": "带有金属刃和木柄的切削工具。"
+        "zh": "带有金属刃和木柄的切削工具。",
+        "ru": "Режущий инструмент с металлической головкой и деревянной рукоятью."
       }
     },
     "plank": {
@@ -1081,7 +1165,8 @@
         "es": "Tablón",
         "pt": "Prancha",
         "ja": "板",
-        "zh": "木板"
+        "zh": "木板",
+        "ru": "Доска"
       },
       "description": {
         "en": "Wood cut into a flat, usable construction board.",
@@ -1093,7 +1178,8 @@
         "es": "Madera cortada en una tabla plana y utilizable para construcción.",
         "pt": "Madeira cortada em uma prancha plana e utilizável para construção.",
         "ja": "使用可能な平らな建材板に切り出された木材。",
-        "zh": "被切割成可用的平整建筑木板的木材。"
+        "zh": "被切割成可用的平整建筑木板的木材。",
+        "ru": "Дерево, распиленное в плоскую, пригодную для строительства доску."
       }
     },
     "bridge": {
@@ -1107,7 +1193,8 @@
         "es": "Puente",
         "pt": "Ponte",
         "ja": "橋",
-        "zh": "桥"
+        "zh": "桥",
+        "ru": "Мост"
       },
       "description": {
         "en": "Elevated pathway spanning a gap.",
@@ -1119,7 +1206,8 @@
         "es": "Camino elevado que atraviesa un vacío.",
         "pt": "Caminho elevado que atravessa um vão.",
         "ja": "隙間にかかる高架の通路。",
-        "zh": "横跨缺口的高架通道。"
+        "zh": "横跨缺口的高架通道。",
+        "ru": "Приподнятый путь, пересекающий разрыв."
       }
     },
     "train_track": {
@@ -1133,7 +1221,8 @@
         "es": "Vía de Tren",
         "pt": "Trilho de Trem",
         "ja": "線路",
-        "zh": "铁轨"
+        "zh": "铁轨",
+        "ru": "Рельсы"
       },
       "description": {
         "en": "Steel rails laid over wooden supports.",
@@ -1145,7 +1234,8 @@
         "es": "Rieles de acero colocados sobre soportes de madera.",
         "pt": "Trilhos de aço colocados sobre suportes de madeira.",
         "ja": "木製の枕木の上に敷かれた鋼鉄のレール。",
-        "zh": "铺设在木质支撑上的钢轨。"
+        "zh": "铺设在木质支撑上的钢轨。",
+        "ru": "Стальные рельсы, уложенные на деревянные опоры."
       }
     },
     "coal": {
@@ -1159,7 +1249,8 @@
         "es": "Carbón",
         "pt": "Carvão",
         "ja": "石炭",
-        "zh": "煤炭"
+        "zh": "煤炭",
+        "ru": "Уголь"
       },
       "description": {
         "en": "Carbonised wood fuel block.",
@@ -1171,7 +1262,8 @@
         "es": "Bloque de combustible de madera carbonizada.",
         "pt": "Bloco de combustível de madeira carbonizada.",
         "ja": "炭化した木の燃料ブロック。",
-        "zh": "碳化木材制成的燃料块。"
+        "zh": "碳化木材制成的燃料块。",
+        "ru": "Карбонизированный древесный топливный брусок."
       }
     },
     "steel": {
@@ -1185,7 +1277,8 @@
         "es": "Acero",
         "pt": "Aço",
         "ja": "鋼",
-        "zh": "钢"
+        "zh": "钢",
+        "ru": "Сталь"
       },
       "description": {
         "en": "Carbon-reinforced metal alloy.",
@@ -1197,7 +1290,8 @@
         "es": "Aleación metálica reforzada con carbono.",
         "pt": "Liga metálica reforçada com carbono.",
         "ja": "炭素で強化された金属合金。",
-        "zh": "碳强化的金属合金。"
+        "zh": "碳强化的金属合金。",
+        "ru": "Металлический сплав, укреплённый углеродом."
       }
     },
     "sword": {
@@ -1211,7 +1305,8 @@
         "es": "Espada",
         "pt": "Espada",
         "ja": "剣",
-        "zh": "剑"
+        "zh": "剑",
+        "ru": "Меч"
       },
       "description": {
         "en": "Forged blade weapon.",
@@ -1223,7 +1318,8 @@
         "es": "Arma de hoja forjada.",
         "pt": "Arma de lâmina forjada.",
         "ja": "鍛造された刃を持つ武器。",
-        "zh": "锻造的刃制武器。"
+        "zh": "锻造的刃制武器。",
+        "ru": "Кованое клинковое оружие."
       }
     },
     "energy_blade": {
@@ -1237,7 +1333,8 @@
         "es": "Hoja de Energía",
         "pt": "Lâmina de Energia",
         "ja": "エネルギーブレード",
-        "zh": "能量刃"
+        "zh": "能量刃",
+        "ru": "Энергетический Клинок"
       },
       "description": {
         "en": "High-tech sword infused with electrical currents.",
@@ -1249,7 +1346,8 @@
         "es": "Espada de alta tecnología infundida con corrientes eléctricas.",
         "pt": "Espada de alta tecnologia infundida com correntes elétricas.",
         "ja": "電流を帯びたハイテク剣。",
-        "zh": "注入电流的高科技剑。"
+        "zh": "注入电流的高科技剑。",
+        "ru": "Высокотехнологичный меч, наполненный электрическими токами."
       }
     },
     "rock": {
@@ -1263,7 +1361,8 @@
         "es": "Roca",
         "pt": "Rocha",
         "ja": "岩",
-        "zh": "岩石"
+        "zh": "岩石",
+        "ru": "Камень"
       },
       "description": {
         "en": "Solid, compact mass of stone.",
@@ -1275,7 +1374,8 @@
         "es": "Masa sólida y compacta de piedra.",
         "pt": "Massa sólida e compacta de pedra.",
         "ja": "硬く密な石の塊。",
-        "zh": "坚固紧密的石块。"
+        "zh": "坚固紧密的石块。",
+        "ru": "Твёрдая, плотная каменная масса."
       }
     },
     "lava": {
@@ -1289,7 +1389,8 @@
         "es": "Lava",
         "pt": "Lava",
         "ja": "溶岩",
-        "zh": "岩浆"
+        "zh": "岩浆",
+        "ru": "Лава"
       },
       "description": {
         "en": "Superheated liquid rock flowing from the earth.",
@@ -1301,7 +1402,8 @@
         "es": "Roca líquida sobrecalentada que fluye desde la tierra.",
         "pt": "Rocha líquida superaquecida fluindo da terra.",
         "ja": "地中から流れ出る過熱した液状の岩石。",
-        "zh": "从地下涌出的过热液态岩石。"
+        "zh": "从地下涌出的过热液态岩石。",
+        "ru": "Перегретая жидкая порода, вытекающая из земли."
       }
     },
     "mountain": {
@@ -1315,7 +1417,8 @@
         "es": "Montaña",
         "pt": "Montanha",
         "ja": "山",
-        "zh": "山"
+        "zh": "山",
+        "ru": "Гора"
       },
       "description": {
         "en": "Towering elevation of the earth's surface.",
@@ -1327,7 +1430,8 @@
         "es": "Elevación imponente de la superficie terrestre.",
         "pt": "Elevação imponente da superfície terrestre.",
         "ja": "そびえ立つ地表の高まり。",
-        "zh": "高耸的地表隆起。"
+        "zh": "高耸的地表隆起。",
+        "ru": "Возвышающаяся часть земной поверхности."
       }
     },
     "volcano": {
@@ -1341,7 +1445,8 @@
         "es": "Volcán",
         "pt": "Vulcão",
         "ja": "火山",
-        "zh": "火山"
+        "zh": "火山",
+        "ru": "Вулкан"
       },
       "description": {
         "en": "A mountain that vents lava, steam, and ash.",
@@ -1353,7 +1458,8 @@
         "es": "Una montaña que expulsa lava, vapor y ceniza.",
         "pt": "Uma montanha que expele lava, vapor e cinzas.",
         "ja": "溶岩、蒸気、灰を噴出する山。",
-        "zh": "喷发岩浆、蒸汽与灰烬的山。"
+        "zh": "喷发岩浆、蒸汽与灰烬的山。",
+        "ru": "Гора, извергающая лаву, пар и пепел."
       }
     },
     "obsidian": {
@@ -1367,7 +1473,8 @@
         "es": "Obsidiana",
         "pt": "Obsidiana",
         "ja": "黒曜石",
-        "zh": "黑曜石"
+        "zh": "黑曜石",
+        "ru": "Обсидиан"
       },
       "description": {
         "en": "Dark, volcanic glass formed from rapid cooling of lava.",
@@ -1379,7 +1486,8 @@
         "es": "Vidrio volcánico oscuro formado por el enfriamiento rápido de la lava.",
         "pt": "Vidro vulcânico escuro formado pelo resfriamento rápido da lava.",
         "ja": "溶岩が急速に冷えてできた暗色の火山ガラス。",
-        "zh": "由熔岩快速冷却形成的深色火山玻璃。"
+        "zh": "由熔岩快速冷却形成的深色火山玻璃。",
+        "ru": "Тёмное вулканическое стекло, образованное быстрым охлаждением лавы."
       }
     },
     "geyser": {
@@ -1393,7 +1501,8 @@
         "es": "Géiser",
         "pt": "Gêiser",
         "ja": "間欠泉",
-        "zh": "间歇泉"
+        "zh": "间歇泉",
+        "ru": "Гейзер"
       },
       "description": {
         "en": "Hot spring that sends columns of steam and water into the air.",
@@ -1405,7 +1514,8 @@
         "es": "Fuente termal que lanza columnas de vapor y agua al aire.",
         "pt": "Fonte termal que lança colunas de vapor e água ao ar.",
         "ja": "蒸気と水の柱を空に噴き上げる温泉。",
-        "zh": "向空中喷出蒸汽与水柱的温泉。"
+        "zh": "向空中喷出蒸汽与水柱的温泉。",
+        "ru": "Горячий источник, выбрасывающий столбы пара и воды в воздух."
       }
     },
     "magnet": {
@@ -1419,7 +1529,8 @@
         "es": "Imán",
         "pt": "Ímã",
         "ja": "磁石",
-        "zh": "磁铁"
+        "zh": "磁铁",
+        "ru": "Магнит"
       },
       "description": {
         "en": "Material that produces a magnetic field.",
@@ -1431,7 +1542,8 @@
         "es": "Material que produce un campo magnético.",
         "pt": "Material que produz um campo magnético.",
         "ja": "磁場を発生させる物質。",
-        "zh": "产生磁场的材料。"
+        "zh": "产生磁场的材料。",
+        "ru": "Материал, создающий магнитное поле."
       }
     },
     "compass": {
@@ -1445,7 +1557,8 @@
         "es": "Brújula",
         "pt": "Bússola",
         "ja": "コンパス",
-        "zh": "指南针"
+        "zh": "指南针",
+        "ru": "Компас"
       },
       "description": {
         "en": "Navigational instrument showing direction.",
@@ -1457,7 +1570,8 @@
         "es": "Instrumento de navegación que indica la dirección.",
         "pt": "Instrumento de navegação que indica a direção.",
         "ja": "方角を示す航海用具。",
-        "zh": "指示方向的导航仪器。"
+        "zh": "指示方向的导航仪器。",
+        "ru": "Навигационный прибор, показывающий направление."
       }
     },
     "clay": {
@@ -1471,7 +1585,8 @@
         "es": "Arcilla",
         "pt": "Argila",
         "ja": "粘土",
-        "zh": "粘土"
+        "zh": "粘土",
+        "ru": "Глина"
       },
       "description": {
         "en": "Fine-grained natural soil material.",
@@ -1483,7 +1598,8 @@
         "es": "Material de suelo natural de grano fino.",
         "pt": "Material de solo natural de grão fino.",
         "ja": "きめ細かい天然の土質材料。",
-        "zh": "细粒的天然土壤材料。"
+        "zh": "细粒的天然土壤材料。",
+        "ru": "Мелкозернистый природный почвенный материал."
       }
     },
     "brick": {
@@ -1497,7 +1613,8 @@
         "es": "Ladrillo",
         "pt": "Tijolo",
         "ja": "レンガ",
-        "zh": "砖"
+        "zh": "砖",
+        "ru": "Кирпич"
       },
       "description": {
         "en": "Rectangular block of baked clay used in building.",
@@ -1509,7 +1626,8 @@
         "es": "Bloque rectangular de arcilla cocida usado en construcción.",
         "pt": "Bloco retangular de argila cozida usado em construção.",
         "ja": "建築に使われる焼成粘土の直方体ブロック。",
-        "zh": "用于建筑的矩形烧制粘土块。"
+        "zh": "用于建筑的矩形烧制粘土块。",
+        "ru": "Прямоугольный блок обожжённой глины, используемый в строительстве."
       }
     },
     "house": {
@@ -1523,7 +1641,8 @@
         "es": "Casa",
         "pt": "Casa",
         "ja": "家",
-        "zh": "房子"
+        "zh": "房子",
+        "ru": "Дом"
       },
       "description": {
         "en": "Building for human habitation.",
@@ -1535,7 +1654,8 @@
         "es": "Edificio para habitación humana.",
         "pt": "Edifício para habitação humana.",
         "ja": "人が住むための建物。",
-        "zh": "供人类居住的建筑。"
+        "zh": "供人类居住的建筑。",
+        "ru": "Здание для проживания людей."
       }
     },
     "plastic": {
@@ -1549,7 +1669,8 @@
         "es": "Plástico",
         "pt": "Plástico",
         "ja": "プラスチック",
-        "zh": "塑料"
+        "zh": "塑料",
+        "ru": "Пластик"
       },
       "description": {
         "en": "Synthetic polymer material refined from crude oil.",
@@ -1561,7 +1682,8 @@
         "es": "Material polimérico sintético refinado a partir de petróleo crudo.",
         "pt": "Material polimérico sintético refinado a partir de petróleo bruto.",
         "ja": "原油から精製された合成ポリマー素材。",
-        "zh": "由原油精炼而成的合成聚合物材料。"
+        "zh": "由原油精炼而成的合成聚合物材料。",
+        "ru": "Синтетический полимерный материал, получаемый из сырой нефти."
       }
     },
     "paper": {
@@ -1575,7 +1697,8 @@
         "es": "Papel",
         "pt": "Papel",
         "ja": "紙",
-        "zh": "纸"
+        "zh": "纸",
+        "ru": "Бумага"
       },
       "description": {
         "en": "Thin sheet pressed from soaked wood pulp.",
@@ -1587,7 +1710,8 @@
         "es": "Lámina fina prensada a partir de pulpa de madera empapada.",
         "pt": "Folha fina prensada a partir de polpa de madeira embebida.",
         "ja": "水に浸した木材パルプを圧搾した薄いシート。",
-        "zh": "由浸泡的木浆压制而成的薄片。"
+        "zh": "由浸泡的木浆压制而成的薄片。",
+        "ru": "Тонкий лист, спрессованный из размоченной древесной массы."
       }
     },
     "animal": {
@@ -1601,7 +1725,8 @@
         "es": "Animal",
         "pt": "Animal",
         "ja": "動物",
-        "zh": "动物"
+        "zh": "动物",
+        "ru": "Животное"
       },
       "description": {
         "en": "Breath given to earth, formed into a living creature.",
@@ -1613,7 +1738,8 @@
         "es": "Aliento dado a la tierra, formado en una criatura viviente.",
         "pt": "Sopro dado à terra, formado em uma criatura viva.",
         "ja": "大地に与えられた息吹が、生きる生物へと形作られたもの。",
-        "zh": "赋予大地的气息,塑造成一个活生生的生物。"
+        "zh": "赋予大地的气息,塑造成一个活生生的生物。",
+        "ru": "Дыхание, дарованное земле, обретшее форму живого существа."
       }
     },
     "leather": {
@@ -1627,7 +1753,8 @@
         "es": "Cuero",
         "pt": "Couro",
         "ja": "革",
-        "zh": "皮革"
+        "zh": "皮革",
+        "ru": "Кожа"
       },
       "description": {
         "en": "Durable animal hide cured over fire.",
@@ -1639,7 +1766,8 @@
         "es": "Piel animal duradera curtida al fuego.",
         "pt": "Couro animal durável curtido ao fogo.",
         "ja": "火で処理された耐久性のある動物の皮。",
-        "zh": "经火处理而成的耐用兽皮。"
+        "zh": "经火处理而成的耐用兽皮。",
+        "ru": "Прочная шкура животного, выделанная над огнём."
       }
     },
     "book": {
@@ -1653,7 +1781,8 @@
         "es": "Libro",
         "pt": "Livro",
         "ja": "本",
-        "zh": "书"
+        "zh": "书",
+        "ru": "Книга"
       },
       "description": {
         "en": "Bound pages of paper wrapped in a leather cover.",
@@ -1665,7 +1794,8 @@
         "es": "Páginas de papel encuadernadas en una cubierta de cuero.",
         "pt": "Páginas de papel encadernadas em uma capa de couro.",
         "ja": "革の表紙で綴じられた紙のページ。",
-        "zh": "用皮革封面装订的纸页。"
+        "zh": "用皮革封面装订的纸页。",
+        "ru": "Сшитые страницы бумаги в кожаном переплёте."
       }
     },
     "ring": {
@@ -1679,7 +1809,8 @@
         "es": "Anillo",
         "pt": "Anel",
         "ja": "指輪",
-        "zh": "戒指"
+        "zh": "戒指",
+        "ru": "Кольцо"
       },
       "description": {
         "en": "Band of precious metal worn as jewelry.",
@@ -1691,7 +1822,8 @@
         "es": "Banda de metal precioso usada como joya.",
         "pt": "Argola de metal precioso usada como joia.",
         "ja": "宝飾品として身につける貴金属の輪。",
-        "zh": "作为首饰佩戴的贵金属环。"
+        "zh": "作为首饰佩戴的贵金属环。",
+        "ru": "Ободок из драгоценного металла, носимый как украшение."
       }
     },
     "mirror": {
@@ -1705,7 +1837,8 @@
         "es": "Espejo",
         "pt": "Espelho",
         "ja": "鏡",
-        "zh": "镜子"
+        "zh": "镜子",
+        "ru": "Зеркало"
       },
       "description": {
         "en": "Polished glass backed with reflective silver.",
@@ -1717,7 +1850,8 @@
         "es": "Vidrio pulido respaldado con plata reflectante.",
         "pt": "Vidro polido revestido com prata refletora.",
         "ja": "反射性の銀を裏打ちした研磨ガラス。",
-        "zh": "背衬反光银层的磨光玻璃。"
+        "zh": "背衬反光银层的磨光玻璃。",
+        "ru": "Полированное стекло с отражающим серебряным слоем."
       }
     }
   }
