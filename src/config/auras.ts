@@ -1,5 +1,5 @@
 // Themed background auras for basic elements when placed on the board.
-export type AuraType = 'particles' | 'ripple' | 'bolt' | 'flame' | 'orbit' | 'wind' | 'shine' | 'leaf';
+export type AuraType = 'particles' | 'ripple' | 'bolt' | 'flame' | 'orbit' | 'wind' | 'shine' | 'leaf' | 'sweep' | 'twinkle';
 export type ParticleShape = 'dust' | 'grain' | 'bubble' | 'sparkle' | 'frost';
 export type ParticleDirection = 'up' | 'down' | 'side';
 
@@ -22,9 +22,9 @@ export const AURA_CONFIG: Record<string, AuraSpec> = {
   sand: { type: 'particles', color: '#D7B36A', secondaryColor: '#C9A24B', shape: 'grain', direction: 'side' },
   lightning: { type: 'bolt', color: '#FFF176' },
   ice: { type: 'particles', color: '#B3E5FC', secondaryColor: '#E1F5FE', shape: 'frost', direction: 'down' },
-  metal: { type: 'shine', color: '#B0BEC5', speed: 1700 },
+  metal: { type: 'sweep', color: 'rgba(230,230,230,0.55)' },
   gold: { type: 'shine', color: '#FFD54F', secondaryColor: '#FFF9C4', speed: 2600 },
-  silver: { type: 'shine', color: '#ECEFF1', secondaryColor: '#B0BEC5', speed: 1100 },
+  silver: { type: 'twinkle', color: '#ECEFF1', secondaryColor: '#B0BEC5' },
   wood: { type: 'leaf', color: '#8BC34A', secondaryColor: '#C77B3B' },
   crude_oil: { type: 'particles', color: '#212121', secondaryColor: '#424242', shape: 'bubble', direction: 'up' },
 };
