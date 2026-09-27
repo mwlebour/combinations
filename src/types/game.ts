@@ -1,3 +1,8 @@
+export interface IconLayer {
+  svgPath: string;
+  color: string;
+}
+
 export interface ElementItem {
   id: string;
   name: string;
@@ -6,6 +11,10 @@ export interface ElementItem {
   category: string;
   svgPath: string;
   color: string;
+  // Optional multi-color override for icons that need more than one fill
+  // (e.g. a wooden handle plus a metal head). When present, ElementIcon
+  // renders these layers instead of the single svgPath/color pair.
+  iconLayers?: IconLayer[];
 }
 
 export interface ActiveCanvasElement {
