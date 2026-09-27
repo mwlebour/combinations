@@ -2523,6 +2523,44 @@
         "uk": "Полірoване скло з відбиваючим срібним шаром на звороті.",
         "pl": "Wypolerowane szkło pokryte odblaskową warstwą srebra."
       }
+    },
+    "homework": {
+      "name": {
+        "en": "Homework",
+        "hu": "Házi feladat",
+        "de": "Hausaufgabe",
+        "la": "Pensum domesticum",
+        "it": "Compiti",
+        "fr": "Devoirs",
+        "es": "Tarea",
+        "pt": "Lição de casa",
+        "ja": "宿題",
+        "zh": "作业",
+        "ru": "Домашнее задание",
+        "ko": "숙제",
+        "sq": "Detyrë shtëpie",
+        "sr": "Domaći zadatak",
+        "uk": "Домашнє завдання",
+        "pl": "Praca domowa"
+      },
+      "description": {
+        "en": "Assignment written up by a living mind, one sheet at a time.",
+        "hu": "Egy élő elme által papírra vetett feladat, lapról lapra.",
+        "de": "Von einem lebendigen Geist verfasste Aufgabe, Blatt für Blatt.",
+        "la": "Pensum a mente viva scriptum, folio post folium.",
+        "it": "Compito scritto da una mente vivente, un foglio alla volta.",
+        "fr": "Devoir rédigé par un esprit vivant, feuille après feuille.",
+        "es": "Tarea redactada por una mente viva, hoja tras hoja.",
+        "pt": "Tarefa escrita por uma mente viva, folha após folha.",
+        "ja": "生きた心が一枚一枚書き上げた宿題。",
+        "zh": "由一颗活的心灵一页页写出的作业。",
+        "ru": "Задание, написанное живым разумом, лист за листом.",
+        "ko": "살아 있는 정신이 한 장씩 써 내려간 과제.",
+        "sq": "Detyrë e shkruar nga një mendje e gjallë, fletë pas fletë.",
+        "sr": "Zadatak koji je napisao živi um, list po list.",
+        "uk": "Завдання, написане живим розумом, аркуш за аркушем.",
+        "pl": "Zadanie napisane przez żywy umysł, kartka po kartce."
+      }
     }
   }
 }
