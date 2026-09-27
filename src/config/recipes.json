@@ -35,5 +35,6 @@
   "mud+sand": "clay",
   "clay+fire": "brick",
   "brick+wood": "house",
-  "crude_oil+fire": "plastic"
+  "crude_oil+fire": "plastic",
+  "gold+metal": "ring"
 }
