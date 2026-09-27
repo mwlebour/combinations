@@ -749,7 +749,7 @@ export default function App() {
           <View style={styles.modalContent}>
             <Text style={styles.modalHeader}>{t('selectLanguage')}</Text>
             
-            <ScrollView style={styles.langScroll} contentContainerStyle={styles.langList} showsVerticalScrollIndicator={true}>
+            <ScrollView nativeID="lang-scroll" style={styles.langScroll} contentContainerStyle={styles.langList} showsVerticalScrollIndicator={true}>
               {LANGUAGES.map((lang) => (
                 <TouchableOpacity
                   key={lang.code}
