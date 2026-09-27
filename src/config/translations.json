@@ -239,6 +239,54 @@
       "pt": "Sem mais dicas — você encontrou todas as combinações!",
       "ja": "ヒントはもうありません — すべての組み合わせを発見しました!",
       "zh": "没有更多提示了——你已经发现了所有组合!"
+    },
+    "confirmResetTitle": {
+      "en": "Reset Game?",
+      "hu": "Visszaállítod a játékot?",
+      "de": "Spiel zurücksetzen?",
+      "la": "Restituere ludum?",
+      "it": "Azzerare il gioco?",
+      "fr": "Réinitialiser la partie ?",
+      "es": "¿Reiniciar juego?",
+      "pt": "Reiniciar jogo?",
+      "ja": "ゲームをリセットしますか?",
+      "zh": "重置游戏?"
+    },
+    "confirmResetDescription": {
+      "en": "Are you sure you want to reset the game? All discovered elements and progress will be lost.",
+      "hu": "Biztosan visszaállítod a játékot? Minden felfedezett elem és haladás elvész.",
+      "de": "Möchtest du das Spiel wirklich zurücksetzen? Alle entdeckten Elemente und dein Fortschritt gehen verloren.",
+      "la": "Certusne es te ludum restituere velle? Omnia elementa reperta et progressus amittentur.",
+      "it": "Sei sicuro di voler azzerare il gioco? Tutti gli elementi scoperti e i progressi andranno persi.",
+      "fr": "Voulez-vous vraiment réinitialiser la partie ? Tous les éléments découverts et votre progression seront perdus.",
+      "es": "¿Seguro que quieres reiniciar el juego? Se perderán todos los elementos descubiertos y el progreso.",
+      "pt": "Tem certeza de que deseja reiniciar o jogo? Todos os elementos descobertos e o progresso serão perdidos.",
+      "ja": "本当にゲームをリセットしますか?発見したすべての要素と進行状況が失われます。",
+      "zh": "确定要重置游戏吗?所有已发现的元素和进度都将丢失。"
+    },
+    "yes": {
+      "en": "Yes",
+      "hu": "Igen",
+      "de": "Ja",
+      "la": "Etiam",
+      "it": "Sì",
+      "fr": "Oui",
+      "es": "Sí",
+      "pt": "Sim",
+      "ja": "はい",
+      "zh": "是"
+    },
+    "no": {
+      "en": "No",
+      "hu": "Nem",
+      "de": "Nein",
+      "la": "Non",
+      "it": "No",
+      "fr": "Non",
+      "es": "No",
+      "pt": "Não",
+      "ja": "いいえ",
+      "zh": "否"
     }
   },
   "elements": {
@@ -370,6 +418,58 @@
         "pt": "Hidrocarboneto líquido espesso e inflamável extraído das profundezas do subsolo.",
         "ja": "地中深くから汲み上げられる、粘性のある可燃性の液体炭化水素。",
         "zh": "从地下深处抽取的粘稠、易燃液态碳氢化合物。"
+      }
+    },
+    "gold": {
+      "name": {
+        "en": "Gold",
+        "hu": "Arany",
+        "de": "Gold",
+        "la": "Aurum",
+        "it": "Oro",
+        "fr": "Or",
+        "es": "Oro",
+        "pt": "Ouro",
+        "ja": "金",
+        "zh": "黄金"
+      },
+      "description": {
+        "en": "Precious, lustrous metal prized for its rarity.",
+        "hu": "Értékes, fényes fém, ritkasága miatt nagyra becsült.",
+        "de": "Kostbares, glänzendes Metall, geschätzt für seine Seltenheit.",
+        "la": "Pretiosum, nitidum metallum ob raritatem suam magni aestimatum.",
+        "it": "Metallo prezioso e lucente, apprezzato per la sua rarità.",
+        "fr": "Métal précieux et brillant, apprécié pour sa rareté.",
+        "es": "Metal precioso y brillante, apreciado por su rareza.",
+        "pt": "Metal precioso e brilhante, valorizado por sua raridade.",
+        "ja": "希少性で珍重される、貴重で光沢のある金属。",
+        "zh": "因稀有而备受珍视的贵重光泽金属。"
+      }
+    },
+    "silver": {
+      "name": {
+        "en": "Silver",
+        "hu": "Ezüst",
+        "de": "Silber",
+        "la": "Argentum",
+        "it": "Argento",
+        "fr": "Argent",
+        "es": "Plata",
+        "pt": "Prata",
+        "ja": "銀",
+        "zh": "白银"
+      },
+      "description": {
+        "en": "Pale, reflective metal valued for its shine.",
+        "hu": "Sápadt, fényvisszaverő fém, csillogásáért becsült.",
+        "de": "Blasses, reflektierendes Metall, geschätzt für seinen Glanz.",
+        "la": "Pallidum, splendens metallum ob nitorem suum aestimatum.",
+        "it": "Metallo pallido e riflettente, apprezzato per la sua lucentezza.",
+        "fr": "Métal pâle et réfléchissant, apprécié pour son éclat.",
+        "es": "Metal pálido y reflectante, valorado por su brillo.",
+        "pt": "Metal pálido e reflexivo, valorizado por seu brilho.",
+        "ja": "輝きで評価される、淡く反射性のある金属。",
+        "zh": "因光泽而备受珍视的淡色反光金属。"
       }
     },
     "sand": {
@@ -1462,6 +1562,162 @@
         "pt": "Material polimérico sintético refinado a partir de petróleo bruto.",
         "ja": "原油から精製された合成ポリマー素材。",
         "zh": "由原油精炼而成的合成聚合物材料。"
+      }
+    },
+    "paper": {
+      "name": {
+        "en": "Paper",
+        "hu": "Papír",
+        "de": "Papier",
+        "la": "Charta",
+        "it": "Carta",
+        "fr": "Papier",
+        "es": "Papel",
+        "pt": "Papel",
+        "ja": "紙",
+        "zh": "纸"
+      },
+      "description": {
+        "en": "Thin sheet pressed from soaked wood pulp.",
+        "hu": "Átnedvesített farostból préselt vékony lap.",
+        "de": "Dünnes Blatt, aus eingeweichtem Holzbrei gepresst.",
+        "la": "Lamina tenuis ex pulpa ligni madefacti expressa.",
+        "it": "Foglio sottile pressato da polpa di legno inzuppata.",
+        "fr": "Feuille fine pressée à partir de pâte de bois trempée.",
+        "es": "Lámina fina prensada a partir de pulpa de madera empapada.",
+        "pt": "Folha fina prensada a partir de polpa de madeira embebida.",
+        "ja": "水に浸した木材パルプを圧搾した薄いシート。",
+        "zh": "由浸泡的木浆压制而成的薄片。"
+      }
+    },
+    "animal": {
+      "name": {
+        "en": "Animal",
+        "hu": "Állat",
+        "de": "Tier",
+        "la": "Animal",
+        "it": "Animale",
+        "fr": "Animal",
+        "es": "Animal",
+        "pt": "Animal",
+        "ja": "動物",
+        "zh": "动物"
+      },
+      "description": {
+        "en": "Breath given to earth, formed into a living creature.",
+        "hu": "A földnek adott lélegzet, amely élőlénnyé formálódott.",
+        "de": "Der Erde eingehauchter Atem, zu einem Lebewesen geformt.",
+        "la": "Spiritus terrae datus, in creaturam viventem formatus.",
+        "it": "Respiro donato alla terra, plasmato in una creatura vivente.",
+        "fr": "Souffle donné à la terre, façonné en une créature vivante.",
+        "es": "Aliento dado a la tierra, formado en una criatura viviente.",
+        "pt": "Sopro dado à terra, formado em uma criatura viva.",
+        "ja": "大地に与えられた息吹が、生きる生物へと形作られたもの。",
+        "zh": "赋予大地的气息,塑造成一个活生生的生物。"
+      }
+    },
+    "leather": {
+      "name": {
+        "en": "Leather",
+        "hu": "Bőr",
+        "de": "Leder",
+        "la": "Corium",
+        "it": "Pelle",
+        "fr": "Cuir",
+        "es": "Cuero",
+        "pt": "Couro",
+        "ja": "革",
+        "zh": "皮革"
+      },
+      "description": {
+        "en": "Durable animal hide cured over fire.",
+        "hu": "Tűz felett kikészített, tartós állatbőr.",
+        "de": "Widerstandsfähige Tierhaut, über Feuer gegerbt.",
+        "la": "Pellis animalis durabilis igni curata.",
+        "it": "Pelle animale resistente conciata sul fuoco.",
+        "fr": "Peau d'animal durable tannée au feu.",
+        "es": "Piel animal duradera curtida al fuego.",
+        "pt": "Couro animal durável curtido ao fogo.",
+        "ja": "火で処理された耐久性のある動物の皮。",
+        "zh": "经火处理而成的耐用兽皮。"
+      }
+    },
+    "book": {
+      "name": {
+        "en": "Book",
+        "hu": "Könyv",
+        "de": "Buch",
+        "la": "Liber",
+        "it": "Libro",
+        "fr": "Livre",
+        "es": "Libro",
+        "pt": "Livro",
+        "ja": "本",
+        "zh": "书"
+      },
+      "description": {
+        "en": "Bound pages of paper wrapped in a leather cover.",
+        "hu": "Bőrborításba kötött papírlapok.",
+        "de": "Gebundene Papierseiten in einem Ledereinband.",
+        "la": "Paginae chartae in tegumento coriaceo ligatae.",
+        "it": "Pagine di carta legate in una copertina di pelle.",
+        "fr": "Pages de papier reliées dans une couverture en cuir.",
+        "es": "Páginas de papel encuadernadas en una cubierta de cuero.",
+        "pt": "Páginas de papel encadernadas em uma capa de couro.",
+        "ja": "革の表紙で綴じられた紙のページ。",
+        "zh": "用皮革封面装订的纸页。"
+      }
+    },
+    "ring": {
+      "name": {
+        "en": "Ring",
+        "hu": "Gyűrű",
+        "de": "Ring",
+        "la": "Anulus",
+        "it": "Anello",
+        "fr": "Bague",
+        "es": "Anillo",
+        "pt": "Anel",
+        "ja": "指輪",
+        "zh": "戒指"
+      },
+      "description": {
+        "en": "Band of precious metal worn as jewelry.",
+        "hu": "Értékes fémből készült ékszer, amelyet ujjon viselnek.",
+        "de": "Aus wertvollem Metall gefertigter Schmuck.",
+        "la": "Vinculum ex metallo pretioso tamquam ornamentum gestatum.",
+        "it": "Fascia di metallo prezioso indossata come gioiello.",
+        "fr": "Anneau de métal précieux porté comme bijou.",
+        "es": "Banda de metal precioso usada como joya.",
+        "pt": "Argola de metal precioso usada como joia.",
+        "ja": "宝飾品として身につける貴金属の輪。",
+        "zh": "作为首饰佩戴的贵金属环。"
+      }
+    },
+    "mirror": {
+      "name": {
+        "en": "Mirror",
+        "hu": "Tükör",
+        "de": "Spiegel",
+        "la": "Speculum",
+        "it": "Specchio",
+        "fr": "Miroir",
+        "es": "Espejo",
+        "pt": "Espelho",
+        "ja": "鏡",
+        "zh": "镜子"
+      },
+      "description": {
+        "en": "Polished glass backed with reflective silver.",
+        "hu": "Csiszolt üveg, ezüst tükröződő réteggel bevonva.",
+        "de": "Poliertes Glas mit reflektierender Silberschicht.",
+        "la": "Vitrum politum argento nitido tectum.",
+        "it": "Vetro levigato rivestito da uno strato riflettente d'argento.",
+        "fr": "Verre poli recouvert d'une couche d'argent réfléchissante.",
+        "es": "Vidrio pulido respaldado con plata reflectante.",
+        "pt": "Vidro polido revestido com prata refletora.",
+        "ja": "反射性の銀を裏打ちした研磨ガラス。",
+        "zh": "背衬反光银层的磨光玻璃。"
       }
     }
   }
