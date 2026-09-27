@@ -41,5 +41,6 @@
   "animal+fire": "leather",
   "leather+paper": "book",
   "gold+metal": "ring",
-  "glass+silver": "mirror"
+  "glass+silver": "mirror",
+  "paper+life": "homework"
 }

@@ -738,14 +738,14 @@ export default function App() {
 
             <View style={styles.confirmButtonRow}>
               <TouchableOpacity
-                style={[styles.modalButton, styles.confirmButton, { borderColor: '#00E676' }]}
+                style={[styles.confirmButton, { borderColor: '#00E676' }]}
                 onPress={handleConfirmResetGame}
               >
                 <Text style={[styles.modalButtonText, { color: '#00E676' }]}>{t('yes')}</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
-                style={[styles.modalButton, styles.confirmButton, { borderColor: '#EF5350' }]}
+                style={[styles.confirmButton, { borderColor: '#EF5350' }]}
                 onPress={() => setShowResetConfirm(false)}
               >
                 <Text style={[styles.modalButtonText, { color: '#EF5350' }]}>{t('no')}</Text>
@@ -1163,6 +1163,14 @@ const styles = StyleSheet.create({
   },
   confirmButton: {
     flex: 1,
+    minWidth: 96,
+    paddingVertical: 8,
+    paddingHorizontal: 20,
+    borderRadius: 999,
+    borderWidth: 1.5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(255,255,255,0.02)',
   },
   modalButton: {
     width: '100%',
