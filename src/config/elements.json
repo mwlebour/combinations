@@ -460,8 +460,22 @@
     "description": "Mining tool with a pointed metal head for breaking rock.",
     "isFinal": false,
     "category": "construction",
-    "svgPath": "M20 5c-3-2-7-2-10 1S6 13 4 15l1.4 1.4c2-2 6.6-5.6 9.6-8.6s4-2 5-1z",
-    "color": "#8D6E63"
+    "svgPath": "M7.56 21.21L13.56 5.21L12.44 4.79L6.44 20.79Z M3 9Q7 2 12 2Q17 2 21 5Q16.5 3.6 12 4Q7.5 4.4 3.6 10.2Z",
+    "color": "#90A4AE",
+    "iconLayers": [
+      {
+        "svgPath": "M7.56 21.21L13.56 5.21L12.44 4.79L6.44 20.79Z",
+        "color": "#8D6E63"
+      },
+      {
+        "svgPath": "M3 9Q7 2 12 2Q17 2 21 5Q16.5 3.6 12 4Q7.5 4.4 3.6 10.2Z",
+        "color": "#90A4AE"
+      },
+      {
+        "svgPath": "M9 4.9Q11 3.2 13.5 2.9L13.7 3.6Q11.5 4 9.8 5.5Z",
+        "color": "#ECEFF1"
+      }
+    ]
   },
   {
     "id": "salt_crystal",
