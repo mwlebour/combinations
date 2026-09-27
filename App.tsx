@@ -11,6 +11,7 @@ import {
   PanResponder,
   LayoutChangeEvent,
   Animated,
+  useWindowDimensions,
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -140,9 +141,16 @@ const DraggableCanvasItem = ({
   );
 };
 
+// Below this viewport width, the sidebar drops beneath the canvas and the
+// inventory switches from a list to a compact wrapping grid.
+const NARROW_BREAKPOINT = 700;
+
 export default function App() {
   const elements = elementsData as ElementItem[];
   const recipes = recipesData as RecipeDictionary;
+
+  const { width: windowWidth } = useWindowDimensions();
+  const isNarrow = windowWidth < NARROW_BREAKPOINT;
 
   // Game States
   const [discoveredIds, setDiscoveredIds] = useState<string[]>(DEFAULT_STARTING_ELEMENTS);
@@ -535,14 +543,14 @@ export default function App() {
       <StatusBar style="light" />
       
       {/* Header Panel */}
-      <View style={styles.header}>
+      <View style={[styles.header, isNarrow && styles.headerNarrow]}>
         <View>
-          <Text style={styles.title}>{t('title')}</Text>
+          <Text style={[styles.title, isNarrow && styles.titleNarrow]}>{t('title')}</Text>
           <Text style={styles.subtitle}>
             {t('discovered')}: {discoveredIds.length} / {elements.length}
           </Text>
         </View>
-        <View style={styles.headerButtons}>
+        <View style={[styles.headerButtons, isNarrow && styles.headerButtonsNarrow]}>
           <TouchableOpacity style={[styles.glassButton, styles.langButton]} onPress={() => setShowLangMenu(true)}>
             <Text style={styles.langButtonText}>
               {LANGUAGES.find(l => l.code === currentLanguage)?.flag} {currentLanguage.toUpperCase()}
@@ -557,11 +565,11 @@ export default function App() {
         </View>
       </View>
 
-      {/* Main Split Screen */}
-      <View style={styles.mainLayout}>
-        
+      {/* Main Split Screen (stacks vertically on narrow screens) */}
+      <View style={[styles.mainLayout, isNarrow && styles.mainLayoutNarrow]}>
+
         {/* Workspace Canvas (Left Area) */}
-        <View style={styles.canvasContainer} onLayout={onCanvasLayout}>
+        <View style={[styles.canvasContainer, isNarrow && styles.canvasContainerNarrow]} onLayout={onCanvasLayout}>
           {canvasElements.length === 0 ? (
             <View style={styles.emptyCanvasHint}>
               <Text style={styles.hintText}>{t('workspaceCanvas')}</Text>
@@ -622,7 +630,7 @@ export default function App() {
         </View>
 
         {/* Right-hand Sidebar (Discovery Inventory with Deep Neon Green Theme) */}
-        <View style={styles.sidebar}>
+        <View style={[styles.sidebar, isNarrow && styles.sidebarNarrow]}>
           <TextInput
             style={styles.searchBar}
             placeholder={t('searchPlaceholder')}
@@ -650,17 +658,18 @@ export default function App() {
           </View>
 
           {/* Scrollable grid listing discovered elements */}
-          <ScrollView 
-            contentContainerStyle={styles.sidebarGrid}
+          <ScrollView
+            contentContainerStyle={[styles.sidebarGrid, isNarrow && styles.sidebarGridNarrow]}
             showsVerticalScrollIndicator={false}
           >
             {filteredElements.map((item) => {
               const trans = getElementTranslation(item.id);
               return (
-                <TouchableOpacity 
-                  key={item.id} 
+                <TouchableOpacity
+                  key={item.id}
                   style={[
-                    styles.sidebarCard, 
+                    styles.sidebarCard,
+                    isNarrow && styles.sidebarCardNarrow,
                     item.isFinal && styles.finalSidebarCard
                   ]}
                   activeOpacity={0.7}
@@ -669,7 +678,10 @@ export default function App() {
                   <View style={[styles.iconWrapper, { backgroundColor: `${item.color}18` }]}>
                     <ElementIcon path={item.svgPath} color={item.color} size={22} />
                   </View>
-                  <Text style={styles.sidebarCardText} numberOfLines={1}>
+                  <Text
+                    style={[styles.sidebarCardText, isNarrow && styles.sidebarCardTextNarrow]}
+                    numberOfLines={1}
+                  >
                     {trans.name}
                   </Text>
                   {item.isFinal && <Text style={styles.finalBadge}>{t('finalBadge')}</Text>}
@@ -792,6 +804,8 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    rowGap: 8,
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 16,
@@ -800,12 +814,19 @@ const styles = StyleSheet.create({
     borderBottomColor: '#1A2332',
     backgroundColor: '#0B0E14',
   },
+  headerNarrow: {
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+  },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#ECEFF1',
     letterSpacing: 0.5,
     userSelect: 'none' as any,
+  },
+  titleNarrow: {
+    fontSize: 16,
   },
   subtitle: {
     fontSize: 12,
@@ -816,7 +837,13 @@ const styles = StyleSheet.create({
   },
   headerButtons: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-end',
     gap: 8,
+  },
+  headerButtonsNarrow: {
+    width: '100%',
+    gap: 6,
   },
   glassButton: {
     paddingVertical: 6,
@@ -848,12 +875,18 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
   },
+  mainLayoutNarrow: {
+    flexDirection: 'column',
+  },
   // Canvas Styles
   canvasContainer: {
     flex: 2.2, // Narrowed sidebar gives canvas about 73% width
     backgroundColor: '#0E131F',
     position: 'relative',
     overflow: 'hidden',
+  },
+  canvasContainerNarrow: {
+    flex: 1.3, // Stacked layout: canvas keeps the larger share of vertical space
   },
   vectorOverlay: {
     position: 'absolute',
@@ -945,6 +978,13 @@ const styles = StyleSheet.create({
     elevation: 8,
     padding: 8,
   },
+  sidebarNarrow: {
+    flex: 1, // Stacked below the canvas; grid layout uses width efficiently
+    borderLeftWidth: 0,
+    borderTopWidth: 3,
+    borderTopColor: '#00E676',
+    shadowOffset: { width: 0, height: -2 },
+  },
   searchBar: {
     height: 38,
     backgroundColor: '#040D07',
@@ -993,6 +1033,11 @@ const styles = StyleSheet.create({
     gap: 6,
     paddingBottom: 20,
   },
+  sidebarGridNarrow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
+  },
   sidebarCard: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -1002,6 +1047,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 6,
     userSelect: 'none' as any,
+  },
+  sidebarCardNarrow: {
+    flexDirection: 'column',
+    width: '31%',
+    paddingVertical: 10,
+    justifyContent: 'center',
   },
   finalSidebarCard: {
     borderColor: 'rgba(255,213,79,0.3)',
@@ -1020,6 +1071,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginLeft: 8,
     flex: 1,
+  },
+  sidebarCardTextNarrow: {
+    marginLeft: 0,
+    marginTop: 6,
+    flex: 0,
+    textAlign: 'center',
   },
   finalBadge: {
     fontSize: 8,
