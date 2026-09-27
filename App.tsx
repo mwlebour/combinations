@@ -19,7 +19,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import elementsData from './src/config/elements.json';
 import recipesData from './src/config/recipes.json';
 import translationsData from './src/config/translations.json';
-import { ElementItem, ActiveCanvasElement, RecipeDictionary, ActiveCombinationAnimation } from './src/types/game';
+import { ElementItem, ActiveCanvasElement, RecipeDictionary, ActiveCombinationAnimation, IconLayer } from './src/types/game';
 import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './src/utils/gameLogic';
 import { CombinationEffect } from './src/components/CombinationEffect';
 import { ElementAura } from './src/components/ElementAura';
@@ -57,9 +57,13 @@ const LANGUAGES = [
 type Language = typeof LANGUAGES[number]['code'];
 
 // Helper: Custom SVG Icon Renderer
-const ElementIcon = ({ path, color, size = 32 }: { path: string; color: string; size?: number }) => (
+// Renders `layers` (multiple fills, e.g. a wooden handle plus a metal head) when
+// provided; otherwise falls back to the single path/color pair.
+const ElementIcon = ({ path, color, size = 32, layers }: { path: string; color: string; size?: number; layers?: IconLayer[] }) => (
   <Svg width={size} height={size} viewBox="0 0 24 24">
-    <Path d={path} fill={color} />
+    {layers && layers.length > 0
+      ? layers.map((layer, i) => <Path key={i} d={layer.svgPath} fill={layer.color} />)
+      : <Path d={path} fill={color} />}
   </Svg>
 );
 
@@ -135,7 +139,7 @@ const DraggableCanvasItem = ({
       ]}
     >
       <ElementAura elementId={item.id} />
-      <ElementIcon path={item.svgPath} color={item.color} size={28} />
+      <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={28} />
       <Text style={styles.canvasElementText} numberOfLines={1}>
         {name}
       </Text>
@@ -678,7 +682,7 @@ export default function App() {
                   onPress={() => handleSpawnElement(item.id)}
                 >
                   <View style={[styles.iconWrapper, { backgroundColor: `${item.color}18` }]}>
-                    <ElementIcon path={item.svgPath} color={item.color} size={22} />
+                    <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={22} />
                   </View>
                   <Text
                     style={[styles.sidebarCardText, isNarrow && styles.sidebarCardTextNarrow]}
@@ -707,7 +711,7 @@ export default function App() {
               <Text style={styles.modalHeader}>{t('newDiscovery')}</Text>
               
               <View style={[styles.modalIconWrapper, { backgroundColor: `${discoveredElement.color}15`, shadowColor: discoveredElement.color }]}>
-                <ElementIcon path={discoveredElement.svgPath} color={discoveredElement.color} size={56} />
+                <ElementIcon path={discoveredElement.svgPath} color={discoveredElement.color} layers={discoveredElement.iconLayers} size={56} />
               </View>
 
               <Text style={[styles.modalTitle, { color: discoveredElement.color }]}>
