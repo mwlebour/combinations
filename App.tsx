@@ -29,9 +29,9 @@ const STORAGE_KEYS = {
   LANGUAGE: '@elemental_language',
 };
 
-const DEFAULT_STARTING_ELEMENTS = [
-  'earth', 'air', 'fire', 'water', 'sand', 'lightning', 'ice', 'metal', 'wood', 'crude_oil'
-];
+const DEFAULT_STARTING_ELEMENTS = (elementsData as ElementItem[])
+  .filter(el => el.category === 'basic')
+  .map(el => el.id);
 
 const LANGUAGES = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
@@ -190,7 +190,15 @@ export default function App() {
         const storedLang = await AsyncStorage.getItem(STORAGE_KEYS.LANGUAGE);
         
         if (storedDiscovered) {
-          setDiscoveredIds(JSON.parse(storedDiscovered));
+          const parsedDiscovered: string[] = JSON.parse(storedDiscovered);
+          const missingBasics = DEFAULT_STARTING_ELEMENTS.filter(id => !parsedDiscovered.includes(id));
+          const mergedDiscovered = missingBasics.length > 0
+            ? [...parsedDiscovered, ...missingBasics]
+            : parsedDiscovered;
+          setDiscoveredIds(mergedDiscovered);
+          if (missingBasics.length > 0) {
+            await AsyncStorage.setItem(STORAGE_KEYS.DISCOVERED, JSON.stringify(mergedDiscovered));
+          }
         } else {
           // Setup defaults
           await AsyncStorage.setItem(STORAGE_KEYS.DISCOVERED, JSON.stringify(DEFAULT_STARTING_ELEMENTS));
