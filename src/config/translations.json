@@ -6,7 +6,11 @@
       "de": "Elementare Kombinationen",
       "la": "Combinationes Elementorum",
       "it": "Combinazioni Elementali",
-      "fr": "Combinaisons Élémentaires"
+      "fr": "Combinaisons Élémentaires",
+      "es": "Combinaciones Elementales",
+      "pt": "Combinações Elementais",
+      "ja": "元素の組み合わせ",
+      "zh": "元素组合"
     },
     "discovered": {
       "en": "Discovered",
@@ -14,7 +18,11 @@
       "de": "Entdeckt",
       "la": "Repertum",
       "it": "Scoperti",
-      "fr": "Découvert"
+      "fr": "Découvert",
+      "es": "Descubierto",
+      "pt": "Descoberto",
+      "ja": "発見済み",
+      "zh": "已发现"
     },
     "resetGame": {
       "en": "Reset Game",
@@ -22,7 +30,11 @@
       "de": "Zurücksetzen",
       "la": "Restituere",
       "it": "Azzera Gioco",
-      "fr": "Réinitialiser"
+      "fr": "Réinitialiser",
+      "es": "Reiniciar Juego",
+      "pt": "Reiniciar Jogo",
+      "ja": "ゲームをリセット",
+      "zh": "重置游戏"
     },
     "clearBoard": {
       "en": "Clear Board",
@@ -30,7 +42,11 @@
       "de": "Säubern",
       "la": "Tabulam purgare",
       "it": "Pulisci Tavola",
-      "fr": "Vider le plateau"
+      "fr": "Vider le plateau",
+      "es": "Limpiar Tablero",
+      "pt": "Limpar Tabuleiro",
+      "ja": "盤面をクリア",
+      "zh": "清空面板"
     },
     "workspaceCanvas": {
       "en": "WORKSPACE CANVAS",
@@ -38,7 +54,11 @@
       "de": "ARBEITSFLÄCHE CANVAS",
       "la": "TABULA OPERIS",
       "it": "TAVOLA DI LAVORO",
-      "fr": "PLATEAU DE TRAVAIL"
+      "fr": "PLATEAU DE TRAVAIL",
+      "es": "ÁREA DE TRABAJO",
+      "pt": "ÁREA DE TRABALHO",
+      "ja": "作業スペース",
+      "zh": "工作台"
     },
     "dragHint": {
       "en": "Tap items in the right sidebar to spawn them. Drag and drop them onto each other to combine!",
@@ -46,7 +66,11 @@
       "de": "Tippe auf Elemente in der Seitenleiste zum Erstellen. Ziehe sie aufeinander, um sie zu kombinieren!",
       "la": "Tange elementa in columna dextera ut ea gignantur. Trahe et superpone ea ut combinentur!",
       "it": "Tocca gli elementi nella barra a destra per crearli. Trascinali uno sull'altro per combinarli!",
-      "fr": "Appuyez sur les éléments de la barre latérale pour les générer. Glissez-déposez-les pour les combiner !"
+      "fr": "Appuyez sur les éléments de la barre latérale pour les générer. Glissez-déposez-les pour les combiner !",
+      "es": "Toca los elementos de la barra lateral para crearlos. ¡Arrástralos uno sobre otro para combinarlos!",
+      "pt": "Toque nos itens da barra lateral para criá-los. Arraste-os uns sobre os outros para combiná-los!",
+      "ja": "右側のサイドバーの項目をタップして生成しましょう。ドラッグ&ドロップで重ねると組み合わせられます!",
+      "zh": "点击右侧栏中的元素以生成它们。将它们拖到一起即可合成!"
     },
     "searchPlaceholder": {
       "en": "Search discovered...",
@@ -54,7 +78,11 @@
       "de": "Suche...",
       "la": "Quaere...",
       "it": "Cerca scoperti...",
-      "fr": "Rechercher..."
+      "fr": "Rechercher...",
+      "es": "Buscar descubiertos...",
+      "pt": "Pesquisar descobertos...",
+      "ja": "発見済みを検索...",
+      "zh": "搜索已发现的元素..."
     },
     "allTab": {
       "en": "All",
@@ -62,7 +90,11 @@
       "de": "Alle",
       "la": "Omnia",
       "it": "Tutti",
-      "fr": "Tout"
+      "fr": "Tout",
+      "es": "Todos",
+      "pt": "Todos",
+      "ja": "すべて",
+      "zh": "全部"
     },
     "basicTab": {
       "en": "Basic",
@@ -70,7 +102,11 @@
       "de": "Basis",
       "la": "Primaria",
       "it": "Base",
-      "fr": "Base"
+      "fr": "Base",
+      "es": "Básico",
+      "pt": "Básico",
+      "ja": "基本",
+      "zh": "基础"
     },
     "combinedTab": {
       "en": "Combined",
@@ -78,7 +114,11 @@
       "de": "Kombiniert",
       "la": "Mixta",
       "it": "Composti",
-      "fr": "Combinés"
+      "fr": "Combinés",
+      "es": "Combinados",
+      "pt": "Combinados",
+      "ja": "組み合わせ",
+      "zh": "组合"
     },
     "finalTab": {
       "en": "Final",
@@ -86,7 +126,11 @@
       "de": "Finale",
       "la": "Finalia",
       "it": "Finali",
-      "fr": "Finaux"
+      "fr": "Finaux",
+      "es": "Finales",
+      "pt": "Finais",
+      "ja": "最終",
+      "zh": "最终"
     },
     "noItems": {
       "en": "No items found",
@@ -94,7 +138,11 @@
       "de": "Keine Elemente gefunden",
       "la": "Nulla elementa reperta",
       "it": "Nessun elemento trovato",
-      "fr": "Aucun élément trouvé"
+      "fr": "Aucun élément trouvé",
+      "es": "No se encontraron elementos",
+      "pt": "Nenhum item encontrado",
+      "ja": "アイテムが見つかりません",
+      "zh": "未找到相关物品"
     },
     "newDiscovery": {
       "en": "NEW DISCOVERY!",
@@ -102,7 +150,11 @@
       "de": "NEUE ENTDECKUNG!",
       "la": "NOVUM REPERTUM!",
       "it": "NUOVA SCOPERTA!",
-      "fr": "NOUVELLE DÉCOUVERTE !"
+      "fr": "NOUVELLE DÉCOUVERTE !",
+      "es": "¡NUEVO DESCUBRIMIENTO!",
+      "pt": "NOVA DESCOBERTA!",
+      "ja": "新発見!",
+      "zh": "新发现!"
     },
     "awesome": {
       "en": "Awesome!",
@@ -110,7 +162,11 @@
       "de": "Großartig!",
       "la": "Optime!",
       "it": "Fantastico!",
-      "fr": "Génial !"
+      "fr": "Génial !",
+      "es": "¡Genial!",
+      "pt": "Incrível!",
+      "ja": "やった!",
+      "zh": "太棒了!"
     },
     "finalBadge": {
       "en": "Final",
@@ -118,7 +174,11 @@
       "de": "Fertig",
       "la": "Finis",
       "it": "Fine",
-      "fr": "Final"
+      "fr": "Final",
+      "es": "Final",
+      "pt": "Final",
+      "ja": "最終",
+      "zh": "最终"
     },
     "selectLanguage": {
       "en": "Select Language",
@@ -126,7 +186,59 @@
       "de": "Sprache wählen",
       "la": "Elige Linguam",
       "it": "Seleziona Lingua",
-      "fr": "Choisir la langue"
+      "fr": "Choisir la langue",
+      "es": "Seleccionar Idioma",
+      "pt": "Selecionar Idioma",
+      "ja": "言語を選択",
+      "zh": "选择语言"
+    },
+    "tipButton": {
+      "en": "Tip",
+      "hu": "Tipp",
+      "de": "Tipp",
+      "la": "Consilium",
+      "it": "Suggerimento",
+      "fr": "Astuce",
+      "es": "Pista",
+      "pt": "Dica",
+      "ja": "ヒント",
+      "zh": "提示"
+    },
+    "hintTitle": {
+      "en": "HERE'S A TIP",
+      "hu": "ITT EGY TIPP",
+      "de": "HIER IST EIN TIPP",
+      "la": "ECCE CONSILIUM",
+      "it": "ECCO UN SUGGERIMENTO",
+      "fr": "VOICI UNE ASTUCE",
+      "es": "AQUÍ TIENES UNA PISTA",
+      "pt": "AQUI ESTÁ UMA DICA",
+      "ja": "ヒントです",
+      "zh": "这是一个提示"
+    },
+    "hintDescription": {
+      "en": "Try combining these two:",
+      "hu": "Próbáld ezt a kettőt kombinálni:",
+      "de": "Versuch diese zwei zu kombinieren:",
+      "la": "Coniunge haec duo:",
+      "it": "Prova a combinare questi due:",
+      "fr": "Essaie de combiner ces deux-là :",
+      "es": "Intenta combinar estos dos:",
+      "pt": "Tente combinar estes dois:",
+      "ja": "この2つを組み合わせてみて:",
+      "zh": "试试组合这两个:"
+    },
+    "noHintAvailable": {
+      "en": "No hints left — you've found every combination!",
+      "hu": "Nincs több tipp — mindent felfedeztél!",
+      "de": "Keine Tipps mehr – du hast alles entdeckt!",
+      "la": "Nullum consilium restat — omnia repperisti!",
+      "it": "Nessun suggerimento rimasto: hai scoperto tutto!",
+      "fr": "Plus d'astuce — tu as tout découvert !",
+      "es": "¡No quedan pistas — has encontrado todas las combinaciones!",
+      "pt": "Sem mais dicas — você encontrou todas as combinações!",
+      "ja": "ヒントはもうありません — すべての組み合わせを発見しました!",
+      "zh": "没有更多提示了——你已经发现了所有组合!"
     },
     "confirmResetTitle": {
       "en": "Reset Game?",
@@ -134,7 +246,11 @@
       "de": "Spiel zurücksetzen?",
       "la": "Restituere ludum?",
       "it": "Azzerare il gioco?",
-      "fr": "Réinitialiser la partie ?"
+      "fr": "Réinitialiser la partie ?",
+      "es": "¿Reiniciar juego?",
+      "pt": "Reiniciar jogo?",
+      "ja": "ゲームをリセットしますか?",
+      "zh": "重置游戏?"
     },
     "confirmResetDescription": {
       "en": "Are you sure you want to reset the game? All discovered elements and progress will be lost.",
@@ -142,7 +258,11 @@
       "de": "Möchtest du das Spiel wirklich zurücksetzen? Alle entdeckten Elemente und dein Fortschritt gehen verloren.",
       "la": "Certusne es te ludum restituere velle? Omnia elementa reperta et progressus amittentur.",
       "it": "Sei sicuro di voler azzerare il gioco? Tutti gli elementi scoperti e i progressi andranno persi.",
-      "fr": "Voulez-vous vraiment réinitialiser la partie ? Tous les éléments découverts et votre progression seront perdus."
+      "fr": "Voulez-vous vraiment réinitialiser la partie ? Tous les éléments découverts et votre progression seront perdus.",
+      "es": "¿Seguro que quieres reiniciar el juego? Se perderán todos los elementos descubiertos y el progreso.",
+      "pt": "Tem certeza de que deseja reiniciar o jogo? Todos os elementos descobertos e o progresso serão perdidos.",
+      "ja": "本当にゲームをリセットしますか?発見したすべての要素と進行状況が失われます。",
+      "zh": "确定要重置游戏吗?所有已发现的元素和进度都将丢失。"
     },
     "yes": {
       "en": "Yes",
@@ -150,7 +270,11 @@
       "de": "Ja",
       "la": "Etiam",
       "it": "Sì",
-      "fr": "Oui"
+      "fr": "Oui",
+      "es": "Sí",
+      "pt": "Sim",
+      "ja": "はい",
+      "zh": "是"
     },
     "no": {
       "en": "No",
@@ -158,7 +282,11 @@
       "de": "Nein",
       "la": "Non",
       "it": "No",
-      "fr": "Non"
+      "fr": "Non",
+      "es": "No",
+      "pt": "Não",
+      "ja": "いいえ",
+      "zh": "否"
     }
   },
   "elements": {
@@ -169,7 +297,11 @@
         "de": "Erde",
         "la": "Terra",
         "it": "Terra",
-        "fr": "Terre"
+        "fr": "Terre",
+        "es": "Tierra",
+        "pt": "Terra",
+        "ja": "地",
+        "zh": "土"
       },
       "description": {
         "en": "Representative of land, stability, soil.",
@@ -177,7 +309,11 @@
         "de": "Repräsentiert Land, Stabilität und Boden.",
         "la": "Repraesentatio terrae, stabilitatis et soli.",
         "it": "Rappresenta la terra, la stabilità, il suolo.",
-        "fr": "Représente la terre, la stabilité et le sol."
+        "fr": "Représente la terre, la stabilité et le sol.",
+        "es": "Representativa de la tierra, la estabilidad, el suelo.",
+        "pt": "Representa a terra, a estabilidade, o solo.",
+        "ja": "大地、安定、土壌を象徴する。",
+        "zh": "代表大地、稳定与土壤。"
       }
     },
     "air": {
@@ -187,7 +323,11 @@
         "de": "Luft",
         "la": "Aer",
         "it": "Aria",
-        "fr": "Air"
+        "fr": "Air",
+        "es": "Aire",
+        "pt": "Ar",
+        "ja": "風",
+        "zh": "风"
       },
       "description": {
         "en": "Representative of atmosphere, wind, movement.",
@@ -195,7 +335,11 @@
         "de": "Repräsentiert Atmosphäre, Wind und Bewegung.",
         "la": "Repraesentatio atmosphaerae, venti, et motus.",
         "it": "Rappresenta l'atmosfera, il vento, il movimento.",
-        "fr": "Représente l'atmosphère, le vent et le mouvement."
+        "fr": "Représente l'atmosphère, le vent et le mouvement.",
+        "es": "Representativo de la atmósfera, el viento, el movimiento.",
+        "pt": "Representa a atmosfera, o vento, o movimento.",
+        "ja": "大気、風、動きを象徴する。",
+        "zh": "代表大气、风与运动。"
       }
     },
     "fire": {
@@ -205,7 +349,11 @@
         "de": "Feuer",
         "la": "Ignis",
         "it": "Fuoco",
-        "fr": "Feu"
+        "fr": "Feu",
+        "es": "Fuego",
+        "pt": "Fogo",
+        "ja": "火",
+        "zh": "火"
       },
       "description": {
         "en": "Representative of heat, energy, light.",
@@ -213,7 +361,11 @@
         "de": "Repräsentiert Wärme, Energie und Licht.",
         "la": "Repraesentatio caloris, energiae, et lucis.",
         "it": "Rappresenta il calore, l'energia, la luce.",
-        "fr": "Représente la chaleur, l'énergie et la lumière."
+        "fr": "Représente la chaleur, l'énergie et la lumière.",
+        "es": "Representativo del calor, la energía, la luz.",
+        "pt": "Representa o calor, a energia, a luz.",
+        "ja": "熱、エネルギー、光を象徴する。",
+        "zh": "代表热量、能量与光。"
       }
     },
     "water": {
@@ -223,7 +375,11 @@
         "de": "Wasser",
         "la": "Aqua",
         "it": "Acqua",
-        "fr": "Eau"
+        "fr": "Eau",
+        "es": "Agua",
+        "pt": "Água",
+        "ja": "水",
+        "zh": "水"
       },
       "description": {
         "en": "Representative of ocean, rain, fluid.",
@@ -231,40 +387,89 @@
         "de": "Repräsentiert Ozean, Regen und Flüssigkeit.",
         "la": "Repraesentatio oceani, pluviae, et fluidi.",
         "it": "Rappresenta l'oceano, la pioggia, il fluido.",
-        "fr": "Représente l'océan, la pluie et les fluides."
+        "fr": "Représente l'océan, la pluie et les fluides.",
+        "es": "Representativa del océano, la lluvia, el fluido.",
+        "pt": "Representa o oceano, a chuva, o fluido.",
+        "ja": "海、雨、液体を象徴する。",
+        "zh": "代表海洋、雨水与流体。"
       }
     },
     "crude_oil": {
-      "name": { "en": "Crude Oil", "hu": "Nyersolaj", "de": "Rohöl", "la": "Oleum Crudum", "it": "Petrolio Greggio", "fr": "Pétrole Brut" },
+      "name": {
+        "en": "Crude Oil",
+        "hu": "Nyersolaj",
+        "de": "Rohöl",
+        "la": "Oleum Crudum",
+        "it": "Petrolio Greggio",
+        "fr": "Pétrole Brut",
+        "es": "Petróleo Crudo",
+        "pt": "Petróleo Bruto",
+        "ja": "原油",
+        "zh": "原油"
+      },
       "description": {
         "en": "Thick, flammable liquid hydrocarbon drawn up from deep underground.",
         "hu": "Sűrű, gyúlékony szénhidrogén, amelyet mély föld alól nyernek ki.",
         "de": "Dickflüssiger, brennbarer Kohlenwasserstoff, der tief unter der Erde gefördert wird.",
         "la": "Crassus, inflammabilis liquor hydrocarbonicus ex alto sub terra haustus.",
         "it": "Denso idrocarburo liquido e infiammabile estratto dal sottosuolo profondo.",
-        "fr": "Hydrocarbure liquide épais et inflammable extrait des profondeurs du sous-sol."
+        "fr": "Hydrocarbure liquide épais et inflammable extrait des profondeurs du sous-sol.",
+        "es": "Hidrocarburo líquido espeso e inflamable extraído de las profundidades subterráneas.",
+        "pt": "Hidrocarboneto líquido espesso e inflamável extraído das profundezas do subsolo.",
+        "ja": "地中深くから汲み上げられる、粘性のある可燃性の液体炭化水素。",
+        "zh": "从地下深处抽取的粘稠、易燃液态碳氢化合物。"
       }
     },
     "gold": {
-      "name": { "en": "Gold", "hu": "Arany", "de": "Gold", "la": "Aurum", "it": "Oro", "fr": "Or" },
+      "name": {
+        "en": "Gold",
+        "hu": "Arany",
+        "de": "Gold",
+        "la": "Aurum",
+        "it": "Oro",
+        "fr": "Or",
+        "es": "Oro",
+        "pt": "Ouro",
+        "ja": "金",
+        "zh": "黄金"
+      },
       "description": {
         "en": "Precious, lustrous metal prized for its rarity.",
         "hu": "Értékes, fényes fém, ritkasága miatt nagyra becsült.",
         "de": "Kostbares, glänzendes Metall, geschätzt für seine Seltenheit.",
         "la": "Pretiosum, nitidum metallum ob raritatem suam magni aestimatum.",
         "it": "Metallo prezioso e lucente, apprezzato per la sua rarità.",
-        "fr": "Métal précieux et brillant, apprécié pour sa rareté."
+        "fr": "Métal précieux et brillant, apprécié pour sa rareté.",
+        "es": "Metal precioso y brillante, apreciado por su rareza.",
+        "pt": "Metal precioso e brilhante, valorizado por sua raridade.",
+        "ja": "希少性で珍重される、貴重で光沢のある金属。",
+        "zh": "因稀有而备受珍视的贵重光泽金属。"
       }
     },
     "silver": {
-      "name": { "en": "Silver", "hu": "Ezüst", "de": "Silber", "la": "Argentum", "it": "Argento", "fr": "Argent" },
+      "name": {
+        "en": "Silver",
+        "hu": "Ezüst",
+        "de": "Silber",
+        "la": "Argentum",
+        "it": "Argento",
+        "fr": "Argent",
+        "es": "Plata",
+        "pt": "Prata",
+        "ja": "銀",
+        "zh": "白银"
+      },
       "description": {
         "en": "Pale, reflective metal valued for its shine.",
         "hu": "Sápadt, fényvisszaverő fém, csillogásáért becsült.",
         "de": "Blasses, reflektierendes Metall, geschätzt für seinen Glanz.",
         "la": "Pallidum, splendens metallum ob nitorem suum aestimatum.",
         "it": "Metallo pallido e riflettente, apprezzato per la sua lucentezza.",
-        "fr": "Métal pâle et réfléchissant, apprécié pour son éclat."
+        "fr": "Métal pâle et réfléchissant, apprécié pour son éclat.",
+        "es": "Metal pálido y reflectante, valorado por su brillo.",
+        "pt": "Metal pálido e reflexivo, valorizado por seu brilho.",
+        "ja": "輝きで評価される、淡く反射性のある金属。",
+        "zh": "因光泽而备受珍视的淡色反光金属。"
       }
     },
     "sand": {
@@ -274,7 +479,11 @@
         "de": "Sand",
         "la": "Arena",
         "it": "Sabbia",
-        "fr": "Sable"
+        "fr": "Sable",
+        "es": "Arena",
+        "pt": "Areia",
+        "ja": "砂",
+        "zh": "沙"
       },
       "description": {
         "en": "Representative of desert, granular silica matter.",
@@ -282,7 +491,11 @@
         "de": "Repräsentiert Wüste und körniges Silizium.",
         "la": "Repraesentatio deserti et materiae arenosae.",
         "it": "Rappresenta il deserto, materia silicea granulare.",
-        "fr": "Représente le désert, matière siliceuse granulaire."
+        "fr": "Représente le désert, matière siliceuse granulaire.",
+        "es": "Representativa del desierto, la materia granular de sílice.",
+        "pt": "Representa o deserto, a matéria granular de sílica.",
+        "ja": "砂漠、粒状のシリカ物質を象徴する。",
+        "zh": "代表沙漠与颗粒状硅质物质。"
       }
     },
     "lightning": {
@@ -292,7 +505,11 @@
         "de": "Blitz",
         "la": "Fulgur",
         "it": "Fulmine",
-        "fr": "Éclair"
+        "fr": "Éclair",
+        "es": "Rayo",
+        "pt": "Raio",
+        "ja": "雷",
+        "zh": "闪电"
       },
       "description": {
         "en": "Representative of electricity, storm energy, sparks.",
@@ -300,7 +517,11 @@
         "de": "Repräsentiert Elektrizität, Sturmengenergie und Funken.",
         "la": "Repraesentatio electricitatis, tempestatis et scintillarum.",
         "it": "Rappresenta l'elettricità, l'energia della tempesta, le scintille.",
-        "fr": "Représente l'électricité, l'énergie de la tempête et les étincelles."
+        "fr": "Représente l'électricité, l'énergie de la tempête et les étincelles.",
+        "es": "Representativo de la electricidad, la energía de tormenta, las chispas.",
+        "pt": "Representa a eletricidade, a energia da tempestade, as faíscas.",
+        "ja": "電気、嵐のエネルギー、火花を象徴する。",
+        "zh": "代表电力、风暴能量与火花。"
       }
     },
     "ice": {
@@ -310,7 +531,11 @@
         "de": "Eis",
         "la": "Glacies",
         "it": "Ghiaccio",
-        "fr": "Glace"
+        "fr": "Glace",
+        "es": "Hielo",
+        "pt": "Gelo",
+        "ja": "氷",
+        "zh": "冰"
       },
       "description": {
         "en": "Representative of frost, cold, crystals.",
@@ -318,7 +543,11 @@
         "de": "Repräsentiert Frost, Kälte und Kristalle.",
         "la": "Repraesentatio gelu, frigoris et crystallorum.",
         "it": "Rappresenta il gelo, il freddo, i cristalli.",
-        "fr": "Représente le gel, le froid et les cristaux."
+        "fr": "Représente le gel, le froid et les cristaux.",
+        "es": "Representativo de la escarcha, el frío, los cristales.",
+        "pt": "Representa a geada, o frio, os cristais.",
+        "ja": "霜、冷気、結晶を象徴する。",
+        "zh": "代表霜冻、寒冷与结晶。"
       }
     },
     "metal": {
@@ -328,7 +557,11 @@
         "de": "Metall",
         "la": "Metallum",
         "it": "Metallo",
-        "fr": "Métal"
+        "fr": "Métal",
+        "es": "Metal",
+        "pt": "Metal",
+        "ja": "金属",
+        "zh": "金属"
       },
       "description": {
         "en": "Representative of iron, refinement, conductibility.",
@@ -336,7 +569,11 @@
         "de": "Repräsentiert Eisen, Veredelung und Leitfähigkeit.",
         "la": "Repraesentatio ferri, elaborationis et ductilitatis.",
         "it": "Rappresenta il ferro, la raffinazione, la conducibilità.",
-        "fr": "Représente le fer, le raffinage et la conductivité."
+        "fr": "Représente le fer, le raffinage et la conductivité.",
+        "es": "Representativo del hierro, el refinamiento, la conductibilidad.",
+        "pt": "Representa o ferro, o refinamento, a condutibilidade.",
+        "ja": "鉄、精錬、伝導性を象徴する。",
+        "zh": "代表铁、精炼与导电性。"
       }
     },
     "wood": {
@@ -346,7 +583,11 @@
         "de": "Holz",
         "la": "Lignum",
         "it": "Legno",
-        "fr": "Bois"
+        "fr": "Bois",
+        "es": "Madera",
+        "pt": "Madeira",
+        "ja": "木",
+        "zh": "木"
       },
       "description": {
         "en": "Representative of forest, organic construction, nature.",
@@ -354,7 +595,11 @@
         "de": "Repräsentiert Wald, organischen Bau und Natur.",
         "la": "Repraesentatio silvae, structurae organicae et naturae.",
         "it": "Rappresenta la foresta, la costruzione organica, la natura.",
-        "fr": "Représente la forêt, la construction organique et la nature."
+        "fr": "Représente la forêt, la construction organique et la nature.",
+        "es": "Representativa del bosque, la construcción orgánica, la naturaleza.",
+        "pt": "Representa a floresta, a construção orgânica, a natureza.",
+        "ja": "森、有機的な建材、自然を象徴する。",
+        "zh": "代表森林、有机建材与自然。"
       }
     },
     "glass": {
@@ -364,7 +609,11 @@
         "de": "Glas",
         "la": "Vitrum",
         "it": "Vetro",
-        "fr": "Verre"
+        "fr": "Verre",
+        "es": "Vidrio",
+        "pt": "Vidro",
+        "ja": "ガラス",
+        "zh": "玻璃"
       },
       "description": {
         "en": "Transparent silica structure.",
@@ -372,7 +621,11 @@
         "de": "Transparente Siliziumdioxidstruktur.",
         "la": "Structura vitrea perspicua.",
         "it": "Struttura silicea trasparente.",
-        "fr": "Structure de silice transparente."
+        "fr": "Structure de silice transparente.",
+        "es": "Estructura de sílice transparente.",
+        "pt": "Estrutura de sílica transparente.",
+        "ja": "透明なシリカ構造。",
+        "zh": "透明的硅质结构。"
       }
     },
     "glasses": {
@@ -382,7 +635,11 @@
         "de": "Brille",
         "la": "Perspicillum",
         "it": "Occhiali",
-        "fr": "Lunettes"
+        "fr": "Lunettes",
+        "es": "Gafas",
+        "pt": "Óculos",
+        "ja": "眼鏡",
+        "zh": "眼镜"
       },
       "description": {
         "en": "Two lenses connected together to assist vision.",
@@ -390,7 +647,11 @@
         "de": "Zwei miteinander verbundene Linsen zur Sehhilfe.",
         "la": "Duo vitra coniuncta ad visum adiuvandum.",
         "it": "Due lenti collegate insieme per assistere la vista.",
-        "fr": "Deux lentilles connectées pour aider la vision."
+        "fr": "Deux lentilles connectées pour aider la vision.",
+        "es": "Dos lentes conectadas para ayudar la visión.",
+        "pt": "Duas lentes conectadas para auxiliar a visão.",
+        "ja": "視力を補助するために連結された2枚のレンズ。",
+        "zh": "两片连接在一起以辅助视力的镜片。"
       }
     },
     "binoculars": {
@@ -400,7 +661,11 @@
         "de": "Fernglas",
         "la": "Binoculum",
         "it": "Binocolo",
-        "fr": "Jumelles"
+        "fr": "Jumelles",
+        "es": "Binoculares",
+        "pt": "Binóculos",
+        "ja": "双眼鏡",
+        "zh": "望远镜"
       },
       "description": {
         "en": "High-magnification optical instrument.",
@@ -408,7 +673,11 @@
         "de": "Optisches Instrument mit starker Vergrößerung.",
         "la": "Instrumentum opticum magnae magnificationis.",
         "it": "Strumento ottico ad alto ingrandimento.",
-        "fr": "Instrument optique à fort grossissement."
+        "fr": "Instrument optique à fort grossissement.",
+        "es": "Instrumento óptico de alta ampliación.",
+        "pt": "Instrumento óptico de alta ampliação.",
+        "ja": "高倍率の光学機器。",
+        "zh": "高倍率光学仪器。"
       }
     },
     "mud": {
@@ -418,7 +687,11 @@
         "de": "Schlamm",
         "la": "Lutum",
         "it": "Fango",
-        "fr": "Boue"
+        "fr": "Boue",
+        "es": "Barro",
+        "pt": "Lama",
+        "ja": "泥",
+        "zh": "泥"
       },
       "description": {
         "en": "Wet, gooey soil.",
@@ -426,7 +699,11 @@
         "de": "Feuchter, klebriger Boden.",
         "la": "Humus humida et mollis.",
         "it": "Terreno umido e fangoso.",
-        "fr": "Terre humide et gluante."
+        "fr": "Terre humide et gluante.",
+        "es": "Tierra húmeda y viscosa.",
+        "pt": "Solo úmido e pegajoso.",
+        "ja": "湿ってねばねばした土。",
+        "zh": "湿润粘稠的泥土。"
       }
     },
     "swamp": {
@@ -436,7 +713,11 @@
         "de": "Sumpf",
         "la": "Palus",
         "it": "Palude",
-        "fr": "Marécage"
+        "fr": "Marécage",
+        "es": "Pantano",
+        "pt": "Pântano",
+        "ja": "沼地",
+        "zh": "沼泽"
       },
       "description": {
         "en": "Wet, saturated forest area.",
@@ -444,7 +725,11 @@
         "de": "Feuchtes, wassergesättigtes Waldgebiet.",
         "la": "Silva humida et aquis inundata.",
         "it": "Area forestale umida e satura d'acqua.",
-        "fr": "Zone forestière humide et saturée d'eau."
+        "fr": "Zone forestière humide et saturée d'eau.",
+        "es": "Zona forestal húmeda y saturada.",
+        "pt": "Área florestal úmida e saturada.",
+        "ja": "湿って水浸しの森林地帯。",
+        "zh": "潮湿饱和的森林地带。"
       }
     },
     "life": {
@@ -454,7 +739,11 @@
         "de": "Leben",
         "la": "Vita",
         "it": "Vita",
-        "fr": "Vie"
+        "fr": "Vie",
+        "es": "Vida",
+        "pt": "Vida",
+        "ja": "生命",
+        "zh": "生命"
       },
       "description": {
         "en": "Sparks of biology and energy coalescing.",
@@ -462,7 +751,11 @@
         "de": "Zusammenfließende Funken von Biologie und Energie.",
         "la": "Scintillae biologiae et energiae coalescentes.",
         "it": "Scintille di biologia ed energia che si fondono.",
-        "fr": "Étincelles de biologie et d'énergie qui fusionnent."
+        "fr": "Étincelles de biologie et d'énergie qui fusionnent.",
+        "es": "Chispas de biología y energía fusionándose.",
+        "pt": "Faíscas de biologia e energia se fundindo.",
+        "ja": "生物とエネルギーの火花が融合する。",
+        "zh": "生物与能量的火花交融汇聚。"
       }
     },
     "ent": {
@@ -472,7 +765,11 @@
         "de": "Ent",
         "la": "Entus",
         "it": "Ent",
-        "fr": "Ent"
+        "fr": "Ent",
+        "es": "Ent",
+        "pt": "Ent",
+        "ja": "エント",
+        "zh": "树人"
       },
       "description": {
         "en": "A sentient, walking tree creature.",
@@ -480,7 +777,11 @@
         "de": "Ein empfindungsfähiges, wandelndes Baumwesen.",
         "la": "Arbor sentiens et ambulans.",
         "it": "Una creatura albero senziente e camminante.",
-        "fr": "Une créature d'arbre sentiente et marcheuse."
+        "fr": "Une créature d'arbre sentiente et marcheuse.",
+        "es": "Una criatura de árbol andante y consciente.",
+        "pt": "Uma criatura árvore ambulante e senciente.",
+        "ja": "意識を持ち、歩き回る木の生き物。",
+        "zh": "一种有知觉、会行走的树形生物。"
       }
     },
     "electricity": {
@@ -490,7 +791,11 @@
         "de": "Elektrizität",
         "la": "Electricitas",
         "it": "Elettricità",
-        "fr": "Électricité"
+        "fr": "Électricité",
+        "es": "Electricidad",
+        "pt": "Eletricidade",
+        "ja": "電気",
+        "zh": "电"
       },
       "description": {
         "en": "Flow of charge through conductive material.",
@@ -498,7 +803,11 @@
         "de": "Fluss von Ladungen durch leitfähiges Material.",
         "la": "Fluctus oneris per materiam ductibilem.",
         "it": "Flusso di carica attraverso materiale conduttivo.",
-        "fr": "Flux de charge à travers un matériau conducteur."
+        "fr": "Flux de charge à travers un matériau conducteur.",
+        "es": "Flujo de carga a través de material conductor.",
+        "pt": "Fluxo de carga através de material condutor.",
+        "ja": "導電性材料を流れる電荷の流れ。",
+        "zh": "电荷流经导电材料的流动。"
       }
     },
     "silicon": {
@@ -508,7 +817,11 @@
         "de": "Silizium",
         "la": "Silicium",
         "it": "Silicio",
-        "fr": "Silicium"
+        "fr": "Silicium",
+        "es": "Silicio",
+        "pt": "Silício",
+        "ja": "シリコン",
+        "zh": "硅"
       },
       "description": {
         "en": "Purified semiconductor base.",
@@ -516,7 +829,11 @@
         "de": "Gereinigte Halbleiterbasis.",
         "la": "Elementum semiconductivum purgatum.",
         "it": "Base semiconduttrice purificata.",
-        "fr": "Base de semi-conducteur purifiée."
+        "fr": "Base de semi-conducteur purifiée.",
+        "es": "Base semiconductora purificada.",
+        "pt": "Base semicondutora purificada.",
+        "ja": "精製された半導体基材。",
+        "zh": "提纯后的半导体基材。"
       }
     },
     "microchip": {
@@ -526,7 +843,11 @@
         "de": "Mikrochip",
         "la": "Microchip",
         "it": "Microchip",
-        "fr": "Puce"
+        "fr": "Puce",
+        "es": "Microchip",
+        "pt": "Microchip",
+        "ja": "マイクロチップ",
+        "zh": "微芯片"
       },
       "description": {
         "en": "Complex integrated circuit.",
@@ -534,7 +855,11 @@
         "de": "Komplexer integrierter Schaltkreis.",
         "la": "Circuitus integratus complexus.",
         "it": "Circuito integrato complesso.",
-        "fr": "Circuit intégré complexe."
+        "fr": "Circuit intégré complexe.",
+        "es": "Circuito integrado complejo.",
+        "pt": "Circuito integrado complexo.",
+        "ja": "複雑な集積回路。",
+        "zh": "复杂的集成电路。"
       }
     },
     "smartphone": {
@@ -544,7 +869,11 @@
         "de": "Smartphone",
         "la": "Telephonum callidum",
         "it": "Smartphone",
-        "fr": "Smartphone"
+        "fr": "Smartphone",
+        "es": "Smartphone",
+        "pt": "Smartphone",
+        "ja": "スマートフォン",
+        "zh": "智能手机"
       },
       "description": {
         "en": "Advanced portable computer with a glass screen.",
@@ -552,7 +881,11 @@
         "de": "Fortschrittlicher tragbarer Computer mit Glasbildschirm.",
         "la": "Computatrum portabile provectum cum vitro perspicuo.",
         "it": "Computer portatile avanzato con schermo in vetro.",
-        "fr": "Ordinateur portable avancé avec écran en verre."
+        "fr": "Ordinateur portable avancé avec écran en verre.",
+        "es": "Computadora portátil avanzada con pantalla de vidrio.",
+        "pt": "Computador portátil avançado com tela de vidro.",
+        "ja": "ガラス画面を備えた高度な携帯用コンピュータ。",
+        "zh": "配备玻璃屏幕的高级便携电脑。"
       }
     },
     "steam": {
@@ -562,7 +895,11 @@
         "de": "Dampf",
         "la": "Vapor",
         "it": "Vapore",
-        "fr": "Vapeur"
+        "fr": "Vapeur",
+        "es": "Vapor",
+        "pt": "Vapor",
+        "ja": "蒸気",
+        "zh": "蒸汽"
       },
       "description": {
         "en": "Heated vapor rising.",
@@ -570,7 +907,11 @@
         "de": "Aufsteigender erhitzter Dampf.",
         "la": "Vapor calidus ascendens.",
         "it": "Vapore riscaldato che sale.",
-        "fr": "Vapeur chauffée qui s'élève."
+        "fr": "Vapeur chauffée qui s'élève.",
+        "es": "Vapor caliente ascendiendo.",
+        "pt": "Vapor aquecido subindo.",
+        "ja": "立ち上る熱い蒸気。",
+        "zh": "升腾的热蒸汽。"
       }
     },
     "cloud": {
@@ -580,7 +921,11 @@
         "de": "Wolke",
         "la": "Nubes",
         "it": "Nuvola",
-        "fr": "Nuage"
+        "fr": "Nuage",
+        "es": "Nube",
+        "pt": "Nuvem",
+        "ja": "雲",
+        "zh": "云"
       },
       "description": {
         "en": "Condensed water droplets in the sky.",
@@ -588,7 +933,11 @@
         "de": "Kondensierte Wassertropfen am Himmel.",
         "la": "Guttae aquae condensatae in caelo.",
         "it": "Gocce d'acqua condensate nel cielo.",
-        "fr": "Gouttelettes d'eau condensées dans le ciel."
+        "fr": "Gouttelettes d'eau condensées dans le ciel.",
+        "es": "Gotas de agua condensadas en el cielo.",
+        "pt": "Gotas de água condensadas no céu.",
+        "ja": "空に凝結した水滴。",
+        "zh": "天空中凝结的水滴。"
       }
     },
     "storm": {
@@ -598,7 +947,11 @@
         "de": "Sturm",
         "la": "Tempestas",
         "it": "Tempesta",
-        "fr": "Tempête"
+        "fr": "Tempête",
+        "es": "Tormenta",
+        "pt": "Tempestade",
+        "ja": "嵐",
+        "zh": "风暴"
       },
       "description": {
         "en": "Heavy tempest of clouds, rain, and thunder.",
@@ -606,7 +959,11 @@
         "de": "Heftiges Unwetter mit Wolken, Regen und Donner.",
         "la": "Tempestas magna nubibus, pluvia et tonitru.",
         "it": "Forte tempesta di nuvole, pioggia e tuoni.",
-        "fr": "Tempête violente de nuages, de pluie et de tonnerre."
+        "fr": "Tempête violente de nuages, de pluie et de tonnerre.",
+        "es": "Fuerte tempestad de nubes, lluvia y truenos.",
+        "pt": "Forte tempestade de nuvens, chuva e trovões.",
+        "ja": "雲、雨、雷を伴う激しい嵐。",
+        "zh": "云、雨与雷交织的猛烈风暴。"
       }
     },
     "lightning_rod": {
@@ -616,7 +973,11 @@
         "de": "Blitzableiter",
         "la": "Virga fulminalis",
         "it": "Parafulmine",
-        "fr": "Paratonnerre"
+        "fr": "Paratonnerre",
+        "es": "Pararrayos",
+        "pt": "Para-raios",
+        "ja": "避雷針",
+        "zh": "避雷针"
       },
       "description": {
         "en": "Metal conductor mounted to attract and ground lightning.",
@@ -624,7 +985,11 @@
         "de": "Metallleiter zur Anziehung und Erdung von Blitzen.",
         "la": "Ductile metallicum ad fulmina attrahenda et in terram ducenda.",
         "it": "Conduttore metallico montato per attrarre e scaricare i fulmini.",
-        "fr": "Conducteur métallique monté pour attirer et canaliser la foudre."
+        "fr": "Conducteur métallique monté pour attirer et canaliser la foudre.",
+        "es": "Conductor metálico instalado para atraer y descargar rayos a tierra.",
+        "pt": "Condutor metálico instalado para atrair e aterrar raios.",
+        "ja": "雷を引き寄せ、接地させるために設置された金属導体。",
+        "zh": "用于吸引雷电并将其导入地面的金属导体。"
       }
     },
     "snow": {
@@ -634,7 +999,11 @@
         "de": "Schnee",
         "la": "Nix",
         "it": "Neve",
-        "fr": "Neige"
+        "fr": "Neige",
+        "es": "Nieve",
+        "pt": "Neve",
+        "ja": "雪",
+        "zh": "雪"
       },
       "description": {
         "en": "Flurry of frozen water crystals.",
@@ -642,7 +1011,11 @@
         "de": "Gestöber von gefrorenen Wasserkristallen.",
         "la": "Crystallorum aquae gelatae multitudo.",
         "it": "Raffica di cristalli d'acqua ghiacciati.",
-        "fr": "Bourrasque de cristaux d'eau gelée."
+        "fr": "Bourrasque de cristaux d'eau gelée.",
+        "es": "Ráfaga de cristales de agua congelada.",
+        "pt": "Rajada de cristais de água congelada.",
+        "ja": "凍った水の結晶の吹雪。",
+        "zh": "冻结水结晶的飘落。"
       }
     },
     "snowman": {
@@ -652,7 +1025,11 @@
         "de": "Schneemann",
         "la": "Homo nivalis",
         "it": "Pupazzo di neve",
-        "fr": "Bonhomme de neige"
+        "fr": "Bonhomme de neige",
+        "es": "Muñeco de Nieve",
+        "pt": "Boneco de Neve",
+        "ja": "雪だるま",
+        "zh": "雪人"
       },
       "description": {
         "en": "Frozen humanoid figure built from packed snow and soil.",
@@ -660,7 +1037,11 @@
         "de": "Gefrorene menschliche Figur aus gepresstem Schnee und Erde.",
         "la": "Figura humana e nive compacta et humo facta.",
         "it": "Figura umana congelata costruita con neve e terra.",
-        "fr": "Figurine humaine gelée construite à partir de neige tassée et de terre."
+        "fr": "Figurine humaine gelée construite à partir de neige tassée et de terre.",
+        "es": "Figura humanoide congelada hecha de nieve compactada y tierra.",
+        "pt": "Figura humanoide congelada feita de neve compactada e solo.",
+        "ja": "固めた雪と土で作られた凍った人型の像。",
+        "zh": "由压实的雪和泥土制成的冰冻人形。"
       }
     },
     "axe": {
@@ -670,7 +1051,11 @@
         "de": "Axt",
         "la": "Securis",
         "it": "Ascia",
-        "fr": "Hache"
+        "fr": "Hache",
+        "es": "Hacha",
+        "pt": "Machado",
+        "ja": "斧",
+        "zh": "斧头"
       },
       "description": {
         "en": "Cutting tool with metal head and wooden handle.",
@@ -678,7 +1063,11 @@
         "de": "Schneidwerkzeug mit Metallkopf und Holzgriff.",
         "la": "Instrumentum caedendi cum capite metallico et manubrio ligneo.",
         "it": "Strumento da taglio con testa in metallo e manico in legno.",
-        "fr": "Outil de coupe avec tête en métal et manche en bois."
+        "fr": "Outil de coupe avec tête en métal et manche en bois.",
+        "es": "Herramienta de corte con cabeza de metal y mango de madera.",
+        "pt": "Ferramenta de corte com cabeça de metal e cabo de madeira.",
+        "ja": "金属の刃と木の柄を持つ切削工具。",
+        "zh": "带有金属刃和木柄的切削工具。"
       }
     },
     "plank": {
@@ -688,7 +1077,11 @@
         "de": "Planke",
         "la": "Tabula",
         "it": "Tavola",
-        "fr": "Planche"
+        "fr": "Planche",
+        "es": "Tablón",
+        "pt": "Prancha",
+        "ja": "板",
+        "zh": "木板"
       },
       "description": {
         "en": "Wood cut into a flat, usable construction board.",
@@ -696,7 +1089,11 @@
         "de": "Holz, das zu einem flachen Baubrett geschnitten wurde.",
         "la": "Lignum sectum in tabulam planam et utilem.",
         "it": "Legno tagliato in una tavola da costruzione piatta e utilizzabile.",
-        "fr": "Bois coupé en une planche de construction plate et utilisable."
+        "fr": "Bois coupé en une planche de construction plate et utilisable.",
+        "es": "Madera cortada en una tabla plana y utilizable para construcción.",
+        "pt": "Madeira cortada em uma prancha plana e utilizável para construção.",
+        "ja": "使用可能な平らな建材板に切り出された木材。",
+        "zh": "被切割成可用的平整建筑木板的木材。"
       }
     },
     "bridge": {
@@ -706,7 +1103,11 @@
         "de": "Brücke",
         "la": "Pons",
         "it": "Ponte",
-        "fr": "Pont"
+        "fr": "Pont",
+        "es": "Puente",
+        "pt": "Ponte",
+        "ja": "橋",
+        "zh": "桥"
       },
       "description": {
         "en": "Elevated pathway spanning a gap.",
@@ -714,7 +1115,11 @@
         "de": "Erhöhter Pfad, der eine Lücke überbrückt.",
         "la": "Via elata super foveam vel flumen.",
         "it": "Percorso sopraelevato che attraversa un vuoto.",
-        "fr": "Passage surélevé enjambant un vide."
+        "fr": "Passage surélevé enjambant un vide.",
+        "es": "Camino elevado que atraviesa un vacío.",
+        "pt": "Caminho elevado que atravessa um vão.",
+        "ja": "隙間にかかる高架の通路。",
+        "zh": "横跨缺口的高架通道。"
       }
     },
     "train_track": {
@@ -724,7 +1129,11 @@
         "de": "Bahngleis",
         "la": "Via ferrea",
         "it": "Binario",
-        "fr": "Voie ferrée"
+        "fr": "Voie ferrée",
+        "es": "Vía de Tren",
+        "pt": "Trilho de Trem",
+        "ja": "線路",
+        "zh": "铁轨"
       },
       "description": {
         "en": "Steel rails laid over wooden supports.",
@@ -732,7 +1141,11 @@
         "de": "Stahlschienen auf Holzschwellen.",
         "la": "Regulae chalybeae super fulcimenta lignea positae.",
         "it": "Rotaie d'acciaio posate su supporti di legno.",
-        "fr": "Rails en acier posés sur des supports en bois."
+        "fr": "Rails en acier posés sur des supports en bois.",
+        "es": "Rieles de acero colocados sobre soportes de madera.",
+        "pt": "Trilhos de aço colocados sobre suportes de madeira.",
+        "ja": "木製の枕木の上に敷かれた鋼鉄のレール。",
+        "zh": "铺设在木质支撑上的钢轨。"
       }
     },
     "coal": {
@@ -742,7 +1155,11 @@
         "de": "Kohle",
         "la": "Carbo",
         "it": "Carbone",
-        "fr": "Charbon"
+        "fr": "Charbon",
+        "es": "Carbón",
+        "pt": "Carvão",
+        "ja": "石炭",
+        "zh": "煤炭"
       },
       "description": {
         "en": "Carbonised wood fuel block.",
@@ -750,7 +1167,11 @@
         "de": "Karbonisierter Holzbrennstoffblock.",
         "la": "Lignum carbonisatum ad ignem alendum.",
         "it": "Blocco di combustibile di legno carbonizzato.",
-        "fr": "Bloc de combustible de bois carbonisé."
+        "fr": "Bloc de combustible de bois carbonisé.",
+        "es": "Bloque de combustible de madera carbonizada.",
+        "pt": "Bloco de combustível de madeira carbonizada.",
+        "ja": "炭化した木の燃料ブロック。",
+        "zh": "碳化木材制成的燃料块。"
       }
     },
     "steel": {
@@ -760,7 +1181,11 @@
         "de": "Stahl",
         "la": "Chalybs",
         "it": "Acciaio",
-        "fr": "Acier"
+        "fr": "Acier",
+        "es": "Acero",
+        "pt": "Aço",
+        "ja": "鋼",
+        "zh": "钢"
       },
       "description": {
         "en": "Carbon-reinforced metal alloy.",
@@ -768,7 +1193,11 @@
         "de": "Kohlenstoffverstärkte Metalllegierung.",
         "la": "Mixtura metallica carbone firmata.",
         "it": "Lega metallica rinforzata con carbonio.",
-        "fr": "Alliage métallique renforcé de carbone."
+        "fr": "Alliage métallique renforcé de carbone.",
+        "es": "Aleación metálica reforzada con carbono.",
+        "pt": "Liga metálica reforçada com carbono.",
+        "ja": "炭素で強化された金属合金。",
+        "zh": "碳强化的金属合金。"
       }
     },
     "sword": {
@@ -778,7 +1207,11 @@
         "de": "Schwert",
         "la": "Gladius",
         "it": "Spada",
-        "fr": "Épée"
+        "fr": "Épée",
+        "es": "Espada",
+        "pt": "Espada",
+        "ja": "剣",
+        "zh": "剑"
       },
       "description": {
         "en": "Forged blade weapon.",
@@ -786,7 +1219,11 @@
         "de": "Geschmiedete Klingenwaffe.",
         "la": "Armum lamina cuspidata formatum.",
         "it": "Arma a lama forgiata.",
-        "fr": "Arme à lame forgée."
+        "fr": "Arme à lame forgée.",
+        "es": "Arma de hoja forjada.",
+        "pt": "Arma de lâmina forjada.",
+        "ja": "鍛造された刃を持つ武器。",
+        "zh": "锻造的刃制武器。"
       }
     },
     "energy_blade": {
@@ -796,7 +1233,11 @@
         "de": "Energieklinge",
         "la": "Lamina energetica",
         "it": "Lama energetica",
-        "fr": "Lame d'énergie"
+        "fr": "Lame d'énergie",
+        "es": "Hoja de Energía",
+        "pt": "Lâmina de Energia",
+        "ja": "エネルギーブレード",
+        "zh": "能量刃"
       },
       "description": {
         "en": "High-tech sword infused with electrical currents.",
@@ -804,7 +1245,11 @@
         "de": "High-Tech-Schwert, durchdrungen von elektrischen Strömen.",
         "la": "Gladius technologiae altae electricitate infusus.",
         "it": "Spada high-tech infusa con correnti elettriche.",
-        "fr": "Épée high-tech infusée de courants électriques."
+        "fr": "Épée high-tech infusée de courants électriques.",
+        "es": "Espada de alta tecnología infundida con corrientes eléctricas.",
+        "pt": "Espada de alta tecnologia infundida com correntes elétricas.",
+        "ja": "電流を帯びたハイテク剣。",
+        "zh": "注入电流的高科技剑。"
       }
     },
     "rock": {
@@ -814,7 +1259,11 @@
         "de": "Fels",
         "la": "Saxum",
         "it": "Roccia",
-        "fr": "Roche"
+        "fr": "Roche",
+        "es": "Roca",
+        "pt": "Rocha",
+        "ja": "岩",
+        "zh": "岩石"
       },
       "description": {
         "en": "Solid, compact mass of stone.",
@@ -822,7 +1271,11 @@
         "de": "Solide, kompakte Steinmasse.",
         "la": "Massa lapidea solida et compacta.",
         "it": "Massa solida e compatta di pietra.",
-        "fr": "Masse solide et compacte de pierre."
+        "fr": "Masse solide et compacte de pierre.",
+        "es": "Masa sólida y compacta de piedra.",
+        "pt": "Massa sólida e compacta de pedra.",
+        "ja": "硬く密な石の塊。",
+        "zh": "坚固紧密的石块。"
       }
     },
     "lava": {
@@ -832,7 +1285,11 @@
         "de": "Lava",
         "la": "Lava",
         "it": "Lava",
-        "fr": "Lave"
+        "fr": "Lave",
+        "es": "Lava",
+        "pt": "Lava",
+        "ja": "溶岩",
+        "zh": "岩浆"
       },
       "description": {
         "en": "Superheated liquid rock flowing from the earth.",
@@ -840,7 +1297,11 @@
         "de": "Aus der Erde fließendes, überhitztes flüssiges Gestein.",
         "la": "Magma liquidum calidissimum e terra fluens.",
         "it": "Roccia liquida surriscaldata che scorre dalla terra.",
-        "fr": "Roche liquide surchauffée s'écoulant de la terre."
+        "fr": "Roche liquide surchauffée s'écoulant de la terre.",
+        "es": "Roca líquida sobrecalentada que fluye desde la tierra.",
+        "pt": "Rocha líquida superaquecida fluindo da terra.",
+        "ja": "地中から流れ出る過熱した液状の岩石。",
+        "zh": "从地下涌出的过热液态岩石。"
       }
     },
     "mountain": {
@@ -850,7 +1311,11 @@
         "de": "Berg",
         "la": "Mons",
         "it": "Montagna",
-        "fr": "Montagne"
+        "fr": "Montagne",
+        "es": "Montaña",
+        "pt": "Montanha",
+        "ja": "山",
+        "zh": "山"
       },
       "description": {
         "en": "Towering elevation of the earth's surface.",
@@ -858,7 +1323,11 @@
         "de": "Riesige Erhebung der Erdoberfläche.",
         "la": "Celsitudo eminens terrae.",
         "it": "Elevata altura della superficie terrestre.",
-        "fr": "Élévation imposante de la surface de la terre."
+        "fr": "Élévation imposante de la surface de la terre.",
+        "es": "Elevación imponente de la superficie terrestre.",
+        "pt": "Elevação imponente da superfície terrestre.",
+        "ja": "そびえ立つ地表の高まり。",
+        "zh": "高耸的地表隆起。"
       }
     },
     "volcano": {
@@ -868,7 +1337,11 @@
         "de": "Vulkan",
         "la": "Vulcanus",
         "it": "Vulcano",
-        "fr": "Volcan"
+        "fr": "Volcan",
+        "es": "Volcán",
+        "pt": "Vulcão",
+        "ja": "火山",
+        "zh": "火山"
       },
       "description": {
         "en": "A mountain that vents lava, steam, and ash.",
@@ -876,7 +1349,11 @@
         "de": "Ein Berg, der Lava, Dampf und Asche ausstößt.",
         "la": "Mons qui lavam, vaporem et cinerem emittit.",
         "it": "Una montagna che emette lava, vapore e cenere.",
-        "fr": "Une montagne qui rejette de la lave, de la vapeur et des cendres."
+        "fr": "Une montagne qui rejette de la lave, de la vapeur et des cendres.",
+        "es": "Una montaña que expulsa lava, vapor y ceniza.",
+        "pt": "Uma montanha que expele lava, vapor e cinzas.",
+        "ja": "溶岩、蒸気、灰を噴出する山。",
+        "zh": "喷发岩浆、蒸汽与灰烬的山。"
       }
     },
     "obsidian": {
@@ -886,7 +1363,11 @@
         "de": "Obsidian",
         "la": "Obsidianus",
         "it": "Ossidiana",
-        "fr": "Obsidienne"
+        "fr": "Obsidienne",
+        "es": "Obsidiana",
+        "pt": "Obsidiana",
+        "ja": "黒曜石",
+        "zh": "黑曜石"
       },
       "description": {
         "en": "Dark, volcanic glass formed from rapid cooling of lava.",
@@ -894,7 +1375,11 @@
         "de": "Dunkles, vulkanisches Glas, das durch schnelle Abkühlung von Lava entsteht.",
         "la": "Vitrum vulcanicum nigrum e lava celeriter refrigerata factum.",
         "it": "Vetro vulcanico scuro formato dal rapido raffreddamento della lava.",
-        "fr": "Verre volcanique sombre formé par le refroidissement rapide de la lave."
+        "fr": "Verre volcanique sombre formé par le refroidissement rapide de la lave.",
+        "es": "Vidrio volcánico oscuro formado por el enfriamiento rápido de la lava.",
+        "pt": "Vidro vulcânico escuro formado pelo resfriamento rápido da lava.",
+        "ja": "溶岩が急速に冷えてできた暗色の火山ガラス。",
+        "zh": "由熔岩快速冷却形成的深色火山玻璃。"
       }
     },
     "geyser": {
@@ -904,7 +1389,11 @@
         "de": "Geysir",
         "la": "Geyzerus",
         "it": "Geyser",
-        "fr": "Geyser"
+        "fr": "Geyser",
+        "es": "Géiser",
+        "pt": "Gêiser",
+        "ja": "間欠泉",
+        "zh": "间歇泉"
       },
       "description": {
         "en": "Hot spring that sends columns of steam and water into the air.",
@@ -912,7 +1401,11 @@
         "de": "Heiße Quelle, die Dampf- und Wassersäulen in die Luft schießt.",
         "la": "Fons calidus qui vaporem et aquam in altum eructat.",
         "it": "Sorgente termale che scaglia colonne di vapore e acqua nell'aria.",
-        "fr": "Source chaude qui projette des colonnes de vapeur et d'eau dans l'air."
+        "fr": "Source chaude qui projette des colonnes de vapeur et d'eau dans l'air.",
+        "es": "Fuente termal que lanza columnas de vapor y agua al aire.",
+        "pt": "Fonte termal que lança colunas de vapor e água ao ar.",
+        "ja": "蒸気と水の柱を空に噴き上げる温泉。",
+        "zh": "向空中喷出蒸汽与水柱的温泉。"
       }
     },
     "magnet": {
@@ -922,7 +1415,11 @@
         "de": "Magnet",
         "la": "Magnes",
         "it": "Magnete",
-        "fr": "Aimant"
+        "fr": "Aimant",
+        "es": "Imán",
+        "pt": "Ímã",
+        "ja": "磁石",
+        "zh": "磁铁"
       },
       "description": {
         "en": "Material that produces a magnetic field.",
@@ -930,7 +1427,11 @@
         "de": "Material, das ein Magnetfeld erzeugt.",
         "la": "Materia quae campum magneticum efficit.",
         "it": "Materiale che produce un campo magnetico.",
-        "fr": "Matériau qui produit un champ magnétique."
+        "fr": "Matériau qui produit un champ magnétique.",
+        "es": "Material que produce un campo magnético.",
+        "pt": "Material que produz um campo magnético.",
+        "ja": "磁場を発生させる物質。",
+        "zh": "产生磁场的材料。"
       }
     },
     "compass": {
@@ -940,7 +1441,11 @@
         "de": "Kompass",
         "la": "Pyxis nautica",
         "it": "Bussola",
-        "fr": "Boussole"
+        "fr": "Boussole",
+        "es": "Brújula",
+        "pt": "Bússola",
+        "ja": "コンパス",
+        "zh": "指南针"
       },
       "description": {
         "en": "Navigational instrument showing direction.",
@@ -948,7 +1453,11 @@
         "de": "Navigationsinstrument zur Richtungsbestimmung.",
         "la": "Instrumentum navigandi vias indicans.",
         "it": "Strumento di navigazione che mostra la direzione.",
-        "fr": "Instrument de navigation indiquant la direction."
+        "fr": "Instrument de navigation indiquant la direction.",
+        "es": "Instrumento de navegación que indica la dirección.",
+        "pt": "Instrumento de navegação que indica a direção.",
+        "ja": "方角を示す航海用具。",
+        "zh": "指示方向的导航仪器。"
       }
     },
     "clay": {
@@ -958,7 +1467,11 @@
         "de": "Ton",
         "la": "Argilla",
         "it": "Argilla",
-        "fr": "Argile"
+        "fr": "Argile",
+        "es": "Arcilla",
+        "pt": "Argila",
+        "ja": "粘土",
+        "zh": "粘土"
       },
       "description": {
         "en": "Fine-grained natural soil material.",
@@ -966,7 +1479,11 @@
         "de": "Feinkörniges natürliches Bodenmaterial.",
         "la": "Materia argillosa terrae subtilis.",
         "it": "Materiale naturale del terreno a grana fine.",
-        "fr": "Matière de sol naturelle à grain fin."
+        "fr": "Matière de sol naturelle à grain fin.",
+        "es": "Material de suelo natural de grano fino.",
+        "pt": "Material de solo natural de grão fino.",
+        "ja": "きめ細かい天然の土質材料。",
+        "zh": "细粒的天然土壤材料。"
       }
     },
     "brick": {
@@ -976,7 +1493,11 @@
         "de": "Ziegel",
         "la": "Later",
         "it": "Mattone",
-        "fr": "Brique"
+        "fr": "Brique",
+        "es": "Ladrillo",
+        "pt": "Tijolo",
+        "ja": "レンガ",
+        "zh": "砖"
       },
       "description": {
         "en": "Rectangular block of baked clay used in building.",
@@ -984,7 +1505,11 @@
         "de": "Rechteckiger Block aus gebranntem Ton zum Bauen.",
         "la": "Massa rectangularis ex argilla cocta ad aedificandum.",
         "it": "Blocco rettangolare di argilla cotta usato nelle costruzioni.",
-        "fr": "Bloc rectangulaire d'argile cuite utilisé dans la construction."
+        "fr": "Bloc rectangulaire d'argile cuite utilisé dans la construction.",
+        "es": "Bloque rectangular de arcilla cocida usado en construcción.",
+        "pt": "Bloco retangular de argila cozida usado em construção.",
+        "ja": "建築に使われる焼成粘土の直方体ブロック。",
+        "zh": "用于建筑的矩形烧制粘土块。"
       }
     },
     "house": {
@@ -994,7 +1519,11 @@
         "de": "Haus",
         "la": "Domus",
         "it": "Casa",
-        "fr": "Maison"
+        "fr": "Maison",
+        "es": "Casa",
+        "pt": "Casa",
+        "ja": "家",
+        "zh": "房子"
       },
       "description": {
         "en": "Building for human habitation.",
@@ -1002,84 +1531,193 @@
         "de": "Gebäude zur menschlichen Behausung.",
         "la": "Aedificium ad habitandum factum.",
         "it": "Edificio destinato ad abitazione umana.",
-        "fr": "Bâtiment destiné à l'habitation humaine."
+        "fr": "Bâtiment destiné à l'habitation humaine.",
+        "es": "Edificio para habitación humana.",
+        "pt": "Edifício para habitação humana.",
+        "ja": "人が住むための建物。",
+        "zh": "供人类居住的建筑。"
       }
     },
     "plastic": {
-      "name": { "en": "Plastic", "hu": "Műanyag", "de": "Kunststoff", "la": "Plasticum", "it": "Plastica", "fr": "Plastique" },
+      "name": {
+        "en": "Plastic",
+        "hu": "Műanyag",
+        "de": "Kunststoff",
+        "la": "Plasticum",
+        "it": "Plastica",
+        "fr": "Plastique",
+        "es": "Plástico",
+        "pt": "Plástico",
+        "ja": "プラスチック",
+        "zh": "塑料"
+      },
       "description": {
         "en": "Synthetic polymer material refined from crude oil.",
         "hu": "Nyersolajból finomított szintetikus polimer anyag.",
         "de": "Synthetisches Polymermaterial, aus Rohöl raffiniert.",
         "la": "Materia polymerica synthetica ex oleo crudo raffinata.",
         "it": "Materiale polimerico sintetico raffinato dal petrolio greggio.",
-        "fr": "Matériau polymère synthétique raffiné à partir de pétrole brut."
+        "fr": "Matériau polymère synthétique raffiné à partir de pétrole brut.",
+        "es": "Material polimérico sintético refinado a partir de petróleo crudo.",
+        "pt": "Material polimérico sintético refinado a partir de petróleo bruto.",
+        "ja": "原油から精製された合成ポリマー素材。",
+        "zh": "由原油精炼而成的合成聚合物材料。"
       }
     },
     "paper": {
-      "name": { "en": "Paper", "hu": "Papír", "de": "Papier", "la": "Charta", "it": "Carta", "fr": "Papier" },
+      "name": {
+        "en": "Paper",
+        "hu": "Papír",
+        "de": "Papier",
+        "la": "Charta",
+        "it": "Carta",
+        "fr": "Papier",
+        "es": "Papel",
+        "pt": "Papel",
+        "ja": "紙",
+        "zh": "纸"
+      },
       "description": {
         "en": "Thin sheet pressed from soaked wood pulp.",
         "hu": "Átnedvesített farostból préselt vékony lap.",
         "de": "Dünnes Blatt, aus eingeweichtem Holzbrei gepresst.",
         "la": "Lamina tenuis ex pulpa ligni madefacti expressa.",
         "it": "Foglio sottile pressato da polpa di legno inzuppata.",
-        "fr": "Feuille fine pressée à partir de pâte de bois trempée."
+        "fr": "Feuille fine pressée à partir de pâte de bois trempée.",
+        "es": "Lámina fina prensada a partir de pulpa de madera empapada.",
+        "pt": "Folha fina prensada a partir de polpa de madeira embebida.",
+        "ja": "水に浸した木材パルプを圧搾した薄いシート。",
+        "zh": "由浸泡的木浆压制而成的薄片。"
       }
     },
     "animal": {
-      "name": { "en": "Animal", "hu": "Állat", "de": "Tier", "la": "Animal", "it": "Animale", "fr": "Animal" },
+      "name": {
+        "en": "Animal",
+        "hu": "Állat",
+        "de": "Tier",
+        "la": "Animal",
+        "it": "Animale",
+        "fr": "Animal",
+        "es": "Animal",
+        "pt": "Animal",
+        "ja": "動物",
+        "zh": "动物"
+      },
       "description": {
         "en": "Breath given to earth, formed into a living creature.",
         "hu": "A földnek adott lélegzet, amely élőlénnyé formálódott.",
         "de": "Der Erde eingehauchter Atem, zu einem Lebewesen geformt.",
         "la": "Spiritus terrae datus, in creaturam viventem formatus.",
         "it": "Respiro donato alla terra, plasmato in una creatura vivente.",
-        "fr": "Souffle donné à la terre, façonné en une créature vivante."
+        "fr": "Souffle donné à la terre, façonné en une créature vivante.",
+        "es": "Aliento dado a la tierra, formado en una criatura viviente.",
+        "pt": "Sopro dado à terra, formado em uma criatura viva.",
+        "ja": "大地に与えられた息吹が、生きる生物へと形作られたもの。",
+        "zh": "赋予大地的气息,塑造成一个活生生的生物。"
       }
     },
     "leather": {
-      "name": { "en": "Leather", "hu": "Bőr", "de": "Leder", "la": "Corium", "it": "Pelle", "fr": "Cuir" },
+      "name": {
+        "en": "Leather",
+        "hu": "Bőr",
+        "de": "Leder",
+        "la": "Corium",
+        "it": "Pelle",
+        "fr": "Cuir",
+        "es": "Cuero",
+        "pt": "Couro",
+        "ja": "革",
+        "zh": "皮革"
+      },
       "description": {
         "en": "Durable animal hide cured over fire.",
         "hu": "Tűz felett kikészített, tartós állatbőr.",
         "de": "Widerstandsfähige Tierhaut, über Feuer gegerbt.",
         "la": "Pellis animalis durabilis igni curata.",
         "it": "Pelle animale resistente conciata sul fuoco.",
-        "fr": "Peau d'animal durable tannée au feu."
+        "fr": "Peau d'animal durable tannée au feu.",
+        "es": "Piel animal duradera curtida al fuego.",
+        "pt": "Couro animal durável curtido ao fogo.",
+        "ja": "火で処理された耐久性のある動物の皮。",
+        "zh": "经火处理而成的耐用兽皮。"
       }
     },
     "book": {
-      "name": { "en": "Book", "hu": "Könyv", "de": "Buch", "la": "Liber", "it": "Libro", "fr": "Livre" },
+      "name": {
+        "en": "Book",
+        "hu": "Könyv",
+        "de": "Buch",
+        "la": "Liber",
+        "it": "Libro",
+        "fr": "Livre",
+        "es": "Libro",
+        "pt": "Livro",
+        "ja": "本",
+        "zh": "书"
+      },
       "description": {
         "en": "Bound pages of paper wrapped in a leather cover.",
         "hu": "Bőrborításba kötött papírlapok.",
         "de": "Gebundene Papierseiten in einem Ledereinband.",
         "la": "Paginae chartae in tegumento coriaceo ligatae.",
         "it": "Pagine di carta legate in una copertina di pelle.",
-        "fr": "Pages de papier reliées dans une couverture en cuir."
+        "fr": "Pages de papier reliées dans une couverture en cuir.",
+        "es": "Páginas de papel encuadernadas en una cubierta de cuero.",
+        "pt": "Páginas de papel encadernadas em uma capa de couro.",
+        "ja": "革の表紙で綴じられた紙のページ。",
+        "zh": "用皮革封面装订的纸页。"
       }
     },
     "ring": {
-      "name": { "en": "Ring", "hu": "Gyűrű", "de": "Ring", "la": "Anulus", "it": "Anello", "fr": "Bague" },
+      "name": {
+        "en": "Ring",
+        "hu": "Gyűrű",
+        "de": "Ring",
+        "la": "Anulus",
+        "it": "Anello",
+        "fr": "Bague",
+        "es": "Anillo",
+        "pt": "Anel",
+        "ja": "指輪",
+        "zh": "戒指"
+      },
       "description": {
         "en": "Band of precious metal worn as jewelry.",
         "hu": "Értékes fémből készült ékszer, amelyet ujjon viselnek.",
         "de": "Aus wertvollem Metall gefertigter Schmuck.",
         "la": "Vinculum ex metallo pretioso tamquam ornamentum gestatum.",
         "it": "Fascia di metallo prezioso indossata come gioiello.",
-        "fr": "Anneau de métal précieux porté comme bijou."
+        "fr": "Anneau de métal précieux porté comme bijou.",
+        "es": "Banda de metal precioso usada como joya.",
+        "pt": "Argola de metal precioso usada como joia.",
+        "ja": "宝飾品として身につける貴金属の輪。",
+        "zh": "作为首饰佩戴的贵金属环。"
       }
     },
     "mirror": {
-      "name": { "en": "Mirror", "hu": "Tükör", "de": "Spiegel", "la": "Speculum", "it": "Specchio", "fr": "Miroir" },
+      "name": {
+        "en": "Mirror",
+        "hu": "Tükör",
+        "de": "Spiegel",
+        "la": "Speculum",
+        "it": "Specchio",
+        "fr": "Miroir",
+        "es": "Espejo",
+        "pt": "Espelho",
+        "ja": "鏡",
+        "zh": "镜子"
+      },
       "description": {
         "en": "Polished glass backed with reflective silver.",
         "hu": "Csiszolt üveg, ezüst tükröződő réteggel bevonva.",
         "de": "Poliertes Glas mit reflektierender Silberschicht.",
         "la": "Vitrum politum argento nitido tectum.",
         "it": "Vetro levigato rivestito da uno strato riflettente d'argento.",
-        "fr": "Verre poli recouvert d'une couche d'argent réfléchissante."
+        "fr": "Verre poli recouvert d'une couche d'argent réfléchissante.",
+        "es": "Vidrio pulido respaldado con plata reflectante.",
+        "pt": "Vidro polido revestido com prata refletora.",
+        "ja": "反射性の銀を裏打ちした研磨ガラス。",
+        "zh": "背衬反光银层的磨光玻璃。"
       }
     }
   }

@@ -40,6 +40,10 @@ const LANGUAGES = [
   { code: 'la', label: 'Latina', flag: '🏛️' },
   { code: 'it', label: 'Italiano', flag: '🇮🇹' },
   { code: 'fr', label: 'Français', flag: '🇫🇷' },
+  { code: 'es', label: 'Español', flag: '🇪🇸' },
+  { code: 'pt', label: 'Português', flag: '🇵🇹' },
+  { code: 'ja', label: '日本語', flag: '🇯🇵' },
+  { code: 'zh', label: '中文', flag: '🇨🇳' },
 ] as const;
 
 type Language = typeof LANGUAGES[number]['code'];
