@@ -42,5 +42,9 @@
   "leather+paper": "book",
   "gold+metal": "ring",
   "glass+silver": "mirror",
-  "life+paper": "homework"
+  "life+paper": "homework",
+  "ice+ice": "glacier",
+  "glacier+water": "iceberg",
+  "ice+storm": "blizzard",
+  "blizzard+earth": "avalanche"
 }
