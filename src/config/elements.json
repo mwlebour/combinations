@@ -602,5 +602,122 @@
     "category": "nature",
     "svgPath": "M2 20h20l-6-9-3 4-3-6-8 11z",
     "color": "#ECEFF1"
+  },
+  {
+    "id": "friend",
+    "name": "Friend",
+    "description": "A loyal animal companion that sticks by your side.",
+    "isFinal": true,
+    "category": "organic",
+    "svgPath": "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-3.3 0-8 1.7-8 5v2h16v-2c0-3.3-4.7-5-8-5z",
+    "color": "#FFB74D"
+  },
+  {
+    "id": "love",
+    "name": "Love",
+    "description": "The warmest feeling a living thing can share with another.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z",
+    "color": "#E91E63"
+  },
+  {
+    "id": "pepper",
+    "name": "Pepper",
+    "description": "A very good dog, made of animal and love.",
+    "isFinal": true,
+    "category": "organic",
+    "svgPath": "M4.5 12c0-2 1.5-3.5 3.5-3.5h1V6L6 3l3-1 2 2.5h2L15 2l3 1-3 3v2.5h1c2 0 3.5 1.5 3.5 3.5v3c0 3.5-2.5 6-6 6h-6c-3.5 0-6-2.5-6-6v-3zm5 1.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3.5 2.5h2l-1 1.2L11 16z",
+    "color": "#8D6E63"
+  },
+  {
+    "id": "boat",
+    "name": "Boat",
+    "description": "A plastic and wooden hull that floats on water.",
+    "isFinal": false,
+    "category": "construction",
+    "svgPath": "M3 17h18l-2.5 4h-13L3 17zm8-14h2v12h-2V3zm0 1l-6 9h6V4z",
+    "color": "#8D6E63"
+  },
+  {
+    "id": "hot_air",
+    "name": "Hot Air",
+    "description": "Air heated by fire; it rises.",
+    "isFinal": false,
+    "category": "weather",
+    "svgPath": "M2 12h12a3 3 0 0 1 3 3a3 3 0 0 1-3 3h-2v-2h2a1 1 0 0 0 1-1a1 1 0 0 0-1-1H2v-2zm2-6h16a3 3 0 0 1 3 3a3 3 0 0 1-3 3h-2v-2h2a1 1 0 0 0 1-1a1 1 0 0 0-1-1H4V6z",
+    "color": "#FF8A65"
+  },
+  {
+    "id": "cold_air",
+    "name": "Cold Air",
+    "description": "Air cooled by water; it sinks.",
+    "isFinal": false,
+    "category": "weather",
+    "svgPath": "M2 12h12a3 3 0 0 1 3 3a3 3 0 0 1-3 3h-2v-2h2a1 1 0 0 0 1-1a1 1 0 0 0-1-1H2v-2zm2-6h16a3 3 0 0 1 3 3a3 3 0 0 1-3 3h-2v-2h2a1 1 0 0 0 1-1a1 1 0 0 0-1-1H4V6z",
+    "color": "#81D4FA"
+  },
+  {
+    "id": "wind",
+    "name": "Wind",
+    "description": "Warm and cold air rushing past each other.",
+    "isFinal": false,
+    "category": "weather",
+    "svgPath": "M3 8h11a3 3 0 1 0-3-3h2a1 1 0 1 1 1 1H3v2zm0 4h15a3 3 0 1 1-3 3h2a1 1 0 1 0 1-1H3v-2zm0 4h8a2.5 2.5 0 1 1-2.5 2.5h2A.5.5 0 1 0 11 18H3v-2z",
+    "color": "#B3E5FC"
+  },
+  {
+    "id": "sailboat",
+    "name": "Sailboat",
+    "description": "A boat that catches the wind to cross the water.",
+    "isFinal": true,
+    "category": "construction",
+    "svgPath": "M11 2v14H3c0 0 4-3 8-14zm2 3c4 5 6 8 6 11h-6V5zM3 18h18l-2.5 3h-13L3 18z",
+    "color": "#4FC3F7"
+  },
+  {
+    "id": "diamond",
+    "name": "Diamond",
+    "description": "A brilliant gem dug out of the rock with a pickaxe.",
+    "isFinal": false,
+    "category": "materials",
+    "svgPath": "M6 3h12l4 6-10 12L2 9l4-6zm1.2 2L4.8 8.5h3.4L10 5H7.2zm5 0L13.6 8.5h5.6L16.8 5h-4.6zM5.6 10.5L12 18.2l6.4-7.7H5.6z",
+    "color": "#80DEEA"
+  },
+  {
+    "id": "jewelry",
+    "name": "Jewelry",
+    "description": "Gold set with a diamond, made to be worn.",
+    "isFinal": true,
+    "category": "materials",
+    "svgPath": "M12 4l2.5 3H9.5L12 4zM6 9h12l3 4-9 9-9-9 3-4zm2.1 2L6.5 13l5.5 5.5 5.5-5.5-1.6-2H8.1z",
+    "color": "#FFD54F"
+  },
+  {
+    "id": "football",
+    "name": "Football",
+    "description": "A leather ball filled with air, ready to be kicked.",
+    "isFinal": true,
+    "category": "materials",
+    "svgPath": "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 4.2l3.4 2.5-1.3 4H9.9l-1.3-4L12 6.2zM4.6 9.6l2.4.8.4 3.1-2.2 2a8 8 0 0 1-.6-5.9zm14.8 0a8 8 0 0 1-.6 5.9l-2.2-2 .4-3.1 2.4-.8zM12 20a8 8 0 0 1-3.4-.8l1.3-2.9h4.2l1.3 2.9A8 8 0 0 1 12 20z",
+    "color": "#A1887F"
+  },
+  {
+    "id": "art",
+    "name": "Art",
+    "description": "Crude oil spread across paper into something expressive.",
+    "isFinal": false,
+    "category": "materials",
+    "svgPath": "M12 3a9 9 0 0 0 0 18c1.1 0 1.5-.9 1.1-1.7-.5-.9.1-2.3 1.4-2.3H17a4 4 0 0 0 4-4c0-5-4-10-9-10zM7.5 12a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z",
+    "color": "#AB47BC"
+  },
+  {
+    "id": "happy",
+    "name": "Happy",
+    "description": "What a living being feels when surrounded by art.",
+    "isFinal": true,
+    "category": "organic",
+    "svgPath": "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-3 7a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm6 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-3 9a5 5 0 0 1-4.6-3h9.2A5 5 0 0 1 12 18z",
+    "color": "#FFEB3B"
   }
 ]
