@@ -67,6 +67,58 @@ describe('Game Logic Utilities', () => {
         const result = combineElements('brick', 'wood', actualRecipes);
         expect(result).toBe('house');
       });
+
+      it('should combine animal + life into friend', () => {
+        expect(combineElements('animal', 'life', actualRecipes)).toBe('friend');
+      });
+
+      it('should combine life + life into love', () => {
+        expect(combineElements('life', 'life', actualRecipes)).toBe('love');
+      });
+
+      it('should combine animal + love into pepper', () => {
+        expect(combineElements('animal', 'love', actualRecipes)).toBe('pepper');
+      });
+
+      it('should combine plastic + wood into boat', () => {
+        expect(combineElements('plastic', 'wood', actualRecipes)).toBe('boat');
+      });
+
+      it('should combine fire + air into hot_air', () => {
+        expect(combineElements('fire', 'air', actualRecipes)).toBe('hot_air');
+      });
+
+      it('should combine water + air into cold_air', () => {
+        expect(combineElements('water', 'air', actualRecipes)).toBe('cold_air');
+      });
+
+      it('should combine hot_air + cold_air into wind', () => {
+        expect(combineElements('hot_air', 'cold_air', actualRecipes)).toBe('wind');
+      });
+
+      it('should combine wind + boat into sailboat', () => {
+        expect(combineElements('wind', 'boat', actualRecipes)).toBe('sailboat');
+      });
+
+      it('should combine salt_crystal + pickaxe into diamond', () => {
+        expect(combineElements('salt_crystal', 'pickaxe', actualRecipes)).toBe('diamond');
+      });
+
+      it('should combine gold + diamond into jewelry', () => {
+        expect(combineElements('gold', 'diamond', actualRecipes)).toBe('jewelry');
+      });
+
+      it('should combine leather + air into football', () => {
+        expect(combineElements('leather', 'air', actualRecipes)).toBe('football');
+      });
+
+      it('should combine crude_oil + paper into art', () => {
+        expect(combineElements('crude_oil', 'paper', actualRecipes)).toBe('art');
+      });
+
+      it('should combine art + life into happy', () => {
+        expect(combineElements('art', 'life', actualRecipes)).toBe('happy');
+      });
     });
   });
 

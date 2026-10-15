@@ -50,5 +50,18 @@
   "ice+ice": "glacier",
   "glacier+water": "iceberg",
   "ice+storm": "blizzard",
-  "blizzard+earth": "avalanche"
+  "blizzard+earth": "avalanche",
+  "animal+life": "friend",
+  "life+life": "love",
+  "animal+love": "pepper",
+  "boat+wind": "sailboat",
+  "diamond+gold": "jewelry",
+  "art+life": "happy",
+  "plastic+wood": "boat",
+  "air+fire": "hot_air",
+  "air+water": "cold_air",
+  "cold_air+hot_air": "wind",
+  "air+leather": "football",
+  "crude_oil+paper": "art",
+  "pickaxe+salt_crystal": "diamond"
 }
