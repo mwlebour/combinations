@@ -719,5 +719,194 @@
     "category": "organic",
     "svgPath": "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-3 7a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm6 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-3 9a5 5 0 0 1-4.6-3h9.2A5 5 0 0 1 12 18z",
     "color": "#FFEB3B"
+  },
+  {
+    "id": "globe",
+    "name": "Globe",
+    "description": "The whole world: land and ocean joined into one sphere.",
+    "isFinal": false,
+    "category": "nature",
+    "svgPath": "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 2.1V8L8 9 6 7.5A8 8 0 0 1 11 4.1zM4.3 13l3 .7L9 17l-1 2.4A8 8 0 0 1 4.3 13zm9.7 6.9V17l3-1.5 1.5-3.3 2 .3a8 8 0 0 1-6.5 7.4z",
+    "color": "#42A5F5"
+  },
+  {
+    "id": "meteor",
+    "name": "Meteor",
+    "description": "A burning rock streaking down from the sky.",
+    "isFinal": false,
+    "category": "nature",
+    "svgPath": "M2 4l9 3-6 2 7 2-6 3 8 1a5 5 0 1 0 5-8l-9-3H2z",
+    "color": "#FF7043"
+  },
+  {
+    "id": "new_age",
+    "name": "New Age",
+    "description": "A meteor strikes the globe and a new era begins.",
+    "isFinal": false,
+    "category": "nature",
+    "svgPath": "M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6zm7 12l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z",
+    "color": "#CE93D8"
+  },
+  {
+    "id": "monkey",
+    "name": "Monkey",
+    "description": "A clever animal of the new age, one step from becoming human.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M12 4a5 5 0 0 0-5 5c-2 0-4 1-4 3s2 3 4 3c1 2.5 3 4 5 4s4-1.5 5-4c2 0 4-1 4-3s-2-3-4-3a5 5 0 0 0-5-5zm-2 6.500a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 14c-1 0-2 .5-2 1h4c0-.5-1-1-2-1z",
+    "color": "#A1887F"
+  },
+  {
+    "id": "human",
+    "name": "Human",
+    "description": "A monkey that learned homework, and never looked back.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M12 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-2 6h4l3 5-1.500 1-1.500-2.500V22h-2v-6h-1v6H9V11.500L7.500 14 6 13l3-5z",
+    "color": "#FFCC80"
+  },
+  {
+    "id": "tech",
+    "name": "Tech",
+    "description": "Metal and oil shaped into the first machines.",
+    "isFinal": false,
+    "category": "technology",
+    "svgPath": "M4 5h16v11H4V5zm2 2v7h12V7H6zM2 18h20v2H2v-2z",
+    "color": "#78909C"
+  },
+  {
+    "id": "car",
+    "name": "Car",
+    "description": "Steel and technology on four wheels.",
+    "isFinal": false,
+    "category": "technology",
+    "svgPath": "M18.920 6.010C18.720 5.420 18.160 5 17.500 5h-11c-.66 0-1.210.42-1.420 1.010L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.080-5.990zM6.500 16a1.500 1.500 0 1 1 0-3 1.500 1.500 0 0 1 0 3zm11 0a1.500 1.500 0 1 1 0-3 1.500 1.500 0 0 1 0 3zM5 11l1.500-4.500h11L19 11H5z",
+    "color": "#EF5350"
+  },
+  {
+    "id": "cyborg",
+    "name": "Cyborg",
+    "description": "Human and machine fused into one.",
+    "isFinal": true,
+    "category": "technology",
+    "svgPath": "M12 2a6 6 0 0 0-6 6v4l-2 2v2h4l1 2h6l1-2h4v-2l-2-2V8a6 6 0 0 0-6-6zm-2 7h4v2h-4V9z",
+    "color": "#26C6DA"
+  },
+  {
+    "id": "engine",
+    "name": "Engine",
+    "description": "Technology that burns fire to make things move.",
+    "isFinal": false,
+    "category": "technology",
+    "svgPath": "M19.140 12.940c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.030-1.580a.49.49 0 0 0 .12-.61l-1.920-3.320a.49.49 0 0 0-.59-.22l-2.390.96c-.5-.38-1.030-.7-1.620-.94l-.36-2.540a.48.48 0 0 0-.48-.41h-3.840c-.24 0-.43.17-.47.41l-.36 2.540c-.59.24-1.130.57-1.620.94l-2.390-.96a.48.48 0 0 0-.59.22L2.740 8.870c-.12.21-.08.47.12.61l2.030 1.580c-.05.3-.09.63-.09.94s.02.64.07.94l-2.030 1.580a.49.49 0 0 0-.12.61l1.920 3.320c.12.22.37.29.59.22l2.390-.96c.5.38 1.030.7 1.620.94l.36 2.540c.05.24.24.41.48.41h3.840c.24 0 .44-.17.47-.41l.36-2.540c.59-.24 1.130-.56 1.620-.94l2.390.96c.22.08.47 0 .59-.22l1.920-3.320c.12-.22.07-.47-.12-.61l-2.010-1.580zM12 15.600a3.600 3.600 0 1 1 0-7.200 3.600 3.600 0 0 1 0 7.200z",
+    "color": "#FF8A65"
+  },
+  {
+    "id": "rocket",
+    "name": "Rocket",
+    "description": "A steel engine strapped to the sky.",
+    "isFinal": false,
+    "category": "technology",
+    "svgPath": "M12 2c3 2 5 5.500 5 9.500l2 3.500v3l-3-1.500-1 3h-6l-1-3L5 20v-3l2-3.500C7 7.500 9 4 12 2zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z",
+    "color": "#ECEFF1"
+  },
+  {
+    "id": "astronaut",
+    "name": "Astronaut",
+    "description": "A human brave enough to ride a rocket.",
+    "isFinal": true,
+    "category": "organic",
+    "svgPath": "M12 2a8 8 0 0 0-8 8v4a8 8 0 0 0 16 0v-4a8 8 0 0 0-8-8zm0 4a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0v-2a5 5 0 0 1 5-5zm0 2.500c-1.400 0-2.500.8-2.500 2v1c0 1.200 1.100 2 2.500 2s2.500-.8 2.500-2v-1c0-1.200-1.100-2-2.500-2z",
+    "color": "#B0BEC5"
+  },
+  {
+    "id": "god",
+    "name": "God",
+    "description": "A human struck by lightning and raised above the clouds.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M12 1c-3 0-5 1-5 2s2 2 5 2 5-1 5-2-2-2-5-2zm0 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-6 15c0-4 3-7 6-7s6 3 6 7H6z",
+    "color": "#FFF59D"
+  },
+  {
+    "id": "devil",
+    "name": "Devil",
+    "description": "A human who got too close to the fire.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M5 2l2 5a7 7 0 0 0-2 5c0 4 3 7 7 7s7-3 7-7a7 7 0 0 0-2-5l2-5-5 2h-4L5 2zm4 10a1.500 1.500 0 1 1 0 3 1.500 1.500 0 0 1 0-3zm6 0a1.500 1.500 0 1 1 0 3 1.500 1.500 0 0 1 0-3z",
+    "color": "#E53935"
+  },
+  {
+    "id": "super_human",
+    "name": "Superhuman",
+    "description": "Where the divine and the devilish meet in one being.",
+    "isFinal": true,
+    "category": "organic",
+    "svgPath": "M12 2l2.400 5 5.600.8-4 4 1 5.600-5-2.700-5 2.700 1-5.600-4-4L9.600 7 12 2zm-5 17h10v3H7v-3z",
+    "color": "#FFD54F"
+  },
+  {
+    "id": "time_travel",
+    "name": "Time Travel",
+    "description": "A car charged with lightning, racing through the years.",
+    "isFinal": true,
+    "category": "technology",
+    "svgPath": "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 5v5l4 2-.8 1.600L11 13V7h2z",
+    "color": "#7E57C2"
+  },
+  {
+    "id": "pollution",
+    "name": "Pollution",
+    "description": "Plastic drifting through the ocean.",
+    "isFinal": false,
+    "category": "nature",
+    "svgPath": "M6 19a4 4 0 0 1-.5-8A6 6 0 0 1 17 9.500 4.500 4.500 0 0 1 17.500 19H6zM8 21h2v2H8v-2zm6 0h2v2h-2v-2z",
+    "color": "#757575"
+  },
+  {
+    "id": "climate_change",
+    "name": "Climate Change",
+    "description": "Pollution begins to change how every living thing survives.",
+    "isFinal": true,
+    "category": "weather",
+    "svgPath": "M15 13V5a3 3 0 0 0-6 0v8a5 5 0 1 0 6 0zm-3-9a1 1 0 0 1 1 1v3h-2V5a1 1 0 0 1 1-1z",
+    "color": "#FF7043"
+  },
+  {
+    "id": "powder",
+    "name": "Powder",
+    "description": "Rock ground to dust with a pickaxe.",
+    "isFinal": false,
+    "category": "materials",
+    "svgPath": "M2 20l5-7 3 3 4-8 8 12H2zM6 7h2v2H6V7zm10-3h2v2h-2V4z",
+    "color": "#BDBDBD"
+  },
+  {
+    "id": "gun",
+    "name": "Gun",
+    "description": "Powder packed into steel.",
+    "isFinal": false,
+    "category": "technology",
+    "svgPath": "M2 8h14l2-2h4v5h-4l-1 2h-3l-1 5H8l1-5H5L2 11V8z",
+    "color": "#546E7A"
+  },
+  {
+    "id": "soldier",
+    "name": "Soldier",
+    "description": "A human armed with a gun.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M12 2c-3 0-5 2-5 4h10c0-2-2-4-5-4zM6 8h12v2H6V8zm6 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-7 11c0-3 3-5 7-5s7 2 7 5H5z",
+    "color": "#6D8B3A"
+  },
+  {
+    "id": "apocalypse",
+    "name": "Apocalypse",
+    "description": "Soldiers loose upon the globe: the end of the world.",
+    "isFinal": true,
+    "category": "nature",
+    "svgPath": "M12 1l2 5 5-3-1 6 6 1-5 4 4 5-6-1-1 6-4-4-4 4-1-6-6 1 4-5-5-4 6-1-1-6 5 3 2-5z",
+    "color": "#D32F2F"
   }
 ]
