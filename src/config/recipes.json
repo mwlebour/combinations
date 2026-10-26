@@ -85,5 +85,6 @@
   "powder+steel": "gun",
   "gun+human": "soldier",
   "globe+soldier": "apocalypse",
-  "globe+rock": "moon"
+  "globe+rock": "moon",
+  "astronaut+moon": "moon_landing"
 }
