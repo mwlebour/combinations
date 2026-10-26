@@ -203,6 +203,10 @@ describe('Game Logic Utilities', () => {
       it('should combine soldier + globe into apocalypse', () => {
         expect(combineElements('soldier', 'globe', actualRecipes)).toBe('apocalypse');
       });
+
+      it('should combine rock + globe into moon', () => {
+        expect(combineElements('rock', 'globe', actualRecipes)).toBe('moon');
+      });
     });
   });
 

@@ -4289,6 +4289,46 @@
         "pl": "Żołnierze spuszczeni ze smyczy na globusie: koniec świata.",
         "bg": "Войници, пуснати върху глобуса: краят на света."
       }
+    },
+    "moon": {
+      "name": {
+        "en": "Moon",
+        "hu": "Hold",
+        "de": "Mond",
+        "la": "Luna",
+        "it": "Luna",
+        "fr": "Lune",
+        "es": "Luna",
+        "pt": "Lua",
+        "ja": "月",
+        "zh": "月亮",
+        "ru": "Луна",
+        "ko": "달",
+        "sq": "Hëna",
+        "sr": "Mesec",
+        "uk": "Місяць",
+        "pl": "Księżyc",
+        "bg": "Луна"
+      },
+      "description": {
+        "en": "A rock circling the globe, lighting up the night.",
+        "hu": "Egy kőzet, ami a földgömb körül kering, és megvilágítja az éjszakát.",
+        "de": "Ein Fels, der den Globus umkreist und die Nacht erhellt.",
+        "la": "Rupes circa globum volvens et noctem illuminans.",
+        "it": "Una roccia che orbita attorno al globo e illumina la notte.",
+        "fr": "Un rocher qui tourne autour du globe et éclaire la nuit.",
+        "es": "Una roca que gira alrededor del globo e ilumina la noche.",
+        "pt": "Uma rocha que gira em torno do globo e ilumina a noite.",
+        "ja": "地球のまわりを回り、夜を照らす岩。",
+        "zh": "绕着地球运转、照亮夜晚的岩石。",
+        "ru": "Камень, обращающийся вокруг глобуса и освещающий ночь.",
+        "ko": "지구 주위를 돌며 밤을 밝히는 바위.",
+        "sq": "Një shkëmb që rrotullohet rreth globit dhe ndriçon natën.",
+        "sr": "Stena koja kruži oko globusa i obasjava noć.",
+        "uk": "Камінь, що обертається навколо глобуса й освітлює ніч.",
+        "pl": "Skała krążąca wokół globusa i oświetlająca noc.",
+        "bg": "Скала, обикаляща глобуса и осветяваща нощта."
+      }
     }
   }
 }
