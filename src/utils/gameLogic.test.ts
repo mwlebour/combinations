@@ -119,6 +119,90 @@ describe('Game Logic Utilities', () => {
       it('should combine art + life into happy', () => {
         expect(combineElements('art', 'life', actualRecipes)).toBe('happy');
       });
+
+      it('should combine earth + ocean into globe', () => {
+        expect(combineElements('earth', 'ocean', actualRecipes)).toBe('globe');
+      });
+
+      it('should combine rock + fire into meteor', () => {
+        expect(combineElements('rock', 'fire', actualRecipes)).toBe('meteor');
+      });
+
+      it('should combine meteor + globe into new_age', () => {
+        expect(combineElements('meteor', 'globe', actualRecipes)).toBe('new_age');
+      });
+
+      it('should combine new_age + animal into monkey', () => {
+        expect(combineElements('new_age', 'animal', actualRecipes)).toBe('monkey');
+      });
+
+      it('should combine monkey + homework into human', () => {
+        expect(combineElements('monkey', 'homework', actualRecipes)).toBe('human');
+      });
+
+      it('should combine metal + crude_oil into tech', () => {
+        expect(combineElements('metal', 'crude_oil', actualRecipes)).toBe('tech');
+      });
+
+      it('should combine tech + steel into car', () => {
+        expect(combineElements('tech', 'steel', actualRecipes)).toBe('car');
+      });
+
+      it('should combine tech + human into cyborg', () => {
+        expect(combineElements('tech', 'human', actualRecipes)).toBe('cyborg');
+      });
+
+      it('should combine tech + fire into engine', () => {
+        expect(combineElements('tech', 'fire', actualRecipes)).toBe('engine');
+      });
+
+      it('should combine engine + steel into rocket', () => {
+        expect(combineElements('engine', 'steel', actualRecipes)).toBe('rocket');
+      });
+
+      it('should combine rocket + human into astronaut', () => {
+        expect(combineElements('rocket', 'human', actualRecipes)).toBe('astronaut');
+      });
+
+      it('should combine lightning + human into god', () => {
+        expect(combineElements('lightning', 'human', actualRecipes)).toBe('god');
+      });
+
+      it('should combine fire + human into devil', () => {
+        expect(combineElements('fire', 'human', actualRecipes)).toBe('devil');
+      });
+
+      it('should combine devil + god into super_human', () => {
+        expect(combineElements('devil', 'god', actualRecipes)).toBe('super_human');
+      });
+
+      it('should combine car + lightning into time_travel', () => {
+        expect(combineElements('car', 'lightning', actualRecipes)).toBe('time_travel');
+      });
+
+      it('should combine plastic + ocean into pollution', () => {
+        expect(combineElements('plastic', 'ocean', actualRecipes)).toBe('pollution');
+      });
+
+      it('should combine pollution + life into climate_change', () => {
+        expect(combineElements('pollution', 'life', actualRecipes)).toBe('climate_change');
+      });
+
+      it('should combine rock + pickaxe into powder', () => {
+        expect(combineElements('rock', 'pickaxe', actualRecipes)).toBe('powder');
+      });
+
+      it('should combine powder + steel into gun', () => {
+        expect(combineElements('powder', 'steel', actualRecipes)).toBe('gun');
+      });
+
+      it('should combine gun + human into soldier', () => {
+        expect(combineElements('gun', 'human', actualRecipes)).toBe('soldier');
+      });
+
+      it('should combine soldier + globe into apocalypse', () => {
+        expect(combineElements('soldier', 'globe', actualRecipes)).toBe('apocalypse');
+      });
     });
   });
 
