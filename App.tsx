@@ -190,6 +190,9 @@ export default function App() {
   // Reset Game Confirmation Modal State
   const [showResetConfirm, setShowResetConfirm] = useState(false);
 
+  // Game Complete Modal State (dismissed for the current session once acknowledged)
+  const [gameCompleteDismissed, setGameCompleteDismissed] = useState(false);
+
   // Keep track of canvas sizing for containment checks
   const [canvasLayout, setCanvasLayout] = useState({ x: 0, y: 0, width: 0, height: 0 });
 
@@ -293,6 +296,7 @@ export default function App() {
 
   const handleResetGame = async () => {
     setDiscoveredIds(DEFAULT_STARTING_ELEMENTS);
+    setGameCompleteDismissed(false);
     setCanvasElements([]);
     setProximityLine(null);
     setActiveCombinations([]);
@@ -537,6 +541,9 @@ export default function App() {
 
   // 5. Filter Discovered Sidebar Lists
   const discoveredElements = elements.filter(el => discoveredIds.includes(el.id));
+
+  // Every element discovered means there is nothing left to combine
+  const isGameComplete = discoveredElements.length === elements.length;
   
   const filteredElements = discoveredElements.filter(item => {
     const trans = getElementTranslation(item.id);
@@ -744,6 +751,23 @@ export default function App() {
           </View>
         );
       })()}
+
+      {/* Game Complete Modal, shown once the final discovery popover is closed */}
+      {isGameComplete && !discoveredElement && !gameCompleteDismissed && (
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalContent, { borderColor: '#FFD54F' }]}>
+            <Text style={[styles.modalHeader, { fontSize: 48 }]}>🏆</Text>
+            <Text style={[styles.modalTitle, { color: '#FFD54F' }]}>{t('gameCompleteTitle')}</Text>
+            <Text style={styles.modalDescription}>{t('gameCompleteDescription')}</Text>
+            <TouchableOpacity
+              style={[styles.modalButton, { borderColor: '#FFD54F' }]}
+              onPress={() => setGameCompleteDismissed(true)}
+            >
+              <Text style={[styles.modalButtonText, { color: '#FFD54F' }]}>{t('awesome')}</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
 
       {/* Reset Game Confirmation Modal */}
       {showResetConfirm && (
