@@ -207,6 +207,10 @@ describe('Game Logic Utilities', () => {
       it('should combine rock + globe into moon', () => {
         expect(combineElements('rock', 'globe', actualRecipes)).toBe('moon');
       });
+
+      it('should combine astronaut + moon into moon_landing', () => {
+        expect(combineElements('astronaut', 'moon', actualRecipes)).toBe('moon_landing');
+      });
     });
   });
 

@@ -4329,6 +4329,46 @@
         "pl": "Skała krążąca wokół globusa i oświetlająca noc.",
         "bg": "Скала, обикаляща глобуса и осветяваща нощта."
       }
+    },
+    "moon_landing": {
+      "name": {
+        "en": "Moon Landing",
+        "hu": "Holdraszállás",
+        "de": "Mondlandung",
+        "la": "Allunatio",
+        "it": "Allunaggio",
+        "fr": "Alunissage",
+        "es": "Alunizaje",
+        "pt": "Alunagem",
+        "ja": "月面着陸",
+        "zh": "登月",
+        "ru": "Высадка на Луну",
+        "ko": "달 착륙",
+        "sq": "Zbarkimi në Hënë",
+        "sr": "Sletanje na Mesec",
+        "uk": "Висадка на Місяць",
+        "pl": "Lądowanie na Księżycu",
+        "bg": "Кацане на Луната"
+      },
+      "description": {
+        "en": "An astronaut takes one small step onto the moon.",
+        "hu": "Egy űrhajós megteszi az első kis lépést a Holdon.",
+        "de": "Ein Astronaut macht einen kleinen Schritt auf den Mond.",
+        "la": "Astronauta parvum gradum in Lunam facit.",
+        "it": "Un astronauta compie un piccolo passo sulla luna.",
+        "fr": "Un astronaute fait un petit pas sur la lune.",
+        "es": "Un astronauta da un pequeño paso sobre la luna.",
+        "pt": "Um astronauta dá um pequeno passo na lua.",
+        "ja": "宇宙飛行士が月面に小さな一歩を踏み出す。",
+        "zh": "宇航员在月球上迈出一小步。",
+        "ru": "Космонавт делает один маленький шаг по Луне.",
+        "ko": "우주비행사가 달 위에 작은 한 걸음을 내딛는다.",
+        "sq": "Një astronaut hedh një hap të vogël mbi Hënë.",
+        "sr": "Astronaut čini mali korak na Mesecu.",
+        "uk": "Астронавт робить один маленький крок по Місяцю.",
+        "pl": "Astronauta stawia jeden mały krok na Księżycu.",
+        "bg": "Астронавт прави една малка крачка по Луната."
+      }
     }
   }
 }
