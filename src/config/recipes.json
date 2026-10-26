@@ -84,5 +84,6 @@
   "pickaxe+rock": "powder",
   "powder+steel": "gun",
   "gun+human": "soldier",
-  "globe+soldier": "apocalypse"
+  "globe+soldier": "apocalypse",
+  "globe+rock": "moon"
 }
