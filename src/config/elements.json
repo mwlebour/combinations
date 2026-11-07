@@ -255,7 +255,7 @@
     "id": "snowman",
     "name": "Snowman",
     "description": "Frozen humanoid figure built from packed snow and soil.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "weather",
     "svgPath": "M12 12a3.5 3.5 0 1 0 0-7a3.5 3.5 0 0 0 0 7zm0 10a5 5 0 1 0 0-10a5 5 0 0 0 0 10z",
     "color": "#EA80FC"
@@ -377,7 +377,7 @@
     "id": "volcano",
     "name": "Volcano",
     "description": "A mountain that vents lava, steam, and ash.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "nature",
     "svgPath": "M12 2L2 22h20L12 2zm0 5l4 8H8l4-8zm-1 8h2v2h-2v-2z",
     "color": "#FF3D00"
@@ -449,7 +449,7 @@
     "id": "plastic",
     "name": "Plastic",
     "description": "Synthetic polymer material refined from crude oil.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "materials",
     "svgPath": "M9 2h6v3l2 2v13a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V7l2-2V2zm0 2v2h6V4H9zm-1 5v11h8V9H8z",
     "color": "#4FC3F7"
@@ -481,7 +481,7 @@
     "id": "salt_crystal",
     "name": "Salt Crystal",
     "description": "Mineral deposit mined from a mountain's core.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "nature",
     "svgPath": "M12 2l4 4-4 4-4-4 4-4zm0 12l4 4-4 4-4-4 4-4z",
     "color": "#F5F5F5"
@@ -499,7 +499,7 @@
     "id": "ocean",
     "name": "Ocean",
     "description": "Vast salt water body covering the earth.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "nature",
     "svgPath": "M2 12c2-2 4-2 6 0s4 2 6 0s4-2 6 0v3c-2 2-4 2-6 0s-4-2-6 0s-4 2-6 0v-3zm0 6c2-2 4-2 6 0s4 2 6 0s4-2 6 0v3H2v-3z",
     "color": "#0277BD"
@@ -562,7 +562,7 @@
     "id": "homework",
     "name": "Homework",
     "description": "Assignment written up by a living mind, one sheet at a time.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "materials",
     "svgPath": "M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM8 11h8v1.5H8V11zm0 3.5h8V16H8v-1.5zm0 3.5h5v1.5H8V18z",
     "color": "#FFD54F"
@@ -715,7 +715,7 @@
     "id": "happy",
     "name": "Happy",
     "description": "What a living being feels when surrounded by art.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "organic",
     "svgPath": "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-3 7a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm6 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-3 9a5 5 0 0 1-4.6-3h9.2A5 5 0 0 1 12 18z",
     "color": "#FFEB3B"
@@ -814,7 +814,7 @@
     "id": "astronaut",
     "name": "Astronaut",
     "description": "A human brave enough to ride a rocket.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "organic",
     "svgPath": "M12 2a8 8 0 0 0-8 8v4a8 8 0 0 0 16 0v-4a8 8 0 0 0-8-8zm0 4a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0v-2a5 5 0 0 1 5-5zm0 2.500c-1.400 0-2.500.8-2.500 2v1c0 1.200 1.100 2 2.500 2s2.500-.8 2.500-2v-1c0-1.200-1.100-2-2.500-2z",
     "color": "#B0BEC5"
@@ -850,7 +850,7 @@
     "id": "time_travel",
     "name": "Time Travel",
     "description": "A car charged with lightning, racing through the years.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "technology",
     "svgPath": "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 5v5l4 2-.8 1.600L11 13V7h2z",
     "color": "#7E57C2"
@@ -913,8 +913,8 @@
     "id": "moon",
     "name": "Moon",
     "description": "A rock circling the globe, lighting up the night.",
-    "isFinal": true,
-    "category": "nature",
+    "isFinal": false,
+    "category": "space",
     "svgPath": "M12 3a9 9 0 1 0 9 9c0-.5 0-.9-.1-1.4A5.500 5.500 0 0 1 13.400 3.100 9 9 0 0 0 12 3z",
     "color": "#CFD8DC"
   },
@@ -926,5 +926,546 @@
     "category": "technology",
     "svgPath": "M12 2l1.500 4h-3L12 2zM8 8h8l2 8h-3l-1 6h-2v-4h-2v4H9l-1-6H5l3-8zM3 22h18v-2H3v2z",
     "color": "#B0BEC5"
+  },
+  {
+    "id": "ice_cream",
+    "name": "Ice Cream",
+    "description": "Ice mixed with happiness: a sweet, frozen treat.",
+    "isFinal": true,
+    "category": "food",
+    "svgPath": "M7 12h10l-5 10z",
+    "color": "#F48FB1",
+    "iconLayers": [
+      {
+        "svgPath": "M7 12h10l-5 10z",
+        "color": "#D7A86E"
+      },
+      {
+        "svgPath": "M7 8a5 5 0 1 0 10 0a5 5 0 1 0 -10 0zM6.5 9.5h11v3h-11z",
+        "color": "#F48FB1"
+      }
+    ]
+  },
+  {
+    "id": "meat",
+    "name": "Meat",
+    "description": "An animal meets an axe. Raw and ready for cooking.",
+    "isFinal": false,
+    "category": "food",
+    "svgPath": "M8 14.5l1.5 1.5-4.2 4.2.6 1.6-1.6.6-.6-1.6-1.6-.6.6-1.6 1.6.6z",
+    "color": "#E57373",
+    "iconLayers": [
+      {
+        "svgPath": "M8 14.5l1.5 1.5-4.2 4.2.6 1.6-1.6.6-.6-1.6-1.6-.6.6-1.6 1.6.6z",
+        "color": "#ECEFF1"
+      },
+      {
+        "svgPath": "M14 2c4.5 0 8 3.5 8 8s-4.5 8-9 7.5L10 17l-1.5-3c0-6 1.5-12 5.5-12z",
+        "color": "#E57373"
+      }
+    ]
+  },
+  {
+    "id": "steak",
+    "name": "Steak",
+    "description": "Meat seared over fire until perfectly cooked.",
+    "isFinal": true,
+    "category": "food",
+    "svgPath": "M3 10c0-4.500 5-7 10-6s8 4.500 7 8.500-5 8.500-10 7.500S3 14.500 3 10z",
+    "color": "#A1572F",
+    "iconLayers": [
+      {
+        "svgPath": "M3 10c0-4.500 5-7 10-6s8 4.500 7 8.500-5 8.500-10 7.500S3 14.500 3 10z",
+        "color": "#A1572F"
+      },
+      {
+        "svgPath": "M6.500 8.500l1-1 8 8-1 1zM9.500 6.500l1-1 7 7-1 1z",
+        "color": "#5D2E14"
+      },
+      {
+        "svgPath": "M11.2 11.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0z",
+        "color": "#FFF3E0"
+      }
+    ]
+  },
+  {
+    "id": "plant",
+    "name": "Plant",
+    "description": "Life takes root in the earth and sprouts green leaves.",
+    "isFinal": false,
+    "category": "nature",
+    "svgPath": "M11 11h2v9h-2zM12 12C12 7.500 8.500 4.500 3 5c0 5 4 8 9 7zM12 10.500c0-4 3-7 8.500-7 0 4.500-3.500 7.500-8.500 7z",
+    "color": "#66BB6A",
+    "iconLayers": [
+      {
+        "svgPath": "M11 11h2v9h-2zM12 12C12 7.500 8.500 4.500 3 5c0 5 4 8 9 7zM12 10.500c0-4 3-7 8.500-7 0 4.500-3.500 7.500-8.500 7z",
+        "color": "#66BB6A"
+      },
+      {
+        "svgPath": "M6 18h12l-1.500 5h-9z",
+        "color": "#A1662F"
+      }
+    ]
+  },
+  {
+    "id": "cactus",
+    "name": "Cactus",
+    "description": "A tough, spiny plant that thrives in the sand.",
+    "isFinal": true,
+    "category": "nature",
+    "svgPath": "M10 21V5a2 2 0 0 1 4 0v16zM10 14H7a2 2 0 0 1-2-2V8a1 1 0 0 1 2 0v4h3zM14 11h3V6a1 1 0 0 1 2 0v5a2 2 0 0 1-2 2h-3z",
+    "color": "#43A047",
+    "iconLayers": [
+      {
+        "svgPath": "M10 21V5a2 2 0 0 1 4 0v16zM10 14H7a2 2 0 0 1-2-2V8a1 1 0 0 1 2 0v4h3zM14 11h3V6a1 1 0 0 1 2 0v5a2 2 0 0 1-2 2h-3z",
+        "color": "#43A047"
+      },
+      {
+        "svgPath": "M2 20.500h20V23H2z",
+        "color": "#D7B36A"
+      }
+    ]
+  },
+  {
+    "id": "tree_house",
+    "name": "Tree House",
+    "description": "Planks nailed up among the leaves: a secret hideout.",
+    "isFinal": true,
+    "category": "construction",
+    "svgPath": "M5.5 7a6.5 6.5 0 1 0 13.0 0a6.5 6.5 0 1 0 -13.0 0z",
+    "color": "#8BC34A",
+    "iconLayers": [
+      {
+        "svgPath": "M5.5 7a6.5 6.5 0 1 0 13.0 0a6.5 6.5 0 1 0 -13.0 0z",
+        "color": "#66BB6A"
+      },
+      {
+        "svgPath": "M11 10h2v13h-2z",
+        "color": "#795548"
+      },
+      {
+        "svgPath": "M6 15l6-4.500 6 4.500v4H6z",
+        "color": "#C77B3B"
+      },
+      {
+        "svgPath": "M10.500 16h3v3h-3z",
+        "color": "#4E342E"
+      }
+    ]
+  },
+  {
+    "id": "smoke",
+    "name": "Smoke",
+    "description": "Burning plants send grey clouds curling into the sky.",
+    "isFinal": true,
+    "category": "weather",
+    "svgPath": "M7 21a3.500 3.500 0 0 1-.5-7 4.500 4.500 0 0 1 8-2 3.500 3.500 0 0 1 3.500 5.500A2 2 0 0 1 17 21zM9.500 10.500a2.500 2.500 0 0 1 1-4.500 3.500 3.500 0 0 1 6 1 2.500 2.500 0 0 1-1 3.500zM13 4a1.800 1.800 0 0 1 3.500-1 1.500 1.500 0 0 1 0 2.500H13.500z",
+    "color": "#90A4AE"
+  },
+  {
+    "id": "string",
+    "name": "String",
+    "description": "Metal stretched thin across a plank until it hums.",
+    "isFinal": false,
+    "category": "materials",
+    "svgPath": "M5 2h14v2.500H5zM5 19.500h14V22H5z",
+    "color": "#FFE082",
+    "iconLayers": [
+      {
+        "svgPath": "M5 2h14v2.500H5zM5 19.500h14V22H5z",
+        "color": "#A1887F"
+      },
+      {
+        "svgPath": "M7.500 4.500h9v15h-9z",
+        "color": "#FFE082"
+      },
+      {
+        "svgPath": "M7.500 7h9v.800h-9zM7.500 10h9v.800h-9zM7.500 13h9v.800h-9zM7.500 16h9v.800h-9zM16 17l5 2-.300.800-5-2z",
+        "color": "#C9A24B"
+      }
+    ]
+  },
+  {
+    "id": "guitar",
+    "name": "Guitar",
+    "description": "Strings stretched over a wooden body. Strum away!",
+    "isFinal": false,
+    "category": "music",
+    "svgPath": "M3 16a5 5 0 1 0 10 0a5 5 0 1 0 -10 0zM7.5 12.5a3.5 3.5 0 1 0 7.0 0a3.5 3.5 0 1 0 -7.0 0z",
+    "color": "#C77B3B",
+    "iconLayers": [
+      {
+        "svgPath": "M3 16a5 5 0 1 0 10 0a5 5 0 1 0 -10 0zM7.5 12.5a3.5 3.5 0 1 0 7.0 0a3.5 3.5 0 1 0 -7.0 0z",
+        "color": "#C77B3B"
+      },
+      {
+        "svgPath": "M11 11.5l8.5-8.5 1.5 1.5-8.5 8.5zM18.5 1.5l4 4-1.5 1.5-4-4z",
+        "color": "#5D4037"
+      },
+      {
+        "svgPath": "M6.7 15a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0z",
+        "color": "#3E2723"
+      }
+    ]
+  },
+  {
+    "id": "trumpet",
+    "name": "Trumpet",
+    "description": "Wind blown through bright metal makes a fanfare.",
+    "isFinal": true,
+    "category": "music",
+    "svgPath": "M1 9.500h2v4H1zM3 10.500h11v2H3zM14 11.500L22 6v11zM5 13h8v3.500H5z",
+    "color": "#FFC107",
+    "iconLayers": [
+      {
+        "svgPath": "M1 9.500h2v4H1zM3 10.500h11v2H3zM14 11.500L22 6v11zM5 13h8v3.500H5z",
+        "color": "#FFC107"
+      },
+      {
+        "svgPath": "M6 6.500h1.500v4H6zM9 6.500h1.500v4H9zM12 6.500h1.500v4H12z",
+        "color": "#FFA000"
+      }
+    ]
+  },
+  {
+    "id": "rock_band",
+    "name": "Rock Band",
+    "description": "Plug the guitar in, turn it up, and rock out!",
+    "isFinal": true,
+    "category": "music",
+    "svgPath": "M3 16a5 5 0 1 0 10 0a5 5 0 1 0 -10 0zM7.5 12.5a3.5 3.5 0 1 0 7.0 0a3.5 3.5 0 1 0 -7.0 0z",
+    "color": "#E53935",
+    "iconLayers": [
+      {
+        "svgPath": "M3 16a5 5 0 1 0 10 0a5 5 0 1 0 -10 0zM7.5 12.5a3.5 3.5 0 1 0 7.0 0a3.5 3.5 0 1 0 -7.0 0z",
+        "color": "#E53935"
+      },
+      {
+        "svgPath": "M11 11.5l8.5-8.5 1.5 1.5-8.5 8.5zM18.5 1.5l4 4-1.5 1.5-4-4z",
+        "color": "#263238"
+      },
+      {
+        "svgPath": "M6.7 15a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0z",
+        "color": "#212121"
+      },
+      {
+        "svgPath": "M18 11l-3.500 5.500h2.500L15.500 23l5-7.500h-2.500L20 11z",
+        "color": "#FFEB3B"
+      }
+    ]
+  },
+  {
+    "id": "dance",
+    "name": "Dance",
+    "description": "Art set in motion by pure happiness.",
+    "isFinal": true,
+    "category": "music",
+    "svgPath": "M12 3.5a2 2 0 1 0 4 0a2 2 0 1 0 -4 0z",
+    "color": "#AB47BC",
+    "iconLayers": [
+      {
+        "svgPath": "M12 3.5a2 2 0 1 0 4 0a2 2 0 1 0 -4 0z",
+        "color": "#AB47BC"
+      },
+      {
+        "svgPath": "M11 7h4l3.500-3 1.500 1.500-4.500 4-1 5 3 6.500-2 1-3.500-5.500-2 3.500-4.500 1-.5-2 3-1 1.800-5.500-3 1.500-1.500 3-2-1 2-4.500z",
+        "color": "#AB47BC"
+      },
+      {
+        "svgPath": "M3 3h1.200v5a1.600 1.600 0 1 1-1.200-1.500zM20 12h1.200v4a1.600 1.600 0 1 1-1.200-1.500z",
+        "color": "#F48FB1"
+      }
+    ]
+  },
+  {
+    "id": "space_station",
+    "name": "Space Station",
+    "description": "A rocket parked near the moon becomes a home in orbit.",
+    "isFinal": true,
+    "category": "space",
+    "svgPath": "M2 9h6v6H2zM16 9h6v6h-6z",
+    "color": "#B0BEC5",
+    "iconLayers": [
+      {
+        "svgPath": "M2 9h6v6H2zM16 9h6v6h-6z",
+        "color": "#42A5F5"
+      },
+      {
+        "svgPath": "M8 11.300h8v1.400H8zM10 8.500h4v7h-4zM11.400 3h1.200v5.500h-1.200z",
+        "color": "#B0BEC5"
+      },
+      {
+        "svgPath": "M10.8 3a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0z",
+        "color": "#EF5350"
+      }
+    ]
+  },
+  {
+    "id": "sun",
+    "name": "Sun",
+    "description": "A globe of fire that lights and warms the world.",
+    "isFinal": false,
+    "category": "space",
+    "svgPath": "M7 12a5 5 0 1 0 10 0a5 5 0 1 0 -10 0zM11 1h2v3.500h-2zM11 19.500h2V23h-2zM1 11h3.500v2H1zM19.500 11H23v2h-3.500zM4.200 5.600l1.400-1.400 2.500 2.500-1.400 1.400zM15.900 17.300l1.400-1.400 2.500 2.500-1.400 1.400zM4.200 18.400l2.500-2.500 1.400 1.400-2.500 2.500zM15.900 6.700l2.500-2.500 1.400 1.400-2.500 2.500z",
+    "color": "#FFB300"
+  },
+  {
+    "id": "planet",
+    "name": "Planet",
+    "description": "A great rock caught in the pull of the sun.",
+    "isFinal": false,
+    "category": "space",
+    "svgPath": "M5.5 12a6.5 6.5 0 1 0 13.0 0a6.5 6.5 0 1 0 -13.0 0z",
+    "color": "#9575CD",
+    "iconLayers": [
+      {
+        "svgPath": "M5.5 12a6.5 6.5 0 1 0 13.0 0a6.5 6.5 0 1 0 -13.0 0z",
+        "color": "#9575CD"
+      },
+      {
+        "svgPath": "M1 14.500c1-2.200 4.500-3.500 5.200-3.600l.2 1.300c-1.800.6-3.400 1.400-3.600 2.200 .8 1.600 9 1.500 14.500-.4 3-1 4.200-2 4-2.800-.2-.6-1.400-.9-2.900-.9l.1-1.300c2.300 0 4 .5 4.200 1.700.4 1.800-2.300 3.300-5 4.300-6 2.100-15.700 2.300-16.700-.5z",
+        "color": "#FFCC80"
+      }
+    ]
+  },
+  {
+    "id": "solar_system",
+    "name": "Solar System",
+    "description": "Planets upon planets, all dancing around the sun.",
+    "isFinal": true,
+    "category": "space",
+    "svgPath": "M8.8 12a3.2 3.2 0 1 0 6.4 0a3.2 3.2 0 1 0 -6.4 0z",
+    "color": "#FFB300",
+    "iconLayers": [
+      {
+        "svgPath": "M8.8 12a3.2 3.2 0 1 0 6.4 0a3.2 3.2 0 1 0 -6.4 0z",
+        "color": "#FFB300"
+      },
+      {
+        "svgPath": "M18.4 5a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0z",
+        "color": "#42A5F5"
+      },
+      {
+        "svgPath": "M1.6 17a1.9 1.9 0 1 0 3.8 0a1.9 1.9 0 1 0 -3.8 0z",
+        "color": "#EF5350"
+      },
+      {
+        "svgPath": "M17.2 19a1.3 1.3 0 1 0 2.6 0a1.3 1.3 0 1 0 -2.6 0z",
+        "color": "#66BB6A"
+      },
+      {
+        "svgPath": "M3.8 5.5a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0z",
+        "color": "#9575CD"
+      },
+      {
+        "svgPath": "M11.600 1h.8v2h-.8zM11.600 21h.8v2h-.8zM1 11.600h2v.8H1zM21 11.600h2v.8h-2z",
+        "color": "#78909C"
+      }
+    ]
+  },
+  {
+    "id": "black_hole",
+    "name": "Black Hole",
+    "description": "Travel far enough through time and even the sun collapses.",
+    "isFinal": true,
+    "category": "space",
+    "svgPath": "M2.5 12a9.5 9.5 0 1 0 19.0 0a9.5 9.5 0 1 0 -19.0 0z",
+    "color": "#7E57C2",
+    "iconLayers": [
+      {
+        "svgPath": "M2.5 12a9.5 9.5 0 1 0 19.0 0a9.5 9.5 0 1 0 -19.0 0z",
+        "color": "#7E57C2"
+      },
+      {
+        "svgPath": "M5 12a7 7 0 1 0 14 0a7 7 0 1 0 -14 0z",
+        "color": "#FF7043"
+      },
+      {
+        "svgPath": "M7 12a5 5 0 1 0 10 0a5 5 0 1 0 -10 0z",
+        "color": "#0B0E14"
+      },
+      {
+        "svgPath": "M.5 12.500c3-1.700 20-1.700 23 0-3 1.200-20 1.200-23 0z",
+        "color": "#FFCC80"
+      }
+    ]
+  },
+  {
+    "id": "horse",
+    "name": "Horse",
+    "description": "An animal that runs as fast as the wind.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M7 22l1.500-7.500-3.500 1.200-2.500-2 5-6.500 1-4.700 2.200 2.300 2-3 .8 4.200c3.500 2 6.500 6.500 6 16z",
+    "color": "#8D6E63",
+    "iconLayers": [
+      {
+        "svgPath": "M7 22l1.500-7.500-3.500 1.200-2.500-2 5-6.500 1-4.700 2.200 2.300 2-3 .8 4.200c3.500 2 6.500 6.500 6 16z",
+        "color": "#8D6E63"
+      },
+      {
+        "svgPath": "M10.200 4.500l2-3 .8 4.200c3.500 2 6.500 6.500 6 16h-2c.5-7-2-12-6-14.500z",
+        "color": "#4E342E"
+      },
+      {
+        "svgPath": "M7.6 10a0.9 0.9 0 1 0 1.8 0a0.9 0.9 0 1 0 -1.8 0z",
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "id": "unicorn",
+    "name": "Unicorn",
+    "description": "A horse crowned with a diamond horn. Pure magic.",
+    "isFinal": true,
+    "category": "myth",
+    "svgPath": "M7 22l1.500-7.500-3.500 1.200-2.500-2 5-6.500 1-4.700 2.200 2.300 2-3 .8 4.200c3.500 2 6.500 6.500 6 16z",
+    "color": "#F48FB1",
+    "iconLayers": [
+      {
+        "svgPath": "M7 22l1.500-7.500-3.500 1.200-2.500-2 5-6.500 1-4.700 2.200 2.300 2-3 .8 4.200c3.500 2 6.500 6.500 6 16z",
+        "color": "#FCE4EC"
+      },
+      {
+        "svgPath": "M10.200 4.500l2-3 .8 4.200c3.500 2 6.500 6.500 6 16h-2c.5-7-2-12-6-14.500z",
+        "color": "#CE93D8"
+      },
+      {
+        "svgPath": "M6.500 5.500L4 .5l3.800 4z",
+        "color": "#FFD54F"
+      },
+      {
+        "svgPath": "M7.6 10a0.9 0.9 0 1 0 1.8 0a0.9 0.9 0 1 0 -1.8 0z",
+        "color": "#5D4037"
+      }
+    ]
+  },
+  {
+    "id": "poseidon",
+    "name": "Poseidon",
+    "description": "A god who rules the ocean with his trident.",
+    "isFinal": true,
+    "category": "myth",
+    "svgPath": "M11 8h2v15h-2zM11 3h2v6h-2zM5 3h1.600v4c0 2 2 3 5.400 3s5.400-1 5.400-3V3H19v4c0 3-3 5-7 5S5 10 5 7zM4.500 3.500L5.800 0 7.100 3.500zM10.700 3.500L12 0l1.300 3.500zM16.900 3.500L18.200 0l1.300 3.500z",
+    "color": "#26C6DA"
+  },
+  {
+    "id": "puddle",
+    "name": "Puddle",
+    "description": "All that is left of a snowman on a sunny day: a carrot and two coals.",
+    "isFinal": true,
+    "category": "nature",
+    "svgPath": "M2 17.500c0-2.200 4.500-3.500 10-3.500s10 1.300 10 3.500-4.500 3.500-10 3.500S2 19.700 2 17.500z",
+    "color": "#4FC3F7",
+    "iconLayers": [
+      {
+        "svgPath": "M2 17.500c0-2.200 4.500-3.500 10-3.500s10 1.300 10 3.500-4.500 3.500-10 3.500S2 19.700 2 17.500z",
+        "color": "#4FC3F7"
+      },
+      {
+        "svgPath": "M9 15l7-2.200-.4 2.200z",
+        "color": "#FF7043"
+      },
+      {
+        "svgPath": "M5.6 18a0.9 0.9 0 1 0 1.8 0a0.9 0.9 0 1 0 -1.8 0zM16.1 18.5a0.9 0.9 0 1 0 1.8 0a0.9 0.9 0 1 0 -1.8 0z",
+        "color": "#263238"
+      }
+    ]
+  },
+  {
+    "id": "rain",
+    "name": "Rain",
+    "description": "A cloud so full of water it starts to fall.",
+    "isFinal": false,
+    "category": "weather",
+    "svgPath": "M6 13a4 4 0 0 1 .5-8 5.500 5.500 0 0 1 10 1.200A3.500 3.500 0 0 1 17.500 13z",
+    "color": "#4FC3F7",
+    "iconLayers": [
+      {
+        "svgPath": "M6 13a4 4 0 0 1 .5-8 5.500 5.500 0 0 1 10 1.200A3.500 3.500 0 0 1 17.500 13z",
+        "color": "#90A4AE"
+      },
+      {
+        "svgPath": "M7 15l1.300 3a1.300 1.300 0 1 1-2.600 0zM12 17l1.300 3a1.300 1.300 0 1 1-2.600 0zM17 15l1.300 3a1.300 1.300 0 1 1-2.600 0z",
+        "color": "#4FC3F7"
+      }
+    ]
+  },
+  {
+    "id": "rainbow",
+    "name": "Rainbow",
+    "description": "Sunlight shines through the rain and paints the sky.",
+    "isFinal": false,
+    "category": "weather",
+    "svgPath": "M2 20a10 10 0 0 1 20 0h-2a8 8 0 0 0-16 0z",
+    "color": "#FFCA28",
+    "iconLayers": [
+      {
+        "svgPath": "M2 20a10 10 0 0 1 20 0h-2a8 8 0 0 0-16 0z",
+        "color": "#EF5350"
+      },
+      {
+        "svgPath": "M4 20a8 8 0 0 1 16 0h-2a6 6 0 0 0-12 0z",
+        "color": "#FFCA28"
+      },
+      {
+        "svgPath": "M6 20a6 6 0 0 1 12 0h-2a4 4 0 0 0-8 0z",
+        "color": "#66BB6A"
+      },
+      {
+        "svgPath": "M8 20a4 4 0 0 1 8 0h-2a2 2 0 0 0-4 0z",
+        "color": "#42A5F5"
+      }
+    ]
+  },
+  {
+    "id": "pot_of_gold",
+    "name": "Pot of Gold",
+    "description": "Found at the end of the rainbow, just like the stories say.",
+    "isFinal": true,
+    "category": "myth",
+    "svgPath": "M5.8 8.5a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0zM9.8 7a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0zM13.8 8.5a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0z",
+    "color": "#FFD54F",
+    "iconLayers": [
+      {
+        "svgPath": "M5.8 8.5a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0zM9.8 7a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0zM13.8 8.5a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0z",
+        "color": "#FFD54F"
+      },
+      {
+        "svgPath": "M5 12.500h14l-.5 1.500c1.500 2.200 1.200 5.500-1 7.500H6.500c-2.200-2-2.500-5.300-1-7.500z",
+        "color": "#37474F"
+      },
+      {
+        "svgPath": "M3 10h18v2.800H3z",
+        "color": "#546E7A"
+      }
+    ]
+  },
+  {
+    "id": "dragon",
+    "name": "Dragon",
+    "description": "An animal born in a volcano, breathing fire.",
+    "isFinal": true,
+    "category": "myth",
+    "svgPath": "M12 9L3 2l1.500 6.500L1 9.500l5 2.500z",
+    "color": "#E53935",
+    "iconLayers": [
+      {
+        "svgPath": "M12 9L3 2l1.500 6.500L1 9.500l5 2.500z",
+        "color": "#B71C1C"
+      },
+      {
+        "svgPath": "M5 13c3-3 9-3.500 12-1l3.500-3.500 2.500.5-1 3.500-3 1.500c.5 4.500-3.500 8-8.500 9l-1-2 3-2.500c-3 .5-6.500-1.500-7.500-5z",
+        "color": "#E53935"
+      },
+      {
+        "svgPath": "M20.500 9l1.500-2.500.5 2.700z",
+        "color": "#FFB300"
+      },
+      {
+        "svgPath": "M19.8 10.3a0.5 0.5 0 1 0 1.0 0a0.5 0.5 0 1 0 -1.0 0z",
+        "color": "#FFEB3B"
+      }
+    ]
   }
 ]
