@@ -1,6 +1,7 @@
 import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './gameLogic';
-import { RecipeDictionary } from '../types/game';
+import { ElementItem, RecipeDictionary } from '../types/game';
 import actualRecipesData from '../config/recipes.json';
+import actualElementsData from '../config/elements.json';
 
 const actualRecipes = actualRecipesData as RecipeDictionary;
 
@@ -211,6 +212,72 @@ describe('Game Logic Utilities', () => {
       it('should combine astronaut + moon into moon_landing', () => {
         expect(combineElements('astronaut', 'moon', actualRecipes)).toBe('moon_landing');
       });
+
+      it.each([
+        ['ice', 'happy', 'ice_cream'],
+        ['animal', 'axe', 'meat'],
+        ['meat', 'fire', 'steak'],
+        ['earth', 'life', 'plant'],
+        ['plant', 'sand', 'cactus'],
+        ['plant', 'plank', 'tree_house'],
+        ['plant', 'fire', 'smoke'],
+        ['plank', 'metal', 'string'],
+        ['string', 'wood', 'guitar'],
+        ['wind', 'metal', 'trumpet'],
+        ['electricity', 'guitar', 'rock_band'],
+        ['happy', 'art', 'dance'],
+        ['rocket', 'moon', 'space_station'],
+        ['globe', 'fire', 'sun'],
+        ['sun', 'rock', 'planet'],
+        ['planet', 'planet', 'solar_system'],
+        ['time_travel', 'sun', 'black_hole'],
+        ['animal', 'wind', 'horse'],
+        ['horse', 'diamond', 'unicorn'],
+        ['god', 'ocean', 'poseidon'],
+        ['snowman', 'sun', 'puddle'],
+        ['water', 'cloud', 'rain'],
+        ['rain', 'sun', 'rainbow'],
+        ['rainbow', 'gold', 'pot_of_gold'],
+        ['animal', 'volcano', 'dragon'],
+      ])('should combine %s + %s into %s', (a, b, product) => {
+        expect(combineElements(a, b, actualRecipes)).toBe(product);
+      });
+    });
+  });
+
+  // Data integrity across elements, recipes and translations
+  describe('Game data integrity', () => {
+    const elements = actualElementsData as ElementItem[];
+    const ids = new Set(elements.map(el => el.id));
+    const ingredients = new Set(Object.keys(actualRecipes).flatMap(key => key.split('+')));
+
+    it('should only reference known elements in recipes', () => {
+      for (const [key, product] of Object.entries(actualRecipes)) {
+        const [a, b] = key.split('+');
+        expect(ids.has(a) && ids.has(b) && ids.has(product)).toBe(true);
+        expect(key).toBe([a, b].sort().join('+'));
+      }
+    });
+
+    it('should mark an element final exactly when no recipe uses it as an ingredient', () => {
+      const mismatched = elements.filter(el => el.isFinal === ingredients.has(el.id)).map(el => el.id);
+      expect(mismatched).toEqual([]);
+    });
+
+    it('should make every non-basic element reachable from the basic elements', () => {
+      const reachable = new Set(elements.filter(el => el.category === 'basic').map(el => el.id));
+      let grew = true;
+      while (grew) {
+        grew = false;
+        for (const [key, product] of Object.entries(actualRecipes)) {
+          const [a, b] = key.split('+');
+          if (reachable.has(a) && reachable.has(b) && !reachable.has(product)) {
+            reachable.add(product);
+            grew = true;
+          }
+        }
+      }
+      expect(elements.filter(el => !reachable.has(el.id)).map(el => el.id)).toEqual([]);
     });
   });
 
