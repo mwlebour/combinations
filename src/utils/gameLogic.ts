@@ -197,3 +197,71 @@ export function generateParticleConfigs(
 
   return particles;
 }
+
+export interface CategoryProgress {
+  category: string;
+  found: number;
+  total: number;
+}
+
+/**
+ * Counts discovered vs. total elements per category, keeping the order in
+ * which categories first appear in the element list. Starting ("basic")
+ * elements are excluded since the player always has all of them.
+ */
+export function getCategoryProgress(
+  elements: { id: string; category: string }[],
+  discoveredIds: string[]
+): CategoryProgress[] {
+  const discovered = new Set(discoveredIds);
+  const byCategory = new Map<string, CategoryProgress>();
+  for (const el of elements) {
+    if (el.category === 'basic') continue;
+    let entry = byCategory.get(el.category);
+    if (!entry) {
+      entry = { category: el.category, found: 0, total: 0 };
+      byCategory.set(el.category, entry);
+    }
+    entry.total += 1;
+    if (discovered.has(el.id)) entry.found += 1;
+  }
+  return Array.from(byCategory.values());
+}
+
+/**
+ * Returns the categories that are fully discovered in `after` but were not in
+ * `before`, i.e. the achievements a discovery just unlocked.
+ */
+export function getNewlyCompletedCategories(
+  elements: { id: string; category: string }[],
+  before: string[],
+  after: string[]
+): string[] {
+  const wasComplete = new Set(
+    getCategoryProgress(elements, before).filter(p => p.found === p.total).map(p => p.category)
+  );
+  return getCategoryProgress(elements, after)
+    .filter(p => p.found === p.total && !wasComplete.has(p.category))
+    .map(p => p.category);
+}
+
+/** All ingredient pairs that produce `elementId`. */
+export function getRecipesFor(elementId: string, recipes: RecipeDictionary): [string, string][] {
+  return Object.entries(recipes)
+    .filter(([, product]) => product === elementId)
+    .map(([key]) => key.split('+') as [string, string]);
+}
+
+/** Every recipe that uses `elementId` as an ingredient, as the other ingredient plus the product. */
+export function getUsesOf(
+  elementId: string,
+  recipes: RecipeDictionary
+): { partner: string; product: string }[] {
+  const uses: { partner: string; product: string }[] = [];
+  for (const [key, product] of Object.entries(recipes)) {
+    const [a, b] = key.split('+');
+    if (a === elementId) uses.push({ partner: b, product });
+    else if (b === elementId) uses.push({ partner: a, product });
+  }
+  return uses;
+}

@@ -1,4 +1,13 @@
-import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './gameLogic';
+import {
+  combineElements,
+  checkCollision,
+  getMidpoint,
+  calculateMagnetPosition,
+  getCategoryProgress,
+  getNewlyCompletedCategories,
+  getRecipesFor,
+  getUsesOf,
+} from './gameLogic';
 import { ElementItem, RecipeDictionary } from '../types/game';
 import actualRecipesData from '../config/recipes.json';
 import actualElementsData from '../config/elements.json';
@@ -242,6 +251,49 @@ describe('Game Logic Utilities', () => {
       ])('should combine %s + %s into %s', (a, b, product) => {
         expect(combineElements(a, b, actualRecipes)).toBe(product);
       });
+    });
+  });
+
+  describe('recipe book and progress helpers', () => {
+    const els = [
+      { id: 'fire', category: 'basic' },
+      { id: 'water', category: 'basic' },
+      { id: 'steam', category: 'weather' },
+      { id: 'cloud', category: 'weather' },
+      { id: 'rain', category: 'weather' },
+      { id: 'glass', category: 'optics' },
+    ];
+    const recipes: RecipeDictionary = {
+      'fire+water': 'steam',
+      'air+steam': 'cloud',
+      'cloud+water': 'rain',
+      'fire+sand': 'glass',
+    };
+
+    it('counts found and total per category, skipping basic elements', () => {
+      expect(getCategoryProgress(els, ['fire', 'water', 'steam'])).toEqual([
+        { category: 'weather', found: 1, total: 3 },
+        { category: 'optics', found: 0, total: 1 },
+      ]);
+    });
+
+    it('reports only categories completed by the latest discovery', () => {
+      const before = ['steam', 'cloud', 'glass'];
+      expect(getNewlyCompletedCategories(els, before, [...before, 'rain'])).toEqual(['weather']);
+      expect(getNewlyCompletedCategories(els, ['steam'], ['steam', 'cloud'])).toEqual([]);
+    });
+
+    it('finds the ingredient pairs that make an element', () => {
+      expect(getRecipesFor('rain', recipes)).toEqual([['cloud', 'water']]);
+      expect(getRecipesFor('fire', recipes)).toEqual([]);
+    });
+
+    it('finds every recipe an element is used in', () => {
+      expect(getUsesOf('water', recipes)).toEqual([
+        { partner: 'fire', product: 'steam' },
+        { partner: 'cloud', product: 'rain' },
+      ]);
+      expect(getUsesOf('rain', recipes)).toEqual([]);
     });
   });
 

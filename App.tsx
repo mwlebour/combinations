@@ -19,8 +19,18 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import elementsData from './src/config/elements.json';
 import recipesData from './src/config/recipes.json';
 import translationsData from './src/config/translations.json';
+import categoriesData from './src/config/categories.json';
 import { ElementItem, ActiveCanvasElement, RecipeDictionary, ActiveCombinationAnimation, IconLayer } from './src/types/game';
-import { combineElements, checkCollision, getMidpoint, calculateMagnetPosition } from './src/utils/gameLogic';
+import {
+  combineElements,
+  checkCollision,
+  getMidpoint,
+  calculateMagnetPosition,
+  getCategoryProgress,
+  getNewlyCompletedCategories,
+  getRecipesFor,
+  getUsesOf,
+} from './src/utils/gameLogic';
 import { CombinationEffect } from './src/components/CombinationEffect';
 import { ElementAura } from './src/components/ElementAura';
 import { playCombinationSound } from './src/utils/audio';
@@ -56,6 +66,16 @@ const LANGUAGES = [
 ] as const;
 
 type Language = typeof LANGUAGES[number]['code'];
+
+interface CategoryInfo {
+  emoji: string;
+  color: string;
+  name: Record<string, string>;
+  title: Record<string, string>;
+}
+const CATEGORIES = categoriesData as Record<string, CategoryInfo>;
+
+type SidebarTab = 'all' | 'basic' | 'combined' | 'final' | 'progress';
 
 // Helper: Custom SVG Icon Renderer
 // Renders `layers` (multiple fills, e.g. a wooden handle plus a metal head) when
@@ -172,7 +192,7 @@ export default function App() {
   const [discoveredIds, setDiscoveredIds] = useState<string[]>(DEFAULT_STARTING_ELEMENTS);
   const [canvasElements, setCanvasElements] = useState<ActiveCanvasElement[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeTab, setActiveTab] = useState<'all' | 'basic' | 'combined' | 'final'>('all');
+  const [activeTab, setActiveTab] = useState<SidebarTab>('all');
   
   // Localization States
   const [currentLanguage, setCurrentLanguage] = useState<Language>('en');
@@ -189,6 +209,12 @@ export default function App() {
 
   // Reset Game Confirmation Modal State
   const [showResetConfirm, setShowResetConfirm] = useState(false);
+
+  // Recipe book: the element whose details (made from / used in) are open
+  const [detailElementId, setDetailElementId] = useState<string | null>(null);
+
+  // Categories completed by recent discoveries, shown one at a time as achievements
+  const [pendingAchievements, setPendingAchievements] = useState<string[]>([]);
 
   // Game Complete Modal State (dismissed for the current session once acknowledged)
   const [gameCompleteDismissed, setGameCompleteDismissed] = useState(false);
@@ -216,6 +242,16 @@ export default function App() {
       };
     }
     return { name: defaultElement.name, description: defaultElement.description };
+  };
+
+  const getCategoryName = (category: string) => {
+    const info = CATEGORIES[category];
+    return info ? info.name[currentLanguage] || info.name.en : category;
+  };
+
+  const getCategoryTitle = (category: string) => {
+    const info = CATEGORIES[category];
+    return info ? info.title[currentLanguage] || info.title.en : category;
   };
 
   // 1. Initial State Loading from Storage
@@ -297,6 +333,8 @@ export default function App() {
   const handleResetGame = async () => {
     setDiscoveredIds(DEFAULT_STARTING_ELEMENTS);
     setGameCompleteDismissed(false);
+    setPendingAchievements([]);
+    setDetailElementId(null);
     setCanvasElements([]);
     setProximityLine(null);
     setActiveCombinations([]);
@@ -515,9 +553,13 @@ export default function App() {
                 updatedDiscovered.push(product);
                 // Delay discovery modal slightly so player watches the combination animation on canvas
                 const itemDetails = elements.find(el => el.id === product);
+                const completed = getNewlyCompletedCategories(elements, currentDiscovered, updatedDiscovered);
                 if (itemDetails) {
                   setTimeout(() => {
                     setDiscoveredElement(itemDetails);
+                    if (completed.length > 0) {
+                      setPendingAchievements(prev => [...prev, ...completed.filter(c => !prev.includes(c))]);
+                    }
                   }, 750);
                 }
               }
@@ -556,6 +598,32 @@ export default function App() {
     if (activeTab === 'combined') return item.category !== 'basic' && !item.isFinal;
     return true;
   });
+
+  const categoryProgress = getCategoryProgress(elements, discoveredIds).sort((a, b) =>
+    getCategoryName(a.category).localeCompare(getCategoryName(b.category))
+  );
+
+  // Small tappable chip for an element in the recipe book; "?" when undiscovered
+  const renderElementChip = (id: string | null, key: string) => {
+    const item = id ? elements.find(el => el.id === id) : undefined;
+    if (!item || !discoveredIds.includes(item.id)) {
+      return (
+        <View key={key} style={[styles.recipeChip, styles.recipeChipUnknown]}>
+          <Text style={styles.recipeChipUnknownText}>?</Text>
+        </View>
+      );
+    }
+    return (
+      <TouchableOpacity
+        key={key}
+        style={[styles.recipeChip, { borderColor: `${item.color}66` }]}
+        onPress={() => setDetailElementId(item.id)}
+      >
+        <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={16} />
+        <Text style={styles.recipeChipText} numberOfLines={1}>{getElementTranslation(item.id).name}</Text>
+      </TouchableOpacity>
+    );
+  };
 
   const onCanvasLayout = (event: LayoutChangeEvent) => {
     setCanvasLayout(event.nativeEvent.layout);
@@ -664,7 +732,7 @@ export default function App() {
 
           {/* Filtering Categories */}
           <View style={styles.tabContainer}>
-            {(['all', 'basic', 'combined', 'final'] as const).map((tab) => (
+            {(['all', 'basic', 'combined', 'final', 'progress'] as const).map((tab) => (
               <TouchableOpacity
                 key={tab}
                 style={[styles.tabButton, activeTab === tab && styles.tabButtonActive]}
@@ -675,12 +743,49 @@ export default function App() {
                   {tab === 'basic' && t('basicTab')}
                   {tab === 'combined' && t('combinedTab')}
                   {tab === 'final' && t('finalTab')}
+                  {tab === 'progress' && t('progressTab')}
                 </Text>
               </TouchableOpacity>
             ))}
           </View>
 
-          {/* Scrollable grid listing discovered elements */}
+          {/* Per-category progress bars with achievement badges */}
+          {activeTab === 'progress' ? (
+            <ScrollView contentContainerStyle={styles.progressList} showsVerticalScrollIndicator={false}>
+              {categoryProgress.map(({ category, found, total }) => {
+                const info = CATEGORIES[category];
+                const color = info?.color ?? '#00E676';
+                const complete = found === total;
+                return (
+                  <View key={category} style={[styles.progressRow, complete && styles.progressRowComplete]}>
+                    <View style={styles.progressHeader}>
+                      <Text style={[styles.progressBadge, !complete && styles.progressBadgeLocked]}>
+                        {info?.emoji ?? '★'}
+                      </Text>
+                      <View style={styles.progressLabels}>
+                        <Text style={styles.progressName} numberOfLines={1}>{getCategoryName(category)}</Text>
+                        <Text
+                          style={[styles.progressTitle, { color: complete ? '#FFD54F' : '#4B5B75' }]}
+                          numberOfLines={1}
+                        >
+                          {complete ? '🏆 ' : '🔒 '}{getCategoryTitle(category)}
+                        </Text>
+                      </View>
+                      <Text style={styles.progressCount}>{found}/{total}</Text>
+                    </View>
+                    <View style={styles.progressTrack}>
+                      <View
+                        style={[
+                          styles.progressFill,
+                          { width: `${Math.round((found / total) * 100)}%`, backgroundColor: complete ? '#FFD54F' : color },
+                        ]}
+                      />
+                    </View>
+                  </View>
+                );
+              })}
+            </ScrollView>
+          ) : (
           <ScrollView
             contentContainerStyle={[styles.sidebarGrid, isNarrow && styles.sidebarGridNarrow]}
             showsVerticalScrollIndicator={false}
@@ -697,7 +802,16 @@ export default function App() {
                   ]}
                   activeOpacity={0.7}
                   onPress={() => handleSpawnElement(item.id)}
+                  onLongPress={() => setDetailElementId(item.id)}
                 >
+                  <TouchableOpacity
+                    style={styles.infoButton}
+                    onPress={() => setDetailElementId(item.id)}
+                    hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+                    accessibilityLabel={`${trans.name}: ${t('madeFrom')} / ${t('usedIn')}`}
+                  >
+                    <Text style={styles.infoButtonText}>i</Text>
+                  </TouchableOpacity>
                   <View style={[styles.iconWrapper, { backgroundColor: `${item.color}18` }]}>
                     <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={22} />
                   </View>
@@ -715,6 +829,7 @@ export default function App() {
               <Text style={styles.noItemsText}>{t('noItems')}</Text>
             )}
           </ScrollView>
+          )}
         </View>
 
       </View>
@@ -752,8 +867,112 @@ export default function App() {
         );
       })()}
 
+      {/* Recipe Book: how an element is made and what it is used in */}
+      {detailElementId && (() => {
+        const item = elements.find(el => el.id === detailElementId);
+        if (!item) return null;
+        const trans = getElementTranslation(item.id);
+        const madeFrom = getRecipesFor(item.id, recipes);
+        const discovered = new Set(discoveredIds);
+        // Known uses first; undiscovered results stay as "?" slots
+        const uses = getUsesOf(item.id, recipes).sort(
+          (a, b) => Number(discovered.has(b.product)) - Number(discovered.has(a.product))
+        );
+        const category = CATEGORIES[item.category];
+        return (
+          <View style={styles.modalOverlay}>
+            <View style={[styles.modalContent, styles.recipeModal, { borderColor: item.color }]}>
+              <ScrollView style={styles.recipeScroll} contentContainerStyle={styles.recipeScrollContent}>
+                {category && (
+                  <Text style={styles.modalHeader}>
+                    {category.emoji} {getCategoryName(item.category).toUpperCase()}
+                  </Text>
+                )}
+                <View style={[styles.modalIconWrapper, { backgroundColor: `${item.color}15`, shadowColor: item.color }]}>
+                  <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={56} />
+                </View>
+                <Text style={[styles.modalTitle, { color: item.color }]}>{trans.name}</Text>
+                <Text style={[styles.modalDescription, { marginBottom: 16 }]}>{trans.description}</Text>
+
+                <Text style={styles.recipeSectionTitle}>{t('madeFrom')}</Text>
+                {madeFrom.length === 0 ? (
+                  <Text style={styles.recipeNote}>{t('startingElement')}</Text>
+                ) : (
+                  madeFrom.map(([a, b]) => (
+                    <View key={`${a}+${b}`} style={styles.recipeRow}>
+                      {renderElementChip(a, 'a')}
+                      <Text style={styles.recipeOperator}>+</Text>
+                      {renderElementChip(b, 'b')}
+                    </View>
+                  ))
+                )}
+
+                <Text style={styles.recipeSectionTitle}>{t('usedIn')}</Text>
+                {uses.length === 0 ? (
+                  <Text style={styles.recipeNote}>{t('finalElementNote')}</Text>
+                ) : (
+                  uses.map(({ partner, product }) => {
+                    const known = discovered.has(product);
+                    return (
+                      <View key={`${partner}>${product}`} style={styles.recipeRow}>
+                        <Text style={styles.recipeOperator}>+</Text>
+                        {renderElementChip(known ? partner : null, 'partner')}
+                        <Text style={styles.recipeOperator}>→</Text>
+                        {renderElementChip(known ? product : null, 'product')}
+                      </View>
+                    );
+                  })
+                )}
+              </ScrollView>
+
+              <View style={styles.confirmButtonRow}>
+                <TouchableOpacity
+                  style={[styles.confirmButton, { borderColor: item.color }]}
+                  onPress={() => {
+                    handleSpawnElement(item.id);
+                    setDetailElementId(null);
+                  }}
+                >
+                  <Text style={[styles.recipeButtonText, { color: item.color }]}>{t('placeOnBoard')}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={[styles.confirmButton, { borderColor: '#90A4AE' }]}
+                  onPress={() => setDetailElementId(null)}
+                >
+                  <Text style={[styles.recipeButtonText, { color: '#90A4AE' }]}>{t('close')}</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        );
+      })()}
+
+      {/* Achievement Modal: a whole category was just completed */}
+      {!discoveredElement && pendingAchievements.length > 0 && (() => {
+        const category = pendingAchievements[0];
+        const info = CATEGORIES[category];
+        return (
+          <View style={styles.modalOverlay}>
+            <View style={[styles.modalContent, { borderColor: '#FFD54F' }]}>
+              <Text style={styles.modalHeader}>{t('achievementUnlocked')}</Text>
+              <Text style={styles.achievementEmoji}>{info?.emoji ?? '🏆'}</Text>
+              <Text style={[styles.modalTitle, { color: '#FFD54F' }]}>{getCategoryTitle(category)}</Text>
+              <Text style={styles.modalDescription}>
+                {t('achievementDescription').replace('{category}', getCategoryName(category))}
+              </Text>
+              <TouchableOpacity
+                style={[styles.modalButton, { borderColor: '#FFD54F' }]}
+                onPress={() => setPendingAchievements(prev => prev.slice(1))}
+              >
+                <Text style={[styles.modalButtonText, { color: '#FFD54F' }]}>{t('awesome')}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        );
+      })()}
+
       {/* Game Complete Modal, shown once the final discovery popover is closed */}
-      {isGameComplete && !discoveredElement && !gameCompleteDismissed && (
+      {isGameComplete && !discoveredElement && pendingAchievements.length === 0 && !gameCompleteDismissed && (
         <View style={styles.modalOverlay}>
           <View style={[styles.modalContent, { borderColor: '#FFD54F' }]}>
             <Text style={[styles.modalHeader, { fontSize: 48 }]}>🏆</Text>
@@ -826,7 +1045,7 @@ export default function App() {
               onPress={() => setShowLangMenu(false)}
             >
               <Text style={styles.langCloseButtonText}>
-                {currentLanguage === 'hu' ? 'Bezárás' : 'Close'}
+                {t('close')}
               </Text>
             </TouchableOpacity>
           </View>
@@ -1115,7 +1334,11 @@ const styles = StyleSheet.create({
   sidebarCardTextNarrow: {
     marginLeft: 0,
     marginTop: 6,
-    flex: 0,
+    // Longhands rather than `flex: 0`, which collapses the label to zero height on web
+    flexGrow: 0,
+    flexShrink: 0,
+    flexBasis: 'auto',
+    alignSelf: 'stretch',
     textAlign: 'center',
   },
   finalBadge: {
@@ -1127,6 +1350,173 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
     borderRadius: 4,
     overflow: 'hidden',
+  },
+  infoButton: {
+    position: 'absolute',
+    top: 3,
+    right: 3,
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: 'rgba(128, 222, 234, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 2,
+  },
+  infoButtonText: {
+    color: '#80DEEA',
+    fontSize: 10,
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+    lineHeight: 12,
+    userSelect: 'none' as any,
+  },
+  progressList: {
+    gap: 8,
+    paddingBottom: 20,
+  },
+  progressRow: {
+    backgroundColor: 'rgba(0, 0, 0, 0.35)',
+    borderWidth: 1,
+    borderColor: 'rgba(0, 230, 118, 0.12)',
+    borderRadius: 10,
+    padding: 8,
+  },
+  progressRowComplete: {
+    borderColor: 'rgba(255,213,79,0.4)',
+    backgroundColor: 'rgba(255,213,79,0.05)',
+  },
+  progressHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 6,
+  },
+  progressBadge: {
+    fontSize: 18,
+    marginRight: 8,
+    userSelect: 'none' as any,
+  },
+  progressBadgeLocked: {
+    opacity: 0.35,
+  },
+  progressLabels: {
+    flex: 1,
+  },
+  progressName: {
+    color: '#ECEFF1',
+    fontSize: 11,
+    fontWeight: '600',
+    userSelect: 'none' as any,
+  },
+  progressTitle: {
+    fontSize: 9,
+    fontWeight: '600',
+    marginTop: 1,
+    userSelect: 'none' as any,
+  },
+  progressCount: {
+    color: '#A5D6A7',
+    fontSize: 11,
+    fontWeight: 'bold',
+    marginLeft: 6,
+    userSelect: 'none' as any,
+  },
+  progressTrack: {
+    height: 6,
+    borderRadius: 3,
+    backgroundColor: 'rgba(255,255,255,0.08)',
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    borderRadius: 3,
+  },
+  recipeModal: {
+    maxWidth: 360,
+    maxHeight: '90%',
+  },
+  recipeScroll: {
+    width: '100%',
+    marginBottom: 16,
+  },
+  recipeScrollContent: {
+    alignItems: 'center',
+  },
+  recipeSectionTitle: {
+    alignSelf: 'flex-start',
+    color: '#80DEEA',
+    fontSize: 11,
+    fontWeight: 'bold',
+    letterSpacing: 1,
+    textTransform: 'uppercase',
+    marginTop: 8,
+    marginBottom: 6,
+    userSelect: 'none' as any,
+  },
+  recipeNote: {
+    alignSelf: 'flex-start',
+    color: '#90A4AE',
+    fontSize: 11,
+    fontStyle: 'italic',
+    marginBottom: 4,
+    userSelect: 'none' as any,
+  },
+  recipeRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    flexWrap: 'wrap',
+    gap: 6,
+    marginBottom: 6,
+  },
+  recipeOperator: {
+    color: '#4B5B75',
+    fontSize: 13,
+    fontWeight: 'bold',
+    userSelect: 'none' as any,
+  },
+  recipeChip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    maxWidth: 130,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: 8,
+    borderWidth: 1,
+    backgroundColor: 'rgba(255,255,255,0.03)',
+  },
+  recipeChipText: {
+    color: '#ECEFF1',
+    fontSize: 11,
+    fontWeight: '600',
+    flexShrink: 1,
+    userSelect: 'none' as any,
+  },
+  recipeChipUnknown: {
+    minWidth: 32,
+    justifyContent: 'center',
+    borderStyle: 'dashed',
+    borderColor: 'rgba(255,255,255,0.2)',
+  },
+  recipeChipUnknownText: {
+    color: '#4B5B75',
+    fontSize: 12,
+    fontWeight: 'bold',
+    userSelect: 'none' as any,
+  },
+  recipeButtonText: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    userSelect: 'none' as any,
+  },
+  achievementEmoji: {
+    fontSize: 48,
+    marginBottom: 12,
+    userSelect: 'none' as any,
   },
   noItemsText: {
     color: '#81C784',
