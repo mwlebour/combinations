@@ -3074,7 +3074,18 @@
         "de": "Spitzhacke",
         "la": "Dolabra",
         "it": "Piccone",
-        "fr": "Pioche"
+        "fr": "Pioche",
+        "es": "Pico",
+        "pt": "Picareta",
+        "ja": "つるはし",
+        "zh": "镐",
+        "ru": "Кирка",
+        "ko": "곡괭이",
+        "sq": "Kazmë",
+        "sr": "Pijuk",
+        "uk": "Кайло",
+        "pl": "Kilof",
+        "bg": "Кирка"
       },
       "description": {
         "en": "Mining tool with a pointed metal head for breaking rock.",
@@ -3082,7 +3093,18 @@
         "de": "Bergbauwerkzeug mit spitzem Metallkopf zum Aufbrechen von Gestein.",
         "la": "Instrumentum fodinae cum capite metallico acuto ad saxa frangenda.",
         "it": "Attrezzo minerario con testa metallica appuntita per rompere la roccia.",
-        "fr": "Outil minier à tête métallique pointue pour briser la roche."
+        "fr": "Outil minier à tête métallique pointue pour briser la roche.",
+        "es": "Herramienta minera con cabeza metálica puntiaguda para romper roca.",
+        "pt": "Ferramenta de mineração com cabeça de metal pontiaguda para quebrar rochas.",
+        "ja": "岩を砕くための尖った金属の頭を持つ採掘道具。",
+        "zh": "带有尖头金属镐头、用来凿碎岩石的采矿工具。",
+        "ru": "Горный инструмент с заострённым металлическим наконечником для разбивания породы.",
+        "ko": "바위를 깨기 위한 뾰족한 금속 머리가 달린 채굴 도구.",
+        "sq": "Vegël minierash me kokë metalike të mprehtë për të thyer shkëmbinjtë.",
+        "sr": "Rudarski alat sa šiljatom metalnom glavom za razbijanje stena.",
+        "uk": "Гірничий інструмент із загостреною металевою головкою для розбивання породи.",
+        "pl": "Narzędzie górnicze z ostrą metalową głowicą do rozbijania skał.",
+        "bg": "Миньорски инструмент със заострена метална глава за разбиване на скали."
       }
     },
     "salt_crystal": {
@@ -3092,7 +3114,18 @@
         "de": "Salzkristall",
         "la": "Crystallum Salis",
         "it": "Cristallo di Sale",
-        "fr": "Cristal de Sel"
+        "fr": "Cristal de Sel",
+        "es": "Cristal de Sal",
+        "pt": "Cristal de Sal",
+        "ja": "塩の結晶",
+        "zh": "盐晶",
+        "ru": "Кристалл Соли",
+        "ko": "소금 결정",
+        "sq": "Kristal Kripe",
+        "sr": "Kristal Soli",
+        "uk": "Кристал Солі",
+        "pl": "Kryształ Soli",
+        "bg": "Солен Кристал"
       },
       "description": {
         "en": "Mineral deposit mined from a mountain's core.",
@@ -3100,7 +3133,18 @@
         "de": "Mineralvorkommen, aus dem Kern eines Berges abgebaut.",
         "la": "Depositum minerale ex corde montis effossum.",
         "it": "Giacimento minerale estratto dal cuore di una montagna.",
-        "fr": "Gisement minéral extrait du cœur d'une montagne."
+        "fr": "Gisement minéral extrait du cœur d'une montagne.",
+        "es": "Depósito mineral extraído del corazón de una montaña.",
+        "pt": "Depósito mineral extraído do coração de uma montanha.",
+        "ja": "山の中心から掘り出された鉱物の結晶。",
+        "zh": "从山体深处开采出的矿物沉积。",
+        "ru": "Минеральное отложение, добытое из недр горы.",
+        "ko": "산의 중심부에서 캐낸 광물 퇴적물.",
+        "sq": "Depozitë minerale e nxjerrë nga zemra e një mali.",
+        "sr": "Mineralna naslaga iskopana iz srca planine.",
+        "uk": "Мінеральне відкладення, видобуте з надр гори.",
+        "pl": "Złoże mineralne wydobyte z wnętrza góry.",
+        "bg": "Минерално находище, изкопано от сърцето на планина."
       }
     },
     "lake": {
@@ -3110,7 +3154,18 @@
         "de": "See",
         "la": "Lacus",
         "it": "Lago",
-        "fr": "Lac"
+        "fr": "Lac",
+        "es": "Lago",
+        "pt": "Lago",
+        "ja": "湖",
+        "zh": "湖泊",
+        "ru": "Озеро",
+        "ko": "호수",
+        "sq": "Liqen",
+        "sr": "Jezero",
+        "uk": "Озеро",
+        "pl": "Jezioro",
+        "bg": "Езеро"
       },
       "description": {
         "en": "A large body of still, fresh water.",
@@ -3118,7 +3173,18 @@
         "de": "Eine große Ansammlung ruhigen Süßwassers.",
         "la": "Magna copia aquae dulcis quietae.",
         "it": "Un grande specchio d'acqua dolce e calma.",
-        "fr": "Une grande étendue d'eau douce et calme."
+        "fr": "Une grande étendue d'eau douce et calme.",
+        "es": "Una gran masa de agua dulce y tranquila.",
+        "pt": "Uma grande massa de água doce e parada.",
+        "ja": "静かな淡水をたたえた大きな水域。",
+        "zh": "一大片平静的淡水。",
+        "ru": "Большой водоём со спокойной пресной водой.",
+        "ko": "잔잔한 민물이 고인 넓은 물.",
+        "sq": "Një trup i madh me ujë të ëmbël e të qetë.",
+        "sr": "Velika površina mirne, slatke vode.",
+        "uk": "Велика водойма зі спокійною прісною водою.",
+        "pl": "Duży zbiornik spokojnej, słodkiej wody.",
+        "bg": "Голям водоем със спокойна сладка вода."
       }
     },
     "ocean": {
@@ -3128,7 +3194,18 @@
         "de": "Ozean",
         "la": "Oceanus",
         "it": "Oceano",
-        "fr": "Océan"
+        "fr": "Océan",
+        "es": "Océano",
+        "pt": "Oceano",
+        "ja": "海洋",
+        "zh": "海洋",
+        "ru": "Океан",
+        "ko": "바다",
+        "sq": "Oqean",
+        "sr": "Okean",
+        "uk": "Океан",
+        "pl": "Ocean",
+        "bg": "Океан"
       },
       "description": {
         "en": "Vast salt water body covering the earth.",
@@ -3136,7 +3213,18 @@
         "de": "Ein riesiges Salzwassergebiet, das die Erde bedeckt.",
         "la": "Vasta aquae salsae copia terram tegens.",
         "it": "Vasta distesa d'acqua salata che ricopre la terra.",
-        "fr": "Vaste étendue d'eau salée recouvrant la terre."
+        "fr": "Vaste étendue d'eau salée recouvrant la terre.",
+        "es": "Vasta masa de agua salada que cubre la tierra.",
+        "pt": "Vasta massa de água salgada que cobre a terra.",
+        "ja": "地球を覆う広大な塩水の海。",
+        "zh": "覆盖大地的浩瀚咸水。",
+        "ru": "Огромная масса солёной воды, покрывающая землю.",
+        "ko": "지구를 덮고 있는 광활한 바닷물.",
+        "sq": "Masë e madhe uji të kripur që mbulon tokën.",
+        "sr": "Ogromna slana voda koja prekriva zemlju.",
+        "uk": "Величезна маса солоної води, що вкриває землю.",
+        "pl": "Ogromny zbiornik słonej wody pokrywający ziemię.",
+        "bg": "Огромна маса солена вода, покриваща земята."
       }
     },
     "friend": {

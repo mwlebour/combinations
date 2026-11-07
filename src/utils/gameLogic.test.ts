@@ -11,6 +11,7 @@ import {
 import { ElementItem, RecipeDictionary } from '../types/game';
 import actualRecipesData from '../config/recipes.json';
 import actualElementsData from '../config/elements.json';
+import translationsData from '../config/translations.json';
 
 const actualRecipes = actualRecipesData as RecipeDictionary;
 
@@ -314,6 +315,26 @@ describe('Game Logic Utilities', () => {
     it('should mark an element final exactly when no recipe uses it as an ingredient', () => {
       const mismatched = elements.filter(el => el.isFinal === ingredients.has(el.id)).map(el => el.id);
       expect(mismatched).toEqual([]);
+    });
+
+    it('should translate every element and UI string into every supported language', () => {
+      const languages = Object.keys(translationsData.ui.title).sort();
+      expect(languages).toHaveLength(17);
+      const translations = translationsData.elements as Record<string, { name: object; description: object }>;
+      const gaps: string[] = [];
+      for (const el of elements) {
+        const entry = translations[el.id];
+        if (!entry) {
+          gaps.push(`${el.id}: missing`);
+          continue;
+        }
+        if (Object.keys(entry.name).sort().join() !== languages.join()) gaps.push(`${el.id}.name`);
+        if (Object.keys(entry.description).sort().join() !== languages.join()) gaps.push(`${el.id}.description`);
+      }
+      for (const [key, value] of Object.entries(translationsData.ui)) {
+        if (Object.keys(value).sort().join() !== languages.join()) gaps.push(`ui.${key}`);
+      }
+      expect(gaps).toEqual([]);
     });
 
     it('should make every non-basic element reachable from the basic elements', () => {
