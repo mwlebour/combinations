@@ -51,10 +51,12 @@ export const CombinationEffect: React.FC<CombinationEffectProps> = ({
   const flashAnim = useRef(new Animated.Value(0)).current;
   const badgeAnim = useRef(new Animated.Value(0)).current;
 
-  // Generate 26 rich elemental particles tailored to ingredients and product
+  // 26 elemental particles tailored to ingredients and product, plus extra
+  // sparkle for an active discovery streak (capped so it stays readable)
+  const streakBonus = Math.min(Math.max((animation.streak ?? 0) - 1, 0), 6) * 6;
   const particles = useMemo(() => {
-    return generateParticleConfigs(26, elementA, elementB, product);
-  }, [elementA, elementB, product]);
+    return generateParticleConfigs(26 + streakBonus, elementA, elementB, product);
+  }, [elementA, elementB, product, streakBonus]);
 
   useEffect(() => {
     // 1. Phase 1: Rapid convergence of ingredients into midpoint (190ms)
