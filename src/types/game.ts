@@ -23,6 +23,9 @@ export interface ActiveCanvasElement {
   x: number;          // X position in pixels on the workspace canvas
   y: number;          // Y position in pixels on the workspace canvas
   isNew?: boolean;    // Flag indicating newly combined or spawned element for entry bounce animation
+  // Set when the item just bounced off a non-matching item: where it was before the bounce,
+  // plus a unique id so the canvas item replays its spring animation once.
+  bounceFrom?: { x: number; y: number; id: number };
 }
 
 export interface GameState {
@@ -59,4 +62,5 @@ export interface ActiveCombinationAnimation {
   elementB: ElementItem;
   product: ElementItem;
   productName: string;
+  streak?: number;     // Current discovery streak; longer streaks get more sparkles
 }

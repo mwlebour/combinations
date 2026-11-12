@@ -7,6 +7,8 @@ import {
   getNewlyCompletedCategories,
   getRecipesFor,
   getUsesOf,
+  getDerivationPath,
+  getBouncePositions,
 } from './gameLogic';
 import { ElementItem, RecipeDictionary } from '../types/game';
 import actualRecipesData from '../config/recipes.json';
@@ -320,6 +322,75 @@ describe('Game Logic Utilities', () => {
         { partner: 'cloud', product: 'rain' },
       ]);
       expect(getUsesOf('rain', recipes)).toEqual([]);
+    });
+  });
+
+  describe('getDerivationPath', () => {
+    const recipes: RecipeDictionary = {
+      'fire+water': 'steam',
+      'air+steam': 'cloud',
+      'cloud+water': 'rain',
+      'rain+steam': 'mist',
+      'fire+rain': 'mist',
+    };
+    const basics = ['fire', 'water', 'air'];
+
+    it('lists every combination needed, ingredients first', () => {
+      expect(getDerivationPath('rain', recipes, basics)).toEqual([
+        { a: 'fire', b: 'water', product: 'steam' },
+        { a: 'air', b: 'steam', product: 'cloud' },
+        { a: 'cloud', b: 'water', product: 'rain' },
+      ]);
+    });
+
+    it('returns nothing for starting or unknown elements', () => {
+      expect(getDerivationPath('fire', recipes, basics)).toEqual([]);
+      expect(getDerivationPath('unicorn', recipes, basics)).toEqual([]);
+    });
+
+    it('never repeats a step that is shared by both branches', () => {
+      const steps = getDerivationPath('mist', recipes, basics);
+      expect(steps[steps.length - 1].product).toBe('mist');
+      expect(new Set(steps.map(s => s.product)).size).toBe(steps.length);
+    });
+
+    it('builds a valid path for every element in the real game', () => {
+      const elements = actualElementsData as ElementItem[];
+      const realBasics = elements.filter(el => el.category === 'basic').map(el => el.id);
+      for (const el of elements) {
+        const steps = getDerivationPath(el.id, actualRecipes, realBasics);
+        const have = new Set(realBasics);
+        for (const step of steps) {
+          expect(have.has(step.a) && have.has(step.b)).toBe(true);
+          expect(combineElements(step.a, step.b, actualRecipes)).toBe(step.product);
+          have.add(step.product);
+        }
+        expect(have.has(el.id)).toBe(true);
+      }
+    });
+  });
+
+  describe('getBouncePositions', () => {
+    const bounds = { width: 800, height: 600 };
+    const dist = (p: { x: number; y: number }, q: { x: number; y: number }) => Math.hypot(p.x - q.x, p.y - q.y);
+
+    it('pushes the items apart beyond the combine distance, dragged item on its own side', () => {
+      const result = getBouncePositions({ x: 330, y: 300 }, { x: 300, y: 300 }, bounds);
+      expect(dist(result.dragged, result.other)).toBeGreaterThan(75);
+      expect(result.dragged.x).toBeGreaterThan(result.other.x);
+      expect(result.other.x).toBeLessThan(300);
+    });
+
+    it('picks a direction when the items are exactly on top of each other', () => {
+      const result = getBouncePositions({ x: 300, y: 300 }, { x: 300, y: 300 }, bounds, () => 0);
+      expect(dist(result.dragged, result.other)).toBeGreaterThan(75);
+    });
+
+    it('stays on the canvas and bounces the other way at a wall', () => {
+      const result = getBouncePositions({ x: 715, y: 300 }, { x: 700, y: 300 }, bounds);
+      expect(result.dragged.x).toBeLessThanOrEqual(720);
+      expect(result.dragged.x).toBeGreaterThanOrEqual(0);
+      expect(dist(result.dragged, result.other)).toBeGreaterThan(75);
     });
   });
 

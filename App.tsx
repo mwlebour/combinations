@@ -30,11 +30,13 @@ import {
   getNewlyCompletedCategories,
   getRecipesFor,
   getUsesOf,
+  getDerivationPath,
+  getBouncePositions,
 } from './src/utils/gameLogic';
 import { CombinationEffect } from './src/components/CombinationEffect';
 import { ElementAura } from './src/components/ElementAura';
 import { Confetti } from './src/components/Confetti';
-import { playCombinationSound } from './src/utils/audio';
+import { playCombinationSound, playBounceSound } from './src/utils/audio';
 
 const STORAGE_KEYS = {
   DISCOVERED: '@elemental_discovered',
@@ -109,6 +111,20 @@ const DraggableCanvasItem = ({
 }: DraggableCanvasItemProps) => {
   const lastPosition = useRef({ x: element.x, y: element.y });
   const spawnScale = useRef(new Animated.Value(element.isNew ? 0 : 1)).current;
+  // Offset that springs back to zero after bouncing off a non-matching item
+  const bounceOffset = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
+
+  useEffect(() => {
+    const from = element.bounceFrom;
+    if (!from) return;
+    bounceOffset.setValue({ x: from.x - element.x, y: from.y - element.y });
+    Animated.spring(bounceOffset, {
+      toValue: { x: 0, y: 0 },
+      friction: 5,
+      tension: 140,
+      useNativeDriver: false,
+    }).start();
+  }, [element.bounceFrom?.id]);
 
   // Update position reference when element prop changes
   useEffect(() => {
@@ -164,7 +180,7 @@ const DraggableCanvasItem = ({
           top: element.y,
           borderColor: item.color,
           shadowColor: item.color,
-          transform: [{ scale: spawnScale }],
+          transform: [{ translateX: bounceOffset.x }, { translateY: bounceOffset.y }, { scale: spawnScale }],
         },
         item.isFinal && styles.finalStateGlow,
       ]}
@@ -174,6 +190,56 @@ const DraggableCanvasItem = ({
       <Text style={styles.canvasElementText} numberOfLines={1}>
         {name}
       </Text>
+    </Animated.View>
+  );
+};
+
+const SILHOUETTE_COLOR = '#2A3445';
+
+// One step of the recipe book's "Show path" tree; steps fade in one after another
+const PathStep = ({ index, children }: { index: number; children: React.ReactNode }) => {
+  const appear = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.timing(appear, {
+      toValue: 1,
+      duration: 260,
+      delay: Math.min(index, 12) * 110,
+      useNativeDriver: false,
+    }).start();
+  }, []);
+  return (
+    <Animated.View
+      style={[
+        styles.recipeRow,
+        {
+          opacity: appear,
+          transform: [{ translateY: appear.interpolate({ inputRange: [0, 1], outputRange: [8, 0] }) }],
+        },
+      ]}
+    >
+      {children}
+    </Animated.View>
+  );
+};
+
+// Header badge for the discovery streak; pops each time the streak grows
+const StreakBadge = ({ streak, label }: { streak: number; label: string }) => {
+  const pop = useRef(new Animated.Value(1)).current;
+  useEffect(() => {
+    pop.setValue(1.35);
+    Animated.spring(pop, { toValue: 1, friction: 4, tension: 160, useNativeDriver: false }).start();
+  }, [streak]);
+  const hot = Math.min(streak, 10) / 10;
+  return (
+    <Animated.View
+      style={[
+        styles.glassButton,
+        styles.streakBadge,
+        { transform: [{ scale: pop }], shadowOpacity: 0.3 + hot * 0.6, shadowRadius: 4 + hot * 10 },
+      ]}
+      accessibilityLabel={`${label}: ${streak}`}
+    >
+      <Text style={styles.streakBadgeText}>🔥 {streak}</Text>
     </Animated.View>
   );
 };
@@ -216,6 +282,21 @@ export default function App() {
 
   // Categories completed by recent discoveries, shown one at a time as achievements
   const [pendingAchievements, setPendingAchievements] = useState<string[]>([]);
+
+  // Recipe book "Show path" toggle (reset whenever another element is opened)
+  const [showPath, setShowPath] = useState(false);
+  useEffect(() => setShowPath(false), [detailElementId]);
+
+  // Silhouette collection of every element
+  const [showCollection, setShowCollection] = useState(false);
+
+  // New discoveries in a row without a failed (bounced) combination. Session only.
+  const [streak, setStreak] = useState(0);
+  const streakRef = useRef(0);
+  const updateStreak = (value: number) => {
+    streakRef.current = value;
+    setStreak(value);
+  };
 
   // Game Complete Modal State (dismissed for the current session once acknowledged)
   const [gameCompleteDismissed, setGameCompleteDismissed] = useState(false);
@@ -296,7 +377,8 @@ export default function App() {
   const saveState = async (newDiscovered: string[], newCanvas: ActiveCanvasElement[]) => {
     try {
       await AsyncStorage.setItem(STORAGE_KEYS.DISCOVERED, JSON.stringify(newDiscovered));
-      await AsyncStorage.setItem(STORAGE_KEYS.CANVAS, JSON.stringify(newCanvas));
+      const persistedCanvas = newCanvas.map(({ bounceFrom, ...rest }) => rest);
+      await AsyncStorage.setItem(STORAGE_KEYS.CANVAS, JSON.stringify(persistedCanvas));
     } catch (e) {
       console.error('Failed to save state to storage', e);
     }
@@ -336,6 +418,7 @@ export default function App() {
     setGameCompleteDismissed(false);
     setPendingAchievements([]);
     setDetailElementId(null);
+    updateStreak(0);
     setCanvasElements([]);
     setProximityLine(null);
     setActiveCombinations([]);
@@ -488,6 +571,8 @@ export default function App() {
       );
 
       let combined = false;
+      // Closest overlapping item that has no recipe with the dragged one
+      let mismatch: { other: ActiveCanvasElement; distance: number } | null = null;
 
       // Find collisions with other elements. Threshold raised to 75px for magnetic comfort.
       for (const other of currentCanvas) {
@@ -525,6 +610,11 @@ export default function App() {
             // Trigger procedural audio feedback
             playCombinationSound(dragged.elementId, other.elementId, product);
 
+            // A brand-new discovery extends the streak; known recipes leave it as is
+            if (!discoveredIds.includes(product)) {
+              updateStreak(streakRef.current + 1);
+            }
+
             // Trigger visual combination burst and particle animation
             if (elementA && elementB && productItem) {
               const productTrans = getElementTranslation(product);
@@ -543,6 +633,7 @@ export default function App() {
                   elementB,
                   product: productItem,
                   productName: productTrans.name,
+                  streak: streakRef.current,
                 },
               ]);
             }
@@ -571,7 +662,34 @@ export default function App() {
             combined = true;
             break;
           }
+
+          const distance = Math.hypot(c2x - c1x, c2y - c1y);
+          if (!mismatch || distance < mismatch.distance) {
+            mismatch = { other, distance };
+          }
         }
+      }
+
+      // Dropped onto something it doesn't combine with: bounce the two apart
+      if (!combined && mismatch) {
+        const target = mismatch.other;
+        const positions = getBouncePositions(
+          { x: endX, y: endY },
+          { x: target.x, y: target.y },
+          { width: canvasLayout.width, height: canvasLayout.height }
+        );
+        const bounceId = Date.now();
+        updatedCanvas = updatedCanvas.map(el => {
+          if (el.instanceId === instanceId) {
+            return { ...el, ...positions.dragged, bounceFrom: { x: endX, y: endY, id: bounceId } };
+          }
+          if (el.instanceId === target.instanceId) {
+            return { ...el, ...positions.other, bounceFrom: { x: target.x, y: target.y, id: bounceId } };
+          }
+          return el;
+        });
+        playBounceSound();
+        updateStreak(0);
       }
 
       if (!combined) {
@@ -599,6 +717,13 @@ export default function App() {
     if (activeTab === 'combined') return item.category !== 'basic' && !item.isFinal;
     return true;
   });
+
+  // Collection groups: starting elements first, then categories alphabetically
+  const collectionSections = Array.from(new Set(elements.map(el => el.category)))
+    .sort((a, b) =>
+      a === 'basic' ? -1 : b === 'basic' ? 1 : getCategoryName(a).localeCompare(getCategoryName(b))
+    )
+    .map(category => ({ category, items: elements.filter(el => el.category === category) }));
 
   const categoryProgress = getCategoryProgress(elements, discoveredIds).sort((a, b) =>
     getCategoryName(a.category).localeCompare(getCategoryName(b.category))
@@ -643,6 +768,10 @@ export default function App() {
           </Text>
         </View>
         <View style={[styles.headerButtons, isNarrow && styles.headerButtonsNarrow]}>
+          {streak >= 2 && <StreakBadge streak={streak} label={t('streak')} />}
+          <TouchableOpacity style={[styles.glassButton, styles.collectionButton]} onPress={() => setShowCollection(true)}>
+            <Text style={styles.collectionButtonText}>📖 {t('collection')}</Text>
+          </TouchableOpacity>
           <TouchableOpacity style={[styles.glassButton, styles.langButton]} onPress={() => setShowLangMenu(true)}>
             <Text style={styles.langButtonText}>
               {LANGUAGES.find(l => l.code === currentLanguage)?.flag} {currentLanguage.toUpperCase()}
@@ -868,6 +997,63 @@ export default function App() {
         );
       })()}
 
+      {/* Collection: every element, undiscovered ones as dark silhouettes */}
+      {showCollection && (
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalContent, styles.collectionModal]}>
+            <Text style={styles.modalHeader}>
+              📖 {t('collection').toUpperCase()} · {discoveredIds.length} / {elements.length}
+            </Text>
+            <ScrollView style={styles.collectionScroll} contentContainerStyle={styles.collectionScrollContent}>
+              {collectionSections.map(({ category, items }) => {
+                const found = items.filter(el => discoveredIds.includes(el.id)).length;
+                const info = CATEGORIES[category];
+                return (
+                  <View key={category} style={styles.collectionSection}>
+                    <Text style={styles.collectionSectionTitle}>
+                      {info ? `${info.emoji} ${getCategoryName(category)}` : t('basicTab')} · {found}/{items.length}
+                    </Text>
+                    <View style={styles.collectionGrid}>
+                      {items.map(item => {
+                        const known = discoveredIds.includes(item.id);
+                        return (
+                          <TouchableOpacity
+                            key={item.id}
+                            style={[styles.collectionTile, known && { borderColor: `${item.color}55` }]}
+                            disabled={!known}
+                            onPress={() => setDetailElementId(item.id)}
+                          >
+                            <ElementIcon
+                              path={item.svgPath}
+                              color={known ? item.color : SILHOUETTE_COLOR}
+                              layers={
+                                known
+                                  ? item.iconLayers
+                                  : item.iconLayers?.map(layer => ({ ...layer, color: SILHOUETTE_COLOR }))
+                              }
+                              size={26}
+                            />
+                            <Text
+                              style={[styles.collectionTileText, !known && styles.collectionTileTextUnknown]}
+                              numberOfLines={1}
+                            >
+                              {known ? getElementTranslation(item.id).name : '???'}
+                            </Text>
+                          </TouchableOpacity>
+                        );
+                      })}
+                    </View>
+                  </View>
+                );
+              })}
+            </ScrollView>
+            <TouchableOpacity style={styles.langCloseButton} onPress={() => setShowCollection(false)}>
+              <Text style={styles.langCloseButtonText}>{t('close')}</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
+
       {/* Recipe Book: how an element is made and what it is used in */}
       {detailElementId && (() => {
         const item = elements.find(el => el.id === detailElementId);
@@ -907,6 +1093,28 @@ export default function App() {
                     </View>
                   ))
                 )}
+
+                {madeFrom.length > 0 && (
+                  <TouchableOpacity
+                    style={[styles.pathToggle, { borderColor: `${item.color}88` }]}
+                    onPress={() => setShowPath(prev => !prev)}
+                  >
+                    <Text style={[styles.pathToggleText, { color: item.color }]}>
+                      🌳 {showPath ? t('hidePath') : t('showPath')}
+                    </Text>
+                  </TouchableOpacity>
+                )}
+                {showPath &&
+                  getDerivationPath(item.id, recipes, DEFAULT_STARTING_ELEMENTS).map((step, index) => (
+                    <PathStep key={`${item.id}-${step.product}`} index={index}>
+                      <Text style={styles.pathStepNumber}>{index + 1}</Text>
+                      {renderElementChip(step.a, 'a')}
+                      <Text style={styles.recipeOperator}>+</Text>
+                      {renderElementChip(step.b, 'b')}
+                      <Text style={styles.recipeOperator}>→</Text>
+                      {renderElementChip(step.product, 'product')}
+                    </PathStep>
+                  ))}
 
                 <Text style={styles.recipeSectionTitle}>{t('usedIn')}</Text>
                 {uses.length === 0 ? (
@@ -1519,6 +1727,99 @@ const styles = StyleSheet.create({
   achievementEmoji: {
     fontSize: 48,
     marginBottom: 12,
+    userSelect: 'none' as any,
+  },
+  collectionButton: {
+    borderColor: 'rgba(128, 222, 234, 0.35)',
+    backgroundColor: 'rgba(128, 222, 234, 0.05)',
+  },
+  collectionButtonText: {
+    color: '#80DEEA',
+    fontSize: 12,
+    fontWeight: '600',
+    userSelect: 'none' as any,
+  },
+  streakBadge: {
+    borderColor: 'rgba(255, 112, 67, 0.6)',
+    backgroundColor: 'rgba(255, 112, 67, 0.12)',
+    shadowColor: '#FF7043',
+    shadowOffset: { width: 0, height: 0 },
+  },
+  streakBadgeText: {
+    color: '#FFAB91',
+    fontSize: 12,
+    fontWeight: 'bold',
+    userSelect: 'none' as any,
+  },
+  collectionModal: {
+    width: '92%',
+    maxWidth: 560,
+    maxHeight: '90%',
+  },
+  collectionScroll: {
+    width: '100%',
+    marginBottom: 16,
+  },
+  collectionScrollContent: {
+    gap: 14,
+  },
+  collectionSection: {
+    gap: 6,
+  },
+  collectionSectionTitle: {
+    color: '#80DEEA',
+    fontSize: 11,
+    fontWeight: 'bold',
+    letterSpacing: 0.5,
+    userSelect: 'none' as any,
+  },
+  collectionGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+  },
+  collectionTile: {
+    width: 68,
+    height: 64,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.06)',
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 4,
+  },
+  collectionTileText: {
+    color: '#ECEFF1',
+    fontSize: 9,
+    fontWeight: '600',
+    marginTop: 4,
+    textAlign: 'center',
+    alignSelf: 'stretch',
+    userSelect: 'none' as any,
+  },
+  collectionTileTextUnknown: {
+    color: '#4B5B75',
+  },
+  pathToggle: {
+    alignSelf: 'flex-start',
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    marginTop: 2,
+    marginBottom: 8,
+  },
+  pathToggleText: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    userSelect: 'none' as any,
+  },
+  pathStepNumber: {
+    color: '#4B5B75',
+    fontSize: 10,
+    fontWeight: 'bold',
+    minWidth: 14,
     userSelect: 'none' as any,
   },
   noItemsText: {

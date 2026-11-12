@@ -265,3 +265,99 @@ export function getUsesOf(
   }
   return uses;
 }
+
+export interface DerivationStep {
+  a: string;
+  b: string;
+  product: string;
+}
+
+/**
+ * Builds the shortest recipe path from the starting elements to `target`,
+ * as an ordered list of combinations where every ingredient is either a
+ * starting element or the product of an earlier step. "Shortest" means
+ * fewest combination tiers, so the tree is as shallow as possible.
+ * Returns [] for starting elements and unreachable targets.
+ */
+export function getDerivationPath(
+  target: string,
+  recipes: RecipeDictionary,
+  basics: string[]
+): DerivationStep[] {
+  const depth = new Map<string, number>(basics.map(id => [id, 0]));
+  const bestRecipe = new Map<string, [string, string]>();
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (const [key, product] of Object.entries(recipes)) {
+      const [a, b] = key.split('+');
+      const depthA = depth.get(a);
+      const depthB = depth.get(b);
+      if (depthA === undefined || depthB === undefined) continue;
+      const candidate = Math.max(depthA, depthB) + 1;
+      const current = depth.get(product);
+      if (current === undefined || candidate < current) {
+        depth.set(product, candidate);
+        bestRecipe.set(product, [a, b]);
+        changed = true;
+      }
+    }
+  }
+
+  const steps: DerivationStep[] = [];
+  const done = new Set(basics);
+  const visit = (id: string) => {
+    if (done.has(id)) return;
+    done.add(id);
+    const recipe = bestRecipe.get(id);
+    if (!recipe) return;
+    visit(recipe[0]);
+    visit(recipe[1]);
+    steps.push({ a: recipe[0], b: recipe[1], product: id });
+  };
+  visit(target);
+  return steps;
+}
+
+/**
+ * Where two non-matching canvas items (80x80, top-left coordinates) end up
+ * after bouncing off each other: the target is nudged back a little and the
+ * dragged item lands clear of it on the side it came from. Positions stay
+ * inside the canvas when its size is known; if a wall blocks that side, the
+ * dragged item lands on the opposite side instead.
+ */
+export function getBouncePositions(
+  dragged: { x: number; y: number },
+  other: { x: number; y: number },
+  bounds: { width: number; height: number },
+  randomFn: () => number = Math.random,
+  separation = 95,
+  push = 20
+): { dragged: { x: number; y: number }; other: { x: number; y: number } } {
+  let dx = dragged.x - other.x;
+  let dy = dragged.y - other.y;
+  let length = Math.sqrt(dx * dx + dy * dy);
+  if (length < 1) {
+    const angle = randomFn() * Math.PI * 2;
+    dx = Math.cos(angle);
+    dy = Math.sin(angle);
+    length = 1;
+  }
+  const ux = dx / length;
+  const uy = dy / length;
+
+  const maxX = bounds.width > 0 ? Math.max(0, bounds.width - 80) : Infinity;
+  const maxY = bounds.height > 0 ? Math.max(0, bounds.height - 80) : Infinity;
+  const clamp = (p: { x: number; y: number }) => ({
+    x: Math.round(Math.min(Math.max(p.x, 0), maxX)),
+    y: Math.round(Math.min(Math.max(p.y, 0), maxY)),
+  });
+
+  const otherPos = clamp({ x: other.x - ux * push, y: other.y - uy * push });
+  let draggedPos = clamp({ x: otherPos.x + ux * separation, y: otherPos.y + uy * separation });
+  const gap = Math.hypot(draggedPos.x - otherPos.x, draggedPos.y - otherPos.y);
+  if (gap < separation * 0.8) {
+    draggedPos = clamp({ x: otherPos.x - ux * separation, y: otherPos.y - uy * separation });
+  }
+  return { dragged: draggedPos, other: otherPos };
+}
