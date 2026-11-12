@@ -33,6 +33,7 @@ import {
 } from './src/utils/gameLogic';
 import { CombinationEffect } from './src/components/CombinationEffect';
 import { ElementAura } from './src/components/ElementAura';
+import { Confetti } from './src/components/Confetti';
 import { playCombinationSound } from './src/utils/audio';
 
 const STORAGE_KEYS = {
@@ -953,6 +954,7 @@ export default function App() {
         const info = CATEGORIES[category];
         return (
           <View style={styles.modalOverlay}>
+            <Confetti key={category} />
             <View style={[styles.modalContent, { borderColor: '#FFD54F' }]}>
               <Text style={styles.modalHeader}>{t('achievementUnlocked')}</Text>
               <Text style={styles.achievementEmoji}>{info?.emoji ?? '🏆'}</Text>
@@ -974,6 +976,7 @@ export default function App() {
       {/* Game Complete Modal, shown once the final discovery popover is closed */}
       {isGameComplete && !discoveredElement && pendingAchievements.length === 0 && !gameCompleteDismissed && (
         <View style={styles.modalOverlay}>
+          <Confetti count={120} />
           <View style={[styles.modalContent, { borderColor: '#FFD54F' }]}>
             <Text style={[styles.modalHeader, { fontSize: 48 }]}>🏆</Text>
             <Text style={[styles.modalTitle, { color: '#FFD54F' }]}>{t('gameCompleteTitle')}</Text>

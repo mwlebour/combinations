@@ -526,23 +526,23 @@
       "bg": "Митове"
     },
     "title": {
-      "en": "Legend",
-      "hu": "Legenda",
-      "de": "Legende",
-      "la": "Heros Fabulosus",
-      "it": "Leggenda",
-      "fr": "Légende",
-      "es": "Leyenda",
-      "pt": "Lenda",
-      "ja": "伝説",
-      "zh": "传奇",
-      "ru": "Легенда",
-      "ko": "전설",
-      "sq": "Legjendë",
-      "sr": "Legenda",
-      "uk": "Легенда",
-      "pl": "Legenda",
-      "bg": "Легенда"
+      "en": "Mythmaker",
+      "hu": "Mítoszteremtő",
+      "de": "Mythenschöpfer",
+      "la": "Fabularum Conditor",
+      "it": "Creatore di Miti",
+      "fr": "Créateur de Mythes",
+      "es": "Creador de Mitos",
+      "pt": "Criador de Mitos",
+      "ja": "神話の語り部",
+      "zh": "神话缔造者",
+      "ru": "Творец Мифов",
+      "ko": "신화 창조자",
+      "sq": "Krijues Mitesh",
+      "sr": "Tvorac Mitova",
+      "uk": "Творець Міфів",
+      "pl": "Twórca Mitów",
+      "bg": "Създател на Митове"
     }
   }
 }

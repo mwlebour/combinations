@@ -201,7 +201,7 @@
     "id": "smartphone",
     "name": "Smartphone",
     "description": "Advanced portable computer with a glass screen.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "electronics",
     "svgPath": "M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm-5 20c-.8 0-1.5-.7-1.5-1.5S11.2 18 12 18s1.5.7 1.5 1.5S12.8 21 12 21zm5-4H7V4h10v13z",
     "color": "#B0BEC5"
@@ -305,7 +305,7 @@
     "id": "train_track",
     "name": "Train Track",
     "description": "Steel rails laid over wooden supports.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "construction",
     "svgPath": "M5 2v20h2V2H5zm12 0v20h2V2h-2zm-9 4h8v2H8V6zm0 6h8v2H8v-2zm0 6h8v2H8v-2z",
     "color": "#FFB300"
@@ -440,7 +440,7 @@
     "id": "house",
     "name": "House",
     "description": "Building for human habitation.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "construction",
     "svgPath": "M12 3L2 12h3v8h14v-8h3L12 3zm0 4l5 5H7l5-5z",
     "color": "#81C784"
@@ -535,7 +535,7 @@
     "id": "book",
     "name": "Book",
     "description": "Bound pages of paper wrapped in a leather cover.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "materials",
     "svgPath": "M4 4c2-1 5-1 8 0v16c-3-1-6-1-8 0V4zm16 0c-2-1-5-1-8 0v16c3-1 6-1 8 0V4z",
     "color": "#795548"
@@ -787,7 +787,7 @@
     "id": "cyborg",
     "name": "Cyborg",
     "description": "Human and machine fused into one.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "technology",
     "svgPath": "M12 2a6 6 0 0 0-6 6v4l-2 2v2h4l1 2h6l1-2h4v-2l-2-2V8a6 6 0 0 0-6-6zm-2 7h4v2h-4V9z",
     "color": "#26C6DA"
@@ -1131,7 +1131,7 @@
     "id": "rock_band",
     "name": "Rock Band",
     "description": "Plug the guitar in, turn it up, and rock out!",
-    "isFinal": true,
+    "isFinal": false,
     "category": "music",
     "svgPath": "M3 16a5 5 0 1 0 10 0a5 5 0 1 0 -10 0zM7.5 12.5a3.5 3.5 0 1 0 7.0 0a3.5 3.5 0 1 0 -7.0 0z",
     "color": "#E53935",
@@ -1267,7 +1267,7 @@
     "id": "black_hole",
     "name": "Black Hole",
     "description": "Travel far enough through time and even the sun collapses.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "space",
     "svgPath": "M2.5 12a9.5 9.5 0 1 0 19.0 0a9.5 9.5 0 1 0 -19.0 0z",
     "color": "#7E57C2",
@@ -1317,7 +1317,7 @@
     "id": "unicorn",
     "name": "Unicorn",
     "description": "A horse crowned with a diamond horn. Pure magic.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "myth",
     "svgPath": "M7 22l1.500-7.500-3.500 1.200-2.500-2 5-6.500 1-4.700 2.200 2.300 2-3 .8 4.200c3.500 2 6.500 6.500 6 16z",
     "color": "#F48FB1",
@@ -1344,7 +1344,7 @@
     "id": "poseidon",
     "name": "Poseidon",
     "description": "A god who rules the ocean with his trident.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "myth",
     "svgPath": "M11 8h2v15h-2zM11 3h2v6h-2zM5 3h1.600v4c0 2 2 3 5.400 3s5.400-1 5.400-3V3H19v4c0 3-3 5-7 5S5 10 5 7zM4.500 3.500L5.800 0 7.100 3.500zM10.700 3.500L12 0l1.300 3.500zM16.900 3.500L18.200 0l1.300 3.500z",
     "color": "#26C6DA"
@@ -1445,7 +1445,7 @@
     "id": "dragon",
     "name": "Dragon",
     "description": "An animal born in a volcano, breathing fire.",
-    "isFinal": true,
+    "isFinal": false,
     "category": "myth",
     "svgPath": "M12 9L3 2l1.500 6.500L1 9.500l5 2.500z",
     "color": "#E53935",
@@ -1465,6 +1465,575 @@
       {
         "svgPath": "M19.8 10.3a0.5 0.5 0 1 0 1.0 0a0.5 0.5 0 1 0 -1.0 0z",
         "color": "#FFEB3B"
+      }
+    ]
+  },
+  {
+    "id": "family",
+    "name": "Family",
+    "description": "Two humans in love, and soon a few more.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M4.5 6a2.5 2.5 0 1 0 5.0 0a2.5 2.5 0 1 0 -5.0 0zM14.5 6a2.5 2.5 0 1 0 5.0 0a2.5 2.5 0 1 0 -5.0 0zM3 22v-7a4 4 0 0 1 8 0v7zM13 22v-7a4 4 0 0 1 8 0v7z",
+    "color": "#F06292",
+    "iconLayers": [
+      {
+        "svgPath": "M4.5 6a2.5 2.5 0 1 0 5.0 0a2.5 2.5 0 1 0 -5.0 0zM14.5 6a2.5 2.5 0 1 0 5.0 0a2.5 2.5 0 1 0 -5.0 0zM3 22v-7a4 4 0 0 1 8 0v7zM13 22v-7a4 4 0 0 1 8 0v7z",
+        "color": "#F06292"
+      },
+      {
+        "svgPath": "M10 12.5a2 2 0 1 0 4 0a2 2 0 1 0 -4 0zM9.5 22v-4a2.5 2.5 0 0 1 5 0v4z",
+        "color": "#FFB74D"
+      }
+    ]
+  },
+  {
+    "id": "home",
+    "name": "Home",
+    "description": "A house filled with family. There's no place like it.",
+    "isFinal": true,
+    "category": "construction",
+    "svgPath": "M12 3L2 12h3v9h14v-9h3z",
+    "color": "#C77B3B",
+    "iconLayers": [
+      {
+        "svgPath": "M12 3L2 12h3v9h14v-9h3z",
+        "color": "#C77B3B"
+      },
+      {
+        "svgPath": "M12 19l-3.5-3.4a2 2 0 0 1 3.5-2.2 2 2 0 0 1 3.5 2.2z",
+        "color": "#F06292"
+      }
+    ]
+  },
+  {
+    "id": "farmer",
+    "name": "Farmer",
+    "description": "A human who grows plants for a living.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M5 23v-3a5 5 0 0 1 5-4h4a5 5 0 0 1 5 4v3z",
+    "color": "#FFD54F",
+    "iconLayers": [
+      {
+        "svgPath": "M5 23v-3a5 5 0 0 1 5-4h4a5 5 0 0 1 5 4v3z",
+        "color": "#42A5F5"
+      },
+      {
+        "svgPath": "M9 12.5a3 3 0 1 0 6 0a3 3 0 1 0 -6 0z",
+        "color": "#FFCC80"
+      },
+      {
+        "svgPath": "M3 9h18v1.8H3zM7.5 9l1.5-5h6l1.5 5z",
+        "color": "#FFD54F"
+      }
+    ]
+  },
+  {
+    "id": "farm",
+    "name": "Farm",
+    "description": "A farmer, some animals, and a lot of early mornings.",
+    "isFinal": true,
+    "category": "construction",
+    "svgPath": "M3 22V11l9-7 9 7v11h-6v-6H9v6z",
+    "color": "#E53935",
+    "iconLayers": [
+      {
+        "svgPath": "M3 22V11l9-7 9 7v11h-6v-6H9v6z",
+        "color": "#E53935"
+      },
+      {
+        "svgPath": "M9 16l6 6h-1.4L9 17.4zM15 16l-6 6h1.4L15 17.4zM9 16h6v1H9zM10.5 9h3v3h-3z",
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "id": "knight",
+    "name": "Knight",
+    "description": "A human on horseback, sworn to protect the realm.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M12 3c-4.5 0-7 3.5-7 8v7l3 4h8l3-4v-7c0-4.5-2.5-8-7-8z",
+    "color": "#B0BEC5",
+    "iconLayers": [
+      {
+        "svgPath": "M12 3c-4.5 0-7 3.5-7 8v7l3 4h8l3-4v-7c0-4.5-2.5-8-7-8z",
+        "color": "#B0BEC5"
+      },
+      {
+        "svgPath": "M7 10.5h10v1.8H7zM11.3 12.3h1.4v5h-1.4z",
+        "color": "#263238"
+      },
+      {
+        "svgPath": "M12 3c1-1.5 4-2.5 6.5-1.5-1.5.5-3 2-3.5 3.5z",
+        "color": "#E53935"
+      }
+    ]
+  },
+  {
+    "id": "legend",
+    "name": "Legend",
+    "description": "A knight who faced the dragon. The tale will be told forever.",
+    "isFinal": true,
+    "category": "myth",
+    "svgPath": "M12 1.5l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 16.7l-6.1 3.4 1.4-6.8-5.1-4.7 6.9-.8z",
+    "color": "#FFD54F",
+    "iconLayers": [
+      {
+        "svgPath": "M12 1.5l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 16.7l-6.1 3.4 1.4-6.8-5.1-4.7 6.9-.8z",
+        "color": "#FFD54F"
+      },
+      {
+        "svgPath": "M3 20.5h18V23H3z",
+        "color": "#E53935"
+      }
+    ]
+  },
+  {
+    "id": "musician",
+    "name": "Musician",
+    "description": "A human with a guitar and a song to share.",
+    "isFinal": false,
+    "category": "music",
+    "svgPath": "M3 22v-6a5 5 0 0 1 10 0v6z",
+    "color": "#7E57C2",
+    "iconLayers": [
+      {
+        "svgPath": "M3 22v-6a5 5 0 0 1 10 0v6z",
+        "color": "#7E57C2"
+      },
+      {
+        "svgPath": "M5.4 6a2.6 2.6 0 1 0 5.2 0a2.6 2.6 0 1 0 -5.2 0z",
+        "color": "#FFCC80"
+      },
+      {
+        "svgPath": "M11.7 17a3.3 3.3 0 1 0 6.6 0a3.3 3.3 0 1 0 -6.6 0zM15.5 14.5l5.5-7 1.2 1-5.5 7z",
+        "color": "#C77B3B"
+      }
+    ]
+  },
+  {
+    "id": "concert",
+    "name": "Concert",
+    "description": "A musician joins the rock band on stage, and the crowd goes wild.",
+    "isFinal": true,
+    "category": "music",
+    "svgPath": "M4 1h2l4 17H6zM18 1h2l-2 17h-4z",
+    "color": "#AB47BC",
+    "iconLayers": [
+      {
+        "svgPath": "M4 1h2l4 17H6zM18 1h2l-2 17h-4z",
+        "color": "#FFF59D"
+      },
+      {
+        "svgPath": "M10.2 11a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM10 18v-4a2 2 0 0 1 4 0v4z",
+        "color": "#AB47BC"
+      },
+      {
+        "svgPath": "M1 18h22v5H1z",
+        "color": "#6D4C41"
+      },
+      {
+        "svgPath": "M1.9 19.5a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0zM6.4 19.5a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0zM10.9 19.5a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0zM15.4 19.5a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0zM19.4 19.5a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0z",
+        "color": "#263238"
+      }
+    ]
+  },
+  {
+    "id": "vegetable",
+    "name": "Vegetable",
+    "description": "A watered plant grown big, green and good for you.",
+    "isFinal": false,
+    "category": "food",
+    "svgPath": "M13 7l4 4L3.5 22.5 2 21z",
+    "color": "#FF7043",
+    "iconLayers": [
+      {
+        "svgPath": "M13 7l4 4L3.5 22.5 2 21z",
+        "color": "#FF7043"
+      },
+      {
+        "svgPath": "M15 7c0-3 1-5.5 2-5.5s.5 3.5-.5 5.5zM17 9c2-2 4-3.5 5-2.5s-2 2.5-4 3.5zM15.5 7.5c-1-2-3-3.5-4-3s1 2.5 3 3.5z",
+        "color": "#66BB6A"
+      }
+    ]
+  },
+  {
+    "id": "soup",
+    "name": "Soup",
+    "description": "Vegetables simmered over the fire into something warm.",
+    "isFinal": true,
+    "category": "food",
+    "svgPath": "M8 1.5c1.5 1.5-1 3 .5 5H7.3c-1.4-2 1.1-3.5-.3-5zM13 1c1.5 1.5-1 3 .5 5h-1.2c-1.4-2 1.1-3.5-.3-5zM17.5 1.5c1.5 1.5-1 3 .5 5h-1.2c-1.4-2 1.1-3.5-.3-5z",
+    "color": "#FFB74D",
+    "iconLayers": [
+      {
+        "svgPath": "M8 1.5c1.5 1.5-1 3 .5 5H7.3c-1.4-2 1.1-3.5-.3-5zM13 1c1.5 1.5-1 3 .5 5h-1.2c-1.4-2 1.1-3.5-.3-5zM17.5 1.5c1.5 1.5-1 3 .5 5h-1.2c-1.4-2 1.1-3.5-.3-5z",
+        "color": "#B0BEC5"
+      },
+      {
+        "svgPath": "M2 10.5a10 9.5 0 0 0 20 0z",
+        "color": "#8D6E63"
+      },
+      {
+        "svgPath": "M2.5 10.5h19V12h-19z",
+        "color": "#FFB74D"
+      }
+    ]
+  },
+  {
+    "id": "alien",
+    "name": "Alien",
+    "description": "Life that took root on another planet.",
+    "isFinal": false,
+    "category": "space",
+    "svgPath": "M12 2c5 0 8 4 8 8 0 6-5 12-8 12s-8-6-8-12c0-4 3-8 8-8z",
+    "color": "#8BC34A",
+    "iconLayers": [
+      {
+        "svgPath": "M12 2c5 0 8 4 8 8 0 6-5 12-8 12s-8-6-8-12c0-4 3-8 8-8z",
+        "color": "#8BC34A"
+      },
+      {
+        "svgPath": "M6.5 11c0-1.5 1.5-2 3.5-1.5.5 1.5-.5 3-2 3s-1.5-.5-1.5-1.5zM17.5 11c0-1.5-1.5-2-3.5-1.5-.5 1.5.5 3 2 3s1.5-.5 1.5-1.5z",
+        "color": "#1B1B1B"
+      }
+    ]
+  },
+  {
+    "id": "ufo",
+    "name": "UFO",
+    "description": "An alien at the controls of a rocket. Is anyone watching?",
+    "isFinal": true,
+    "category": "space",
+    "svgPath": "M8 16h8l3.5 7h-15z",
+    "color": "#80DEEA",
+    "iconLayers": [
+      {
+        "svgPath": "M8 16h8l3.5 7h-15z",
+        "color": "#FFF59D"
+      },
+      {
+        "svgPath": "M7 11a5 5 0 0 1 10 0z",
+        "color": "#80DEEA"
+      },
+      {
+        "svgPath": "M1 13.5c0-2 5-3.5 11-3.5s11 1.5 11 3.5-5 3-11 3-11-1-11-3z",
+        "color": "#B0BEC5"
+      },
+      {
+        "svgPath": "M4.1 13.5a0.9 0.9 0 1 0 1.8 0a0.9 0.9 0 1 0 -1.8 0zM11.1 14.5a0.9 0.9 0 1 0 1.8 0a0.9 0.9 0 1 0 -1.8 0zM18.1 13.5a0.9 0.9 0 1 0 1.8 0a0.9 0.9 0 1 0 -1.8 0z",
+        "color": "#FFEB3B"
+      }
+    ]
+  },
+  {
+    "id": "spaghettification",
+    "name": "Spaghettification",
+    "description": "A planet stretched into a long, thin noodle by a black hole.",
+    "isFinal": true,
+    "category": "space",
+    "svgPath": "M11.5 12a5.5 5.5 0 1 0 11.0 0a5.5 5.5 0 1 0 -11.0 0z",
+    "color": "#FFD54F",
+    "iconLayers": [
+      {
+        "svgPath": "M11.5 12a5.5 5.5 0 1 0 11.0 0a5.5 5.5 0 1 0 -11.0 0z",
+        "color": "#7E57C2"
+      },
+      {
+        "svgPath": "M13.5 12a3.5 3.5 0 1 0 7.0 0a3.5 3.5 0 1 0 -7.0 0z",
+        "color": "#0B0E14"
+      },
+      {
+        "svgPath": "M1 10c3-2 5 2 8 0s5-2 7.5 1l-.6 1.1c-2-2.5-4-2-6.5-.3S3 13.5 1 12z",
+        "color": "#FFD54F"
+      }
+    ]
+  },
+  {
+    "id": "wormhole",
+    "name": "Wormhole",
+    "description": "A human dives into a black hole and comes out somewhere else.",
+    "isFinal": true,
+    "category": "space",
+    "svgPath": "M2 12a10 10 0 1 0 20 0a10 10 0 1 0 -20 0z",
+    "color": "#26C6DA",
+    "iconLayers": [
+      {
+        "svgPath": "M2 12a10 10 0 1 0 20 0a10 10 0 1 0 -20 0z",
+        "color": "#7E57C2"
+      },
+      {
+        "svgPath": "M4 12a8 8 0 1 0 16 0a8 8 0 1 0 -16 0z",
+        "color": "#121926"
+      },
+      {
+        "svgPath": "M6 12a6 6 0 1 0 12 0a6 6 0 1 0 -12 0z",
+        "color": "#26C6DA"
+      },
+      {
+        "svgPath": "M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0z",
+        "color": "#121926"
+      },
+      {
+        "svgPath": "M10 12a2 2 0 1 0 4 0a2 2 0 1 0 -4 0z",
+        "color": "#E0F7FA"
+      }
+    ]
+  },
+  {
+    "id": "dinosaur",
+    "name": "Dinosaur",
+    "description": "Travel back in time and the plants are full of giants.",
+    "isFinal": false,
+    "category": "organic",
+    "svgPath": "M2 20c0-4 3-7 8-7h4c1 0 2-1 2-3V5c0-1.5 1-2.5 2.5-2.5S21 3.5 21 5c0 1-1 1.5-2 1.5v5c0 3-1 4.5-2 5.5l1 3.5h-2.5l-1-2.5h-4l-1 2.5H7l.5-3c-2 .5-3.5 1.5-5.5 2.5z",
+    "color": "#66BB6A",
+    "iconLayers": [
+      {
+        "svgPath": "M2 20c0-4 3-7 8-7h4c1 0 2-1 2-3V5c0-1.5 1-2.5 2.5-2.5S21 3.5 21 5c0 1-1 1.5-2 1.5v5c0 3-1 4.5-2 5.5l1 3.5h-2.5l-1-2.5h-4l-1 2.5H7l.5-3c-2 .5-3.5 1.5-5.5 2.5z",
+        "color": "#66BB6A"
+      },
+      {
+        "svgPath": "M18.599999999999998 4.6a0.6 0.6 0 1 0 1.2 0a0.6 0.6 0 1 0 -1.2 0z",
+        "color": "#1B1B1B"
+      }
+    ]
+  },
+  {
+    "id": "extinction",
+    "name": "Extinction",
+    "description": "A meteor falls and the age of the dinosaurs ends.",
+    "isFinal": true,
+    "category": "nature",
+    "svgPath": "M11 10l9-9 2 2-9 9zM12 12.5l8.5-4 .7 1.8-8.5 3.4z",
+    "color": "#8D6E63",
+    "iconLayers": [
+      {
+        "svgPath": "M11 10l9-9 2 2-9 9zM12 12.5l8.5-4 .7 1.8-8.5 3.4z",
+        "color": "#FF7043"
+      },
+      {
+        "svgPath": "M5 13a4 4 0 1 0 8 0a4 4 0 1 0 -8 0z",
+        "color": "#8D6E63"
+      },
+      {
+        "svgPath": "M1 19h22v4H1z",
+        "color": "#5D4037"
+      },
+      {
+        "svgPath": "M3 19c1-2 3-2 4 0zM15 19c1-2 3-2 4 0z",
+        "color": "#FFB74D"
+      }
+    ]
+  },
+  {
+    "id": "selfie",
+    "name": "Selfie",
+    "description": "The smartphone turned into a work of art: you.",
+    "isFinal": true,
+    "category": "technology",
+    "svgPath": "M6 1h12a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z",
+    "color": "#4FC3F7",
+    "iconLayers": [
+      {
+        "svgPath": "M6 1h12a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z",
+        "color": "#263238"
+      },
+      {
+        "svgPath": "M6 4h12v15H6z",
+        "color": "#4FC3F7"
+      },
+      {
+        "svgPath": "M9 10a3 3 0 1 0 6 0a3 3 0 1 0 -6 0zM7.5 19a4.5 4.5 0 0 1 9 0z",
+        "color": "#FFCC80"
+      }
+    ]
+  },
+  {
+    "id": "motorboat",
+    "name": "Motorboat",
+    "description": "A boat with an engine. No need to row anymore.",
+    "isFinal": true,
+    "category": "technology",
+    "svgPath": "M6 9.5h7l2.5 4.5H6z",
+    "color": "#1E88E5",
+    "iconLayers": [
+      {
+        "svgPath": "M6 9.5h7l2.5 4.5H6z",
+        "color": "#ECEFF1"
+      },
+      {
+        "svgPath": "M1 14h19.5l-3 5H4z",
+        "color": "#1E88E5"
+      },
+      {
+        "svgPath": "M20 11.5h2.2v6.5H20z",
+        "color": "#37474F"
+      },
+      {
+        "svgPath": "M1 20c2 1 4 1 6 0s4-1 6 0 4 1 6 0 3-1 4 0v2H1z",
+        "color": "#4FC3F7"
+      }
+    ]
+  },
+  {
+    "id": "train",
+    "name": "Train",
+    "description": "An engine on the train tracks pulls a line of carriages.",
+    "isFinal": true,
+    "category": "technology",
+    "svgPath": "M2 18V9h4V5h8v4h4l3 4v5z",
+    "color": "#E53935",
+    "iconLayers": [
+      {
+        "svgPath": "M2 18V9h4V5h8v4h4l3 4v5z",
+        "color": "#E53935"
+      },
+      {
+        "svgPath": "M15 3h2.5v6H15z",
+        "color": "#37474F"
+      },
+      {
+        "svgPath": "M7 6.5h5v4H7z",
+        "color": "#80DEEA"
+      },
+      {
+        "svgPath": "M3.8 19a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0zM9.8 19a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0zM15.8 19a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0z",
+        "color": "#263238"
+      },
+      {
+        "svgPath": "M1 21.5h22V23H1z",
+        "color": "#8D6E63"
+      }
+    ]
+  },
+  {
+    "id": "airplane",
+    "name": "Airplane",
+    "description": "An engine that pushes through the air until it takes off.",
+    "isFinal": false,
+    "category": "technology",
+    "svgPath": "M11 2a1 1 0 0 1 2 0v7l9 5v2l-9-2.5V19l3 2v1.5l-4-1-4 1V21l3-2v-5.5L2 16v-2l9-5z",
+    "color": "#90CAF9"
+  },
+  {
+    "id": "jet",
+    "name": "Jet",
+    "description": "An airplane with rocket power, faster than sound.",
+    "isFinal": true,
+    "category": "technology",
+    "svgPath": "M12 1c.8 0 1.3 1.5 1.3 3v5L22 15v2l-8.7-3v5l2.7 2v1.5L12 21.5l-4 1V21l2.7-2v-5L2 17v-2l8.7-6V4c0-1.5.5-3 1.3-3z",
+    "color": "#78909C",
+    "iconLayers": [
+      {
+        "svgPath": "M12 1c.8 0 1.3 1.5 1.3 3v5L22 15v2l-8.7-3v5l2.7 2v1.5L12 21.5l-4 1V21l2.7-2v-5L2 17v-2l8.7-6V4c0-1.5.5-3 1.3-3z",
+        "color": "#78909C"
+      },
+      {
+        "svgPath": "M11 21.8h2l-1 2z",
+        "color": "#FF7043"
+      }
+    ]
+  },
+  {
+    "id": "dragons_hoard",
+    "name": "Dragon's Hoard",
+    "description": "A dragon sleeping on a mountain of gold. Do not wake it.",
+    "isFinal": true,
+    "category": "myth",
+    "svgPath": "M4 14L1 6l5 3 1-4 3 7z",
+    "color": "#FFD54F",
+    "iconLayers": [
+      {
+        "svgPath": "M4 14L1 6l5 3 1-4 3 7z",
+        "color": "#B71C1C"
+      },
+      {
+        "svgPath": "M1 22c2-6 6-9 11-9s9 3 11 9z",
+        "color": "#FFD54F"
+      },
+      {
+        "svgPath": "M5.8 19a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0zM10.8 17a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0zM15.8 19.5a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0z",
+        "color": "#FFA000"
+      },
+      {
+        "svgPath": "M11 10l2-2 2 2-2 3z",
+        "color": "#E53935"
+      }
+    ]
+  },
+  {
+    "id": "fairy_tale",
+    "name": "Fairy Tale",
+    "description": "A book with a unicorn in it begins \"Once upon a time...\"",
+    "isFinal": true,
+    "category": "myth",
+    "svgPath": "M2 6c3-1 7-1 10 1 3-2 7-2 10-1v14c-3-1-7-1-10 1-3-2-7-2-10-1z",
+    "color": "#F48FB1",
+    "iconLayers": [
+      {
+        "svgPath": "M2 6c3-1 7-1 10 1 3-2 7-2 10-1v14c-3-1-7-1-10 1-3-2-7-2-10-1z",
+        "color": "#FFF8E1"
+      },
+      {
+        "svgPath": "M11.6 7h.8v13h-.8z",
+        "color": "#BCAAA4"
+      },
+      {
+        "svgPath": "M18 0l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8zM5.5 1l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4L3.5 3l1.4-.6z",
+        "color": "#F48FB1"
+      }
+    ]
+  },
+  {
+    "id": "tsunami",
+    "name": "Tsunami",
+    "description": "Poseidon stirs up a storm and the sea rises as a giant wave.",
+    "isFinal": true,
+    "category": "weather",
+    "svgPath": "M1 22V14C1 7 6 3 12 3c4 0 7 2 8 5-2-1-5-1-6 1s0 5 3 5c2 0 3-1 5-1v9z",
+    "color": "#1E88E5",
+    "iconLayers": [
+      {
+        "svgPath": "M1 22V14C1 7 6 3 12 3c4 0 7 2 8 5-2-1-5-1-6 1s0 5 3 5c2 0 3-1 5-1v9z",
+        "color": "#1E88E5"
+      },
+      {
+        "svgPath": "M12 3c4 0 7 2 8 5-2-1-5-1-6 1-1-2 0-5-2-6z",
+        "color": "#E1F5FE"
+      }
+    ]
+  },
+  {
+    "id": "mecha_dragon",
+    "name": "Mecha-Dragon",
+    "description": "Half cyborg, half dragon, all fire and steel.",
+    "isFinal": true,
+    "category": "myth",
+    "svgPath": "M12 9L3 2l1.5 6.5L1 9.5l5 2.5z",
+    "color": "#78909C",
+    "iconLayers": [
+      {
+        "svgPath": "M12 9L3 2l1.5 6.5L1 9.5l5 2.5z",
+        "color": "#455A64"
+      },
+      {
+        "svgPath": "M5 13c3-3 9-3.5 12-1l3.5-3.5 2.5.5-1 3.5-3 1.5c.5 4.5-3.5 8-8.5 9l-1-2 3-2.5c-3 .5-6.5-1.5-7.5-5z",
+        "color": "#90A4AE"
+      },
+      {
+        "svgPath": "M20.5 9l1.5-2.5.5 2.7z",
+        "color": "#FF7043"
+      },
+      {
+        "svgPath": "M19.7 10.3a0.6 0.6 0 1 0 1.2 0a0.6 0.6 0 1 0 -1.2 0z",
+        "color": "#00E5FF"
+      },
+      {
+        "svgPath": "M8 15h6v1h-6zM9 17h5v1H9z",
+        "color": "#455A64"
       }
     ]
   }
