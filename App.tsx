@@ -12,6 +12,7 @@ import {
   LayoutChangeEvent,
   Animated,
   useWindowDimensions,
+  Vibration,
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -32,16 +33,20 @@ import {
   getUsesOf,
   getDerivationPath,
   getBouncePositions,
+  getElementDepths,
+  getRarityStars,
 } from './src/utils/gameLogic';
 import { CombinationEffect } from './src/components/CombinationEffect';
 import { ElementAura } from './src/components/ElementAura';
 import { Confetti } from './src/components/Confetti';
-import { playCombinationSound, playBounceSound } from './src/utils/audio';
+import { playCombinationSound, playBounceSound, playMilestoneSound, setAudioSettings } from './src/utils/audio';
 
 const STORAGE_KEYS = {
   DISCOVERED: '@elemental_discovered',
   CANVAS: '@elemental_canvas',
   LANGUAGE: '@elemental_language',
+  BEST_STREAK: '@elemental_best_streak',
+  SETTINGS: '@elemental_settings',
 };
 
 const KNOWN_ELEMENT_IDS = new Set((elementsData as ElementItem[]).map(el => el.id));
@@ -49,6 +54,22 @@ const KNOWN_ELEMENT_IDS = new Set((elementsData as ElementItem[]).map(el => el.i
 const DEFAULT_STARTING_ELEMENTS = (elementsData as ElementItem[])
   .filter(el => el.category === 'basic')
   .map(el => el.id);
+
+// Rarity (1-5 stars) of every element, from how many combination tiers it needs
+const RARITY: Record<string, number> = Object.fromEntries(
+  Object.entries(getElementDepths(recipesData as RecipeDictionary, DEFAULT_STARTING_ELEMENTS)).map(
+    ([id, depth]) => [id, getRarityStars(depth)]
+  )
+);
+
+const STREAK_MILESTONES = [5, 10, 20];
+
+interface GameSettings {
+  soundOn: boolean;
+  volume: number; // 0-1
+  vibrationOn: boolean;
+}
+const DEFAULT_SETTINGS: GameSettings = { soundOn: true, volume: 0.75, vibrationOn: true };
 
 const LANGUAGES = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
@@ -243,6 +264,26 @@ const DraggableCanvasItem = ({
       </Text>
     </Animated.View>
   );
+};
+
+// ★★★☆☆ under an element's name
+const RarityStars = ({ stars }: { stars: number }) => (
+  <Text style={styles.rarityStars} accessibilityLabel={`${stars}/5`}>
+    <Text style={stars === 5 ? styles.rarityStarsLegendary : styles.rarityStarsFilled}>{'★'.repeat(stars)}</Text>
+    <Text style={styles.rarityStarsEmpty}>{'★'.repeat(5 - stars)}</Text>
+  </Text>
+);
+
+// Full-screen gold flash for a 5-star discovery
+const GoldFlash = () => {
+  const flash = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.sequence([
+      Animated.timing(flash, { toValue: 0.6, duration: 160, useNativeDriver: false }),
+      Animated.timing(flash, { toValue: 0, duration: 900, useNativeDriver: false }),
+    ]).start();
+  }, []);
+  return <Animated.View pointerEvents="none" style={[StyleSheet.absoluteFill, styles.goldFlash, { opacity: flash }]} />;
 };
 
 const SILHOUETTE_COLOR = '#2A3445';
@@ -495,9 +536,49 @@ export default function App() {
   // New discoveries in a row without a failed (bounced) combination. Session only.
   const [streak, setStreak] = useState(0);
   const streakRef = useRef(0);
+  const [bestStreak, setBestStreak] = useState(0);
+  const bestStreakRef = useRef(0);
+  // Toast + confetti shown when the streak hits 5, 10 or 20
+  const [milestone, setMilestone] = useState<{ n: number; id: number } | null>(null);
   const updateStreak = (value: number) => {
     streakRef.current = value;
     setStreak(value);
+    if (value > bestStreakRef.current) {
+      bestStreakRef.current = value;
+      setBestStreak(value);
+      AsyncStorage.setItem(STORAGE_KEYS.BEST_STREAK, String(value)).catch(() => {});
+    }
+    const level = STREAK_MILESTONES.indexOf(value);
+    if (level >= 0) {
+      playMilestoneSound(level + 1);
+      buzz([0, 30, 60, 30, 60, 60]);
+      setMilestone({ n: value, id: Date.now() });
+    }
+  };
+  useEffect(() => {
+    if (!milestone) return;
+    const timer = setTimeout(() => setMilestone(null), 2600);
+    return () => clearTimeout(timer);
+  }, [milestone?.id]);
+
+  // Sound & vibration settings (persisted)
+  const [settings, setSettings] = useState<GameSettings>(DEFAULT_SETTINGS);
+  const settingsRef = useRef(DEFAULT_SETTINGS);
+  const [showSettings, setShowSettings] = useState(false);
+  const applySettings = (next: GameSettings, persist: boolean) => {
+    settingsRef.current = next;
+    setSettings(next);
+    setAudioSettings({ muted: !next.soundOn, volume: next.volume });
+    if (persist) AsyncStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(next)).catch(() => {});
+  };
+  // Short vibration on phones that support it (ignored elsewhere)
+  const buzz = (pattern: number | number[]) => {
+    if (!IS_COARSE_POINTER || !settingsRef.current.vibrationOn) return;
+    try {
+      Vibration.vibrate(pattern);
+    } catch {
+      // Not supported on this device
+    }
   };
 
   // Game Complete Modal State (dismissed for the current session once acknowledged)
@@ -555,6 +636,18 @@ export default function App() {
         const storedDiscovered = await AsyncStorage.getItem(STORAGE_KEYS.DISCOVERED);
         const storedCanvas = await AsyncStorage.getItem(STORAGE_KEYS.CANVAS);
         const storedLang = await AsyncStorage.getItem(STORAGE_KEYS.LANGUAGE);
+        const storedBest = await AsyncStorage.getItem(STORAGE_KEYS.BEST_STREAK);
+        const storedSettings = await AsyncStorage.getItem(STORAGE_KEYS.SETTINGS);
+        if (storedBest) {
+          const best = parseInt(storedBest, 10) || 0;
+          bestStreakRef.current = best;
+          setBestStreak(best);
+        }
+        if (storedSettings) {
+          applySettings({ ...DEFAULT_SETTINGS, ...JSON.parse(storedSettings) }, false);
+        } else {
+          applySettings(DEFAULT_SETTINGS, false);
+        }
         
         if (storedDiscovered) {
           // Drop ids of elements that were removed from the game since this save
@@ -905,6 +998,7 @@ export default function App() {
 
             // Trigger procedural audio feedback
             playCombinationSound(dragged.elementId, other.elementId, product);
+            buzz(discoveredIds.includes(product) ? 20 : 45);
 
             // A brand-new discovery extends the streak; known recipes leave it as is
             if (!discoveredIds.includes(product)) {
@@ -985,6 +1079,7 @@ export default function App() {
           return el;
         });
         playBounceSound();
+        buzz([0, 15, 40, 15]);
         updateStreak(0);
       }
 
@@ -1065,6 +1160,13 @@ export default function App() {
         </View>
         <View style={[styles.headerButtons, isNarrow && styles.headerButtonsNarrow]}>
           {streak >= 2 && <StreakBadge streak={streak} label={t('streak')} />}
+          <TouchableOpacity
+            style={[styles.glassButton, styles.settingsButton]}
+            onPress={() => setShowSettings(true)}
+            accessibilityLabel={t('settings')}
+          >
+            <Text style={styles.settingsButtonText}>⚙️</Text>
+          </TouchableOpacity>
           <TouchableOpacity style={[styles.glassButton, styles.collectionButton]} onPress={() => setShowCollection(true)}>
             <Text style={styles.collectionButtonText}>📖 {t('collection')}</Text>
           </TouchableOpacity>
@@ -1186,6 +1288,11 @@ export default function App() {
           {/* Per-category progress bars with achievement badges */}
           {activeTab === 'progress' ? (
             <ScrollView contentContainerStyle={styles.progressList} showsVerticalScrollIndicator={false}>
+              <View style={[styles.progressRow, styles.bestStreakRow]}>
+                <Text style={styles.progressBadge}>🔥</Text>
+                <Text style={[styles.progressName, { flex: 1 }]}>{t('bestStreak')}</Text>
+                <Text style={styles.progressCount}>{bestStreak}</Text>
+              </View>
               {categoryProgress.map(({ category, found, total }) => {
                 const info = CATEGORIES[category];
                 const color = info?.color ?? '#00E676';
@@ -1254,6 +1361,7 @@ export default function App() {
         const trans = getElementTranslation(discoveredElement.id);
         return (
           <View style={styles.modalOverlay}>
+            {RARITY[discoveredElement.id] === 5 && <GoldFlash key={discoveredElement.id} />}
             <View style={[styles.modalContent, { borderColor: discoveredElement.color }]}>
               <Text style={styles.modalHeader}>{t('newDiscovery')}</Text>
               
@@ -1264,6 +1372,7 @@ export default function App() {
               <Text style={[styles.modalTitle, { color: discoveredElement.color }]}>
                 {trans.name}
               </Text>
+              <RarityStars stars={RARITY[discoveredElement.id] ?? 1} />
               
               <Text style={styles.modalDescription}>
                 {trans.description}
@@ -1364,6 +1473,7 @@ export default function App() {
                   <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={56} />
                 </View>
                 <Text style={[styles.modalTitle, { color: item.color }]}>{trans.name}</Text>
+                <RarityStars stars={RARITY[item.id] ?? 1} />
                 <Text style={[styles.modalDescription, { marginBottom: 16 }]}>{trans.description}</Text>
 
                 <Text style={styles.recipeSectionTitle}>{t('madeFrom')}</Text>
@@ -1543,6 +1653,76 @@ export default function App() {
               <Text style={styles.langCloseButtonText}>
                 {t('close')}
               </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
+
+      {/* Streak milestone: big toast with confetti, fades by itself */}
+      {milestone && (
+        <View style={styles.milestoneLayer} pointerEvents="none">
+          <Confetti key={milestone.id} count={60} />
+          <View style={styles.milestoneToast}>
+            <Text style={styles.milestoneText}>🔥 {t('streakMilestone').replace('{n}', String(milestone.n))}</Text>
+          </View>
+        </View>
+      )}
+
+      {/* Sound & vibration settings */}
+      {showSettings && (
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalHeader}>⚙️ {t('settings').toUpperCase()}</Text>
+            <View style={styles.settingsRow}>
+              <Text style={styles.settingsLabel}>🔊 {t('sound')}</Text>
+              <TouchableOpacity
+                style={[styles.toggle, settings.soundOn && styles.toggleOn]}
+                onPress={() => applySettings({ ...settings, soundOn: !settings.soundOn }, true)}
+              >
+                <Text style={[styles.toggleText, settings.soundOn && styles.toggleTextOn]}>
+                  {settings.soundOn ? t('on') : t('off')}
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={[styles.settingsRow, !settings.soundOn && { opacity: 0.4 }]}>
+              <Text style={styles.settingsLabel}>🎚️ {t('volume')}</Text>
+              <View style={styles.volumeOptions}>
+                {[0.25, 0.5, 0.75, 1].map(level => (
+                  <TouchableOpacity
+                    key={level}
+                    disabled={!settings.soundOn}
+                    style={[styles.volumeOption, Math.abs(settings.volume - level) < 0.01 && styles.toggleOn]}
+                    onPress={() => {
+                      applySettings({ ...settings, volume: level }, true);
+                      playBounceSound();
+                    }}
+                  >
+                    <Text style={[styles.toggleText, Math.abs(settings.volume - level) < 0.01 && styles.toggleTextOn]}>
+                      {Math.round(level * 100)}%
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+            {IS_COARSE_POINTER && (
+              <View style={styles.settingsRow}>
+                <Text style={styles.settingsLabel}>📳 {t('vibration')}</Text>
+                <TouchableOpacity
+                  style={[styles.toggle, settings.vibrationOn && styles.toggleOn]}
+                  onPress={() => {
+                    const next = { ...settings, vibrationOn: !settings.vibrationOn };
+                    applySettings(next, true);
+                    if (next.vibrationOn) buzz(40);
+                  }}
+                >
+                  <Text style={[styles.toggleText, settings.vibrationOn && styles.toggleTextOn]}>
+                    {settings.vibrationOn ? t('on') : t('off')}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            )}
+            <TouchableOpacity style={[styles.langCloseButton, { marginTop: 12 }]} onPress={() => setShowSettings(false)}>
+              <Text style={styles.langCloseButtonText}>{t('close')}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -2156,6 +2336,118 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: 'bold',
     minWidth: 14,
+    userSelect: 'none' as any,
+  },
+  rarityStars: {
+    fontSize: 14,
+    letterSpacing: 2,
+    marginTop: -2,
+    marginBottom: 10,
+    userSelect: 'none' as any,
+  },
+  rarityStarsFilled: {
+    color: '#FFD54F',
+  },
+  rarityStarsLegendary: {
+    color: '#FFD54F',
+    textShadowColor: '#FFB300',
+    textShadowRadius: 8,
+  },
+  rarityStarsEmpty: {
+    color: '#2A3445',
+  },
+  goldFlash: {
+    backgroundColor: '#FFD54F',
+    zIndex: 998,
+  },
+  bestStreakRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderColor: 'rgba(255, 112, 67, 0.35)',
+  },
+  settingsButton: {
+    borderColor: 'rgba(255, 255, 255, 0.15)',
+    paddingHorizontal: 10,
+  },
+  settingsButtonText: {
+    fontSize: 13,
+    userSelect: 'none' as any,
+  },
+  settingsRow: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    gap: 8,
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(255,255,255,0.06)',
+  },
+  settingsLabel: {
+    color: '#ECEFF1',
+    fontSize: 13,
+    fontWeight: '600',
+    userSelect: 'none' as any,
+  },
+  toggle: {
+    minWidth: 64,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.2)',
+    alignItems: 'center',
+  },
+  toggleOn: {
+    borderColor: '#00E676',
+    backgroundColor: 'rgba(0, 230, 118, 0.15)',
+  },
+  toggleText: {
+    color: '#90A4AE',
+    fontSize: 12,
+    fontWeight: 'bold',
+    userSelect: 'none' as any,
+  },
+  toggleTextOn: {
+    color: '#00E676',
+  },
+  volumeOptions: {
+    flexDirection: 'row',
+    gap: 4,
+  },
+  volumeOption: {
+    paddingVertical: 6,
+    paddingHorizontal: 8,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.2)',
+  },
+  milestoneLayer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    alignItems: 'center',
+    zIndex: 1001, // above the discovery popup that appears right after
+  },
+  milestoneToast: {
+    marginTop: 72, // just under the header, clear of popups' content
+    paddingVertical: 14,
+    paddingHorizontal: 26,
+    borderRadius: 18,
+    borderWidth: 2,
+    borderColor: '#FF7043',
+    backgroundColor: 'rgba(17, 23, 38, 0.95)',
+    shadowColor: '#FF7043',
+    shadowOpacity: 0.8,
+    shadowRadius: 18,
+  },
+  milestoneText: {
+    color: '#FFAB91',
+    fontSize: 22,
+    fontWeight: 'bold',
     userSelect: 'none' as any,
   },
   noItemsText: {

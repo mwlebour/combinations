@@ -9,6 +9,8 @@ import {
   getUsesOf,
   getDerivationPath,
   getBouncePositions,
+  getElementDepths,
+  getRarityStars,
 } from './gameLogic';
 import { ElementItem, RecipeDictionary } from '../types/game';
 import actualRecipesData from '../config/recipes.json';
@@ -392,6 +394,23 @@ describe('Game Logic Utilities', () => {
         }
         expect(have.has(el.id)).toBe(true);
       }
+    });
+  });
+
+  describe('rarity', () => {
+    it('measures depth as the fewest combination tiers', () => {
+      const recipes: RecipeDictionary = { 'fire+water': 'steam', 'air+steam': 'cloud', 'fire+cloud': 'storm', 'air+fire': 'storm' };
+      expect(getElementDepths(recipes, ['fire', 'water', 'air'])).toEqual({ fire: 0, water: 0, air: 0, steam: 1, cloud: 2, storm: 1 });
+    });
+
+    it('maps depth to 1-5 stars', () => {
+      expect([0, 1, 2, 3, 4, 5, 6, 8, 9, 15].map(getRarityStars)).toEqual([1, 1, 2, 2, 3, 3, 4, 4, 5, 5]);
+    });
+
+    it('gives every real element a depth', () => {
+      const elements = actualElementsData as ElementItem[];
+      const depths = getElementDepths(actualRecipes, elements.filter(el => el.category === 'basic').map(el => el.id));
+      expect(elements.filter(el => depths[el.id] === undefined).map(el => el.id)).toEqual([]);
     });
   });
 
