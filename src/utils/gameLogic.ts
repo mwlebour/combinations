@@ -279,11 +279,11 @@ export interface DerivationStep {
  * fewest combination tiers, so the tree is as shallow as possible.
  * Returns [] for starting elements and unreachable targets.
  */
-export function getDerivationPath(
-  target: string,
-  recipes: RecipeDictionary,
-  basics: string[]
-): DerivationStep[] {
+/**
+ * Fewest combination tiers needed to make each reachable element (starting
+ * elements are 0), plus the recipe that achieves it.
+ */
+function computeDepths(recipes: RecipeDictionary, basics: string[]) {
   const depth = new Map<string, number>(basics.map(id => [id, 0]));
   const bestRecipe = new Map<string, [string, string]>();
   let changed = true;
@@ -303,6 +303,32 @@ export function getDerivationPath(
       }
     }
   }
+  return { depth, bestRecipe };
+}
+
+/** Recipe depth of every reachable element, keyed by id (starting elements are 0). */
+export function getElementDepths(recipes: RecipeDictionary, basics: string[]): Record<string, number> {
+  return Object.fromEntries(computeDepths(recipes, basics).depth);
+}
+
+/**
+ * Rarity from 1 to 5 stars, based on how many combination tiers an element
+ * needs: 0-1 → 1, 2-3 → 2, 4-5 → 3, 6-8 → 4, 9+ → 5.
+ */
+export function getRarityStars(depth: number): number {
+  if (depth <= 1) return 1;
+  if (depth <= 3) return 2;
+  if (depth <= 5) return 3;
+  if (depth <= 8) return 4;
+  return 5;
+}
+
+export function getDerivationPath(
+  target: string,
+  recipes: RecipeDictionary,
+  basics: string[]
+): DerivationStep[] {
+  const { bestRecipe } = computeDepths(recipes, basics);
 
   const steps: DerivationStep[] = [];
   const done = new Set(basics);

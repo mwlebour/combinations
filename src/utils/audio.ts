@@ -5,9 +5,30 @@
  */
 
 let audioCtx: AudioContext | null = null;
+let masterGain: GainNode | null = null;
+
+// Player settings: muted skips all sound; volume (0-1) scales the master output
+const audioSettings = { muted: false, volume: 0.8 };
+
+export function setAudioSettings(settings: { muted: boolean; volume: number }): void {
+  audioSettings.muted = settings.muted;
+  audioSettings.volume = Math.min(Math.max(settings.volume, 0), 1);
+  if (masterGain) masterGain.gain.value = audioSettings.volume;
+}
+
+/** Every sound connects here instead of straight to the speakers, so volume applies. */
+function getOutput(ctx: AudioContext): AudioNode {
+  if (!masterGain) {
+    masterGain = ctx.createGain();
+    masterGain.connect(ctx.destination);
+  }
+  masterGain.gain.value = audioSettings.volume;
+  return masterGain;
+}
 
 function getAudioContext(): AudioContext | null {
   if (typeof window === 'undefined') return null;
+  if (audioSettings.muted || audioSettings.volume <= 0) return null;
   const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
   if (!AudioContextClass) return null;
 
@@ -69,7 +90,7 @@ export function playCombinationSound(
 
     sweepOsc.connect(filter);
     filter.connect(sweepGain);
-    sweepGain.connect(ctx.destination);
+    sweepGain.connect(getOutput(ctx));
 
     sweepOsc.start(now);
     sweepOsc.stop(now + 0.26);
@@ -98,7 +119,7 @@ export function playCombinationSound(
       gain.gain.exponentialRampToValueAtTime(0.0001, noteStart + noteDuration);
 
       osc.connect(gain);
-      gain.connect(ctx.destination);
+      gain.connect(getOutput(ctx));
 
       osc.start(noteStart);
       osc.stop(noteStart + noteDuration);
@@ -125,10 +146,38 @@ export function playBounceSound(): void {
     gain.gain.exponentialRampToValueAtTime(0.12, now + 0.015);
     gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
     osc.connect(gain);
-    gain.connect(ctx.destination);
+    gain.connect(getOutput(ctx));
     osc.start(now);
     osc.stop(now + 0.2);
   } catch {
     // Audio is optional; ignore failures (e.g. autoplay restrictions).
+  }
+}
+
+/**
+ * Rising arpeggio for streak milestones; longer and higher for bigger streaks.
+ */
+export function playMilestoneSound(level: number): void {
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const now = ctx.currentTime;
+    const base = [523.25, 659.25, 783.99, 1046.5, 1318.5, 1568];
+    const notes = base.slice(0, Math.min(3 + level, base.length));
+    notes.forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, now + i * 0.08);
+      gain.gain.setValueAtTime(0.0001, now + i * 0.08);
+      gain.gain.exponentialRampToValueAtTime(0.14, now + i * 0.08 + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.08 + 0.35);
+      osc.connect(gain);
+      gain.connect(getOutput(ctx));
+      osc.start(now + i * 0.08);
+      osc.stop(now + i * 0.08 + 0.4);
+    });
+  } catch {
+    // Audio is optional
   }
 }
