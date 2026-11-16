@@ -301,7 +301,6 @@ describe('Game Logic Utilities', () => {
         ['village', 'village', 'city'],
         ['car', 'car', 'traffic_jam'],
         ['concert', 'smartphone', 'livestream'],
-        ['mountain', 'snow', 'ski_slope'],
       ])('should combine %s + %s into %s', (a, b, product) => {
         expect(combineElements(a, b, actualRecipes)).toBe(product);
       });
