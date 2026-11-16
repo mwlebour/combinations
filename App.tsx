@@ -101,7 +101,15 @@ interface DraggableCanvasItemProps {
   onDragStart: (instanceId: string, x: number, y: number) => void;
   onDragMove: (instanceId: string, dx: number, dy: number) => void;
   onDragRelease: (instanceId: string, endX: number, endY: number) => void;
+  onDragCancel: (instanceId: string) => void;
+  onTap: (instanceId: string) => void;
+  onLongPress: (instanceId: string) => void;
+  selected: boolean;
 }
+
+// A press that moves less than this many pixels counts as a tap or a hold, not a drag
+const TAP_SLOP = 8;
+const LONG_PRESS_MS = 500;
 
 const DraggableCanvasItem = ({
   element,
@@ -110,6 +118,10 @@ const DraggableCanvasItem = ({
   onDragStart,
   onDragMove,
   onDragRelease,
+  onDragCancel,
+  onTap,
+  onLongPress,
+  selected,
 }: DraggableCanvasItemProps) => {
   const lastPosition = useRef({ x: element.x, y: element.y });
   const spawnScale = useRef(new Animated.Value(element.isNew ? 0 : 1)).current;
@@ -151,26 +163,62 @@ const DraggableCanvasItem = ({
   // props/state directly (they'd freeze at this item's first mount, e.g. when
   // rehydrated from storage before canvasLayout has been measured). Route through
   // a ref that's refreshed every render so handlers always see current values.
-  const handlersRef = useRef({ onDragStart, onDragMove, onDragRelease });
+  const handlersRef = useRef({ onDragStart, onDragMove, onDragRelease, onDragCancel, onTap, onLongPress });
   useEffect(() => {
-    handlersRef.current = { onDragStart, onDragMove, onDragRelease };
+    handlersRef.current = { onDragStart, onDragMove, onDragRelease, onDragCancel, onTap, onLongPress };
   });
+
+  // Per-gesture state: a press becomes a drag once it moves past TAP_SLOP; a
+  // press held still for LONG_PRESS_MS opens the item's info instead.
+  const gesture = useRef({ moved: false, longPressed: false, timer: null as ReturnType<typeof setTimeout> | null });
+  const clearLongPressTimer = () => {
+    if (gesture.current.timer) clearTimeout(gesture.current.timer);
+    gesture.current.timer = null;
+  };
 
   const panResponder = useRef(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
+      onPanResponderTerminationRequest: () => false,
       onPanResponderGrant: () => {
+        gesture.current.moved = false;
+        gesture.current.longPressed = false;
+        clearLongPressTimer();
+        gesture.current.timer = setTimeout(() => {
+          if (!gesture.current.moved) {
+            gesture.current.longPressed = true;
+            handlersRef.current.onLongPress(element.instanceId);
+          }
+        }, LONG_PRESS_MS);
         handlersRef.current.onDragStart(element.instanceId, lastPosition.current.x, lastPosition.current.y);
       },
       onPanResponderMove: (evt, gestureState) => {
+        if (gesture.current.longPressed) return;
+        if (!gesture.current.moved && Math.hypot(gestureState.dx, gestureState.dy) < TAP_SLOP) return;
+        gesture.current.moved = true;
+        clearLongPressTimer();
         handlersRef.current.onDragMove(element.instanceId, gestureState.dx, gestureState.dy);
       },
-      onPanResponderRelease: (evt, gestureState) => {
-        handlersRef.current.onDragRelease(element.instanceId, lastPosition.current.x, lastPosition.current.y);
+      onPanResponderRelease: () => {
+        clearLongPressTimer();
+        if (gesture.current.longPressed) {
+          handlersRef.current.onDragCancel(element.instanceId);
+        } else if (!gesture.current.moved) {
+          handlersRef.current.onDragCancel(element.instanceId);
+          handlersRef.current.onTap(element.instanceId);
+        } else {
+          handlersRef.current.onDragRelease(element.instanceId, lastPosition.current.x, lastPosition.current.y);
+        }
+      },
+      onPanResponderTerminate: () => {
+        clearLongPressTimer();
+        handlersRef.current.onDragCancel(element.instanceId);
       },
     })
   ).current;
+
+  useEffect(() => clearLongPressTimer, []);
 
   return (
     <Animated.View
@@ -185,6 +233,7 @@ const DraggableCanvasItem = ({
           transform: [{ translateX: bounceOffset.x }, { translateY: bounceOffset.y }, { scale: spawnScale }],
         },
         item.isFinal && styles.finalStateGlow,
+        selected && styles.canvasElementSelected,
       ]}
     >
       <ElementAura elementId={item.id} />
@@ -197,6 +246,157 @@ const DraggableCanvasItem = ({
 };
 
 const SILHOUETTE_COLOR = '#2A3445';
+
+// Phones and tablets: the sidebar scrolls by touch, so only the card's icon
+// starts a drag there. With a mouse the whole card can be dragged.
+const IS_COARSE_POINTER =
+  typeof window !== 'undefined' && typeof window.matchMedia === 'function'
+    ? window.matchMedia('(pointer: coarse)').matches
+    : false;
+
+interface SidebarDragHandlers {
+  onStart: (elementId: string, x: number, y: number) => void;
+  onMove: (x: number, y: number) => void;
+  onDrop: (x: number, y: number) => void;
+  onCancel: () => void;
+}
+
+// Pan responder for dragging an element from the sidebar onto the board.
+//
+// Mouse: wraps the whole card and only takes over once the pointer has moved,
+// so a plain click still reaches the card's onPress (spawn in the middle).
+//
+// Touch: attached to the card's icon. react-native-web only lets ancestors of
+// the current responder steal a gesture, so the icon claims the touch at the
+// start and handles all three cases itself: tap = spawn, hold = info, move =
+// drag. Touches elsewhere on the card scroll the sidebar as usual.
+const useSidebarDrag = (
+  elementId: string,
+  handlers: SidebarDragHandlers,
+  claimOnStart: boolean,
+  onTap: () => void,
+  onHold: () => void
+) => {
+  const ref = useRef({ handlers, onTap, onHold });
+  ref.current = { handlers, onTap, onHold };
+  const state = useRef({ dragging: false, held: false, timer: null as ReturnType<typeof setTimeout> | null });
+  const clearTimer = () => {
+    if (state.current.timer) clearTimeout(state.current.timer);
+    state.current.timer = null;
+  };
+  return useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => claimOnStart,
+      onMoveShouldSetPanResponderCapture: (_evt, g) => !claimOnStart && Math.hypot(g.dx, g.dy) > TAP_SLOP,
+      onPanResponderTerminationRequest: () => false,
+      onPanResponderGrant: (_evt, g) => {
+        state.current.held = false;
+        clearTimer();
+        if (claimOnStart) {
+          state.current.dragging = false;
+          state.current.timer = setTimeout(() => {
+            if (!state.current.dragging) {
+              state.current.held = true;
+              ref.current.onHold();
+            }
+          }, LONG_PRESS_MS);
+        } else {
+          state.current.dragging = true;
+          ref.current.handlers.onStart(elementId, g.moveX, g.moveY);
+        }
+      },
+      onPanResponderMove: (_evt, g) => {
+        if (state.current.held) return;
+        if (!state.current.dragging) {
+          if (Math.hypot(g.dx, g.dy) < TAP_SLOP) return;
+          state.current.dragging = true;
+          clearTimer();
+          ref.current.handlers.onStart(elementId, g.moveX, g.moveY);
+        }
+        ref.current.handlers.onMove(g.moveX, g.moveY);
+      },
+      onPanResponderRelease: (_evt, g) => {
+        clearTimer();
+        if (state.current.dragging) ref.current.handlers.onDrop(g.moveX, g.moveY);
+        else if (!state.current.held) ref.current.onTap();
+        state.current.dragging = false;
+      },
+      onPanResponderTerminate: () => {
+        clearTimer();
+        if (state.current.dragging) ref.current.handlers.onCancel();
+        state.current.dragging = false;
+      },
+    })
+  ).current;
+};
+
+interface SidebarCardProps {
+  item: ElementItem;
+  name: string;
+  isNarrow: boolean;
+  finalLabel: string;
+  infoLabel: string;
+  drag: SidebarDragHandlers;
+  onSpawn: (elementId: string) => void;
+  onInfo: (elementId: string) => void;
+}
+
+const SidebarCard = ({ item, name, isNarrow, finalLabel, infoLabel, drag, onSpawn, onInfo }: SidebarCardProps) => {
+  // On touch the icon handles its own tap; browsers then also send a click to
+  // the card, which must not spawn a second copy.
+  const lastIconTap = useRef(0);
+  const pan = useSidebarDrag(
+    item.id,
+    drag,
+    IS_COARSE_POINTER,
+    () => {
+      lastIconTap.current = Date.now();
+      onSpawn(item.id);
+    },
+    () => onInfo(item.id)
+  );
+  const card = (
+    <TouchableOpacity
+      style={[
+        styles.sidebarCard,
+        isNarrow && styles.sidebarCardNarrow,
+        // With a mouse the drag wrapper takes the grid cell, so the card fills it
+        isNarrow && !IS_COARSE_POINTER && styles.sidebarCardFill,
+        item.isFinal && styles.finalSidebarCard,
+      ]}
+      activeOpacity={0.7}
+      onPress={() => {
+        if (Date.now() - lastIconTap.current > 600) onSpawn(item.id);
+      }}
+      onLongPress={() => onInfo(item.id)}
+    >
+      <TouchableOpacity
+        style={styles.infoButton}
+        onPress={() => onInfo(item.id)}
+        hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+        accessibilityLabel={infoLabel}
+      >
+        <Text style={styles.infoButtonText}>i</Text>
+      </TouchableOpacity>
+      <View
+        {...(IS_COARSE_POINTER ? pan.panHandlers : {})}
+        style={[styles.iconWrapper, { backgroundColor: `${item.color}18` }, IS_COARSE_POINTER && styles.dragHandle]}
+      >
+        <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={22} />
+      </View>
+      <Text style={[styles.sidebarCardText, isNarrow && styles.sidebarCardTextNarrow]} numberOfLines={1}>
+        {name}
+      </Text>
+      {item.isFinal && <Text style={styles.finalBadge}>{finalLabel}</Text>}
+    </TouchableOpacity>
+  );
+  if (IS_COARSE_POINTER) return card;
+  return (
+    <View {...pan.panHandlers} style={isNarrow ? styles.sidebarCardDragWrapperNarrow : undefined}>
+      {card}
+    </View>
+  );
+};
 
 // One step of the recipe book's "Show path" tree; steps fade in one after another
 const PathStep = ({ index, children }: { index: number; children: React.ReactNode }) => {
@@ -306,6 +506,16 @@ export default function App() {
   // Keep track of canvas sizing for containment checks
   const [canvasLayout, setCanvasLayout] = useState({ x: 0, y: 0, width: 0, height: 0 });
 
+  // Tap-to-combine (phones only): the board item picked by the first tap
+  const tapToCombine = isNarrow && IS_COARSE_POINTER;
+  const [selectedInstanceId, setSelectedInstanceId] = useState<string | null>(null);
+  const lastTapRef = useRef<{ id: string; time: number } | null>(null);
+
+  // Element being dragged out of the sidebar, drawn as a floating tile
+  const [sidebarDragId, setSidebarDragId] = useState<string | null>(null);
+  const sidebarDragPos = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
+  const canvasRef = useRef<View>(null);
+
   // References to track drag offset starts
   const dragStartPositions = useRef<{ [key: string]: { x: number; y: number } }>({});
 
@@ -410,8 +620,89 @@ export default function App() {
     saveState(discoveredIds, updatedCanvas);
   };
 
+  const makeInstanceId = () => `instance_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+  // Keeps an 80x80 item fully on the board
+  const clampToCanvas = (x: number, y: number) => ({
+    x: Math.round(Math.min(Math.max(x, 0), Math.max(0, canvasLayout.width - 80))),
+    y: Math.round(Math.min(Math.max(y, 0), Math.max(0, canvasLayout.height - 80))),
+  });
+
+  // Double-tap: a fresh copy of the item, just below and to the right
+  const handleDuplicate = (instanceId: string) => {
+    const source = canvasElements.find(el => el.instanceId === instanceId);
+    if (!source) return;
+    const pos = clampToCanvas(source.x + 26, source.y + 26);
+    const copy: ActiveCanvasElement = { instanceId: makeInstanceId(), elementId: source.elementId, ...pos, isNew: true };
+    const updatedCanvas = [...canvasElements, copy];
+    setCanvasElements(updatedCanvas);
+    saveState(discoveredIds, updatedCanvas);
+  };
+
+  const handleCanvasTap = (instanceId: string) => {
+    const now = Date.now();
+    const last = lastTapRef.current;
+    if (last && last.id === instanceId && now - last.time < 350) {
+      lastTapRef.current = null;
+      setSelectedInstanceId(null);
+      handleDuplicate(instanceId);
+      return;
+    }
+    lastTapRef.current = { id: instanceId, time: now };
+    if (!tapToCombine) return;
+
+    if (selectedInstanceId === null || !canvasElements.some(el => el.instanceId === selectedInstanceId)) {
+      setSelectedInstanceId(instanceId);
+    } else if (selectedInstanceId === instanceId) {
+      setSelectedInstanceId(null);
+    } else {
+      // Second tap on another item: fly the first one onto it and combine (or bounce)
+      const target = canvasElements.find(el => el.instanceId === instanceId);
+      const first = selectedInstanceId;
+      setSelectedInstanceId(null);
+      lastTapRef.current = null;
+      if (target) handleDragRelease(first, target.x, target.y);
+    }
+  };
+
+  const handleCanvasLongPress = (instanceId: string) => {
+    const el = canvasElements.find(item => item.instanceId === instanceId);
+    if (!el) return;
+    setSelectedInstanceId(null);
+    setDetailElementId(el.elementId);
+  };
+
+  const handleDragCancel = (instanceId: string) => {
+    delete dragStartPositions.current[instanceId];
+    setProximityLine(null);
+  };
+
+  // Dragging an element straight from the sidebar onto a spot on the board
+  const sidebarDrag: SidebarDragHandlers = {
+    onStart: (elementId, x, y) => {
+      sidebarDragPos.setValue({ x: x - 40, y: y - 40 });
+      setSidebarDragId(elementId);
+    },
+    onMove: (x, y) => sidebarDragPos.setValue({ x: x - 40, y: y - 40 }),
+    onCancel: () => setSidebarDragId(null),
+    onDrop: (x, y) => {
+      const elementId = sidebarDragId;
+      setSidebarDragId(null);
+      if (!elementId || !canvasRef.current) return;
+      canvasRef.current.measureInWindow((cx, cy, width, height) => {
+        if (x < cx || y < cy || x > cx + width || y > cy + height) return;
+        const pos = clampToCanvas(x - cx - 40, y - cy - 40);
+        const instance: ActiveCanvasElement = { instanceId: makeInstanceId(), elementId, ...pos, isNew: true };
+        setCanvasElements(prev => [...prev, instance]);
+        // Run the normal drop logic so it combines with (or bounces off) whatever it lands on
+        handleDragRelease(instance.instanceId, pos.x, pos.y);
+      });
+    },
+  };
+
   // 3. Clear, Reset, & Language Actions
   const handleClearCanvas = () => {
+    setSelectedInstanceId(null);
     setCanvasElements([]);
     setProximityLine(null);
     setActiveCombinations([]);
@@ -795,7 +1086,11 @@ export default function App() {
       <View style={[styles.mainLayout, isNarrow && styles.mainLayoutNarrow]}>
 
         {/* Workspace Canvas (Left Area) */}
-        <View style={[styles.canvasContainer, isNarrow && styles.canvasContainerNarrow]} onLayout={onCanvasLayout}>
+        <View
+          ref={canvasRef}
+          style={[styles.canvasContainer, isNarrow && styles.canvasContainerNarrow]}
+          onLayout={onCanvasLayout}
+        >
           {canvasElements.length === 0 ? (
             <View style={styles.emptyCanvasHint}>
               <Text style={styles.hintText}>{t('workspaceCanvas')}</Text>
@@ -815,6 +1110,10 @@ export default function App() {
                   onDragStart={handleDragStart}
                   onDragMove={handleDragMove}
                   onDragRelease={handleDragRelease}
+                  onDragCancel={handleDragCancel}
+                  onTap={handleCanvasTap}
+                  onLongPress={handleCanvasLongPress}
+                  selected={el.instanceId === selectedInstanceId}
                 />
               );
             })
@@ -928,36 +1227,17 @@ export default function App() {
             {filteredElements.map((item) => {
               const trans = getElementTranslation(item.id);
               return (
-                <TouchableOpacity
+                <SidebarCard
                   key={item.id}
-                  style={[
-                    styles.sidebarCard,
-                    isNarrow && styles.sidebarCardNarrow,
-                    item.isFinal && styles.finalSidebarCard
-                  ]}
-                  activeOpacity={0.7}
-                  onPress={() => handleSpawnElement(item.id)}
-                  onLongPress={() => setDetailElementId(item.id)}
-                >
-                  <TouchableOpacity
-                    style={styles.infoButton}
-                    onPress={() => setDetailElementId(item.id)}
-                    hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
-                    accessibilityLabel={`${trans.name}: ${t('madeFrom')} / ${t('usedIn')}`}
-                  >
-                    <Text style={styles.infoButtonText}>i</Text>
-                  </TouchableOpacity>
-                  <View style={[styles.iconWrapper, { backgroundColor: `${item.color}18` }]}>
-                    <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={22} />
-                  </View>
-                  <Text
-                    style={[styles.sidebarCardText, isNarrow && styles.sidebarCardTextNarrow]}
-                    numberOfLines={1}
-                  >
-                    {trans.name}
-                  </Text>
-                  {item.isFinal && <Text style={styles.finalBadge}>{t('finalBadge')}</Text>}
-                </TouchableOpacity>
+                  item={item}
+                  name={trans.name}
+                  isNarrow={isNarrow}
+                  finalLabel={t('finalBadge')}
+                  infoLabel={`${trans.name}: ${t('madeFrom')} / ${t('usedIn')}`}
+                  drag={sidebarDrag}
+                  onSpawn={handleSpawnElement}
+                  onInfo={setDetailElementId}
+                />
               );
             })}
             {filteredElements.length === 0 && (
@@ -1268,6 +1548,30 @@ export default function App() {
         </View>
       )}
 
+      {/* Tile following the pointer while dragging from the sidebar */}
+      {sidebarDragId && (() => {
+        const item = elements.find(el => el.id === sidebarDragId);
+        if (!item) return null;
+        return (
+          <Animated.View
+            pointerEvents="none"
+            style={[
+              styles.canvasElement,
+              styles.dragGhost,
+              {
+                borderColor: item.color,
+                shadowColor: item.color,
+                transform: [{ translateX: sidebarDragPos.x }, { translateY: sidebarDragPos.y }],
+              },
+            ]}
+          >
+            <ElementIcon path={item.svgPath} color={item.color} layers={item.iconLayers} size={28} />
+            <Text style={styles.canvasElementText} numberOfLines={1}>
+              {getElementTranslation(item.id).name}
+            </Text>
+          </Animated.View>
+        );
+      })()}
     </SafeAreaView>
   );
 }
@@ -1521,13 +1825,19 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(0, 230, 118, 0.12)',
     borderRadius: 10,
     padding: 6,
+    paddingRight: 34, // room for the info button
     userSelect: 'none' as any,
   },
   sidebarCardNarrow: {
     flexDirection: 'column',
     width: '31%',
     paddingVertical: 10,
+    paddingHorizontal: 6,
+    paddingTop: 14,
     justifyContent: 'center',
+  },
+  sidebarCardFill: {
+    width: '100%',
   },
   finalSidebarCard: {
     borderColor: 'rgba(255,213,79,0.3)',
@@ -1569,25 +1879,46 @@ const styles = StyleSheet.create({
   },
   infoButton: {
     position: 'absolute',
-    top: 3,
-    right: 3,
-    width: 16,
-    height: 16,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: 'rgba(128, 222, 234, 0.5)',
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    top: 4,
+    right: 4,
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: 'rgba(128, 222, 234, 0.6)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 2,
   },
   infoButtonText: {
     color: '#80DEEA',
-    fontSize: 10,
+    fontSize: 14,
     fontWeight: 'bold',
     fontStyle: 'italic',
-    lineHeight: 12,
+    lineHeight: 16,
     userSelect: 'none' as any,
+  },
+  dragHandle: {
+    touchAction: 'none',
+    cursor: 'grab',
+  } as any,
+  sidebarCardDragWrapperNarrow: {
+    width: '31%',
+  },
+  dragGhost: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    opacity: 0.9,
+    zIndex: 1000,
+  },
+  canvasElementSelected: {
+    borderWidth: 2.5,
+    borderColor: '#FFFFFF',
+    shadowColor: '#FFFFFF',
+    shadowOpacity: 0.9,
+    shadowRadius: 14,
   },
   progressList: {
     gap: 8,
