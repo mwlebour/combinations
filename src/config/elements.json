@@ -2599,32 +2599,5 @@
         "color": "#F44336"
       }
     ]
-  },
-  {
-    "id": "ski_slope",
-    "name": "Ski Slope",
-    "description": "A snowy mountain, perfect for racing down.",
-    "isFinal": true,
-    "category": "nature",
-    "svgPath": "M1 22L10 6l4 6 3-4 6 14z",
-    "color": "#90A4AE",
-    "iconLayers": [
-      {
-        "svgPath": "M1 22L10 6l4 6 3-4 6 14z",
-        "color": "#90A4AE"
-      },
-      {
-        "svgPath": "M10 6l2.5 4.5-1.5-.5-1 1-1-1.5-1.5 1zM17 8l2 4.5-1.2-.4-.8.8-1-1z",
-        "color": "#ECEFF1"
-      },
-      {
-        "svgPath": "M4 21l9-5 .5.9-9 5z",
-        "color": "#FFFFFF"
-      },
-      {
-        "svgPath": "M7 16.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0z",
-        "color": "#E53935"
-      }
-    ]
   }
 ]

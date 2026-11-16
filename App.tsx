@@ -44,6 +44,8 @@ const STORAGE_KEYS = {
   LANGUAGE: '@elemental_language',
 };
 
+const KNOWN_ELEMENT_IDS = new Set((elementsData as ElementItem[]).map(el => el.id));
+
 const DEFAULT_STARTING_ELEMENTS = (elementsData as ElementItem[])
   .filter(el => el.category === 'basic')
   .map(el => el.id);
@@ -345,13 +347,15 @@ export default function App() {
         const storedLang = await AsyncStorage.getItem(STORAGE_KEYS.LANGUAGE);
         
         if (storedDiscovered) {
-          const parsedDiscovered: string[] = JSON.parse(storedDiscovered);
+          // Drop ids of elements that were removed from the game since this save
+          const storedIds: string[] = JSON.parse(storedDiscovered);
+          const parsedDiscovered = storedIds.filter(id => KNOWN_ELEMENT_IDS.has(id));
           const missingBasics = DEFAULT_STARTING_ELEMENTS.filter(id => !parsedDiscovered.includes(id));
           const mergedDiscovered = missingBasics.length > 0
             ? [...parsedDiscovered, ...missingBasics]
             : parsedDiscovered;
           setDiscoveredIds(mergedDiscovered);
-          if (missingBasics.length > 0) {
+          if (missingBasics.length > 0 || parsedDiscovered.length !== storedIds.length) {
             await AsyncStorage.setItem(STORAGE_KEYS.DISCOVERED, JSON.stringify(mergedDiscovered));
           }
         } else {
@@ -360,7 +364,8 @@ export default function App() {
         }
         
         if (storedCanvas) {
-          setCanvasElements(JSON.parse(storedCanvas));
+          const storedItems: ActiveCanvasElement[] = JSON.parse(storedCanvas);
+          setCanvasElements(storedItems.filter(el => KNOWN_ELEMENT_IDS.has(el.elementId)));
         }
 
         if (storedLang) {

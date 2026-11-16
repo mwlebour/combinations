@@ -161,6 +161,5 @@
   "house+house": "village",
   "village+village": "city",
   "car+car": "traffic_jam",
-  "concert+smartphone": "livestream",
-  "mountain+snow": "ski_slope"
+  "concert+smartphone": "livestream"
 }

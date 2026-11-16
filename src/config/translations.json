@@ -7742,46 +7742,6 @@
         "pl": "Koncert przesyłany na każdy smartfon na planecie.",
         "bg": "Концерт, излъчван на всеки смартфон на планетата."
       }
-    },
-    "ski_slope": {
-      "name": {
-        "en": "Ski Slope",
-        "hu": "Sípálya",
-        "de": "Skipiste",
-        "la": "Clivus Nartandi",
-        "it": "Pista da Sci",
-        "fr": "Piste de Ski",
-        "es": "Pista de Esquí",
-        "pt": "Pista de Esqui",
-        "ja": "スキー場",
-        "zh": "滑雪道",
-        "ru": "Горнолыжный Склон",
-        "ko": "스키장",
-        "sq": "Pistë Skish",
-        "sr": "Ski Staza",
-        "uk": "Гірськолижний Схил",
-        "pl": "Stok Narciarski",
-        "bg": "Ски Писта"
-      },
-      "description": {
-        "en": "A snowy mountain, perfect for racing down.",
-        "hu": "Havas hegy, tökéletes a lesikláshoz.",
-        "de": "Ein verschneiter Berg, perfekt zum Hinunterflitzen.",
-        "la": "Mons nivosus, ad celeriter descendendum aptissimus.",
-        "it": "Una montagna innevata, perfetta per sfrecciare giù.",
-        "fr": "Une montagne enneigée, parfaite pour dévaler.",
-        "es": "Una montaña nevada, perfecta para bajar a toda velocidad.",
-        "pt": "Uma montanha nevada, perfeita para descer a toda velocidade.",
-        "ja": "一気に滑り降りるのにぴったりの雪山。",
-        "zh": "一座积雪的山，最适合一路飞驰而下。",
-        "ru": "Заснеженная гора, идеальная для спуска на скорости.",
-        "ko": "빠르게 내려오기 딱 좋은 눈 덮인 산.",
-        "sq": "Një mal me borë, i përsosur për të zbritur me shpejtësi.",
-        "sr": "Snežna planina, savršena za brzo spuštanje.",
-        "uk": "Засніжена гора, ідеальна для швидкого спуску.",
-        "pl": "Ośnieżona góra, idealna do szybkiego zjazdu.",
-        "bg": "Заснежена планина, идеална за бързо спускане."
-      }
     }
   }
 }
